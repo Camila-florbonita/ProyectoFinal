@@ -1,0 +1,147 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffecf0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header
+{
+    background-color: rgb(255, 180, 190);
+    display: block;
+    height: 100px;
+}
+
+.logo
+{
+    width: 90;
+    height: 60;
+    margin: 20px;
+    float: left;
+}
+
+.buscar
+{
+    float: left;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.lupa
+{
+    border: none;
+    background-color: transparent;
+}
+
+.lupa img
+{
+    width: 30;
+    height: 30;
+}
+
+.companyname
+{
+    color: black;
+    font-size: 50px;
+    font-family:"Brush Script MT";
+    float: left;
+    margin-top: 15px;
+    margin-left: 15%;
+}
+
+
+.formLogin
+{
+    background-color: white;
+    margin-top: 0px;
+    padding: 3px;
+    border-radius: 2%;
+}
+
+.labelLogin
+{
+    text-align: center;
+    font-family: "Arial Black";
+    font-size: 40px;
+    color: #9c6e79;
+}
+
+.contenedor
+{
+    width: 100%;
+    padding: 15px;
+}
+
+.input
+{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor
+{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.icono
+{
+    width: 30;
+    height: 30;
+    background-color: transparent;
+    margin-left: 5px;
+    margin-bottom: -8px;
+    opacity: 0.7;
+}
+
+.botonLogin
+{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #9c6e79;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botonLogin:hover
+{
+    background: #ffb4be;
+}
+
+.aviso, .notienescuenta
+{
+    text-align: center;
+}
+
+.link
+{
+    text-decoration: none;
+    color: #9c6e79;
+    font-weight: 600;
+}
+
+.link:hover
+{
+    color: #ffb4be;
+}
+
+@media (min-width: 768px) 
+{
+    .formLogin
+    {
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
+

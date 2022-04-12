@@ -1,0 +1,264 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="FormatoCSS.css">
+        <title>Editar prenda</title>
+    </head>
+    <body>
+
+        <header class="header">
+            <img class="logo" src="logo_provisional.jpg">
+            <form class="buscar" action="">
+                <input class="busqueda" type="text" placeholder="Buscar...">
+                <button class="lupa" type="submit">
+                    <img src="lupa.png">
+                </button>
+            </form>
+            <span class="companyname">
+                FashionChoice
+            </span>
+            <a href="">
+                <img class="iconocuentaadmin" src="cuentaicono.png">
+            </a>       
+        </header>
+
+        <div class="menuadmin">
+            <a class="boprenda" href="">
+                <button class="botonadmin">
+                    Borrar
+                </button>
+            </a>
+            <a class="edprenda" href="">
+                <button class="botonadmin">
+                    Editar
+                </button>
+            </a>
+            <a class="analitics" href="">
+                <button class="botonadmin">
+                    Analitics
+                </button>
+            </a>
+            <a class="ofer" href="">
+                <button class="botonadmin">
+                    Ofertas
+                </button>
+            </a>
+        </div>
+
+        <img class="imgprenda" src="imagendelproducto_provisional.jpg">
+
+        <form class="carsdeprenda" action="#">
+            <div class="etiquetas">
+                <p>
+                    Genero: 
+                    <select name="genero" id="genero">
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="unisex">Unisex</option>
+                    </select>
+                </p>
+                <p>
+                    Estilo: 
+                    <select name="estilo" id="estilo">
+                        <option value="clasico">Clasico</option>
+                        <option value="vintage">Vintage</option>
+                        <option value="gotico">Gotico</option>
+                        <option value="preppy">Preppy</option>
+                        <option value="urbano">Urbano</option>
+                        <option value="hipster">Hipster</option>
+                        <option value="grunge">Grunge</option>
+                        <option value="natural">Natural</option>
+                        <option value="sofisticado">Sofisticado</option>
+                        <option value="artsy">Artsy</option>
+                        <option value="vanguardista">Vanguardista</option>
+                        <option value="boho">Boho</option>
+                        <option value="romantico">Romantico</option>
+                        <option value="dramatico">Dramatico</option>
+                        <option value="girly">Girly</option>
+                    </select>
+                </p>
+                <p>
+                    Edad: 
+                    <select name="edad" id="edad">
+                        <option value="nino">Niños</option>
+                        <option value="joven">Jovenes</option>
+                        <option value="adulto">Adultos</option>
+                    </select>
+                </p>
+                <p>
+                    Color: 
+                    <select name="color" id="color">
+                        <option value="negro">Negro</option>
+                        <option value="azul">Azul</option>
+                        <option value="cafe">Café</option>
+                        <option value="gris">Gris</option>
+                        <option value="verde">Verde</option>
+                        <option value="naranja">Naranja</option>
+                        <option value="rosa">Rosa</option>
+                        <option value="morado">Morado</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="amarillo">Amarillo</option>
+                        <option value="turquesa">Turquesa</option>
+                        <option value="magenta">Magenta</option>
+                        <option value="lila">Lila</option>
+                        <option value="beige">Beige</option>
+                        <option value="salmon">Salmón</option>
+                        <option value="fucsia">Fucsia</option>
+                        <option value="violeta">Violeta</option>
+                        <option value="celeste">Azul celeste</option>
+                        <option value="marino">Azul marino</option>
+                        <option value="lima">Verde lima</option>
+                        <option value="verdeoscuro">Verde oscuro</option>
+                        <option value="mostaza">Mostaza</option>
+                        <option value="cian">Cian</option>
+                        <option value="vino">Vino</option>
+                    </select>
+                </p>
+                <p> Tipo de prenda: 
+                    <select name="tipodeprenda" id="tipodeprenda">
+                        <option class="playera" value="playera">Playera</option>
+                        <option class="pantalon" value="pantalon">Pantalon</option>
+                        <option class="vestido" value="vestido">Vestidos</option>
+                        <option class="short" value="short">Short</option>
+                        <option class="falda" value="falda">Falda</option>
+                        <option class="sueter" value="sueter">Sueter</option>
+                    </select>
+                </p>
+                <p>
+                    Temporada: 
+                    <select name="temporada" id="temporada">
+                        <option value="primavera">Primavera</option>
+                        <option value="verano">Verano</option>
+                        <option value="otono">Otoño</option>
+                        <option value="invierno">Invierno</option>
+                    </select>
+                </p>
+                <p>
+                    Ocasion: 
+                    <select name="ocasion" id="ocasion">
+                        <option value="playa">Playa</option>
+                        <option value="elegante">Elegante</option>
+                        <option value="deporte">Deportes</option>
+                        <option value="fiesta">Fiesta</option>
+                    </select>
+                </p>
+                <p>
+                    Nivel de formalidad: 
+                    <select name="formalidad" id="formalidad">
+                        <option value="casual">Casual</option>
+                        <option value="semiformal">Semiformal</option>
+                        <option value="formal">Formal</option>
+                        <option value="seda">Seda</option>
+                        <option value="cuero">Cuero</option>
+                        <option value="mezclilla">Mezclilla</option>
+                        <option value="licra">Licra</option>
+                        <option value="lino">Lino</option>
+                    </select>
+                </p>
+                <p>
+                    Material: 
+                    <select name="material" id="material">
+                        <option value="algodon">Algodon</option>
+                        <option value="poliester">Poliester</option>
+                        <option value="lana">Lana</option>
+
+                    </select>
+                </p>
+                <p>
+                    Corte: 
+                    <select name="corte" id="corte">
+                        <div class="corteplayera">
+                            <option value="camiseta">Camiseta</option>
+                            <option value="camisa">Camisa</option>
+                            <option value="polo">Polo</option>
+                            <option value="tanktop">Tank Top</option>
+                            <option value="mangalarga">Manga Larga</option>
+                            <option value="croptop">Crop Top</option>
+                        </div>
+                        <div class="cortepantalon">
+                            <option value="precto">Recto</option>
+                            <option value="skinny">Skinny</option>
+                            <option value="slim">Slim</option>
+                            <option value="bota">Bota</option>
+                            <option value="formal">Formal</option>
+                            <option value="mallas">Mallas</option>
+                        </div>
+                        <div class="cortevestido">
+                            <option value="vrecto">Recto</option>
+                            <option value="cinturaalta">Cintura Alta</option>
+                            <option value="ventubado">Entubado</option>
+                            <option value="imperio">Imperio</option>
+                            <option value="asimetrico">Asimetrico</option>
+                        </div>
+                        <div class="corteshort">
+                            <option value="minishort">Minishort</option>
+                            <option value="bermuda">Bermuda</option>
+                            <option value="tradicional">Tradicional</option>
+                        </div>
+                        <div class="corteplayera">
+                            <option value="camiseta">Camiseta</option>
+                            <option value="camisa">Camisa</option>
+                            <option value="polo">Polo</option>
+                            <option value="tanktop">Tank Top</option>
+                            <option value="mangalarga">Manga Larga</option>
+                            <option value="croptop">Crop Top</option>
+                        </div>
+                        <div class="cortefalda">
+                            <option value="fentubada">Entubada</option>
+                            <option value="minifalda">Minifalda</option>
+                            <option value="frecta">Recta</option>
+                            <option value="tipoa">Tipo A</option>
+                            <option value="circular">Circular</option>
+                            <option value="plisada">Plisada</option>
+                        </div>
+                        <div class="cortesueter">
+                            <option value="tejido">Tejido</option>
+                            <option value="saco">Saco</option>
+                            <option value="sudadera">Sudadera</option>
+                            <option value="chamarra">Chamarra</option>
+                            <option value="chaleco">Chaleco</option>
+                            <option value="chaqueta">Chaqueta</option>
+                        </div>
+                    </select>
+                </p>
+            </div>
+            <div class="ntallas">
+                <p>
+                    XS: <input type="number" min="0" name="nxs">
+                </p>
+                <p>
+                    S: <input type="number" min="0" name="ns">
+                </p>
+                <p>
+                    M: <input type="number" min="0" name="nm">
+                </p>
+                <p>
+                    L: <input type="number" min="0" name="nl">
+                </p>
+                <p>
+                    XL: <input type="number" min="0" name="nxl">
+                </p>
+            </div>
+            
+
+            <p class="gcamb">
+                <button class="guardarcambios" type="submit">
+                    Guardar cambios
+                </button>
+            </p>
+        </form>
+        
+
+        <footer class="footer">
+            <a class="foot" href="">
+                Aviso legal
+            </a>
+            <a class="foot" href="">
+                Politica de privacidad
+            </a>
+            <p class="foot">
+                No se que mas vaya aqui :P
+            </p>
+        </footer>
+    </body>
+</html>
