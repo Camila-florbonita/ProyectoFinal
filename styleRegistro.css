@@ -1,7 +1,7 @@
 body
 {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffecf0;
+    background-color: whitesmoke;
     margin: 0;
 }
 
@@ -11,7 +11,7 @@ body
 
 .header
 {
-    background-color: rgb(255, 180, 190);
+    background-color: #c227d5;
     display: block;
     height: 100px;
 }
@@ -59,6 +59,12 @@ body
     margin-top: 0px;
     padding: 3px;
     border-radius: 2%;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%), 0 3px 7px 0 rgb(0 0 0 / 9%);
+}
+
+.formRegistrar:hover
+{
+    box-shadow: 0 5px 8px 0 rgb(0 0 0 / 12%), 0 5px 10px 0 rgb(0 0 0 / 7%);
 }
 
 .labelRegistrar
@@ -66,13 +72,16 @@ body
     text-align: center;
     font-family: "Arial Black";
     font-size: 40px;
-    color: #9c6e79;
+    color: #881b95;
 }
 
 .contenedor
 {
-    width: 100%;
+    width: 90%;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 
 .input
@@ -87,6 +96,13 @@ body
 {
     margin-bottom: 15px;
     border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+.input-contenedor:hover
+{
+    border: 3px solid #881b95;
+    border-radius: 25px;
 }
 
 .icono
@@ -105,7 +121,7 @@ body
     width: 100%;
     color: white;
     font-size: 20px;
-    background: #9c6e79;
+    background: #881b95;
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -113,7 +129,7 @@ body
 
 .botonRegistrar:hover
 {
-    background: #ffb4be;
+    background: #f397ff;
 }
 
 .aviso, .yatienescuenta
@@ -124,13 +140,13 @@ body
 .link
 {
     text-decoration: none;
-    color: #9c6e79;
+    color: #881b95;
     font-weight: 600;
 }
 
 .link:hover
 {
-    color: #ffb4be;
+    color: #f397ff;
 }
 
 @media (min-width: 768px) 
