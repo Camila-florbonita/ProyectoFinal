@@ -16,44 +16,6 @@ body
     height: 100px;
 }
 
-.logo
-{
-    width: 90;
-    height: 60;
-    margin: 20px;
-    float: left;
-}
-
-.buscar
-{
-    float: left;
-    margin-top: 25px;
-    margin-left: 20px;
-}
-
-.lupa
-{
-    border: none;
-    background-color: transparent;
-}
-
-.lupa img
-{
-    width: 30;
-    height: 30;
-}
-
-.companyname
-{
-    color: black;
-    font-size: 50px;
-    font-family:"Brush Script MT";
-    float: left;
-    margin-top: 15px;
-    margin-left: 15%;
-}
-
-
 .formLogin
 {
     background-color: white;

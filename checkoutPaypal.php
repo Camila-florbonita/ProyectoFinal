@@ -1,13 +1,16 @@
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script> -->
+
 <html>
     <head>
         <link rel="stylesheet" href="FormatoCSS.css">
         <title>Producto</title>
+        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=MXN"></script>
     </head>
     <body>
 
         <header class="header">
             <img class="logo" src="logo_provisional.jpg">
-            <form class="buscar" action="#">
+            <form class="buscar" action="">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
                     <img src="lupa.png">
@@ -16,8 +19,37 @@
             <span class="companyname">
                 FashionChoice
             </span>
-            <a class="iniciarsesion" href="googleApi.php">
-                Iniciar sesion
+            <ul class="cuentas">
+                <li class="cue">
+                    <a href="">
+                        <img class="iconocuenta" src="cuentaicono.png">
+                    </a>
+                    <ul class="cuenta">
+                        <li class="cuentaelemento">
+                            <a href="">
+                                Historial
+                            </a>
+                        </li >
+                        <li class="cuentaelemento">
+                            <a href="">
+                                Lista de deseos
+                            </a>
+                        </li>
+                        <li class="cuentaelemento">
+                            <a href="">
+                                Configuracion
+                            </a>
+                        </li>
+                        <li class="cuentaelemento">
+                            <a href="">
+                                Cerrar sesion
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="" class="carrito">
+                <img src="carritodecompras.png">
             </a>
         </header>
 
@@ -241,13 +273,54 @@
                 <input class="elegirtalla" type="radio" name="talla" id="L" value="L">
                 <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
                 <p>
-                    <a href="">
-                        <button class="comprar" type="submit">
-                            Inicia sesion para comprar
-                        </button>
-                    </a>    
+                    <div id="paypal-button-container"></div>
+                    <script>
+                        paypal.Buttons({
+                            style: {
+                                color: 'blue',
+                                shape: 'pill',
+                                label: 'pay'
+                            },
+                            createOrder: function(data, actions)
+                            {
+                                return actions.order.create(
+                                    {
+                                        purchase_units: [{
+                                            amount: {
+                                                value: 10
+                                            }
+                                        }]
+                                    });
+                            },
+
+                            onApprove: function(data, actions)
+                            {
+                                actions.order.capture().then(function(detalles)
+                                {
+                                    console.log(detalles);
+                                    alert("Pago realizado");
+                                    //window.location.href="";
+                                });
+                            },
+
+                            onCancel: function(data)
+                            {
+                                alert("Pago cancelado");
+                                console.log(data);
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+                    <!-- <button class="comprar" type="submit">
+                        Comprar
+                    </button> -->
+                    <button class="alcarrito" type="submit">
+                        <img src="carritodecompras.png">
+                    </button>
                 </p>                
             </form>
+            <button class="guardarenlista">
+                <img src="bookmark.png">
+            </button>
         </div>
 
         <p class="descripciondelproducto">
@@ -257,6 +330,17 @@
         <p class="descprod">
             Aqui va la descripcion del producto
         </p>
+
+        <div class="calificacion">
+            <p>
+                Calificar el producto
+            </p>
+            <img class="estrella" src="estrella.png">
+            <img class="estrella" src="estrella.png">
+            <img class="estrella" src="estrella.png">
+            <img class="estrella" src="estrella.png">
+            <img class="estrella" src="estrella.png">
+        </div>
 
         <p class="coments">
             Comentarios

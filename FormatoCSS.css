@@ -16,14 +16,29 @@ body
     width: 90;
     height: 60;
     margin: 20px;
+    margin-left: 50px;
     float: left;
 }
 
 .buscar
 {
     float: left;
-    margin-top: 25px;
+    margin-top: 34px;
     margin-left: 20px;
+}
+
+.busqueda
+{
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.busqueda:hover
+{
+    border: 2px solid darkgrey;
+    border-radius: 25px;
 }
 
 .lupa
@@ -35,7 +50,8 @@ body
 .lupa img
 {
     width: 30;
-    height: 30;
+    height: 27;
+    margin-bottom: -9px;
 }
 
 .companyname
@@ -45,7 +61,7 @@ body
     font-family:"Brush Script MT";
     float: left;
     margin-top: 15px;
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 .cuentas
