@@ -111,9 +111,9 @@ body
     background: #f397ff;
 }
 
-@media (min-width: 768px) 
+@media (max-width: 768px) 
 {
-    .formLogin
+    .formularioConfiguracion
     {
         margin: auto;
         width: 500px;
@@ -121,3 +121,14 @@ body
         border-radius: 2%;
     }
 }
+
+@media (max-width: 600px) 
+{
+    .formularioConfiguracion
+    {
+        margin: auto;
+        width: 90%;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+} 

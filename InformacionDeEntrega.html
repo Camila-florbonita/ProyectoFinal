@@ -1,16 +1,17 @@
 <html>
     <head>
-        <link rel="stylesheet" href="FormatoCSS.css">
+        <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleCuenta.css">
         <title>Informacion de entrega</title>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="logo_provisional.jpg">
+            <img class="logo" src="img/logo_provisional.jpg">
             <form class="buscar" action="#">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="lupa.png">
+                    <img src="img/lupa.png">
                 </button>
             </form>
             <span class="companyname">
@@ -19,21 +20,21 @@
             <ul class="cuentas">
                 <li class="cue">
                     <a href="">
-                        <img class="iconocuenta" src="cuentaicono.png">
+                        <img class="iconocuenta" src="img/cuentaicono.png">
                     </a>
                     <ul class="cuenta">
                         <li class="cuentaelemento">
-                            <a href="">
+                            <a href="HistorialDeCompras.html">
                                 Historial
                             </a>
                         </li >
                         <li class="cuentaelemento">
-                            <a href="">
+                            <a href="ListaDeDeseos.html">
                                 Lista de deseos
                             </a>
                         </li>
                         <li class="cuentaelemento">
-                            <a href="">
+                            <a href="ConfiguracionCuenta.html">
                                 Configuracion
                             </a>
                         </li>
@@ -45,30 +46,47 @@
                     </ul>
                 </li>
             </ul>
-            <a href="" class="carrito">
-                <img src="carritodecompras.png">
+            <a href="CarritoDeCompras.html" class="carrito">
+                <img src="img/carritodecompras.png">
             </a>
         </header>
 
-        <form class="entrega" action="#">
-            <p>
-                Direccion: <input type="text" name="direccion" placeholder="Direccion...">
-            </p>
-            <p>
-                Numero exterior: <input type="number" name="nexterior" placeholder="Numero exterior...">
-            </p>
-            <p>
-                Numero interior: <input type="number" name="ninterior" placeholder="Numero interior...">
-            </p>
-            <p>
-                Numero de telefono: <input type="number" name="telefono" placeholder="Numero de telefono...">
-            </p>
-            <p>
-                Codigo postal: <input type="number" name="cpostal" placeholder="Codigo postal...">
-            </p>
-            <p>
-                Estado: 
-                <select name="estado" id="estado">
+        <form class="formularioConfiguracion" action="#">
+            <h2 class="labelConfigurar">
+                Ingrese la información de envío
+            </h2>
+            <div class="contenedor">
+
+                <div class="input-contenedor">
+                    <p class="labelDatos">Dirección:
+                    </p>
+                    <input class="input" type="text" name="direccion">
+                </div>
+                <div class="input-contenedor">
+                    <p class="labelDatos">Número exterior:
+                    </p>
+                    <input class="input" type="text" name="nexterior">
+                </div>
+                <div class="input-contenedor">
+                    <p class="labelDatos">Número interior:
+                    </p>
+                    <input class="input" type="text" name="ninterior">
+                </div>
+                <div class="input-contenedor">
+                    <p class="labelDatos">Número de teléfono:
+                    </p>
+                    <input class="input" type="text" name="telefono" maxlength="10" minlength="10">
+                </div>
+                <div class="input-contenedor">
+                    <p class="labelDatos">Código postal:
+                    </p>
+                    <input class="input" type="text" name="cpostal" maxlength="5" minlength="5">
+                </div>
+                
+                <p class="labelDatos">
+                    Estado: 
+                </p>
+                <select class="input" name="estado" id="estado">
                     <option value="aguascalientes">Aguascalientes</option>
                     <option value="bcnorte">Baja California Norte</option>
                     <option value="bcsur">Baja California Sur</option>
@@ -102,18 +120,25 @@
                     <option value="yucatan">Yucatan</option>
                     <option value="zacatecas">Zacatecas</option>     
                 </select>
-            </p>
-            <p>
-                Municipio: <input type="text" name="municipio" placeholder="Municipio...">
-            </p>
-            <p>
-                Instrucciones especificas de entrega: <input type="text" name="insdeentrega" placeholder="Instrucciones de entrega...">
-            </p>
-            <p class="gdir">
-                <button class="guardardireccion" type="submit">
-                    Guardar
-                </button>
-            </p>
+                
+                <div class="input-contenedor">
+                    <p class="labelDatos">Municipio:
+                    </p>
+                    <input class="input" type="text" name="municipio">
+                </div>
+                
+                <div class="input-contenedor">
+                    <p class="labelDatos">Instrucciones de entrega:
+                    </p>                
+                    <input class="input" type="text" name="insdeentrega">
+                </div>
+                
+                
+                    <button class="botonGuardar" type="submit">
+                        Guardar cambios
+                    </button>
+                
+            </div>
         </form>
 
         <footer class="footer">

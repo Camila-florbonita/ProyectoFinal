@@ -4,7 +4,7 @@
     <head>
         <link rel="stylesheet" href="FormatoCSS.css">
         <title>Producto</title>
-        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=MXN"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
     </head>
     <body>
 

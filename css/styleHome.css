@@ -11,7 +11,7 @@ body
     margin-left: auto;
     align-items: center;
     width: 93%;
-    height: 50%;
+    height: auto;
     border-radius: 20px;
     background-color: #f9cbff;
     /* box-shadow: 0 10px 14px 0 rgb(0 0 0 / 10%), 0 11px 15px 0 rgb(0 0 0 / 9%); */
@@ -103,3 +103,12 @@ body
     color: #881b95;
     /* position: relative; */
 }
+
+/* @media (min-width: 768px) 
+{
+    .container
+    {
+        width: 90%;
+        height: auto;
+    }
+} */
