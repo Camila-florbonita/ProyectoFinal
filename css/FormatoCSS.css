@@ -775,6 +775,7 @@ body
     width: 100%;
     border-bottom: 0;
     padding: 20px;
+    /* bottom: 0; */
 }
 
 .foot

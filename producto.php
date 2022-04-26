@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="FormatoCSS.css">
+        <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
         <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
     </head>
@@ -247,10 +247,10 @@
         </ul>
 
         <div class="imagenesdelproducto">
-            <img class="imagenprincipal" src="imagendelproducto_provisional.jpg">
-            <img class="imagensecundaria" src="imagendelproducto_provisional4.jpg">
-            <img class="imagensecundaria" src="imagendelproducto_provisional2.jpg">
-            <img class="imagensecundaria" src="imagendelproducto_provisional3.jfif">
+            <img class="imagenprincipal" src="img/imagendelproducto_provisional.jpg">
+            <img class="imagensecundaria" src="img/imagendelproducto_provisional4.jpg">
+            <img class="imagensecundaria" src="img/imagendelproducto_provisional2.jpg">
+            <img class="imagensecundaria" src="img/imagendelproducto_provisional3.jfif">
             
         </div>
 
@@ -335,11 +335,11 @@
             <p>
                 Calificar el producto
             </p>
-            <img class="estrella" src="estrella.png">
-            <img class="estrella" src="estrella.png">
-            <img class="estrella" src="estrella.png">
-            <img class="estrella" src="estrella.png">
-            <img class="estrella" src="estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
         </div>
 
         <p class="coments">
