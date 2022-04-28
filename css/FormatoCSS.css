@@ -1,6 +1,6 @@
 body
 {
-    background-color: floralwhite;
+    background-color: whitesmoke;
     margin: 0;
     min-height: 100vh;
     position: relative;
@@ -9,7 +9,8 @@ body
 
 .header
 {
-    background-color: rgb(255, 180, 190);
+    /* background-color: rgb(255, 180, 190); */
+    background-color: #c227d5;
     display: block;
     height: 100px;
 }
@@ -87,8 +88,8 @@ body
 {
     text-decoration: none;
     display: block;
-    background-color: darkorange;
-    color: black;
+    background-color: #881b95;
+    color: white;
 }
 
 .cue a:hover
@@ -111,8 +112,8 @@ body
 {
     text-decoration: none;
     display: block;
-    background-color: cornflowerblue;
-    color: black;
+    background-color: #881b95;
+    color: white;
 }
 
 .cuentaelemento a:hover
@@ -177,14 +178,17 @@ body
 {
     text-decoration: none;
     display: block;
-    background-color: rgb(252, 212, 199);
-    color: black;
+    /* background-color: rgb(252, 212, 199); */
+    background-color: #881b95;
+    color: white;
     padding: 10px 12px;
 }
 
 .sub a:hover
 {
-    background-color: rgb(255, 181, 162);
+    /* background-color: rgb(255, 181, 162); */
+    background-color: #c227d5;
+    
 }
 
 .submenu
@@ -194,18 +198,29 @@ body
     width: 20%;
 }
 
+:root {
+    --whiteColor: rgb(255, 240, 235);
+    --principalColor: #c227d5;
+    --principalColorOscuro: #881b95;
+    --colorClaro: #f397ff;
+    --colorMasClaro: #f9cbff;
+}
+
 .submenu li a
 {
     text-decoration: none;
     display: block;
-    background-color: rgb(255, 240, 235);
-    color: black;
+    /* background-color: rgb(255, 240, 235); */
+    background-color: var(--principalColor);
+    color: white;
     padding: 6px 8px;
 }
 
 .submenu li a:hover
 {
-    background-color: rgb(255, 214, 214);
+    /* background-color: rgb(255, 214, 214); 
+    #e72fff*/
+    background-color: #e72fff;
 }
 
 .sub:hover .submenu
@@ -224,7 +239,8 @@ body
 
 .ofertas
 {
-    background-color: rgb(250, 199, 198);
+    /* background-color: rgb(250, 199, 198); */
+    background-color: var(--colorClaro);
     margin: 60px;
     padding-bottom: 10px;
 }
@@ -261,7 +277,8 @@ body
 
 .popular
 {
-    background-color: rgb(255, 178, 176);
+    /* background-color: rgb(255, 178, 176); */
+    background-color: var(--colorClaro);
     margin: 60px;
     padding-bottom: 10px;
 }
@@ -315,19 +332,19 @@ body
     text-align: center;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: midnightblue;
+    background-color: var(--principalColorOscuro);
     color: white;
     border-radius: 10px;
 }
 
-.regcongoogle, .incongoogle
+/* .regcongoogle, .incongoogle
 {
     text-align: center;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: orange;
     border-radius: 10px;
-}
+} */
 
 .imagenprincipal
 {
@@ -386,23 +403,29 @@ body
     appearance: none;
     outline: none;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(85, 85, 85);
     border-width: 1px;
     width: 60px;
     border-radius: 10px;
     padding: 5px;
     background-color: transparent;
-    color: black;
+    color: rgb(43, 43, 43);
     font-size: 20px;
     text-align: center;
     margin-bottom: 40px;
     margin-top: 10px;
 }
 
+.elegirtalla:hover
+{
+    border-width: 2px;
+}
+
 .elegirtalla:checked
 {
-    background-color: red;
-    border-color: red;
+    /* background-color: rgb(94, 94, 94); */
+    background-color: var(--colorClaro);
+    /* border-color: var(--colorClaro); */
 }
 
 .elegirtalla::before
@@ -413,13 +436,19 @@ body
 .comprar
 {
     padding: 10px;
-    background-color: limegreen;
+    background-color: var(--principalColor);
     text-align: center;
     border-radius: 10px;
     font-size: x-large;
     width: 400px;
     float: left;
     margin-top: 20px;
+    border: none;
+}
+
+.comprar:hover
+{
+    background-color: var(--colorClaro);
 }
 
 .alcarrito, .guardarenlista
@@ -514,16 +543,25 @@ body
     float: right;
     margin-top: 50px;
     margin-right: 120px;
+    background-color: var(--colorMasClaro);
+    padding: 30px;
+    border-radius: 7%;
 }
 
 .paga
 {
     padding: 10px;
-    background-color: blanchedalmond;
+    background-color: var(--principalColor);
     text-align: center;
     border-radius: 10px;
     font-size: x-large;
     width: 200px;
+    border: none;
+}
+
+.paga:hover
+{
+    background-color: var(--colorClaro);
 }
 
 .registrodepago
@@ -559,8 +597,14 @@ body
     font-size: large;
     text-align: center;
     width: 150px;
-    background-color: lightsteelblue;
+    background-color: var(--principalColor);
     border-radius: 10px;
+    border: none;
+}
+
+.guardartarjeta, .pagartarjeta, .guardarpaypal, .pagarpaypal:hover
+{
+    background-color: var(--colorClaro);
 }
 
 .pagarconpaypal, .pagarcontarjeta
@@ -568,8 +612,13 @@ body
     font-size: larger;
     text-align: center;
     border-radius: 10px;
-    background-color: darkkhaki;
+    background-color: var(--principalColor);
     margin-right: 150px;
+}
+
+.pagarconpaypal, .pagarcontarjeta:hover
+{
+    background-color: var(--colorClaro);
 }
 
 .pagarconpaypalp, .pagarcontarjetap
@@ -591,7 +640,7 @@ body
     margin-top: 10px;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: honeydew;
+    background-color: whitesmoke;
     border-radius: 10px;
 }
 
@@ -623,16 +672,21 @@ body
     margin-top: 10px;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: maroon;
+    background-color: var(--principalColor);
     border-radius: 10px;
     font-size: larger;
+}
+
+.guardarcambios:hover
+{
+    background-color: var(--colorClaro);
 }
 
 .opcadmin
 {
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: azure;
+    background-color: whitesmoke;
     border-radius: 10px;
     font-size: x-large;
     height: 150px;
@@ -654,7 +708,7 @@ body
 .menuadmin
 {
     width: 100%;
-    background-color: mediumseagreen;
+    background-color: var(--principalColorOscuro);
     display: block;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -665,10 +719,11 @@ body
     padding: 5px;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: darkturquoise;
+    background-color: var(--principalColor);
     border-radius: 10px;
     width: 20%;
     margin-left: 40px;
+    border: none;
 }
 
 .imgprenda
@@ -707,7 +762,7 @@ body
 
 .borrarprenda
 {
-    background-color: tomato;
+    background-color: var(--principalColor);
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -753,7 +808,7 @@ body
 
 .guardaroferta
 {
-    background-color: mediumspringgreen;
+    background-color: var(--principalColor);
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -773,7 +828,7 @@ body
 
 .footer
 {
-    background-color: rgb(70, 44, 24);
+    background-color: var(--principalColorOscuro);
     margin-top: auto;
     width: 100%;
     position: absolute;

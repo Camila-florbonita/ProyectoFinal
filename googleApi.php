@@ -68,7 +68,7 @@ if(!isset($_SESSION['access_token']))
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!-- <title>PHP Login using Google Account</title> -->
   <title>Iniciar sesion</title>
-  <link rel="stylesheet" href="styleLogin.css">
+  <link rel="stylesheet" href="css/styleLogin.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -79,13 +79,8 @@ if(!isset($_SESSION['access_token']))
  </head>
  <body>
  <header class="header">
-            <img class="logo" src="logo_provisional.jpg">
-            <form class="buscar" action="#">
-                <input class="busqueda" type="text" name="busqueda" placeholder="Buscar...">
-                <button class="lupa" type="submit">
-                    <img src="lupa.png">
-                </button>
-            </form>
+            <img class="logo" src="img/logo_provisional.jpg">
+            
             <span class="companyname">
                 FashionChoice
             </span>
