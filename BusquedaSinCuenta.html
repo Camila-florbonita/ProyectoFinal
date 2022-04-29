@@ -1,31 +1,36 @@
 <html>
     <head>
-        <link rel="stylesheet" href="css/FormatoCSS.css">
-        <link rel="stylesheet" href="css/styleCart.css">
+        <link rel="stylesheet" href="FormatoCSS.css">
         <title>Resultados de busqueda</title>
+        <script src="Busqueda.js"></script>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
-            <form class="buscar" action="#">
-                <input class="busqueda" type="text" placeholder="Buscar...">
+            <a href="InicioSinCuenta.html">
+                <img class="logo" src="logo_provisional.jpg">
+            </a>
+            <form class="buscar" action="Buscar.php" method="post">
+                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <img src="lupa.png">
                 </button>
             </form>
-            <span class="companyname">
-                FashionChoice
-            </span>
-            <a class="iniciarsesion" href="googleApi.php">
+            <a href="InicioSinCuenta.html">
+                <span class="companyname">
+                    FashionChoice
+                </span>
+            </a>
+            
+            <a class="iniciarsesion" href="IniciarSesion.html">
                 Iniciar sesion
             </a>
         </header>
 
-
-        <div class="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
+        <div class="productos" id="productos">
+        <div class="producto" id="producto">
+            <img class="imagenprenda" src="imagendelproducto_provisional.jpg">
+            <p class="nomprodcarrito" id="NombreProducto">
                 Nombre del producto
             </p>
             <p class="precprodcarrito">
@@ -35,32 +40,7 @@
                 Aqui va la descripcion del producto
             </p>
         </div>
-        <div class="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
-        </div>
-        <div class="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
-        </div>
-
-        
+    </div>
 
         <footer class="footer">
             <a class="foot" href="">

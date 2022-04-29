@@ -1,17 +1,17 @@
 <html>
     <head>
-        <link rel="stylesheet" href="css/FormatoCSS.css">
-        <link rel="stylesheet" href="css/styleCart.css">
+        <link rel="stylesheet" href="FormatoCSS.css">
         <title>Resultados de busqueda</title>
+        <script src="Busqueda.js"></script>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
-            <form class="buscar" action="#">
-                <input class="busqueda" type="text" placeholder="Buscar...">
+            <img class="logo" src="logo_provisional.jpg">
+            <form class="buscar" action="BusquedaReference.php" method="post">
+                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <img src="lupa.png">
                 </button>
             </form>
             <span class="companyname">
@@ -20,21 +20,21 @@
             <ul class="cuentas">
                 <li class="cue">
                     <a href="">
-                        <img class="iconocuenta" src="img/cuentaicono.png">
+                        <img class="iconocuenta" src="cuentaicono.png">
                     </a>
                     <ul class="cuenta">
                         <li class="cuentaelemento">
-                            <a href="HistorialDeCompras.html">
+                            <a href="">
                                 Historial
                             </a>
                         </li >
                         <li class="cuentaelemento">
-                            <a href="ListaDeDeseos.html">
+                            <a href="">
                                 Lista de deseos
                             </a>
                         </li>
                         <li class="cuentaelemento">
-                            <a href="ConfiguracionCuenta.html">
+                            <a href="">
                                 Configuracion
                             </a>
                         </li>
@@ -46,47 +46,25 @@
                     </ul>
                 </li>
             </ul>
-            <a href="CarritoDeCompras.html" class="carrito">
-                <img src="img/carritodecompras.png">
+            <a href="" class="carrito">
+                <img src="carritodecompras.png">
             </a>
         </header>
 
 
-        <div class="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
-        </div>
-        <div class="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
-        </div>
-        <div class="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
+        <div class="productos" id="productos">
+            <div class="producto" id="producto">
+                <img class="imagenprenda" src="imagendelproducto_provisional.jpg">
+                <p class="nomprodcarrito" id="NombreProducto">
+                    Nombre del producto
+                </p>
+                <p class="precprodcarrito">
+                    Precio del producto
+                </p>
+                <p class="descprodcarrito">
+                    Aqui va la descripcion del producto
+                </p>
+            </div>
         </div>
 
         

@@ -2,47 +2,51 @@
     <head>
         <link rel="stylesheet" href="FormatoCSS.css">
         <title>Ingresar prenda</title>
+        <script src="package/dist/chart.js"></script>
+        <script src="Analytics.js"></script>
+        
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="logo_provisional.jpg">
+            <a href="OpcionesAdministrador.html">
+                <img class="logo" src="logo_provisional.jpg">
+            </a>
             <form class="buscar" action="#">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
                     <img src="lupa.png">
                 </button>
             </form>
-            <span class="companyname">
-                FashionChoice
-            </span>
+            <a href="OpcionesAdministrador.html">
+                <span class="companyname">
+                    FashionChoice
+                </span>
+            </a>
             <a href="">
                 <img class="iconocuentaadmin" src="cuentaicono.png">
             </a>       
         </header>
 
         <div class="menuadmin">
-            <a class="boprenda" href="">
-                <button class="botonadmin">
-                    Borrar
-                </button>
-            </a>
-            <a class="edprenda" href="">
+            <a class="edprenda" href="EditarPrenda.html">
                 <button class="botonadmin">
                     Editar
                 </button>
             </a>
-            <a class="analitics" href="">
+            <a class="agprenda" href="AgregarPrenda.html">
                 <button class="botonadmin">
                     Analitics
                 </button>
             </a>
-            <a class="ofer" href="">
+            <a class="ofer" href="Ofertas.html">
                 <button class="botonadmin">
                     Ofertas
                 </button>
             </a>
         </div>
+
+        
 
         <form class="buscarprenda" action="#">
             <input class="busquedaprenda" type="text" placeholder="Buscar prenda...">
@@ -51,24 +55,22 @@
             </button>
         </form>
 
-        <form class="ingresarofertas" action="#">
+        <form class="fechaGrafca" action="#">
             <p>
-                Inicio de la oferta:
+                Inicio:
             </p>
             <input class="fechaoferta" type="date" name="iniciooferta">
             <p>
-                Fin de la oferta:
+                Fin:
             </p>
             <input class="fechaoferta" type="date" name="finoferta">
-            <p>
-                Descuento:
-            </p>
-            <input class="descuento" type="text">
-            <p>
-                <button class="guardaroferta" type="submit">Agregar promocion</button>
-            </p>
+ 
         </form>
 
+
+        <div class="graficaContainer" >
+            <canvas id="grafica"></canvas>
+        </div>
 
         <footer class="footer">
             <a class="foot" href="">
