@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
+        <script src="Producto.js"></script>
     </head>
     <body>
 
@@ -243,19 +244,16 @@
             </li>
         </ul>
 
-        <div class="imagenesdelproducto">
-            <img class="imagenprincipal" src="img/imagendelproducto_provisional.jpg">
-            <img class="imagensecundaria" src="img/imagendelproducto_provisional4.jpg">
-            <img class="imagensecundaria" src="img/imagendelproducto_provisional2.jpg">
-            <img class="imagensecundaria" src="img/imagendelproducto_provisional3.jfif">
+        <div class="imagenesdelproducto" >
+            <img class="imagenprincipal" src="img/imagendelproducto_provisional.jpg" id="productImage">
             
         </div>
 
-        <p class="nombredelproducto">
+        <p class="nombredelproducto" id="productName">
             Nombre del producto
         </p>
 
-        <p class="preciodelproducto">
+        <p class="preciodelproducto" id="productPrice">
             Precio del producto
         </p>
 
@@ -263,7 +261,7 @@
             <span>
                 Tallas
             </span>
-            <form class="comprarprenda" action="#">
+            <form class="comprarprenda" action="RegistrarCompra.php" method="post">
                 <input class="elegirtalla" type="radio" name="talla" id="XS" value="XS">
                 <input class="elegirtalla" type="radio" name="talla" id="S" value="S">
                 <input class="elegirtalla" type="radio" name="talla" id="M" value="M">
@@ -287,7 +285,7 @@
             Descripcion del producto
         </p>
 
-        <p class="descprod">
+        <p class="descprod" id="productDesc">
             Aqui va la descripcion del producto
         </p>
 

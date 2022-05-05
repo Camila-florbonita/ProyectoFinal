@@ -1,17 +1,19 @@
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script> -->
+
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
-        <link rel="stylesheet" href="css/styleHome.css">
-        <title>Pagina de inicio</title>
+        <title>Producto</title>
+        <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
-            <form class="buscar" action="BusquedaReference.php" method="post">
-                <input class="busqueda" type="text" placeholder="Buscar">
+            <img class="logo" src="logo_provisional.jpg">
+            <form class="buscar" action="">
+                <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <img src="lupa.png">
                 </button>
             </form>
             <span class="companyname">
@@ -20,21 +22,21 @@
             <ul class="cuentas">
                 <li class="cue">
                     <a href="">
-                        <img class="iconocuenta" src="img/cuentaicono.png">
+                        <img class="iconocuenta" src="cuentaicono.png">
                     </a>
                     <ul class="cuenta">
                         <li class="cuentaelemento">
-                            <a href="HistorialDeCompras.html">
+                            <a href="">
                                 Historial
                             </a>
                         </li >
                         <li class="cuentaelemento">
-                            <a href="ListaDeDeseos.html">
+                            <a href="">
                                 Lista de deseos
                             </a>
                         </li>
                         <li class="cuentaelemento">
-                            <a href="ConfiguracionCuenta.html">
+                            <a href="">
                                 Configuracion
                             </a>
                         </li>
@@ -46,11 +48,10 @@
                     </ul>
                 </li>
             </ul>
-            <a href="CarritoDeCompras.html" class="carrito">
-                <img src="img/carritodecompras.png">
+            <a href="" class="carrito">
+                <img src="carritodecompras.png">
             </a>
         </header>
-    
 
         <ul class="menu">
             <li class="sub">
@@ -245,171 +246,137 @@
             </li>
         </ul>
 
-
-        <a href="">
-            <img class="banner" src="img/banner_provisional.jpg">
-        </a>
-
-
-        <div class="container">
-            <p class="labelOfertas">
-                Ofertas
-            </p>
-            <div class="sugerencias">
-
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripción
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripción
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripción
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripción
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/ofertas_provisional.jpg">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-            </div>
+        <div class="imagenesdelproducto">
+            <img class="imagenprincipal" src="img/imagendelproducto_provisional.jpg">
+            <img class="imagensecundaria" src="img/imagendelproducto_provisional4.jpg">
+            <img class="imagensecundaria" src="img/imagendelproducto_provisional2.jpg">
+            <img class="imagensecundaria" src="img/imagendelproducto_provisional3.jfif">
+            
         </div>
 
-        <div class="container">
-            <p class="labelOfertas">
-                Recomendaciones
-            </p>
-            <div class="sugerencias">
+        <p class="nombredelproducto">
+            Nombre del producto
+        </p>
 
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/maspopular_provisional.jfif">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/maspopular_provisional.jfif">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/maspopular_provisional.jfif">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/maspopular_provisional.jfif">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-                <div class="elemento">
-                    <a href="">
-                        <img class="imagenElemento" src="img/maspopular_provisional.jfif">
-                        <p class="labelElemento">
-                            Descripcion
-                        </p>
-                        <p class="labelPrecio">
-                            $ Precio
-                        </p>
-                    </a>
-                </div>
-            </div>
+        <p class="preciodelproducto">
+            Precio del producto
+        </p>
+
+        <div class="prenda">
+            <span>
+                Tallas
+            </span>
+            <form class="comprarprenda" action="#">
+                <input class="elegirtalla" type="radio" name="talla" id="XS" value="XS">
+                <input class="elegirtalla" type="radio" name="talla" id="S" value="S">
+                <input class="elegirtalla" type="radio" name="talla" id="M" value="M">
+                <input class="elegirtalla" type="radio" name="talla" id="L" value="L">
+                <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
+                <p>
+                    <div id="paypal-button-container"></div>
+                    <script>
+                        paypal.Buttons({
+                            style: {
+                                color: 'blue',
+                                shape: 'pill',
+                                label: 'pay'
+                            },
+                            createOrder: function(data, actions)
+                            {
+                                return actions.order.create(
+                                    {
+                                        purchase_units: [{
+                                            amount: {
+                                                value: 10
+                                            }
+                                        }]
+                                    });
+                            },
+
+                            onApprove: function(data, actions)
+                            {
+                                actions.order.capture().then(function(detalles)
+                                {
+                                    console.log(detalles);
+                                    alert("Pago realizado");
+                                    //window.location.href="";
+                                });
+                            },
+
+                            onCancel: function(data)
+                            {
+                                alert("Pago cancelado");
+                                console.log(data);
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+                    <!-- <button class="comprar" type="submit">
+                        Comprar
+                    </button> -->
+                    <button class="alcarrito" type="submit">
+                        <img src="carritodecompras.png">
+                    </button>
+                </p>                
+            </form>
+            <button class="guardarenlista">
+                <img src="bookmark.png">
+            </button>
+        </div>
+
+        <p class="descripciondelproducto">
+            Descripcion del producto
+        </p>
+
+        <p class="descprod">
+            Aqui va la descripcion del producto
+        </p>
+
+        <div class="calificacion">
+            <p>
+                Calificar el producto
+            </p>
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+            <img class="estrella" src="img/estrella.png">
+        </div>
+
+        <p class="coments">
+            Comentarios
+        </p>
+
+        <div class="comentarios">     
+            <p class="nombreusuario">
+                Nombre de usuario
+            </p>
+            <p class="comentario">
+                Comentario
+            </p>
+        </div>
+        <div class="comentarios">     
+            <p class="nombreusuario">
+                Nombre de usuario
+            </p>
+            <p class="comentario">
+                Comentario
+            </p>
+        </div>
+        <div class="comentarios">     
+            <p class="nombreusuario">
+                Nombre de usuario
+            </p>
+            <p class="comentario">
+                Comentario
+            </p>
+        </div>
+        <div class="comentarios">     
+            <p class="nombreusuario">
+                Nombre de usuario
+            </p>
+            <p class="comentario">
+                Comentario
+            </p>
         </div>
 
         <footer class="footer">

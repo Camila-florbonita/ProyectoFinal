@@ -9,6 +9,7 @@ $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar
 $busqueda = $_SESSION["Busqueda"];
 
     $query = "SELECT * from productos WHERE nombre_producto = '$busqueda'
+    OR nombre_producto LIKE '%$busqueda%'
     OR genero = '$busqueda'
     OR estilo = '$busqueda'
     OR edad = '$busqueda'
@@ -26,7 +27,7 @@ $busqueda = $_SESSION["Busqueda"];
 //echo " " . $registro['id_producto']." ";
 
 
-echo "<div class='producto' id='producto'>
+echo "<div class='producto' id='producto' onclick='getProductId(", $registro['id_producto'],")'>
 <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
 <p class='nomprodcarrito' id='NombreProducto'>",
     $registro['nombre_producto'],
@@ -52,6 +53,7 @@ if($cont == 0)
   </p>
   </div>";
 }
+
 
 ?>
 
