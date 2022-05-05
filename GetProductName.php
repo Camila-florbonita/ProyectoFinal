@@ -15,5 +15,6 @@ $id = $_SESSION['id_p'];
         echo $registro['nombre_producto'];
 }
 
+
 ?>
 
