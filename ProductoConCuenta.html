@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
         <script src="Producto.js"></script>
+        <script src="RegistrarCompra.js"></script>
     </head>
     <body>
 
@@ -262,23 +263,25 @@
                 Tallas
             </span>
             <form class="comprarprenda" action="RegistrarCompra.php" method="post">
-                <input class="elegirtalla" type="radio" name="talla" id="XS" value="XS">
+                <input class="elegirtalla" type="radio" name="talla" id="XS" value="XS" required>
                 <input class="elegirtalla" type="radio" name="talla" id="S" value="S">
                 <input class="elegirtalla" type="radio" name="talla" id="M" value="M">
                 <input class="elegirtalla" type="radio" name="talla" id="L" value="L">
                 <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
                 <p>
-                    <button class="comprar" type="submit">
+                    <button class="comprar" type="submit" value="comprar" name="botons">
                         Comprar
                     </button>
-                    <button class="alcarrito" type="submit">
+                    <button class="alcarrito" type="submit" value="carrito" name="botons">
                         <img src="img/carritodecompras.png">
                     </button>
-                </p>                
-            </form>
-            <button class="guardarenlista">
+                    <button class="guardarenlista" type="submit" value="listadeseos" name="botons">
                 <img src="img/bookmark.png">
             </button>
+                </p>            
+
+            </form>
+            
         </div>
 
         <p class="descripciondelproducto">
