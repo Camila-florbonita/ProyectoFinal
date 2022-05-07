@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
         <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
+        <script src="PayPalAPI.js"></script>
     </head>
     <body>
 
@@ -275,7 +276,7 @@
                 <p>
                     <div id="paypal-button-container"></div>
                     <script>
-                        paypal.Buttons({
+                         paypal.Buttons({
                             style: {
                                 color: 'blue',
                                 shape: 'pill',
@@ -308,7 +309,7 @@
                                 alert("Pago cancelado");
                                 console.log(data);
                             }
-                        }).render('#paypal-button-container');
+                        }).render('#paypal-button-container'); 
                     </script>
                     <!-- <button class="comprar" type="submit">
                         Comprar
