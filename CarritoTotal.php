@@ -7,7 +7,4 @@ $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar
 
 echo $_SESSION["totalCarrito"];
 
-
-
-
 ?>

@@ -29,7 +29,7 @@ echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['i
     $registro2['precio'],
 "</p>
 <p class='descprodcarrito'>",
-"CTM Molina la descripcion no es necesaria",
+"",
 "</p>
 </div>";
 $cont++;

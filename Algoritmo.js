@@ -1,8 +1,8 @@
-const genero = ["masculino", "femenino", "unisex"];
 const estilo = ["clasico", "vintage", "gotico", "preppy", "urbano", "hipster", "grunge", "natural", "sofisticado", "artsy", "vanguardista", "boho", "romantico", "dramatico", "girly"];
+const tipoPrenda = ["playera", "pantalon", "vestido", "short", "falda", "sueter"];
+const genero = ["masculino", "femenino", "unisex"];
 const edad = ["nino", "joven", "adulto"];
 const color = ["negro", "azul", "cafe", "gris", "verde", "naranja", "rosa", "morado", "rojo", "blanco", "amarillo", "turquesa", "magenta", "lila", "beige", "salmon", "fucsia", "violeta", "celeste", "marino", "lima", "verdeoscuro", "mostaza", "cian", "vino"];
-const tipoPrenda = ["playera", "pantalon", "vestido", "short", "falda", "sueter"];
 const temporada = ["primavera", "verano", "otono", "invierno"];
 const ocasion = ["playa", "elegante", "deporte", "fiesta"];
 const formalidad = ["casual", "semiformal", "formal"];

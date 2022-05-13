@@ -2,7 +2,6 @@ function CambiarCorte()
 {
     var tipoPrenda = document.getElementById("tipodeprenda").value;
     document.getElementById("corte").disabled = false;
-    var ortePantalon = document.getElementById("cortepantalon");
     switch(tipoPrenda)
     {
         case "playera":

@@ -5,7 +5,7 @@
 $conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
 $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
 
-$borrar = "DELETE FROM productos WHERE id_producto = 83";
+$borrar = "DELETE FROM productos WHERE id_producto = 23";
 mysqli_query($conexion, $borrar);
 
 $query = "SELECT id_producto from productos ORDER BY id_producto DESC LIMIT 1";
