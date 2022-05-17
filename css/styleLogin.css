@@ -58,13 +58,13 @@ body
 .input-contenedor
 {
     margin-bottom: 15px;
-    border: 1px solid #aaa;
+    border: 2px solid #aaa;
     border-radius: 6px;
 }
 
 .input-contenedor:hover
 {
-    border: 3px solid #881b95;
+    border: 2px solid #881b95;
     border-radius: 25px;
 }
 
