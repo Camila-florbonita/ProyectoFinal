@@ -7,47 +7,13 @@ $formalidad = $_SESSION["fromalidadValue"];
 $genero = $_SESSION["generoValue"];
 $material = $_SESSION["materialValue"];
 $temporada = $_SESSION["temporadaValue"];
+$color = $_SESSION["color"];
 $id_us = 1;
 $cont = 0;
 
+echo $edad, "<br>";
 
-$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
-$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
-
-$edad = edad($edad);
-    echo $edad, "<br>";
-
-    $genero = genero($genero);
-    echo $genero, "<br>";
-    
-    $formalidad = formalidad($formalidad);
-    echo $formalidad, "<br>";
-
-    $estilo1 = estilo1($estilo);
-    echo $estilo1, "<br>";
-
-    $estilo2 = estilo2($estilo);
-    echo $estilo2, "<br>";
-
-    $query = "SELECT * from productos WHERE estilo = '$estilo2'";
-    $result = mysqli_query($conexion, $query); 
-
-    
-    while ($registro = mysqli_fetch_array($result)){ 
-        if($cont < 11){
-        echo $registro['id_producto'], "<br>";
-        }
-        $cont++;
-}
-
-if($cont == 0)
-{
-    echo "No hubo resultados";
-}
-
- function edad($edad)
- {
-    if($edad <= 0.3)
+if($edad <= 0.3)
     {
         $edad = "nino";
     }
@@ -60,44 +26,691 @@ if($cont == 0)
         $edad = "adulto";
     }
 
-    return $edad;
- }   
-
- function formalidad($formalidad)
- {
-    if($formalidad <= 0.5)
+    echo $formalidad, "<br>";
+    if($formalidad >= 0.8)
     {
-        $formalidad = "casual";
+        $formalidad = "formal";
     }
     if($formalidad > 0.5 && $formalidad < 0.8)
     {
         $formalidad = "semiformal";
     }
-    if($formalidad >= 0.8)
+    if($formalidad <= 0.5)
     {
-        $formalidad = "formal";
+        $formalidad = "casual";
     }
 
-    return $formalidad;
- }   
+    echo $genero, "<br>";
 
- function genero($genero)
- {
-    if($genero <= 0.4)
+    if($genero <= 0.40)
     {
         $genero = "femenino";
     }
-    if($genero > 0.4 && $genero < 0.6)
+    elseif($genero > 0.4 && $genero < 0.6)
     {
         $genero = "unisex";
     }
-    if($genero >= 0.6)
+    elseif($genero >= 0.60)
     {
         $genero = "masculino";
     }
 
-    return $genero;
- }   
+$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
+$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
+
+
+    echo $edad, "<br>";
+
+
+    echo $genero, "<br>";
+    
+
+    echo $formalidad, "<br>";
+
+    $estilo1 = estilo1($estilo);
+    echo $estilo1, "<br>";
+
+    $estilo2 = estilo2($estilo);
+    echo $estilo2, "<br>";
+
+
+    if($genero == "femenino")
+    {
+        if($temporada < .5 && $temporada > 0)
+        {
+            if($formalidad < 0)
+            {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+            else
+            {
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+        }
+        if($temporada >= .5)
+        {
+            if($formalidad < 0)
+            {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+            else
+            {
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+        }
+
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+             AND formalidad = '$formalidad' AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            if($temporada < .5 && $temporada > 0)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+             AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+        }
+        if($temporada >= .5)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        }
+    }
+
+    if($genero == "masculino")
+    {
+        if($temporada < .5 && $temporada > 0)
+        {
+            if($formalidad < 0)
+            {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+            else
+            {
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+        }
+        if($temporada >= .5)
+        {
+            if($formalidad < 0)
+            {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+            else
+            {
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+             AND formalidad = '$formalidad' AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            if($temporada < .5 && $temporada > 0)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+             AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+        }
+        if($temporada >= .5)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        }
+    }
+
+    if($genero == "unisex")
+    {
+        if($temporada < .5 && $temporada > 0)
+        {
+            if($formalidad < 0)
+            {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+            else
+            {
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+        }
+        if($temporada >= .5)
+        {
+            if($formalidad < 0)
+            {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+            else
+            {
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+            }
+        }
+
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+            AND formalidad = '$formalidad' AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            if($temporada < .5 && $temporada > 0)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+             AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+            $result = mysqli_query($conexion, $query); 
+            while ($registro = mysqli_fetch_array($result))
+            { 
+                if($cont < 11)
+                {
+                    echo $registro['id_producto'], "<br>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+            }
+        }
+        if($temporada >= .5)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+            AND color = '$color'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        if($cont < 11)
+        {
+            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
+           $result = mysqli_query($conexion, $query); 
+           while ($registro = mysqli_fetch_array($result))
+           { 
+               if($cont < 11)
+               {
+                   echo $registro['id_producto'], "<br>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+           }
+        }
+        }
+    }
+
+    
+if($cont < 11)
+{
+    echo "No hubo mas resultados";
+}
 
  
 function estilo1($estilo)

@@ -7,6 +7,7 @@ $db = mysqli_select_db($conexion, 'noproyecto') or die ( "No se ha podido conect
 
 $id_us = 1;
 $suma = 0;
+$colores = [];
 
     $query = "SELECT * from comprado WHERE id_usuario = '$id_us'";
     $result = mysqli_query($conexion, $query); 
@@ -17,30 +18,30 @@ $suma = 0;
         $query2 = "SELECT * from productos WHERE id_producto = '$id_prenda'";
         $result2 = mysqli_query($conexion, $query2); 
         $registro2 = mysqli_fetch_array($result2);
-        switch($registro2["formalidad"])
-        {
-            case "casual": $formalidadValue = 0;
-            break;
-            case "formal": $formalidadValue = 1;
-            break;
-            case "semiformal": $formalidadValue = .7;
-            break;
-        }
-
-        echo $formalidadValue, "<br>";
+        $colores[] = $registro2["color"];
         
-        $suma = $suma + $formalidadValue;
-        echo $suma, "<br>";
 $cont++;
+
 }
 
-echo $suma, "<br>";
-echo $cont, "<br>";
-$total = $suma/$cont;
-echo $total;
+print_r($colores);
+$sortColores = array_count_values($colores);
+echo "<br>";
+print_r($sortColores);
+echo "<br>";
+arsort($sortColores);
+print_r($sortColores);
+echo "<br>";
+$colorArr = array_keys($sortColores);
+print_r($colorArr);
+echo "<br>";
+$color = $colorArr[0];
+echo $color;
 
-$_SESSION["fromalidadValue"] = $total;
+$_SESSION["color"] = $color;
 
-header("Location: GetGeneroValue.php");
+header("Location: GetMaterialValue.php");
+
 
 ?>
+ 

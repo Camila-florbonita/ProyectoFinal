@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Ingresar prenda</title>
+        <script src="Ofertas.js"></script>
     </head>
     <body>
 
@@ -44,68 +45,34 @@
             </a>
         </div>
 
-        <form class="buscarprenda" action="#">
-            <input class="busquedaprenda" type="text" placeholder="Buscar prenda...">
-            <button class="lupa" type="submit">
-                <img src="img/lupa.png">
-            </button>
-        </form>
-
         <form class="ingresarofertas" action="#">
+            <p>
+                Duracion de la oferta
+            </p>
+            <select name="duracionOferta" id="duracionOferta" required>
+                <option value="mes">Mes</option>
+                <option value="dia">Dia</option>
+                <option value="temporadaOf">Temporada</option>
+                <option value="liquidacion">Liquidacion</option>
+            </select>            
             <p>
                 Inicio de la oferta:
             </p>
-            <input class="fechaoferta" type="date" name="iniciooferta">
+            <input class="fechaoferta" type="date" name="iniciooferta" required>
             <p>
-                Fin de la oferta:
+                Descuento (en porcentaje):
             </p>
-            <input class="fechaoferta" type="date" name="finoferta">
-            <p>
-                Descuento:
-            </p>
-            <input class="descuento" type="text">
+            <input class="descuento" type="number" required max="99">
+            %
             <p>
                 <button class="guardaroferta" type="submit">Agregar promocion</button>
             </p>
         </form>
 
         <div class="productooferta">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
-        </div>
+            <select name="POferta[]" id="POferta" multiple required>
 
-        <div class="productooferta">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
-        </div>
-
-        <div class="productooferta">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
+            </select>
         </div>
 
         <footer class="footer">
