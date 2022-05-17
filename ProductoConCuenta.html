@@ -4,6 +4,7 @@
         <title>Producto</title>
         <script src="Producto.js"></script>
         <script src="RegistrarCompra.js"></script>
+        <script src="ShowComents.js"></script>
     </head>
     <body>
 
@@ -307,31 +308,14 @@
             Comentarios
         </p>
 
-        <div class="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-        <div class="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-        <div class="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-        <div class="comentarios">     
+        <form class="form-comentar" action="Comentarios.php" method="post">
+            <input class="comentar" type="text" placeholder="Comentar..." name= "comentario">
+            <button class="lupa" type="submit">
+                <img src="img/comment.png">
+            </button>
+        </form>
+
+        <div class="comentarios" id="comentarios">     
             <p class="nombreusuario">
                 Nombre de usuario
             </p>
@@ -340,16 +324,5 @@
             </p>
         </div>
 
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
-        </footer>
     </body>
 </html>

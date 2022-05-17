@@ -457,6 +457,19 @@ body
     margin-bottom: 50;
 }
 
+.form-comentar
+{
+    text-align: center;
+    background-color: #9c6e79;
+}
+
+.comentar
+{
+    width: 500px;
+    height: 500px;
+    border-radius: 3px;
+}
+
 .nombreusuario, .comentario
 {
     margin-left: 50px;
