@@ -82,7 +82,7 @@ function paypal()
             alert("Pago cancelado");
             console.log(data);
         }
-    }).render(paypal_button_container);
+    }).render('#paypal_button_container');
 
 }, false);
 
