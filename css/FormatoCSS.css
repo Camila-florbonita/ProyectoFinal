@@ -10,7 +10,7 @@ body
 .header
 {
     /* background-color: rgb(255, 180, 190); */
-    background-color: #c227d5;
+    background-color: white;
     display: block;
     height: 100px;
 }
@@ -41,8 +41,8 @@ body
 
 .busqueda:hover
 {
-    border: 2px solid darkgrey;
-    border-radius: 25px;
+    border: 1px solid darkgrey;
+    border-radius: 15px;
 }
 
 .lupa
@@ -179,16 +179,16 @@ body
     text-decoration: none;
     display: block;
     /* background-color: rgb(252, 212, 199); */
-    background-color: #881b95;
-    color: white;
+    background-color: var(--whiteColor);
+    color: darkgray;
     padding: 10px 12px;
 }
 
 .sub a:hover
 {
     /* background-color: rgb(255, 181, 162); */
-    background-color: #c227d5;
-    
+    background-color: var(--whiteColor);
+    color: gray;
 }
 
 .submenu
@@ -199,7 +199,7 @@ body
 }
 
 :root {
-    --whiteColor: rgb(255, 240, 235);
+    --whiteColor: whitesmoke;
     --principalColor: #c227d5;
     --principalColorOscuro: #881b95;
     --colorClaro: #f397ff;
@@ -211,8 +211,8 @@ body
     text-decoration: none;
     display: block;
     /* background-color: rgb(255, 240, 235); */
-    background-color: var(--principalColor);
-    color: white;
+    background-color: var(--whiteColor);
+    color: gray;
     padding: 6px 8px;
 }
 
@@ -220,7 +220,8 @@ body
 {
     /* background-color: rgb(255, 214, 214); 
     #e72fff*/
-    background-color: #e72fff;
+    background-color: lightgrey;
+    color: #d52788;
 }
 
 .sub:hover .submenu

@@ -1,3 +1,5 @@
+const req4 = new XMLHttpRequest();
+
 document.addEventListener('DOMContentLoaded', 
 function paypal()
 {

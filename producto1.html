@@ -5,16 +5,16 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
         <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
-        <script src="PayPalAPI.js"></script>
+        <script src="Producto.js"></script>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="logo_provisional.jpg">
+            <img class="logo" src="img/logo_provisional.jpg">
             <form class="buscar" action="">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="lupa.png">
+                    <img src="img/lupa.png">
                 </button>
             </form>
             <span class="companyname">
@@ -23,7 +23,7 @@
             <ul class="cuentas">
                 <li class="cue">
                     <a href="">
-                        <img class="iconocuenta" src="cuentaicono.png">
+                        <img class="iconocuenta" src="img/cuentaicono.png">
                     </a>
                     <ul class="cuenta">
                         <li class="cuentaelemento">
@@ -50,7 +50,7 @@
                 </li>
             </ul>
             <a href="" class="carrito">
-                <img src="carritodecompras.png">
+                <img src="img/carritodecompras.png">
             </a>
         </header>
 
@@ -275,52 +275,52 @@
                 <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
                 <p>
                     <div id="paypal-button-container"></div>
-                    <script>
-                         paypal.Buttons({
-                            style: {
-                                color: 'blue',
-                                shape: 'pill',
-                                label: 'pay'
-                            },
-                            createOrder: function(data, actions)
-                            {
-                                return actions.order.create(
-                                    {
-                                        purchase_units: [{
-                                            amount: {
-                                                value: 10
-                                            }
-                                        }]
-                                    });
-                            },
+                    <!-- <script>
+                        paypal.Buttons({
+                           style: {
+                               color: 'blue',
+                               shape: 'pill',
+                               label: 'pay'
+                           },
+                           createOrder: function(data, actions)
+                           {
+                               return actions.order.create(
+                                   {
+                                       purchase_units: [{
+                                           amount: {
+                                               value: 10
+                                           }
+                                       }]
+                                   });
+                           },
 
-                            onApprove: function(data, actions)
-                            {
-                                actions.order.capture().then(function(detalles)
-                                {
-                                    console.log(detalles);
-                                    alert("Pago realizado");
-                                    //window.location.href="";
-                                });
-                            },
+                           onApprove: function(data, actions)
+                           {
+                               actions.order.capture().then(function(detalles)
+                               {
+                                   console.log(detalles);
+                                   alert("Pago realizado");
+                                   //window.location.href="";
+                               });
+                           },
 
-                            onCancel: function(data)
-                            {
-                                alert("Pago cancelado");
-                                console.log(data);
-                            }
-                        }).render('#paypal-button-container'); 
-                    </script>
+                           onCancel: function(data)
+                           {
+                               alert("Pago cancelado");
+                               console.log(data);
+                           }
+                       }).render('#paypal-button-container'); 
+                   </script> -->
                     <!-- <button class="comprar" type="submit">
                         Comprar
                     </button> -->
                     <button class="alcarrito" type="submit">
-                        <img src="carritodecompras.png">
+                        <img src="img/carritodecompras.png">
                     </button>
                 </p>                
             </form>
             <button class="guardarenlista">
-                <img src="bookmark.png">
+                <img src="img/bookmark.png">
             </button>
         </div>
 
