@@ -1,7 +1,7 @@
 <html>
     <head>
-        <link rel="stylesheet" href="FormatoCSS.css">
-        <title>Ingresar prenda</title>
+        <link rel="stylesheet" href="css/FormatoCSS.css">
+        <title>Analytics</title>
         <script src="package/dist/chart.js"></script>
         <script src="Analytics.js"></script>
         
@@ -12,20 +12,12 @@
             <a href="OpcionesAdministrador.html">
                 <img class="logo" src="logo_provisional.jpg">
             </a>
-            <form class="buscar" action="#">
-                <input class="busqueda" type="text" placeholder="Buscar...">
-                <button class="lupa" type="submit">
-                    <img src="lupa.png">
-                </button>
-            </form>
             <a href="OpcionesAdministrador.html">
                 <span class="companyname">
-                    FashionChoice
+                    Cadivie
                 </span>
             </a>
-            <a href="">
-                <img class="iconocuentaadmin" src="cuentaicono.png">
-            </a>       
+            <img class="iconocuentaadmin" src="cuentaicono.png">  
         </header>
 
         <div class="menuadmin">
@@ -36,7 +28,7 @@
             </a>
             <a class="agprenda" href="AgregarPrenda.html">
                 <button class="botonadmin">
-                    Analitics
+                    Agregar Prenda
                 </button>
             </a>
             <a class="ofer" href="Ofertas.html">
@@ -45,43 +37,54 @@
                 </button>
             </a>
         </div>
-
         
+        <form class="fechaGrafca" action="Analytics.php" method="post">
 
-        <form class="buscarprenda" action="#">
-            <input class="busquedaprenda" type="text" placeholder="Buscar prenda...">
-            <button class="lupa" type="submit">
-                <img src="lupa.png">
-            </button>
-        </form>
+            <select name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
+                <option value="">Graficas</option>
+                <option value="general">General</option>
+                <option value="prenda">Prenda</option>
+                <option value="estilo">Estilo</option>
+            </select>
 
-        <form class="fechaGrafca" action="#">
+            <select name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
+                
+            </select>
+
+            <select name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
+                <option value="">Estilo</option>
+                <option value="clasico">Clasico</option>
+                <option value="vintage">Vintage</option>
+                <option value="gotico">Gotico</option>
+                <option value="preppy">Preppy</option>
+                <option value="urbano">Urbano</option>
+                <option value="hipster">Hipster</option>
+                <option value="grunge">Grunge</option>
+                <option value="natural">Natural</option>
+                <option value="sofisticado">Sofisticado</option>
+                <option value="artsy">Artsy</option>
+                <option value="vanguardista">Vanguardista</option>
+                <option value="boho">Boho</option>
+                <option value="romantico">Romantico</option>
+                <option value="dramatico">Dramatico</option>
+                <option value="girly">Girly</option>
+            </select>
+
             <p>
                 Inicio:
             </p>
-            <input class="fechaoferta" type="date" name="iniciooferta">
+            <input class="fechaoferta" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
             <p>
                 Fin:
             </p>
-            <input class="fechaoferta" type="date" name="finoferta">
+            <input class="fechaoferta" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
  
+            <button id="verGrafica" onclick="Grafica()" type="submit" disabled>Ver Grafica</button>
         </form>
 
 
         <div class="graficaContainer" >
             <canvas id="grafica"></canvas>
         </div>
-
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
-        </footer>
     </body>
 </html>

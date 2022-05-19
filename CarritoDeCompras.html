@@ -10,21 +10,23 @@
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
-            <form class="buscar" action="C:\xampp\htdocs\Buscar.php">
-                <input class="busqueda" type="text" placeholder="Buscar...">
+            <a href="InicioConCuenta.html">
+                <img class="logo" src="img/logo_provisional.jpg">
+            </a>
+            <form class="buscar" action="BusquedaReference.php" method="post">
+                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
                     <img src="img/lupa.png">
                 </button>
             </form>
-            <span class="companyname">
-                FashionChoice
-            </span>
+            <a href="InicioConCuenta.html">
+                <span class="companyname">
+                    Cadivie
+                </span>
+            </a>
             <ul class="cuentas">
                 <li class="cue">
-                    <a href="">
-                        <img class="iconocuenta" src="img/cuentaicono.png">
-                    </a>
+                    <img class="iconocuenta" src="img/cuentaicono.png">
                     <ul class="cuenta">
                         <li class="cuentaelemento">
                             <a href="HistorialDeCompras.html">
@@ -49,7 +51,6 @@
                     </ul>
                 </li>
             </ul>
-            
         </header>
 
         <div class="pagar">
@@ -76,18 +77,5 @@
                 Aqui va la descripcion del producto
             </p>
         </div>
-        
-
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
-        </footer>
     </body>
 </html>

@@ -1,9 +1,9 @@
 const req = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
-function Comentarios()
+function Ofertas()
 {
-     req.onload = function ShowComents(){
+     req.onload = function ShowProductos(){
      var selectP = document.getElementById("POferta");
     
      selectP.innerHTML = req.responseText;
