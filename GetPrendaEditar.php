@@ -6,26 +6,15 @@ session_start();
 $conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
 $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
 //$busqueda = $_POST["buscar"];
-$busqueda = $_SESSION["Busqueda"];
+$id_p = $_REQUEST["id"];
 
-    $query = "SELECT * from productos WHERE nombre_producto = '$busqueda'
-    OR nombre_producto LIKE '%$busqueda%'
-    OR genero = '$busqueda'
-    OR estilo = '$busqueda'
-    OR edad = '$busqueda'
-    OR color = '$busqueda'
-    OR tipo_prenda = '$busqueda'
-    OR temporada = '$busqueda'
-    OR ocasion = '$busqueda'
-    OR formalidad = '$busqueda'
-    OR material = '$busqueda'
-    OR corte = '$busqueda'";     // Esta linea hace la consulta
+    $query = "SELECT * from productos WHERE id_producto = '$id_p'";
     $result = mysqli_query($conexion, $query); 
+    $registro = mysqli_fetch_array($result);
 
-    $cont = 0;
-    while ($registro = mysqli_fetch_array($result)){ 
-//echo " " . $registro['id_producto']." ";
-
+    $query2 = "SELECT * from tallas WHERE id_producto = '$id_p'";
+    $result2 = mysqli_query($conexion, $query2); 
+    $registro2 = mysqli_fetch_array($result2);
 
 echo "<div class='producto' id='producto' onclick='getProductId(", $registro['id_producto'],")'>
 <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
@@ -43,7 +32,7 @@ echo "<div class='producto' id='producto' onclick='getProductId(", $registro['id
 "</p>
 </div>";
 $cont++;
-}
+
 
 if($cont == 0)
 {

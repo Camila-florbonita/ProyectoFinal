@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleRegistro.css">
+        <script src="js/verificarPassword.js"></script>
         <title>Crear cuenta</title>
     </head>
     <body>
@@ -15,7 +16,7 @@
             </span>
         </header>
 
-        <form class="formRegistrar" action="C:\xampp\htdocs\RegistroCuenta.php" method="post">
+        <form class="formRegistrar" action="RegistroCuenta.php" method="post">
             <h1 class="labelRegistrar">
                 Crea tu cuenta
             </h1>
@@ -36,16 +37,16 @@
                 <div class="input-contenedor">
                     <!-- aqui va el icono :/ -->
                     <img src="img/password.png" class="icono">
-                    <input class="input" type="password" id="password" placeholder="Contraseña" required>
+                    <input class="input" type="password" id="password" name="password" placeholder="Contraseña" required>
                 </div>
 
                 <div class="input-contenedor">
                     <!-- aqui va el icono :/ -->
                     <img src="img/password.png" class="icono">
-                    <input class="input" type="password" id="verifypassword" placeholder="Verificar contraseña" required>
+                    <input class="input" type="password" id="verifypassword" placeholder="Verificar contraseña" required onkeyup="checkPassword()">
                 </div>
 
-                <button class="botonRegistrar" onclick="checkPassword()" type="submit">
+                <button class="botonRegistrar" id="botonRegistrar" type="submit" disabled>
                     Registrarse
                 </button>
 
@@ -58,57 +59,6 @@
                     </a>
                 </p>
             </div>
-
-
         </form>
-
-        <script src="js/verificarPassword.js"></script>
-
-        <!--
-            <p>
-                Nombre: <input type="text" name="nombre" placeholder="Nombre de usuario...">
-            </p>
-            <p>
-                Correo electronico: <input type="email" name="email" placeholder="Correo electronico...">
-            </p>
-            <p>
-                Contraseña: <input type="password" name="password" placeholder="Contraseña...">
-            </p>
-            <p>
-                Verificar contraseña: <input type="password" name="verifypassword" placeholder="Contraseña...">
-            </p>
-            <p>
-
-                    <button class="registrarse" type="submit">
-                        Registrarse
-                    </button>
-
-                
-            </p>
-
-        -->
-
-        <!--
-            <p class="registrarsecongoogle">
-                <button class="regcongoogle">
-                    Registrarse con Google
-                </button>
-            </p>
-
-        -->
-        
-        
-
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
-        </footer>
     </body>
 </html>

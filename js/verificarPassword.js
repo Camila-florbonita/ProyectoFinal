@@ -7,11 +7,13 @@ function checkPassword()
 
     if (password != 0)
     {
-        if (password != verifyPassword)
+        if (password == verifyPassword)
         {
-            //message.textContent = "Ambas contraseñas no coinciden";
-            //message.style.color = "#FF4D4D";
-            alert("Ambas contraseñas no coinciden");
+            document.getElementById("botonRegistrar").disabled = false;
+        }
+        else
+        {
+            document.getElementById("botonRegistrar").disabled = true;
         }
     }
 }

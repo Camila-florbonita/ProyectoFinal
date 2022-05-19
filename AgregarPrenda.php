@@ -22,8 +22,8 @@ $TXL = $_POST["nxl"];
 $conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
 $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
 
-$ingreso = "INSERT into productos (nombre_producto, genero, estilo, edad, color, tipo_prenda, temporada, ocasion, formalidad, material, corte, precio) 
-VALUES ('$nombreprenda', '$genero', '$estilo', '$edad', '$color', '$tipodeprenda', '$temporada', '$ocasion', '$formalidad', '$material', '$corte','$precio')";
+$ingreso = "INSERT into productos (nombre_producto, genero, estilo, edad, color, tipo_prenda, temporada, ocasion, formalidad, material, corte, precio, descripcion) 
+VALUES ('$nombreprenda', '$genero', '$estilo', '$edad', '$color', '$tipodeprenda', '$temporada', '$ocasion', '$formalidad', '$material', '$corte','$precio', '$descprenda')";
 mysqli_query($conexion, $ingreso);
 
 $query = "SELECT id_producto from productos ORDER BY id_producto DESC LIMIT 1";
