@@ -3,7 +3,8 @@
 
 session_start();
 
-$id_usuario = 1;
+$id_usuario = $_SESSION["id_us"];
+echo $id_usuario;
 $comentario =  $_POST["comentario"];
 $id_p = $_SESSION["id_p"];
 
@@ -13,6 +14,6 @@ $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar
 $ingreso = "INSERT into comentarios (id_usuario, id_producto, comentario) VALUES ('$id_usuario','$id_p','$comentario')";
 mysqli_query($conexion, $ingreso);
 
-header("Location: ProductoConCuenta.html");
+//header("Location: ProductoConCuenta.html");
 ?>
 

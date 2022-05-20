@@ -10,5 +10,7 @@ $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar
 
 $ingreso = "INSERT into usuarios (nombre_usuario, correo_electronico, password) VALUES ('$nombre_usuario','$correo_electronico','$password')";
 mysqli_query($conexion, $ingreso);
+
+header("Location: login.html")
 ?>
 

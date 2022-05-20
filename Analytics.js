@@ -1,7 +1,7 @@
 const req = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
-function Analytics()
+function GetProductosShow()
 {
      req.onload = function ShowProductos(){
      var selectP = document.getElementById("GraficaPrenda");

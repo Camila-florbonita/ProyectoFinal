@@ -30,7 +30,9 @@ echo "<div id='producto'>
 <p class='preciodelproducto'>",
     $registro['precio'],
 "</p>
-</div>";
+</div>
+
+";
 
 }
 

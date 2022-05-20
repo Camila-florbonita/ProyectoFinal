@@ -6,6 +6,7 @@
         <title>Producto</title>
         <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
         <script src="Producto.js"></script>
+        
     </head>
     <body>
 
@@ -255,7 +256,7 @@
             
         </div>
 
-        <p class="nombredelproducto">
+        <p class="nombredelproducto" on>
             Nombre del producto
         </p>
 
@@ -275,7 +276,25 @@
                 <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
                 <p>
                     <div id="paypal-button-container"></div>
-                    <!-- <script>
+                    <div id="owo">
+                    <script>
+                        var cc = 0;
+                        const reqS = new XMLHttpRequest();
+
+document.addEventListener('DOMContentLoaded', 
+function Comentarios()
+{
+     reqS.onload = function ShowComents(){
+     var co =  reqS.responseText;
+     cc = co + 0.00;
+     alert(cc);
+}
+    reqS.open("GET", "phpapi.php?");
+    reqS.send();
+
+}, false);
+                        document.addEventListener('DOMContentLoaded',
+
                         paypal.Buttons({
                            style: {
                                color: 'blue',
@@ -288,7 +307,7 @@
                                    {
                                        purchase_units: [{
                                            amount: {
-                                               value: 10
+                                               value: cc
                                            }
                                        }]
                                    });
@@ -309,8 +328,9 @@
                                alert("Pago cancelado");
                                console.log(data);
                            }
-                       }).render('#paypal-button-container'); 
-                   </script> -->
+                       }).render('#paypal-button-container'), false); 
+                   </script>
+                   </div>
                     <!-- <button class="comprar" type="submit">
                         Comprar
                     </button> -->

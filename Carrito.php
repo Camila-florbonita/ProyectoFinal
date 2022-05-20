@@ -8,7 +8,7 @@ $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar
 
 $totalCarrito = 0;
 
-$id_us = 1;
+$id_us = $_SESSION["id_us"];
 
     $query = "SELECT * from carrito WHERE id_usuario = '$id_us'";
     $result = mysqli_query($conexion, $query); 

@@ -7,7 +7,6 @@ $conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido con
 $db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
 
 
-
 $id_p = $_SESSION["id_p"];
 
     $query = "SELECT * from comentarios WHERE id_producto = '$id_p'";
