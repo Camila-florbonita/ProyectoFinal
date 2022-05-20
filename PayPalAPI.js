@@ -1,6 +1,19 @@
-const req4 = new XMLHttpRequest();
+const req = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
+function GetPrice()
+{
+     req.onload = function trash(){
+     var getPrice = req.responseText;
+    
+}
+    req.open("GET", "GetProductPrice.php?");
+    req.send();
+
+}, false);
+
+document.addEventListener('DOMContentLoaded',
+
 function paypal()
 {
     paypal.Buttons({
@@ -15,7 +28,7 @@ function paypal()
                 {
                     purchase_units: [{
                         amount: {
-                            value: 10
+                            value: getPrice
                         }
                     }]
                 });
