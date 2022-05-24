@@ -16,24 +16,22 @@ if(!($registro = mysqli_fetch_array($resname)))
     //header("Location: registro.html");
     
 }
-$coincidename = $registro["correo_electronico"];
-
-$datopass = "SELECT password FROM usuarios WHERE password = '$password'";
-$respass = mysqli_query($conexion, $datopass);
-$coincidepass = $respass->num_rows;
-$registro = mysqli_fetch_array($respass);
-
-if($coincidename > 0 && $coincidepass > 0)
+else
 {
-    $fila = $resname->fetch_assoc();
-    echo htmlentities($fila['correo_electronico']);
+    $coincidename = $registro["correo_electronico"];
+    $datopass = $registro["password"];
+    
+if($coincidename == $correo_electronico && $datopass == $password)
+{
     $_SESSION["id_us"] = $registro['id_usuario'];
     echo $_SESSION["id_us"];
-    //header("Location: InicioConCuenta.html");
+    header("Location: InicioConCuenta.html");
 }
 else
 {
-    //header("Location: login.html");
+    header("Location: login.html");
 }
+}
+
 ?>
 
