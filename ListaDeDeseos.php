@@ -3,12 +3,10 @@
 
 session_start();
 
-$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
-$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
+include "database.php";
 
 
-
-$id_us = 1;
+$id_us = $_SESSION["id_us"];
 
     $query = "SELECT * from listadedeseos WHERE id_usuario = '$id_us'";
     $result = mysqli_query($conexion, $query); 

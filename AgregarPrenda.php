@@ -1,6 +1,8 @@
 
 <?PHP
 
+include "database.php";
+
 $nombreprenda = $_POST["nombreprenda"];
 $genero = $_POST["genero"];
 $estilo = $_POST["estilo"];
@@ -19,8 +21,6 @@ $TM = $_POST["nm"];
 $TL = $_POST["nl"];
 $TXL = $_POST["nxl"];
 
-$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
-$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
 
 $ingreso = "INSERT into productos (nombre_producto, genero, estilo, edad, color, tipo_prenda, temporada, ocasion, formalidad, material, corte, precio, descripcion) 
 VALUES ('$nombreprenda', '$genero', '$estilo', '$edad', '$color', '$tipodeprenda', '$temporada', '$ocasion', '$formalidad', '$material', '$corte','$precio', '$descprenda')";

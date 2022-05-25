@@ -5,9 +5,7 @@ session_start();
 $correo_electronico = $_POST["email"];
 $password =  $_POST["password"];
 
-$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
-$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
-
+include "database.php";
 $dato = "SELECT * FROM usuarios WHERE correo_electronico = '$correo_electronico'";
 $resname = mysqli_query($conexion, $dato);
 if(!($registro = mysqli_fetch_array($resname)))

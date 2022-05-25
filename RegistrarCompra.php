@@ -12,9 +12,7 @@ $talla = $_POST["talla"];
 //$action = $_REQUEST["action"];
 $action = $_POST["botons"];
 
-$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
-$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
-
+include "database.php";
 $query = "SELECT * from tallas WHERE id_producto = '$id_pr'";
 $result = mysqli_query($conexion, $query); 
 $registro = mysqli_fetch_array($result);

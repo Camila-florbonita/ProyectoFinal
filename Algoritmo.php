@@ -1,4 +1,5 @@
 <?PHP
+include "database.php";
 
 session_start();
 $edad = $_SESSION["edadValue"];
@@ -54,9 +55,6 @@ if($edad <= 0.3)
     {
         $genero = "masculino";
     }
-
-$conexion = mysqli_connect("localhost", "root", "") or die ("No se ha podido conectar al servidor de Base de datos");
-$db = mysqli_select_db($conexion, 'proyecto') or die ( "No se ha podido conectar a la base de datos");
 
 
     echo $edad, "<br>";
