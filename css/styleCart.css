@@ -43,11 +43,13 @@ body
 
 .imagenprenda
 {
-    max-width: 80%;
-    max-height: 80%;
+    /* height: auto;
+    width: auto;
+    border-radius: 20px; */
+    
+    max-height: 200px;
+    min-height: auto;
     border-radius: 20px;
-    
-    
 }
 /* 
 .contenedor-imagen
