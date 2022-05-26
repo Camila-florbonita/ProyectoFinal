@@ -38,6 +38,7 @@ if($action == "listadeseos")
     echo "carrito";
 }
 
+header("Location: PrendaConCuenta.html");
 
 ?>
 
