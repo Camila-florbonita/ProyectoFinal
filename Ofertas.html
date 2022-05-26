@@ -46,6 +46,12 @@
         </div>
 
         <form class="ingresarofertas" action="Ofertas.php" method="post">
+            <div class="productooferta">
+            <select name="POferta" id="POferta" multiple required>
+
+            </select>
+        </div>
+            
             <p>
                 Duracion de la oferta
             </p>
@@ -62,18 +68,14 @@
             <p>
                 Descuento (en porcentaje):
             </p>
-            <input class="descuento" type="number" required max="99">
+            <input class="descuento" name="descuento" type="number" required max="99">
             %
             <p>
                 <button class="guardaroferta" type="submit">Agregar promocion</button>
             </p>
         </form>
 
-        <div class="productooferta">
-            <select name="POferta[]" id="POferta" multiple required>
-
-            </select>
-        </div>
+        
 
         <footer class="footer">
             <a class="foot" href="">
