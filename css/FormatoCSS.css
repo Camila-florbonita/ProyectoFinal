@@ -10,7 +10,7 @@ body
 .header
 {
     /* background-color: rgb(255, 180, 190); */
-    background-color: white;
+    background-color: #f397ff;
     display: block;
     height: 100px;
 }
@@ -60,12 +60,12 @@ body
 
 .companyname
 {
-    color: black;
+    color: white;
     font-size: 50px;
-    font-family:"Brush Script MT";
+    font-family: Georgia, 'Times New Roman', Times, serif;
     float: left;
-    margin-top: 15px;
-    margin-left: 30%;
+    margin-top: 22px;
+    margin-left: 20px;
 }
 
 .cuentas
@@ -174,7 +174,7 @@ body
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.sub a
+.sub .a
 {
     text-decoration: none;
     display: block;
@@ -184,7 +184,7 @@ body
     padding: 10px 12px;
 }
 
-.sub a:hover
+.sub .a:hover
 {
     /* background-color: rgb(255, 181, 162); */
     background-color: var(--whiteColor);
@@ -404,13 +404,13 @@ body
     appearance: none;
     outline: none;
     border-style: solid;
-    border-color: rgb(85, 85, 85);
+    border-color: #c64cd6;
     border-width: 1px;
     width: 60px;
     border-radius: 10px;
     padding: 5px;
-    background-color: transparent;
-    color: rgb(43, 43, 43);
+    background-color: white;
+    color: #c64cd6;
     font-size: 20px;
     text-align: center;
     margin-bottom: 40px;
@@ -419,13 +419,16 @@ body
 
 .elegirtalla:hover
 {
-    border-width: 2px;
+    /* border-width: 2px; */
+    background-color: #c64cd6;
+    color: white;
 }
 
 .elegirtalla:checked
 {
     /* background-color: rgb(94, 94, 94); */
-    background-color: var(--colorClaro);
+    background-color: #c64cd6;
+    color: white;
     /* border-color: var(--colorClaro); */
 }
 
@@ -434,37 +437,28 @@ body
     content: attr(id);
 }
 
-.comprar
+.boton-paypal
 {
     padding: 10px;
-    background-color: var(--principalColor);
-    text-align: center;
-    border-radius: 10px;
-    font-size: x-large;
-    width: 400px;
+    width: 100px;
     float: left;
     margin-top: 20px;
-    border: none;
-}
-
-.comprar:hover
-{
-    background-color: var(--colorClaro);
 }
 
 .alcarrito, .guardarenlista
 {
-    display: inline-block;
+    /*display: inline-block;*/
     border: none;
-    margin-left: 30px;
+    margin-left: 10px;
     background-color: transparent;
 }
 
 .alcarrito img, .guardarenlista img
 {
-    width: 80;
-    height: 80;
+    width: 50px;
+    height: 50px;
 }
+
 
 .descripciondelproducto, .coments
 {
@@ -556,25 +550,35 @@ body
     float: right;
     margin-top: 50px;
     margin-right: 120px;
-    background-color: var(--colorMasClaro);
+    background-color: white;
     padding: 30px;
-    border-radius: 7%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%), 0 3px 7px 0 rgb(0 0 0 / 9%);
 }
 
 .paga
 {
-    padding: 10px;
-    background-color: var(--principalColor);
+    /* padding: 10px; */
+    
     text-align: center;
     border-radius: 10px;
-    font-size: x-large;
-    width: 200px;
-    border: none;
+    /* font-size: x-large; */
+    /* width: 200px; */
+    
+    border: 2px solid #c64cd6;
+    width: 100%;
+    color: #c64cd6;
+    font-size: 20px;
+    background: white;
+    padding: 15px 20px;
+    
+    cursor: pointer;
 }
 
 .paga:hover
 {
-    background-color: var(--colorClaro);
+    background: #c64cd6;
+    color: white;
 }
 
 .registrodepago

@@ -2,6 +2,9 @@
 
 <html>
     <head>
+        <!-- <link rel="shortcut icon" href="file:///C:/Users/Camila/Pictures/logo_mila.jpg"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
         <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
@@ -275,24 +278,26 @@
                 <input class="elegirtalla" type="radio" name="talla" id="L" value="L">
                 <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
                 <p>
-                    <div id="paypal-button-container"></div>
-                    <div id="owo">
+                    <div class="boton-paypal">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                    <div id="conf-boton-paypal">
                     <script>
                         var cc = 0;
                         const reqS = new XMLHttpRequest();
 
-document.addEventListener('DOMContentLoaded', 
-function Comentarios()
-{
-     reqS.onload = function ShowComents(){
-     var co =  reqS.responseText;
-     cc = co + 0.00;
-     alert(cc);
-}
-    reqS.open("GET", "phpapi.php?");
-    reqS.send();
+                        document.addEventListener('DOMContentLoaded', 
+                        function Comentarios()
+                        {
+                            reqS.onload = function ShowComents(){
+                            var co =  reqS.responseText;
+                            cc = co;
+                            // alert(cc);
+                        }
+                            reqS.open("GET", "phpapi.php?");
+                            reqS.send();
 
-}, false);
+                        }, false);
                         document.addEventListener('DOMContentLoaded',
 
                         paypal.Buttons({
@@ -315,11 +320,25 @@ function Comentarios()
 
                            onApprove: function(data, actions)
                            {
+                               let url = 'GetDatosCompra.php'
                                actions.order.capture().then(function(detalles)
                                {
                                    console.log(detalles);
                                    alert("Pago realizado");
                                    //window.location.href="";
+                                   return fetch(url,
+                                   {
+                                       method: 'post',
+                                       headers: 
+                                       {
+                                           'content-type': 'application/json'
+                                       },
+                                       body: JSON.stringify(
+                                           {
+                                                detalles: detalles
+                                           }
+                                       )
+                                   })
                                });
                            },
 
@@ -335,12 +354,14 @@ function Comentarios()
                         Comprar
                     </button> -->
                     <button class="alcarrito" type="submit">
-                        <img src="img/carritodecompras.png">
+                        
+                        <abbr title="Carrito de compras"><img src="img/carritodecompras.png"></abbr>
                     </button>
                 </p>                
             </form>
             <button class="guardarenlista">
-                <img src="img/bookmark.png">
+                
+                <abbr title="Carrito de compras"><img src="img/bookmark.png"></abbr>
             </button>
         </div>
 
@@ -407,9 +428,7 @@ function Comentarios()
             <a class="foot" href="">
                 Politica de privacidad
             </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
+            
         </footer>
     </body>
 </html>

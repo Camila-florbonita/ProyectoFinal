@@ -14,7 +14,7 @@ body
     height: auto;
     border-radius: 20px;
     background-color: #f9cbff;
-    /* box-shadow: 0 10px 14px 0 rgb(0 0 0 / 10%), 0 11px 15px 0 rgb(0 0 0 / 9%); */
+    box-shadow: 0 10px 14px 0 rgb(0 0 0 / 10%), 0 11px 15px 0 rgb(0 0 0 / 9%);
     margin-bottom: 40px;
 }
 
