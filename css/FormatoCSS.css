@@ -454,6 +454,7 @@ body
     border: none;
     margin-left: 10px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .alcarrito img, .guardarenlista img
