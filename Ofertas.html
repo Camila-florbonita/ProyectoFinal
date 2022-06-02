@@ -55,16 +55,22 @@
             <p>
                 Duracion de la oferta
             </p>
-            <select name="duracionOferta" id="duracionOferta" required>
+            <select name="duracionOferta" id="duracionOferta" required onchange="temporadazzz()">
                 <option value="mes">Mes</option>
                 <option value="dia">Dia</option>
                 <option value="temporadaOf">Temporada</option>
                 <option value="liquidacion">Liquidacion</option>
-            </select>            
+            </select>        
+            <select name="temporada" id="temporada" disabled style="visibility: hidden;">
+                <option value="primavera">Primavera</option>
+                <option value="verano">Verano</option>
+                <option value="otono">Otoño</option>
+                <option value="invierno">Invierno</option>
+            </select>    
             <p>
                 Inicio de la oferta:
             </p>
-            <input class="fechaoferta" type="date" name="iniciooferta" required>
+            <input class="fechaoferta" type="date" name="iniciooferta" id="iniciooferta" required>
             <p>
                 Descuento (en porcentaje):
             </p>

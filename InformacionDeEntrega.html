@@ -55,7 +55,7 @@
             </a>
         </header>
 
-        <form class="formularioConfiguracion" action="#">
+        <form class="formularioConfiguracion" action="InformacionDeEntrega.php" method="post">
             <h2 class="labelConfigurar">
                 Ingrese la información de envío
             </h2>
@@ -64,12 +64,12 @@
                 <div class="input-contenedor">
                     <p class="labelDatos">Dirección:
                     </p>
-                    <input class="input" type="text" name="direccion">
+                    <input class="input" type="text" name="direccion" required>
                 </div>
                 <div class="input-contenedor">
                     <p class="labelDatos">Número exterior:
                     </p>
-                    <input class="input" type="text" name="nexterior">
+                    <input class="input" type="text" name="nexterior" required>
                 </div>
                 <div class="input-contenedor">
                     <p class="labelDatos">Número interior:
@@ -79,18 +79,18 @@
                 <div class="input-contenedor">
                     <p class="labelDatos">Número de teléfono:
                     </p>
-                    <input class="input" type="text" name="telefono" maxlength="10" minlength="10">
+                    <input class="input" type="text" name="telefono" maxlength="10" minlength="10" required>
                 </div>
                 <div class="input-contenedor">
                     <p class="labelDatos">Código postal:
                     </p>
-                    <input class="input" type="text" name="cpostal" maxlength="5" minlength="5">
+                    <input class="input" type="text" name="cpostal" maxlength="5" minlength="5" required>
                 </div>
                 
                 <p class="labelDatos">
                     Estado: 
                 </p>
-                <select class="input" name="estado" id="estado">
+                <select class="input" name="estado" id="estado" required>
                     <option value="aguascalientes">Aguascalientes</option>
                     <option value="bcnorte">Baja California Norte</option>
                     <option value="bcsur">Baja California Sur</option>
@@ -128,7 +128,7 @@
                 <div class="input-contenedor">
                     <p class="labelDatos">Municipio:
                     </p>
-                    <input class="input" type="text" name="municipio">
+                    <input class="input" type="text" name="municipio" required>
                 </div>
                 
                 <div class="input-contenedor">
@@ -139,7 +139,7 @@
                 
                 
                     <button class="botonGuardar" type="submit">
-                        Guardar cambios
+                        Guardar información
                     </button>
                 
             </div>
