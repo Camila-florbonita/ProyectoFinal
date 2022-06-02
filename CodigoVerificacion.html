@@ -1,34 +1,54 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
-        <title>Codigo de Verificacion</title>
+        <link rel="stylesheet" href="css/styleCuenta.css">
+        <title>Código de Verificación</title>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
         <header class="header">
-            <a href="InicioSinCuenta.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+            <a href="index.html">
+                <abbr title="Cadivie">
+                    <img class="logo" src="img/logo_provisional.jpg">
+
+                </abbr>
             </a>
-            <a href="InicioSinCuenta.html">
+            <a href="index.html">
                 <span class="companyname">
                     Cadivie
                 </span>
             </a>
         </header>
 
-        <form class="creacioncuenta" action="#">
-            <h1 class="creatucuenta">
-                Ingresa el codigo de verificacion
+        <form class="formularioConfiguracion" action="#">
+            <h1 class="labelConfigurar">
+                Ingresa el código de verificación
             </h1>
+            <div class="contenedor">
+                <div class="fila">
+                    <div class="columna">
+                        <p class="labelDatos">
+                            Código de verificación: 
+                        </p>
+                    </div>
+                    <div class="columna">
+                        <div class="input-contenedor">
+                            <input class="input" type="text" name="codigoverif">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <p>
-                Codigo de verificacion: <input type="text" name="codigoverif" placeholder="Codigo de verificacion...">
-            </p>
-            <p>
-                <a href="">
-                    <button class="registrarse" type="submit">
-                        Ingresar
+                <div class="boton">
+                    <button class="botonGuardar" type="submit">
+                        Aceptar
                     </button>
-                </a>
+
+                </div>
+                
             </p>
         </form>
     </body>

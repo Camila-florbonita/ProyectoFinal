@@ -9,43 +9,54 @@
         <title>Producto</title>
         <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
         <script src="Producto.js"></script>
-        
+        <script src="ShowComents.js"></script>
+        <script src="Calificacion.js"></script>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
+            <a href="index.html">
+                <abbr title="Cadivie">
+                    <img class="logo" src="img/logo_provisional.jpg">
+
+                </abbr>
+            </a>
             <form class="buscar" action="">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+
+                    </abbr>
                 </button>
             </form>
-            <span class="companyname">
-                FashionChoice
-            </span>
-            <ul class="cuentas">
-                <li class="cue">
-                    <a href="">
-                        <img class="iconocuenta" src="img/cuentaicono.png">
-                    </a>
-                    <ul class="cuenta">
-                        <li class="cuentaelemento">
-                            <a href="">
+            <a href="InicioConCuenta.html">
+                <span class="companyname">
+                    Cadivie
+                </span>
+            </a>
+            <ul class="menuUsuario">
+                <li class="opcionMenu">
+                    
+                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                    
+                    <ul class="submenuUsuario">
+                        <li class="opcionUsuario">
+                            <a href="HistorialDeCompras.html">
                                 Historial
                             </a>
                         </li >
-                        <li class="cuentaelemento">
-                            <a href="">
+                        <li class="opcionUsuario">
+                            <a href="ListaDeDeseos.html">
                                 Lista de deseos
                             </a>
                         </li>
-                        <li class="cuentaelemento">
-                            <a href="">
+                        <li class="opcionUsuario">
+                            <a href="ConfiguracionCuenta.html">
                                 Configuracion
                             </a>
                         </li>
-                        <li class="cuentaelemento">
+                        <li class="opcionUsuario">
                             <a href="">
                                 Cerrar sesion
                             </a>
@@ -53,189 +64,200 @@
                     </ul>
                 </li>
             </ul>
-            <a href="" class="carrito">
-                <img src="img/carritodecompras.png">
+            <a href="CarritoDeCompras.html" class="carrito">
+                <abbr title="Carrito de compras">
+                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+
+                </abbr>
             </a>
         </header>
 
         <ul class="menu">
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Prenda
-                </a>
+                </div>
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('playera')" href="MenuSecciones.html">
                             Playeras
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('pantalon')" href="MenuSecciones.html">
                             Pantalones
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('vestido')" href="MenuSecciones.html">
                             Vestidos
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('short')" href="MenuSecciones.html">
                             Shorts
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('falda')" href="MenuSecciones.html">
                             Faldas
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('sueter')" href="MenuSecciones.html">
                             Sueteres
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Temporada
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('primavera')" href="MenuSecciones.html">
                             Primavera
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('verano')" href="MenuSecciones.html">
                             Verano
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('otono')" href="MenuSecciones.html">
                             Otoño
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('invierno')" href="MenuSecciones.html">
                             Invierno
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Estilo
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('clasico')" href="MenuSecciones.html">
                             Clasico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('vintage')" href="MenuSecciones.html">
                             Vintage
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('gotico')" href="MenuSecciones.html">
                             Gotico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('preppy')" href="MenuSecciones.html">
                             Preppy
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('urbano')" href="MenuSecciones.html">
                             Urbano
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('hipster')" href="MenuSecciones.html">
                             Hipster
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('grunge')" href="MenuSecciones.html">
                             Grunge
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('natural')" href="MenuSecciones.html">
                             Natural
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('sofisticado')" href="MenuSecciones.html">
                             Sofisticado
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('artsy')" href="MenuSecciones.html">
                             Artsy
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('vanguardista')" href="MenuSecciones.html">
                             Vanguardista
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('boho')" href="MenuSecciones.html">
                             Boho
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('romantico')" href="MenuSecciones.html">
                             Romantico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('dramatico')" href="MenuSecciones.html">
                             Dramatico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('girly')" href="MenuSecciones.html">
                             Girly
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Ocasion
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('playa')" href="MenuSecciones.html">
                             Playa
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('elegante')" href="MenuSecciones.html">
                             Elegante
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('deportivo')" href="MenuSecciones.html">
                             Deportivo
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('fiesta')" href="MenuSecciones.html">
                             Fiesta
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Maniqui 3D
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
                         <a href="">
@@ -353,15 +375,17 @@
                     <!-- <button class="comprar" type="submit">
                         Comprar
                     </button> -->
-                    <button class="alcarrito" type="submit">
-                        
-                        <abbr title="Carrito de compras"><img src="img/carritodecompras.png"></abbr>
+                    <button class="alcarrito" type="submit" value="carrito" name="botons">
+                        <abbr title="Añadir al carrito de compras">
+                            <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+
+                        </abbr>
                     </button>
-                </p>                
-            </form>
-            <button class="guardarenlista">
-                
-                <abbr title="Carrito de compras"><img src="img/bookmark.png"></abbr>
+                    <button class="guardarenlista" type="submit" value="listadeseos" name="botons">
+                        <abbr title="Añadir a lista de deseos">
+                            <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/bookmark_ayho2g.png">
+
+                        </abbr>
             </button>
         </div>
 
@@ -377,42 +401,43 @@
             <p>
                 Calificar el producto
             </p>
-            <img class="estrella" src="img/estrella.png">
-            <img class="estrella" src="img/estrella.png">
-            <img class="estrella" src="img/estrella.png">
-            <img class="estrella" src="img/estrella.png">
-            <img class="estrella" src="img/estrella.png">
+            <abbr title="Calificar con una estrella">
+                <img class="estrella" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" onclick="cal(1)" id="estrella1">
+
+            </abbr>
+            <abbr title="Calificar con dos estrellas">
+                <img class="estrella" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" onclick="cal(2)" id="estrella2">
+                
+            </abbr>
+            <abbr title="Calificar con tres estrellas">
+                <img class="estrella" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" onclick="cal(3)" id="estrella3">
+                
+            </abbr>
+            <abbr title="Calificar con cuatro estrellas">
+                <img class="estrella" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" onclick="cal(4)" id="estrella4">
+                
+            </abbr>
+            <abbr title="Calificar con cinco estrellas">
+                <img class="estrella" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" onclick="cal(5)" id="estrella5">
+                
+            </abbr>
         </div>
 
         <p class="coments">
             Comentarios
         </p>
 
-        <div class="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-        <div class="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-        <div class="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-        <div class="comentarios">     
+        <form class="form-comentar" action="Comentarios.php" method="post">
+            <input class="comentar" type="text" placeholder="Escribe un comentario" name= "comentario">
+            <button class="lupa" type="submit">
+                <abbr title="Publicar comentario">
+                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1654137546/comentar_oj7ndr.png">
+
+                </abbr>
+            </button>
+        </form>
+
+        <div class="comentarios" id="comentarios">     
             <p class="nombreusuario">
                 Nombre de usuario
             </p>

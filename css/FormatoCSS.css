@@ -68,60 +68,62 @@ body
     margin-left: 20px;
 }
 
-.cuentas
+.menuUsuario
 {
     float: right;
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    margin-right: 80px;
+    margin-right: 120px;
     margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
 }
 
-.cue
+.menuUsuario ul
 {
-    font-size: larger;
+    border-radius: 10px;
+}
+
+.opcionMenu
+{
+    font-size: medium;
 
 }
 
-.cue a
+.opcionMenu a
 {
     text-decoration: none;
     display: block;
-    background-color: #881b95;
-    color: white;
 }
 
-.cue a:hover
-{
-    background-color: crimson;
-}
-
-.cuenta
+.submenuUsuario
 {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    margin-right: 20px;
+    margin-right: 120px;
     display: none;
-    width: 120px;
+    width: auto;
     position: absolute;
 }
 
-.cuentaelemento a
+.opcionUsuario a
 {
     text-decoration: none;
-    display: block;
-    background-color: #881b95;
-    color: white;
+    display: flex;
+    color: gray;
+    background-color: white;
+    padding: 5px 20px;
 }
 
-.cuentaelemento a:hover
+.opcionUsuario a:hover
 {
-    background-color: aquamarine;
+    background-color: whitesmoke;
+    color: #c64cd6;
 }
 
-.cue:hover .cuenta
+.opcionMenu:hover .submenuUsuario
 {
     display: block;
 }
@@ -162,7 +164,8 @@ body
     margin: 0;
     padding: 0;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1000;
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%), 0 4px 5px 0 rgb(0 0 0 / 9%);
 }
 
 .sub
@@ -179,7 +182,7 @@ body
     text-decoration: none;
     display: block;
     /* background-color: rgb(252, 212, 199); */
-    background-color: var(--whiteColor);
+    background-color: white;
     color: darkgray;
     padding: 10px 12px;
 }
@@ -187,7 +190,7 @@ body
 .sub .a:hover
 {
     /* background-color: rgb(255, 181, 162); */
-    background-color: var(--whiteColor);
+    background-color: white;
     color: gray;
 }
 
@@ -211,7 +214,7 @@ body
     text-decoration: none;
     display: block;
     /* background-color: rgb(255, 240, 235); */
-    background-color: var(--whiteColor);
+    background-color: white;
     color: gray;
     padding: 6px 8px;
 }
@@ -686,17 +689,23 @@ body
 
 .guardarcambios
 {
-    margin-top: 10px;
-    padding: 10px;
+    border: 2px solid #c64cd6;
+    text-align: center;
+    margin-top: 10%;
+    color: #c64cd6;
+    padding: 15px 20px;
+    background: white;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--principalColor);
+    
     border-radius: 10px;
-    font-size: larger;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .guardarcambios:hover
 {
-    background-color: var(--colorClaro);
+    background: #c64cd6;
+    color: white;
 }
 
 .opcadmin
@@ -713,23 +722,85 @@ body
     margin-bottom: 50px;
 }
 
-.iconocuentaadmin
+.logout
 {
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-top: 30px;
+    margin-right: 50px;
     float: right;
-    width: 50;
-    height: 50;
+    width: 150px;
+    height: 40px;
+
+    border: 2px solid #c64cd6;
+    background: #c64cd6;
+    font-size: medium;
+    color: white;
+    /* padding: 15px 20px; */
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.logout:hover
+{
+    color: #c64cd6;
+    background: white;
+    border-color: #c64cd6;
 }
 
 .menuadmin
 {
-    width: 100%;
+    /* width: 100%;
     background-color: var(--principalColorOscuro);
     display: block;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 15px; */
+
+    background-color: white;
+    
+    display: flex;
+    height: 100px;
+    padding: 0 20px;
+    justify-content: space-between;
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%), 0 4px 5px 0 rgb(0 0 0 / 9%);
 }
+
+.menuadmin a
+{
+    text-decoration: none;
+}
+
+.menuadmin ul {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    margin-top: 0px;
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menuadmin ul a {
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: gray;
+}
+
+.menuadmin ul li {
+    padding: 5px;
+    /* margin-left: 20%; */
+    margin-right: 30%;
+}
+
+.menuadmin ul li:hover, .menuadmin ul a:hover {
+
+    background: whitesmoke;
+    color: #c64cd6;
+    transition: 0.3s;
+}
+
 
 .botonadmin
 {
@@ -774,7 +845,7 @@ body
 {
     width: 220px;
     height: 40px;
-    font-size: large;
+    font-size: medium;
     text-align: center;
 }
 
@@ -802,14 +873,32 @@ body
 
 .borrarprenda
 {
-    background-color: var(--principalColor);
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
+    
     text-align: center;
     border-radius: 10px;
-    width: 220px;
+    
     height: 60px;
     margin-bottom: 50px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border: 2px solid #c64cd6;
+    margin-top: 1%;
+    color: #c64cd6;
+    padding: 15px 20px;
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.borrarprenda:hover
+{
+    background: #c64cd6;
+    color: white;
 }
 
 .buscarprenda

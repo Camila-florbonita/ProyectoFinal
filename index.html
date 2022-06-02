@@ -2,7 +2,8 @@
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleHome.css">
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pagina de inicio</title>
         <script src="GetSeccionSinCuenta.js"></script>
         <script src="index.js"></script>
@@ -13,16 +14,22 @@
     <body>
 
         <header class="header">
-            <a href="InicioSinCuenta.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+            <a href="index.html">
+                <abbr title="Cadivie">
+                    <img class="logo" src="img/logo_provisional.jpg">
+
+                </abbr>
             </a>
             <form class="buscar" action="BusquedaReferenceSinCuenta.php" method="post">
                 <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+
+                    </abbr>
                 </button>
             </form>
-            <a href="InicioSinCuenta.html">
+            <a href="index.html">
                 <span class="companyname">
                     Cadivie
                 </span>
@@ -73,9 +80,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Temporada
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('primavera')" href="MenuSeccionesSinCuenta.html">
@@ -100,9 +109,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Estilo
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('clasico')" href="MenuSeccionesSinCuenta.html">
@@ -182,9 +193,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Ocasion
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('playa')" href="MenuSeccionesSinCuenta.html">
@@ -209,9 +222,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Maniqui 3D
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a href="">
@@ -335,9 +350,7 @@
             <a class="foot" href="">
                 Politica de privacidad
             </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
+            
         </footer>
     </body>
 </html>

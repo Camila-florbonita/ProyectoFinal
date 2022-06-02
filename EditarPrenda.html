@@ -1,8 +1,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleCuenta.css">
         <title>Editar prenda</title>
         <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
         <script src="AgregarPrenda.js"></script>
         <script src="EditarPrenda.js"></script>
     </head>
@@ -10,7 +12,10 @@
 
         <header class="header">
             <a href="OpcionesAdministrador.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+                <abbr title="Cadivie">
+                    <img class="logo" src="img/logo_provisional.jpg">
+
+                </abbr>
             </a>
             <a href="OpcionesAdministrador.html">
                 <span class="companyname">
@@ -18,29 +23,45 @@
                 </span>
             </a>
 
-            <img class="iconocuentaadmin" src="img/cuentaicono.png">   
+            <button class="logout">
+                Cerrar Sesión
+            </button>
         </header>
 
-        <div class="menuadmin">
-            <a class="agprenda" href="AgregarPrenda.html">
-                <button class="botonadmin">
-                    Editar
-                </button>
-            </a>
-            <a class="analitics" href="Analytics.html">
-                <button class="botonadmin">
-                    Analitics
-                </button>
-            </a>
-            <a class="ofer" href="Ofertas.html">
-                <button class="botonadmin">
-                    Ofertas
-                </button>
-            </a>
-        </div>
+        <nav>
+            <div class="menuadmin">
+                <ul>
+                    <li>
+                        <a class="edprenda" href="EditarPrenda.html">
+                            
+                                Editar
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="analitics" href="Analytics.html">
+                            
+                                Analitics
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="ofer" href="Ofertas.html">
+                            
+                                Ofertas
+                            
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
 
         <div class="buscarprenda">
-            <select name="elegirPrenda" id="elegirPrenda" onchange="getPrenda()">
+            <select class="input" name="elegirPrenda" id="elegirPrenda" onchange="getPrenda()">
                 
             </select>
         </div>
@@ -52,10 +73,10 @@
             
             <div class="etiquetas">
                 <p>
-                    <input type="text" name="nombreprenda" placeholder="Nombre de la prenda..." required>
+                    <input class="input" type="text" name="nombreprenda" placeholder="Nombre de la prenda..." required>
                 </p>
                 <p>
-                    <select name="genero" id="genero" required>
+                    <select class="input" name="genero" id="genero" required>
                         <option value="">Genero</option>
                         <option value="masculino">Masculino</option>
                         <option value="femenino">Femenino</option>
@@ -63,7 +84,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="estilo" id="estilo" required>
+                    <select class="input" name="estilo" id="estilo" required>
                         <option value="">Estilo</option>
                         <option value="clasico">Clasico</option>
                         <option value="vintage">Vintage</option>
@@ -83,7 +104,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="edad" id="edad" required>
+                    <select class="input" name="edad" id="edad" required>
                         <option value="">Edad</option>
                         <option value="nino">Niños</option>
                         <option value="joven">Jovenes</option>
@@ -93,7 +114,7 @@
             </div>
             <div class="etiquetas">
                 <p> 
-                    <select name="color" id="color" required>
+                    <select class="input" name="color" id="color" required>
                         <option value="">Color</option>
                         <option value="negro">Negro</option>
                         <option value="azul">Azul</option>
@@ -123,7 +144,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="tipodeprenda" id="tipodeprenda" required onchange="CambiarCorte()">
+                    <select class="input" name="tipodeprenda" id="tipodeprenda" required onchange="CambiarCorte()">
                         <option value="">Tipo de prenda</option>
                         <option class="playera" value="playera">Playera</option>
                         <option class="pantalon" value="pantalon">Pantalon</option>
@@ -134,7 +155,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="temporada" id="temporada">
+                    <select class="input" name="temporada" id="temporada">
                         <option value="">Temporada</option>
                         <option value="primavera">Primavera</option>
                         <option value="verano">Verano</option>
@@ -143,7 +164,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="ocasion" id="ocasion">
+                    <select class="input" name="ocasion" id="ocasion">
                         <option value="">Ocasion</option>
                         <option value="playa">Playa</option>
                         <option value="elegante">Elegante</option>
@@ -154,7 +175,7 @@
             </div>
             <div class="etiquetas">
                 <p>
-                    <select name="formalidad" id="formalidad" required>
+                    <select class="input" name="formalidad" id="formalidad" required>
                         <option value="">Nivel de formalidad</option>
                         <option value="casual">Casual</option>
                         <option value="semiformal">Semiformal</option>
@@ -163,7 +184,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="material" id="material" required>
+                    <select class="input" name="material" id="material" required>
                         <option value="">Material</option>
                         <option value="algodon">Algodon</option>
                         <option value="poliester">Poliester</option>
@@ -176,7 +197,7 @@
                     </select>
                 </p>
                 <p>
-                    <select name="corte" id="corte" required disabled>
+                    <select class="input" name="corte" id="corte" required disabled>
                         <option value="">Corte</option>
                         <optgroup label="Corte de Playera" id="CortePlayera">
                             <option value="camiseta" id="camiseta">Camiseta</option>
@@ -231,41 +252,43 @@
                     </select>
                 </p>
                 <p>
-                    <input type="number" min="0" step=".01" name="precio" placeholder="Precio..." required>
+                    <input class="input" type="number" min="0" step=".01" name="precio" placeholder="Precio..." required>
                 </p>
             </div>
             <div class="ntallas">
                 <p>
-                    XS: <input type="number" min="0" name="nxs" required>
+                    XS: <input class="input" type="number" min="0" name="nxs" required>
                 </p>
                 <p>
-                    S: <input type="number" min="0" name="ns" required>
+                    S: <input class="input" type="number" min="0" name="ns" required>
                 </p>
                 <p>
-                    M: <input type="number" min="0" name="nm" required>
+                    M: <input class="input" type="number" min="0" name="nm" required>
                 </p>
                 <p>
-                    L: <input type="number" min="0" name="nl" required>
+                    L: <input class="input" type="number" min="0" name="nl" required>
                 </p>
                 <p>
-                    XL: <input type="number" min="0" name="nxl" required>
+                    XL: <input class="input" type="number" min="0" name="nxl" required>
                 </p>
-            </div>
             </div>
 
-            <p class="gcamb">
-                <button class="guardarcambios" type="submit" disabled>
-                    Editar prenda
-                </button>
-            </p>
+            <button class="guardarcambios" type="submit" disabled>
+                Editar prenda
+            </button>
+
+            </div>
+
+            
+            
         </form>
 
         <form action="BorrarPrenda.php">
-            <p class="gcamb">
+            
                 <button class="borrarprenda" type="submit" disabled>
                     Borrar prenda
                 </button>    
-            </p>
+            
         </form>
     </body>
 </html>
