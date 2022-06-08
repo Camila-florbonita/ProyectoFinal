@@ -1,23 +1,32 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleCart.css">
         <title>Resultados de busqueda</title>
         <script src="Busqueda.js"></script>
         <script src="GetProductIdSinCuenta.js"></script>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
         <header class="header">
-            <a href="InicioSinCuenta.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+            <a href="index.html">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
             </a>
             <form class="buscar" action="BusquedaReferenceSinCuenta.php" method="post">
                 <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+
+                    </abbr>
                 </button>
             </form>
-            <a href="InicioSinCuenta.html">
+            <a href="index.html">
                 <span class="companyname">
                     Cadivie
                 </span>
@@ -31,9 +40,9 @@
 
             <ul class="menu">
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Prenda
-                    </a>
+                    </div>
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('playera')" href="MenuSeccionesSinCuenta.html">
@@ -68,9 +77,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Temporada
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('primavera')" href="MenuSeccionesSinCuenta.html">
@@ -95,9 +106,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Estilo
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('clasico')" href="MenuSeccionesSinCuenta.html">
@@ -177,9 +190,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Ocasion
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a onclick="Secciones('playa')" href="MenuSeccionesSinCuenta.html">
@@ -204,9 +219,11 @@
                     </ul>
                 </li>
                 <li class="sub">
-                    <a href="">
+                    <div class="a">
                         Maniqui 3D
-                    </a>
+                        
+                    </div>
+                    
                     <ul class="submenu">
                         <li>
                             <a href="">
@@ -224,11 +241,9 @@
 
         </nav>
 
-
-        <div class="productos" id="productos">
-        <div class="producto" id="producto">
-            <img class="imagenprenda" src="imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito" id="NombreProducto">
+        <div id="producto">
+            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
+            <p class="nomprodcarrito">
                 Nombre del producto
             </p>
             <p class="precprodcarrito">
@@ -238,6 +253,5 @@
                 Aqui va la descripcion del producto
             </p>
         </div>
-    </div>
     </body>
 </html>

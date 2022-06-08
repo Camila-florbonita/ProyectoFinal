@@ -1,57 +1,78 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleCuenta.css">
         <title>Analytics</title>
         <script src="package/dist/chart.js"></script>
         <script src="Analytics.js"></script>
-        
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
         <header class="header">
             <a href="OpcionesAdministrador.html">
-                <img class="logo" src="logo_provisional.jpg">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
             </a>
             <a href="OpcionesAdministrador.html">
                 <span class="companyname">
                     Cadivie
                 </span>
             </a>
-            <img class="iconocuentaadmin" src="cuentaicono.png">  
+            <button class="logout">
+                Cerrar Sesión
+            </button>
         </header>
 
-        <div class="menuadmin">
-            <a class="edprenda" href="EditarPrenda.html">
-                <button class="botonadmin">
-                    Editar
-                </button>
-            </a>
-            <a class="agprenda" href="AgregarPrenda.html">
-                <button class="botonadmin">
-                    Agregar Prenda
-                </button>
-            </a>
-            <a class="ofer" href="Ofertas.html">
-                <button class="botonadmin">
-                    Ofertas
-                </button>
-            </a>
-        </div>
+        <nav>
+            <div class="menuadmin">
+                <ul>
+                    <li>
+                        <a class="edprenda" href="EditarPrenda.html">
+                            
+                                Editar
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="analitics" href="Analytics.html">
+                            
+                                Analitics
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="ofer" href="Ofertas.html">
+                            
+                                Ofertas
+                            
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
         
         <form class="fechaGrafca" action="Analytics.php" method="post">
 
-            <select name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
+            <select class="input" name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
                 <option value="">Graficas</option>
                 <option value="general">General</option>
                 <option value="prenda">Prenda</option>
                 <option value="estilo">Estilo</option>
             </select>
 
-            <select name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
+            <select class="input" name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
                 
             </select>
 
-            <select name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
+            <select class="input" name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
                 <option value="">Estilo</option>
                 <option value="clasico">Clasico</option>
                 <option value="vintage">Vintage</option>
@@ -73,13 +94,13 @@
             <p>
                 Inicio:
             </p>
-            <input class="fechaoferta" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
+            <input class="input" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
             <p>
                 Fin:
             </p>
-            <input class="fechaoferta" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
- 
-            <button id="verGrafica" onclick="Grafica()" type="submit" disabled>Ver Grafica</button>
+            <input class="input" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
+            <br>
+            <button class="guardarcambios" id="verGrafica" onclick="Grafica()" type="submit" disabled>Ver Grafica</button>
         </form>
 
 

@@ -3,13 +3,17 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Ingresar prenda</title>
         <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="AgregarPrenda.js"></script>
     </head>
     <body>
 
         <header class="header">
             <a href="OpcionesAdministrador.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
             </a>
             <a href="OpcionesAdministrador.html">
                 <span class="companyname">
@@ -17,26 +21,42 @@
                 </span>
             </a>
 
-            <img class="iconocuentaadmin" src="img/cuentaicono.png">   
+            <button class="logout">
+                Cerrar Sesión
+            </button>
         </header>
 
-        <div class="menuadmin">
-            <a class="edprenda" href="EditarPrenda.html">
-                <button class="botonadmin">
-                    Editar
-                </button>
-            </a>
-            <a class="analitics" href="Analytics.html">
-                <button class="botonadmin">
-                    Analitics
-                </button>
-            </a>
-            <a class="ofer" href="Ofertas.html">
-                <button class="botonadmin">
-                    Ofertas
-                </button>
-            </a>
-        </div>
+        <nav>
+            <div class="menuadmin">
+                <ul>
+                    <li>
+                        <a class="edprenda" href="EditarPrenda.html">
+                            
+                                Editar
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="analitics" href="Analytics.html">
+                            
+                                Analitics
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="ofer" href="Ofertas.html">
+                            
+                                Ofertas
+                            
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
 
         <img class="imgprenda" src="ImagenesPrendas/1.jpg">
         <div class="etiquetas_container">

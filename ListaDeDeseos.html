@@ -3,6 +3,8 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleCart.css">
         <title>Lista de deseos</title>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="ListaDeDeseos.js"></script>
         <script src="Busqueda.js"></script>
         <script src="GetProductId.js"></script>
@@ -11,12 +13,18 @@
 
         <header class="header">
             <a href="InicioConCuenta.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
             </a>
             <form class="buscar" action="BusquedaReference.php" method="post">
                 <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+
+                    </abbr>
                 </button>
             </form>
             <a href="InicioConCuenta.html">
@@ -24,23 +32,28 @@
                     Cadivie
                 </span>
             </a>
-            <ul class="cuentas">
-                <li class="cue">
-                    <a href="">
-                        <img class="iconocuenta" src="img/cuentaicono.png">
-                    </a>
-                    <ul class="cuenta">
-                        <li class="cuentaelemento">
+            <ul class="menuUsuario">
+                <li class="opcionMenu">
+                    
+                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                    
+                    <ul class="submenuUsuario">
+                        <li class="opcionUsuario">
                             <a href="HistorialDeCompras.html">
                                 Historial
                             </a>
                         </li >
-                        <li class="cuentaelemento">
+                        <li class="opcionUsuario">
+                            <a href="ListaDeDeseos.html">
+                                Lista de deseos
+                            </a>
+                        </li>
+                        <li class="opcionUsuario">
                             <a href="ConfiguracionCuenta.html">
                                 Configuracion
                             </a>
                         </li>
-                        <li class="cuentaelemento">
+                        <li class="opcionUsuario">
                             <a href="">
                                 Cerrar sesion
                             </a>
@@ -49,12 +62,15 @@
                 </li>
             </ul>
             <a href="CarritoDeCompras.html" class="carrito">
-                <img src="img/carritodecompras.png">
+                <abbr title="Carrito de Compras">
+                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+
+                </abbr>
             </a>
         </header>
 
 
-        <div class="producto" id="producto">
+        <div id="producto">
             <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
             <p class="nomprodcarrito">
                 Nombre del producto

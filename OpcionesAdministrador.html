@@ -1,22 +1,103 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <!-- <link rel="stylesheet" href="css/primerIntentoMenu.css"> -->
         <title>Opciones administrador</title>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/index.js"></script>
     </head>
     <body>
 
         <header class="header">
             <a href="OpcionesAdministrador.html">
-                <img class="logo" src="img/logo_provisional.jpg">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
             </a>
             <a href="OpcionesAdministrador.html">
                 <span class="companyname">
                     Cadivie
                 </span>
             </a>
-            <img class="iconocuentaadmin" src="img/cuentaicono.png">   
+            <button class="logout">
+                Cerrar Sesión
+            </button>
         </header>
 
+        <!-- MENU RESPONSIVO ADMINISTRADOR -->
+
+        <!-- <header class="header">
+            <div id="brand" style="cursor: pointer;">
+                <a href="OpcionesAdministrador.html">
+                    <abbr title="Cadivie">
+                        <img class="logo" src="img/logo_provisional.jpg">
+    
+                    </abbr>
+                </a>
+                
+                <a class="companyname" href="OpcionesAdministrador.html">Cadivie</a>
+            </div>
+            <nav>
+              <ul>
+                <li>
+                    <button class="logout">
+                        Cerrar Sesión
+                    </button>
+                </li>
+                
+              </ul>
+            </nav>
+            <div id="iconoMenu" onclick="toggleMobileMenu(this)">
+                <div class="bar1">
+                    <img class="imgMenu" src="https://res.cloudinary.com/cadivie/image/upload/v1654142978/menu_ptc4k1.png">
+
+                </div>
+                <div class="bar2">
+                    <img class="imgMenu" src="https://res.cloudinary.com/cadivie/image/upload/v1654146176/close_gqiqrm.png">
+                </div>
+              <ul class="menuMovil">
+                <li><a href="">Cerrar Sesión</a></li>
+                
+              </ul>
+            </div>
+          </header> -->
+        
+        <!--  -->
+
+        <nav>
+            <div class="menuadmin">
+                <ul>
+                    <li>
+                        <a class="edprenda" href="EditarPrenda.html">
+                            
+                                Editar
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="analitics" href="Analytics.html">
+                            
+                                Analitics
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="ofer" href="Ofertas.html">
+                            
+                                Ofertas
+                            
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        
         <a class="agprenda" href="">
             <button class="opcadmin">
                 Agregar prenda
@@ -50,9 +131,7 @@
             <a class="foot" href="">
                 Politica de privacidad
             </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
+            
         </footer>
     </body>
 </html>
