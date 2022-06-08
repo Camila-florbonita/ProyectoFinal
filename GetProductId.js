@@ -6,5 +6,4 @@ function getProductId(id_p)
     req.send();
 
     window.location.href = "ProductoConCuenta.html";
-
 }
