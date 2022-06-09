@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="css/styleCart.css">
         <title>Lista de deseos</title>
         <script src="CombinacionAtuendos.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="VerificarLogin.js"></script>
     </head>
     <body>
 
@@ -40,8 +42,8 @@
                                 Configuracion
                             </a>
                         </li>
-                        <li class="cuentaelemento">
-                            <a href="">
+                        <li class="cuentaelemento" id="logout">
+                            <a href="" id="logout">
                                 Cerrar sesion
                             </a>
                         </li>
@@ -54,7 +56,7 @@
         </header>
 
 
-        <div class="producto" id="producto">
+        <div class="grid grid-cols-1 md:grid-cols-5" id="producto">
             <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
             <p class="nomprodcarrito">
                 Nombre del producto
@@ -79,5 +81,7 @@
                 No se que mas vaya aqui :P
             </p>
         </footer>
+        
+        <script src="Logout.js"></script>
     </body>
 </html>
