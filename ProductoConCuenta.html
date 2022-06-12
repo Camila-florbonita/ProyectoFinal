@@ -5,6 +5,7 @@
         <title>Producto</title>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
         <script src="Producto.js"></script>
         <script src="RegistrarCompra.js"></script>
         <script src="ShowComents.js"></script>
@@ -298,6 +299,94 @@
                     <button class="comprar" type="submit" value="comprar" name="botons">
                         Comprar
                     </button>
+
+                    <div id="paypal-button-container"></div>
+
+                    <script>
+
+                        try {
+                            var costo = 0;
+                            const reqS = new XMLHttpRequest();
+    
+                            document.addEventListener('DOMContentLoaded', 
+                            function Comentarios()
+                            {
+                                reqS.onload = function ShowComents(){
+                                var co =  reqS.responseText;
+                                costo = co;
+                                alert(costo);
+                            }
+                                reqS.open("GET", "phpapi.php?");
+                                reqS.send();
+    
+                            }, false);
+                            
+                        } catch (error) {
+                            console.log(error);
+                        }
+
+                        try {
+                            document.addEventListener('DOMContentLoaded',
+    
+    
+                            paypal.Buttons({
+                                style:{
+                                    layout: 'horizontal',
+                                    color:  'silver',
+                                    shape:  'pill',
+                                    tagline: 'false',
+                                    label:  'paypal'
+                                },
+                                createOrder: function(data, actions)
+                                {
+                                    return actions.order.create({
+                                        purchase_units: [{
+                                            amount: {
+                                                value: costo
+                                            }
+                                        }]
+                                    });
+                                },
+                                onApprove: function(data, actions)
+                                {
+                                        let url = 'GetDatosCompra.php'
+                                    actions.order.capture().then(function(detalles)
+                                    {
+                                        console.log(detalles);
+                                        alert("Pago realizado");
+                                        //window.location.href="";
+                                        return fetch(url,
+                                        {
+                                            method: 'post',
+                                            headers: 
+                                            {
+                                                'content-type': 'application/json'
+                                            },
+                                            body: JSON.stringify(
+                                                {
+                                                        detalles: detalles
+                                                }
+                                            )
+                                        });
+                                    });
+                                },
+
+                                onCancel: function(data)
+                                {
+                                    alert("Pago cancelado");
+                                    console.log(data);
+                                },
+                                onError: function (err) 
+                                {
+                                    alert("Ha sucedido un error, intente de nuevo");
+                                }
+                            }).render('#paypal-button-container'), false);
+                            
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    </script>
+
                     <button class="alcarrito" type="submit" value="carrito" name="botons">
                         <abbr title="Añadir al carrito de compras">
                             <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
@@ -373,5 +462,6 @@
             </p>
         </div>
 
+        <script src="Logout.js"></script>
     </body>
 </html>
