@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hoodie
+* source:	https://sketchfab.com/3d-models/hoodie-297bd8925c334e76b52888213fd0dfb1
+* author:	Shadowfang22 (https://sketchfab.com/Shadowfang22)
+
+Model License:
+* license type:	CC-BY-ND-4.0 (http://creativecommons.org/licenses/by-nd/4.0/)
+* requirements:	Author must be credited. Modified versions can not be distributed. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hoodie" (https://sketchfab.com/3d-models/hoodie-297bd8925c334e76b52888213fd0dfb1) by Shadowfang22 (https://sketchfab.com/Shadowfang22) licensed under CC-BY-ND-4.0 (http://creativecommons.org/licenses/by-nd/4.0/)
