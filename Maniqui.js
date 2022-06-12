@@ -1,3 +1,5 @@
+import * as THREE from 'http://threejs.org/build/three.js';
+import { GLTFLoader } from 'GLTFLoader.js';
 
 document.addEventListener('DOMContentLoaded', 
 function Maniqui()
