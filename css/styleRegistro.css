@@ -53,6 +53,7 @@ body
     width: 82%;
     padding: 10px;
     border: none;
+    outline: none;
 }
 
 .input-contenedor
