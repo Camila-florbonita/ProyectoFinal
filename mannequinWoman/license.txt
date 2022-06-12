@@ -1,0 +1,11 @@
+Model Information:
+* title:	h4
+* source:	https://sketchfab.com/3d-models/h4-7cc6d193cb6147a9bf5b2d4c9f7336e3
+* author:	rahmikarajeh (https://sketchfab.com/rahmikarajeh)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "h4" (https://sketchfab.com/3d-models/h4-7cc6d193cb6147a9bf5b2d4c9f7336e3) by rahmikarajeh (https://sketchfab.com/rahmikarajeh) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

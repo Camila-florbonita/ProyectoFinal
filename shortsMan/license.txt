@@ -1,0 +1,11 @@
+Model Information:
+* title:	White Boxer
+* source:	https://sketchfab.com/3d-models/white-boxer-515aecbda90a46aba46bec0955db0bcd
+* author:	whatsdown (https://sketchfab.com/whatsdown)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "White Boxer" (https://sketchfab.com/3d-models/white-boxer-515aecbda90a46aba46bec0955db0bcd) by whatsdown (https://sketchfab.com/whatsdown) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
