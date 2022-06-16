@@ -9,7 +9,7 @@ $id = $_SESSION['id_p'];
     $result = mysqli_query($conexion, $query); 
 
     while ($registro = mysqli_fetch_array($result)){ 
-        echo "...";
+        echo $registro['descripcion'];
 }
 
 ?>
