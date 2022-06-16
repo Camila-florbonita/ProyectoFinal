@@ -34,8 +34,8 @@ body
 
 .elemento 
 {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     margin-top: 2%;
     margin-bottom: 10px;
     /* flex: 50%; */
@@ -72,12 +72,12 @@ body
 .labelElemento 
 {
     color: #1d1d1d;
-    margin-left: 30%;
-    margin-right: 25%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    max-width: 100%;
+    max-width: 200px;
     text-align: center;
-    
+    width: auto;
 }
 
 .labelPrecio 

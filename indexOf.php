@@ -12,7 +12,7 @@ $id_us = $_SESSION["id_us"];
     $cont = 0;
     while ($registro = mysqli_fetch_array($result)){ 
 
-echo "<div class='elementoOf' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
 <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
 <p class='labelElemento'>",
     $registro['nombre_producto'],

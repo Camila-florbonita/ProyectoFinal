@@ -17,7 +17,7 @@ $id_us = 1;
         $result2 = mysqli_query($conexion, $query2); 
         $registro2 = mysqli_fetch_array($result2);
 
-echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
+echo "<div class='elemento' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
 <img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
 <p class='nomprodcarrito' id='NombreProducto'>",
     $registro2['nombre_producto'],
@@ -34,7 +34,7 @@ $cont++;
 
 if($cont == 0)
 {
-  echo "<div class='producto' id='producto'>
+  echo "<div class='elemento' id='producto'>
   <p class='precprodcarrito'>
   No se tienen compras registradas
   </p>

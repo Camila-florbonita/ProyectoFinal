@@ -6,6 +6,7 @@
         <title>Analytics</title>
         <script src="package/dist/chart.js"></script>
         <script src="Analytics.js"></script>
+        <script src="VerificarLogin.js"></script>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -23,7 +24,7 @@
                     Cadivie
                 </span>
             </a>
-            <button class="logout">
+            <button class="logout" id="logout">
                 Cerrar Sesión
             </button>
         </header>
@@ -51,13 +52,13 @@
                         <a class="ofer" href="Ofertas.html">
                             
                                 Ofertas
-                            
-                        </a>
+                                
+                            </a>
 
                     </li>
                 </ul>
             </div>
-
+            
         </nav>
         
         <form class="fechaGrafca" action="Analytics.php" method="post">
@@ -108,5 +109,6 @@
         <div class="graficaContainer" >
             <canvas id="grafica"></canvas>
         </div>
+        <script src="Logout.js"></script>
     </body>
 </html>

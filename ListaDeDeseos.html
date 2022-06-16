@@ -9,6 +9,8 @@
         <script src="ListaDeDeseos.js"></script>
         <script src="Busqueda.js"></script>
         <script src="GetProductId.js"></script>
+        <script src="VerificarLogin.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
 
@@ -54,24 +56,24 @@
                                 Configuracion
                             </a>
                         </li>
-                        <li class="opcionUsuario">
-                            <a href="">
+                        <li class="opcionUsuario" id="logout">
+                            <a href="" id="logout">
                                 Cerrar sesion
                             </a>
-                        </li>
+                        </li> 
                     </ul>
                 </li>
             </ul>
             <a href="CarritoDeCompras.html" class="carrito">
                 <abbr title="Carrito de Compras">
                     <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
-
+                    
                 </abbr>
             </a>
         </header>
 
 
-        <div id="producto">
+        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
             <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
             <p class="nomprodcarrito">
                 Nombre del producto
@@ -83,5 +85,7 @@
                 Aqui va la descripcion del producto
             </p>
         </div>
+        
+        <script src="Logout.js"></script>
     </body>
-</html>
+    </html>
