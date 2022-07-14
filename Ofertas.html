@@ -2,49 +2,75 @@
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleCuenta.css">
         <title>Ingresar prenda</title>
         <script src="Ofertas.js"></script>
+        <script src="VerificarLogin.js"></script>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
+            <a href="OpcionesAdministrador.html">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
+            </a>
             <form class="buscar" action="#">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+
+                    </abbr>
                 </button>
             </form>
-            <span class="companyname">
-                FashionChoice
-            </span>
-            <a href="">
-                <img class="iconocuentaadmin" src="img/cuentaicono.png">
-            </a>       
+            <a href="OpcionesAdministrador.html">
+                <span class="companyname">
+                    Cadivie
+                </span>
+
+            </a>
+            
+            <button class="logout" id="logout">
+                Cerrar Sesión
+            </button>
+               
         </header>
 
-        <div class="menuadmin">
-            <a class="boprenda" href="">
-                <button class="botonadmin">
-                    Borrar
-                </button>
-            </a>
-            <a class="edprenda" href="">
-                <button class="botonadmin">
-                    Editar
-                </button>
-            </a>
-            <a class="analitics" href="">
-                <button class="botonadmin">
-                    Analitics
-                </button>
-            </a>
-            <a class="ofer" href="">
-                <button class="botonadmin">
-                    Ofertas
-                </button>
-            </a>
-        </div>
+        <nav>
+            <div class="menuadmin">
+                <ul>
+                    <li>
+                        <a class="edprenda" href="EditarPrenda.html">
+                            
+                                Editar
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="analitics" href="Analytics.html">
+                            
+                                Analitics
+                            
+                        </a>
+
+                    </li>
+                    <li>
+                        <a class="ofer" href="Ofertas.html">
+                            
+                                Ofertas
+                            
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
 
         <form class="ingresarofertas" action="Ofertas.php" method="post">
             <div class="productooferta">
@@ -82,8 +108,6 @@
             </p>
         </form>
 
-        
-
         <footer class="footer">
             <a class="foot" href="">
                 Aviso legal
@@ -91,9 +115,9 @@
             <a class="foot" href="">
                 Politica de privacidad
             </a>
-            <p class="foot">
-                No se que mas vaya aqui :P
-            </p>
+            
         </footer>
+        
+        <script src="Logout.js"></script>
     </body>
 </html>

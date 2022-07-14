@@ -10,6 +10,8 @@
         <script src="GetSeccion.js"></script>
         <script src="Busqueda.js"></script>
         <script src="GetProductId.js"></script>
+        <script src="VerificarLogin.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
         <header class="header">
@@ -54,8 +56,8 @@
                                 Configuracion
                             </a>
                         </li>
-                        <li class="opcionUsuario">
-                            <a href="">
+                        <li class="opcionUsuario" id="logout">
+                            <a href="" id="logout">
                                 Cerrar sesion
                             </a>
                         </li>
@@ -271,7 +273,7 @@
             </li>
         </ul>
 
-        <div id="producto">
+        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
             <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
             <p class="nomprodcarrito">
                 Nombre del producto
@@ -284,5 +286,6 @@
             </p>
         </div>
         
+        <script src="Logout.js"></script>
     </body>
 </html>

@@ -12,7 +12,7 @@ function index()
     req.send();
 
     req2.onload = function IndexInicio2(){
-        var prendas = document.getElementById("elementoSug");
+        var prendas = document.getElementById("sugerenciasSug");
        
         prendas.innerHTML = req2.responseText;
    }
