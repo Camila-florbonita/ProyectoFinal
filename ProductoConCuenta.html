@@ -3,47 +3,323 @@
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <title>Producto</title>
+        <meta charset="UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
         <script src="Producto.js"></script>
         <script src="RegistrarCompra.js"></script>
         <script src="ShowComents.js"></script>
         <script src="Calificacion.js"></script>
+        <script src="GetSeccion.js"></script>
+        <script src="VerificarLogin.js"></script>
+        <script src="Busqueda.js"></script>
+        <script src="GetProductId.js"></script>
+        <script src="ShowRating.js"></script>
+        <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
+        <link rel="stylesheet" href="css/styleProductoConCuenta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     </head>
     <body>
 
         <header class="header">
-            <img class="logo" src="img/logo_provisional.jpg">
-            <form class="buscar" action="">
+            <div class="wrapper">
+                <nav>
+                    <input type="checkbox" id="show-search">
+                    <input type="checkbox" id="show-menu">
+                    <label for="show-menu" class="icono-menu">
+                        <abbr title="Menú">
+                            <i class="fas fa-bars"></i>
+                        </abbr>
+                    </label>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="InicioConCuenta.html" class="brand-name">
+                                <abbr title="Cadivie">
+                                    Cadivie
+                                </abbr>
+                            </a>
+                        </div>
+                            <ul class="links">
+                                <li>
+                                    <div class="menu-busqueda">Prenda</div>
+                                    <input type="checkbox" id="show-prenda">
+                                    <label for="show-prenda">Prenda</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('playera')" href="MenuSecciones.html" class="subcategorias">
+                                                Playeras
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('pantalon')" href="MenuSecciones.html" class="subcategorias">
+                                                Pantalones
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vestido')" href="MenuSecciones.html" class="subcategorias">
+                                                Vestidos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('short')" href="MenuSecciones.html" class="subcategorias">
+                                                Shorts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('falda')" href="MenuSecciones.html" class="subcategorias">
+                                                Faldas
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('sueter')" href="MenuSecciones.html" class="subcategorias">
+                                                Sueteres
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Temporada</div>
+                                    <input type="checkbox" id="show-temporada">
+                                    <label for="show-temporada">Temporada</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('primavera')" href="MenuSecciones.html" class="subcategorias">
+                                                Primavera
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('verano')" href="MenuSecciones.html" class="subcategorias">
+                                                Verano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('otono')" href="MenuSecciones.html" class="subcategorias">
+                                                Otoño
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('invierno')" href="MenuSecciones.html" class="subcategorias">
+                                                Invierno
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Estilo</div>
+                                    <input type="checkbox" id="show-estilo">
+                                    <label for="show-estilo">Estilo</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('clasico')" href="MenuSecciones.html" class="subcategorias">
+                                                Clasico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vintage')" href="MenuSecciones.html" class="subcategorias">
+                                                Vintage
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('gotico')" href="MenuSecciones.html" class="subcategorias">
+                                                Gotico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('preppy')" href="MenuSecciones.html" class="subcategorias">
+                                                Preppy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('urbano')" href="MenuSecciones.html" class="subcategorias">
+                                                Urbano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('hipster')" href="MenuSecciones.html" class="subcategorias">
+                                                Hipster
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('grunge')" href="MenuSecciones.html" class="subcategorias">
+                                                Grunge
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('natural')" href="MenuSecciones.html" class="subcategorias">
+                                                Natural
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('sofisticado')" href="MenuSecciones.html" class="subcategorias">
+                                                Sofisticado
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('artsy')" href="MenuSecciones.html" class="subcategorias">
+                                                Artsy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vanguardista')" href="MenuSecciones.html" class="subcategorias">
+                                                Vanguardista
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('boho')" href="MenuSecciones.html" class="subcategorias">
+                                                Boho
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('romantico')" href="MenuSecciones.html" class="subcategorias">
+                                                Romantico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('dramatico')" href="MenuSecciones.html" class="subcategorias">
+                                                Dramatico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('girly')" href="MenuSecciones.html" class="subcategorias">
+                                                Girly
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Ocasión</div>
+                                    <input type="checkbox" id="show-ocasion">
+                                    <label for="show-ocasion">Ocasión</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('playa')" href="MenuSecciones.html" class="subcategorias">
+                                                Playa
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('elegante')" href="MenuSecciones.html" class="subcategorias">
+                                                Elegante
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('deportivo')" href="MenuSecciones.html" class="subcategorias">
+                                                Deportivo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('fiesta')" href="MenuSecciones.html" class="subcategorias">
+                                                Fiesta
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Maniquí 3D</div>
+                                    <input type="checkbox" id="show-maniqui">
+                                    <label for="show-maniqui">Maniquí 3D</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a href="" class="subcategorias">
+                                                Combinar atuendo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="subcategorias">
+                                                Poner al maniqui
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="menuUsuario">
+                                <li class="opcionMenu">
+                                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                                    <ul class="submenuUsuario">
+                                        <li class="opcionUsuario">
+                                            <a href="HistorialDeCompras.html">
+                                                Historial
+                                            </a>
+                                        </li >
+                                        <li class="opcionUsuario">
+                                            <a href="ListaDeDeseos.html">
+                                                Lista de deseos
+                                            </a>
+                                        </li>
+                                        <li class="opcionUsuario">
+                                            <a href="ConfiguracionCuenta.html">
+                                                Configuracion
+                                            </a>
+                                        </li>
+                                        <li class="opcionUsuario" id="logout">
+                                            <a href="" id="logout">
+                                                Cerrar sesion
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <label for="show-search" class="icono-busqueda">
+                            <abbr title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </abbr>
+                        </label>
+                    </div>
+                    <form class="search-box" action="BusquedaReference.php" method="post">
+                        <input class="" type="text" placeholder="Buscar..." required>
+                        <button class="boton-buscar" type="submit">
+                            <abbr title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </abbr>
+                        </button>
+                    </form>
+                </nav>
+            </div>
+        </header>
+
+        <!-- <header class="header">
+            <a href="index.html">
+                <abbr title="Cadivie">
+                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+
+                </abbr>
+            </a>
+            <form class="buscar" action="BusquedaReference.php" method="post">
                 <input class="busqueda" type="text" placeholder="Buscar...">
                 <button class="lupa" type="submit">
-                    <img src="img/lupa.png">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+
+                    </abbr>
                 </button>
             </form>
-            <span class="companyname">
-                FashionChoice
-            </span>
-            <ul class="cuentas">
-                <li class="cue">
-                    <a href="">
-                        <img class="iconocuenta" src="img/cuentaicono.png">
-                    </a>
-                    <ul class="cuenta">
-                        <li class="cuentaelemento">
+            <a href="InicioConCuenta.html">
+                <span class="companyname">
+                    Cadivie
+                </span>
+            </a>
+            <ul class="menuUsuario">
+                <li class="opcionMenu">
+                    
+                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                    
+                    <ul class="submenuUsuario">
+                        <li class="opcionUsuario">
                             <a href="HistorialDeCompras.html">
                                 Historial
                             </a>
                         </li >
-                        <li class="cuentaelemento">
+                        <li class="opcionUsuario">
                             <a href="ListaDeDeseos.html">
                                 Lista de deseos
                             </a>
                         </li>
-                        <li class="cuentaelemento">
+                        <li class="opcionUsuario">
                             <a href="ConfiguracionCuenta.html">
                                 Configuracion
                             </a>
                         </li>
-                        <li class="cuentaelemento">
-                            <a href="">
+                        <li class="opcionUsuario" id="logout">
+                            <a href=""  id="logout">
                                 Cerrar sesion
                             </a>
                         </li>
@@ -51,188 +327,199 @@
                 </li>
             </ul>
             <a href="CarritoDeCompras.html" class="carrito">
-                <img src="img/carritodecompras.png">
+                <abbr title="Carrito de compras">
+                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+
+                </abbr>
             </a>
         </header>
 
         <ul class="menu">
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Prenda
-                </a>
+                </div>
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('playera')" href="MenuSecciones.html">
                             Playeras
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('pantalon')" href="MenuSecciones.html">
                             Pantalones
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('vestido')" href="MenuSecciones.html">
                             Vestidos
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('short')" href="MenuSecciones.html">
                             Shorts
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('falda')" href="MenuSecciones.html">
                             Faldas
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('sueter')" href="MenuSecciones.html">
                             Sueteres
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Temporada
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('primavera')" href="MenuSecciones.html">
                             Primavera
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('verano')" href="MenuSecciones.html">
                             Verano
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('otono')" href="MenuSecciones.html">
                             Otoño
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('invierno')" href="MenuSecciones.html">
                             Invierno
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Estilo
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('clasico')" href="MenuSecciones.html">
                             Clasico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('vintage')" href="MenuSecciones.html">
                             Vintage
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('gotico')" href="MenuSecciones.html">
                             Gotico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('preppy')" href="MenuSecciones.html">
                             Preppy
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('urbano')" href="MenuSecciones.html">
                             Urbano
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('hipster')" href="MenuSecciones.html">
                             Hipster
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('grunge')" href="MenuSecciones.html">
                             Grunge
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('natural')" href="MenuSecciones.html">
                             Natural
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('sofisticado')" href="MenuSecciones.html">
                             Sofisticado
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('artsy')" href="MenuSecciones.html">
                             Artsy
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('vanguardista')" href="MenuSecciones.html">
                             Vanguardista
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('boho')" href="MenuSecciones.html">
                             Boho
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('romantico')" href="MenuSecciones.html">
                             Romantico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('dramatico')" href="MenuSecciones.html">
                             Dramatico
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('girly')" href="MenuSecciones.html">
                             Girly
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Ocasion
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('playa')" href="MenuSecciones.html">
                             Playa
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('elegante')" href="MenuSecciones.html">
                             Elegante
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('deportivo')" href="MenuSecciones.html">
                             Deportivo
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a onclick="Secciones('fiesta')" href="MenuSecciones.html">
                             Fiesta
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="sub">
-                <a href="">
+                <div class="a">
                     Maniqui 3D
-                </a>
+                    
+                </div>
+                
                 <ul class="submenu">
                     <li>
                         <a href="">
@@ -246,85 +533,242 @@
                     </li>
                 </ul>
             </li>
-        </ul>
+        </ul> -->
 
-        <div class="imagenesdelproducto" >
-            <img class="imagenprincipal" src="img/imagendelproducto_provisional.jpg" id="productImage">
-            
+        <div class="product-container">
+            <div class="container-image">
+            <img class="product-image" src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" id="productImage">
+    
+            </div>
+            <div class="product-info">
+                <div class="details">
+                    <p class="product-name" id="productName">
+                        Nombre del producto
+                    </p>
+                
+                    <p class="product-price" id="productPrice">
+                        Precio del producto
+                    </p>
+    
+                </div>
+    
+                <div class="select-details">
+                    <p class="subtitle">
+                        Tallas
+                    </p>
+                    <form class="comprarprenda" action="RegistrarCompra.php" method="post">
+                    <div class="details-form">
+                            
+                            <input class="primary-button option" type="radio" name="talla" id="XS" value="XS">
+                            <input class="primary-button option" type="radio" name="talla" id="S" value="S">
+                            <input class="primary-button option" type="radio" name="talla" id="M" value="M">
+                            <input class="primary-button option" type="radio" name="talla" id="L" value="L">
+                            <input class="primary-button option" type="radio" name="talla" id="XL" value="XL">
+                        </div>
+                        <div class="button-container">
+                            
+                            <button class="primary-button buy" type="submit" value="comprar" name="botons">
+                                Comprar
+                            </button>
+    
+                            <div id="paypal-button-container"></div>
+    
+                        <script>
+    
+                            try {
+                                var costo = 0;
+                                const reqS = new XMLHttpRequest();
+        
+                                document.addEventListener('DOMContentLoaded', 
+                                function Comentarios()
+                                {
+                                    reqS.onload = function ShowComents(){
+                                    var co =  reqS.responseText;
+                                    costo = co;
+                                    alert(costo);
+                                }
+                                    reqS.open("GET", "phpapi.php?");
+                                    reqS.send();
+        
+                                }, false);
+                                
+                            } catch (error) {
+                                console.log(error);
+                            }
+    
+                            try {
+                                document.addEventListener('DOMContentLoaded',
+        
+        
+                                paypal.Buttons({
+                                    style:{
+                                        layout: 'horizontal',
+                                        color:  'silver',
+                                        shape:  'pill',
+                                        tagline: 'false',
+                                        label:  'paypal'
+                                    },
+                                    createOrder: function(data, actions)
+                                    {
+                                        return actions.order.create({
+                                            purchase_units: [{
+                                                amount: {
+                                                    value: costo
+                                                }
+                                            }]
+                                        });
+                                    },
+                                    onApprove: function(data, actions)
+                                    {
+                                            let url = 'http://localhost/ProyectoFinal/GetDatosCompra.php'
+                                        actions.order.capture().then(function(detalles)
+                                        {
+                                            const item = {
+                                                detalles: {
+                                                    id: detalles.id,
+                                                    purchase_units: detalles.purchase_units[0].amount.value,
+                                                    status: detalles.status,
+                                                    update_time: detalles.update_time,
+                                                    payer: {
+                                                        email_address: detalles.payer.email_address, 
+                                                        payer_id: detalles.payer.payer_id
+                                                    }
+                                                }
+                                            };
+    
+                                            console.log(JSON.stringify(item));
+                                            console.log(detalles);
+                                            alert("Pago realizado");
+                                            //window.location.href="";
+                                            return fetch(url,
+                                            {
+                                                method: 'post',
+                                                headers: 
+                                                {
+                                                    'content-type': 'application/json'
+                                                },
+                                                body: JSON.stringify(item)
+                                            }).catch( err => {
+                                                alert(err);
+                                            });;
+                                        });
+                                    },
+    
+                                    onCancel: function(data)
+                                    {
+                                        alert("Pago cancelado");
+                                        console.log(data);
+                                    },
+                                    onError: function (err) 
+                                    {
+                                        alert("Ha sucedido un error, intente de nuevo");
+                                    }
+                                }).render('#paypal-button-container'), false);
+                                
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        </script>
+    
+                            <div class="subButtons">
+                                <abbr title="Añadir al carrito de compras">
+                                    <button class="imageButton cart" type="submit" value="carrito" name="botons">
+                                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+                                    </button>
+    
+                                </abbr>
+                                
+                                <abbr title="Añadir a lista de deseos">
+                                    <button class="imageButton wishlist" type="submit" value="listadeseos" name="botons">
+                                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/bookmark_ayho2g.png">
+                                    </button>
+    
+                                </abbr>
+    
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="product-description">
+                    <p class="subtitle">
+                        Descripcion del producto
+                    </p>
+                    <p class="description" id="productDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis at tortor sit amet auctor. </p>
+                </div>
+    
+            </div>
         </div>
-
-        <p class="nombredelproducto" id="productName">
-            Nombre del producto
-        </p>
-
-        <p class="preciodelproducto" id="productPrice">
-            Precio del producto
-        </p>
-
-        <div class="prenda">
-            <span>
-                Tallas
-            </span>
-            <form class="comprarprenda" action="RegistrarCompra.php" method="post">
-                <input class="elegirtalla" type="radio" name="talla" id="XS" value="XS" required>
-                <input class="elegirtalla" type="radio" name="talla" id="S" value="S">
-                <input class="elegirtalla" type="radio" name="talla" id="M" value="M">
-                <input class="elegirtalla" type="radio" name="talla" id="L" value="L">
-                <input class="elegirtalla" type="radio" name="talla" id="XL" value="XL">
-                <p>
-                    <button class="comprar" type="submit" value="comprar" name="botons">
-                        Comprar
-                    </button>
-                    <button class="alcarrito" type="submit" value="carrito" name="botons">
-                        <img src="img/carritodecompras.png">
-                    </button>
-                    <button class="guardarenlista" type="submit" value="listadeseos" name="botons">
-                <img src="img/bookmark.png">
-            </button>
-                </p>            
-
+    
+        <div class="comments-container">
+    
+            <div class="rating-container">
+                <p class="subtitle comments">
+                    Calificar el producto
+                </p>
+                <form action="Calificacion.php" method="post">
+                    <abbr title="Calificar con una estrella">
+                        <button class="imageButton star" type="submit" value="1" name="estrellas">
+                            <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella1">
+                        </button>
+                    </abbr>
+                    <abbr title="Calificar con dos estrellas">
+                        <button class="imageButton star" type="submit" value="2" name="estrellas">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella2">
+                        </button>
+                    </abbr>
+                    <abbr title="Calificar con tres estrellas">
+                        <button class="imageButton star" type="submit" value="3" name="estrellas">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella3">
+                        </button>
+                    </abbr>
+                    <abbr title="Calificar con cuatro estrellas">
+                        <button class="imageButton star" type="submit" value="4" name="estrellas">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella4">
+                        </button>
+                    </abbr>
+                    <abbr title="Calificar con cinco estrellas">
+                        <button class="imageButton star" type="submit" value="5" name="estrellas">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella5">
+                        </button>
+                    </abbr>
+                </form>
+                <div class="calification-box">
+                    <p class="average calification">Calificación Promedio:</p>
+                    <p class="calification-text calification" id="CalifTotal">5</p>
+                    <p class="calification-text calification">estrellas</p>
+                </div>
+                
+            </div>
+    
+    
+            <p class="subtitle comments">
+                Comentarios
+            </p>
+    
+            <form class="form-comment" action="Comentarios.php" method="post">
+                <input class="input comment" type="text" placeholder="Escriba su comentario..." name="comentario">
+                <button class="sendButton send" type="submit">
+                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1654137546/comentar_oj7ndr.png">
+                </button>
             </form>
+    
+            <div id="comentarios">
+                <div class="comment-box">     
+                    <p class="username">
+                        Nombre de usuario
+                    </p>
+                    <p class="comment-text">
+                        Comentario
+                    </p>
+                </div>
+
+            </div>
+    
             
         </div>
 
-        <p class="descripciondelproducto">
-            Descripcion del producto
-        </p>
-
-        <p class="descprod" id="productDesc">
-            Aqui va la descripcion del producto
-        </p>
-
-        <div class="calificacion">
-            <p>
-                Calificar el producto
-            </p>
-            <img class="estrella" src="img/estrella.png" onclick="cal(1)" id="estrella1">
-            <img class="estrella" src="img/estrella.png" onclick="cal(2)" id="estrella2">
-            <img class="estrella" src="img/estrella.png" onclick="cal(3)" id="estrella3">
-            <img class="estrella" src="img/estrella.png" onclick="cal(4)" id="estrella4">
-            <img class="estrella" src="img/estrella.png" onclick="cal(5)" id="estrella5">
-        </div>
-
-        <p class="coments">
-            Comentarios
-        </p>
-
-        <form class="form-comentar" action="Comentarios.php" method="post">
-            <input class="comentar" type="text" placeholder="Comentar..." name= "comentario">
-            <button class="lupa" type="submit">
-                <img src="img/comment.png">
-            </button>
-        </form>
-
-        <div class="comentarios" id="comentarios">     
-            <p class="nombreusuario">
-                Nombre de usuario
-            </p>
-            <p class="comentario">
-                Comentario
-            </p>
-        </div>
-
+        <script src="Logout.js"></script>
     </body>
 </html>

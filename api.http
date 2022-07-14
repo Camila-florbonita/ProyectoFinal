@@ -1,0 +1,13 @@
+POST http://localhost/ProyectoFinal/GetDatosCompra.php
+content-type: application/json
+
+    
+    {
+        "detalles":{
+        "id":"123456ASDV",
+        "purchase_units":"299.00",
+        "status":"COMPLETED",
+        "update_time":"2022-06-16T19:01:56Z",
+        "payer":{"email_address":"sb-nb1uh15929889@personal.example.com",
+        "payer_id":"98ZJE38AQFFG6"}}
+        }
