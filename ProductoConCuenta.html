@@ -559,7 +559,7 @@
                     <form class="comprarprenda" action="RegistrarCompra.php" method="post">
                     <div class="details-form">
                             
-                            <input class="primary-button option" type="radio" name="talla" id="XS" value="XS">
+                            <input class="primary-button option" type="radio" name="talla" id="XS" value="XS" required>
                             <input class="primary-button option" type="radio" name="talla" id="S" value="S">
                             <input class="primary-button option" type="radio" name="talla" id="M" value="M">
                             <input class="primary-button option" type="radio" name="talla" id="L" value="L">
@@ -638,6 +638,7 @@
     
                                             console.log(JSON.stringify(item));
                                             console.log(detalles);
+                                            console.log(url);
                                             alert("Pago realizado");
                                             //window.location.href="";
                                             return fetch(url,
