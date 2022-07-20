@@ -3,6 +3,7 @@
             --strong-pink: #c64cd6;
             --white: white;
             --background: whitesmoke;
+            --gris-oscuro: rgb(77, 77, 77);
             --lg: 1.8rem;
             --md: 1.5rem;
             --sm: 1.2rem;
@@ -37,6 +38,7 @@
         .description
         {
             font-size: var(--sm);
+            color: var(--gris-oscuro);
         }
 
     .product-container {
@@ -90,7 +92,7 @@
         font-size: var(--md);
         background-color: var(--white);
         color: var(--strong-pink);
-        padding: 15px 20px;
+        padding: 15px 54px;
         cursor: pointer;
     }
 
@@ -174,7 +176,7 @@
         outline: none;
     }
     
-    .input:hover
+    .input:hover, .input:focus
     {
         border: 2px solid var(--strong-pink);
         border-radius: 15px;
@@ -210,6 +212,11 @@
         font-size: var(--sm);
     }
 
+    .comment-text
+    {
+        color: var(--gris-oscuro);
+    }
+
     @media (max-width: 790px) {
         .product-container
         {
@@ -227,7 +234,6 @@
         {
             width: 90%; /* 70% */
             height: auto; /* auto */
-            object-fit: cover;
             max-width: 86%;
         }
 

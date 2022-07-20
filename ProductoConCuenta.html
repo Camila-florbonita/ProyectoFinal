@@ -321,7 +321,7 @@
                                 Comprar
                             </button>
     
-                            <div id="paypal-button-container"></div>
+                            <!-- <div id="paypal-button-container"></div>
     
                         <script>
     
@@ -419,7 +419,7 @@
                             } catch (error) {
                                 console.log(error);
                             }
-                        </script>
+                        </script> -->
     
                             <div class="subButtons">
                                 <abbr title="Añadir al carrito de compras">
@@ -444,7 +444,7 @@
     
                 <div class="product-description">
                     <p class="subtitle">
-                        Descripcion del producto
+                        Descripción del producto
                     </p>
                     <p class="description" id="productDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis at tortor sit amet auctor. </p>
                 </div>
@@ -499,10 +499,13 @@
             </p>
     
             <form class="form-comment" action="Comentarios.php" method="post">
-                <input class="input comment" type="text" placeholder="Escriba su comentario..." name="comentario">
-                <button class="sendButton send" type="submit">
-                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1654137546/comentar_oj7ndr.png">
-                </button>
+                <input class="input comment" type="text" placeholder="Escriba su comentario..." name="comentario" required>
+                <abbr title="Enviar  comentario">
+                    <button class="sendButton send" type="submit">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1654137546/comentar_oj7ndr.png">
+                    </button>
+
+                </abbr>
             </form>
     
             <div id="comentarios">
