@@ -1,6 +1,5 @@
 <?PHP
 
-session_start();
 
 include "database.php";
 $id_us = 1;
@@ -27,20 +26,17 @@ $suma = 0;
             break;
         }
 
-        echo $temporadaValue, "<br>";
-        
         $suma = $suma + $temporadaValue;
-        echo $suma, "<br>";
+
 $cont++;
     }
 }
 
-echo $suma, "<br>";
-echo $cont, "<br>";
+
 $total = $suma/$cont;
-echo $total;
+
 
 $_SESSION["temporadaValue"] = $total;
-header("Location: Algoritmo.php");
+
 
 ?>

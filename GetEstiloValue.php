@@ -1,7 +1,5 @@
 <?PHP
 
-session_start();
-
 include "database.php";
 $id_us = 1;
 $suma = 0;
@@ -49,23 +47,14 @@ $suma = 0;
             break;
         }
 
-        echo $estiloValue, "<br>";
-        
         $suma = $suma + $estiloValue;
-        echo $suma, "<br>";
 $cont++;
 
 }
 
-echo $suma, "<br>";
-echo $cont, "<br>";
 $total = $suma/$cont;
-echo $total;
 
 $_SESSION["estiloValue"] = $total;
-
-header("Location: GetColorValue.php");
-
 
 ?>
  

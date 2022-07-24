@@ -1,4 +1,4 @@
-const req = new XMLHttpRequest();
+var req = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function GetProductosShow()
@@ -37,6 +37,7 @@ function showSelectGraph()
 function enableDate()
 {
   alert(document.getElementById("GraficaPrenda").value);
+  alert(document.getElementById("GraficaEstilo").value);
   var today = new Date();
   var dd = today.getDate()-1;
   var mm = today.getMonth()+1;

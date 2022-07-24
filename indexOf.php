@@ -18,7 +18,7 @@ echo "<div class='elemento' id='elementoOf' onclick='getProductId(", $registro['
     $registro['nombre_producto'],
 "</p>
 <p class='labelPrecio'>",
-    $registro['precio'],
+    $registro['precio_oferta'],
 "</p>
 </div>";
 $cont++;

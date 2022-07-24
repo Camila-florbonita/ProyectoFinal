@@ -2,6 +2,20 @@
 include "database.php";
 
 session_start();
+$id_us = 1;
+$queryx = "SELECT * from comprado WHERE id_usuario = '$id_us'";
+    $resultx = mysqli_query($conexion, $queryx); 
+
+if ($registrox = mysqli_fetch_array($resultx)) {
+
+include 'GetEdadValue.php';
+include 'GetEstiloValue.php';
+include 'GetFormalidadValue.php';
+include 'GetGeneroValue.php';
+include 'GetMaterialValue.php';
+include 'GetTemporadaValue.php';
+include 'GetColorValue.php';
+
 $edad = $_SESSION["edadValue"];
 $estilo = $_SESSION["estiloValue"];
 $formalidad = $_SESSION["fromalidadValue"];
@@ -9,10 +23,8 @@ $genero = $_SESSION["generoValue"];
 $material = $_SESSION["materialValue"];
 $temporada = $_SESSION["temporadaValue"];
 $color = $_SESSION["color"];
-$id_us = 1;
-$cont = 0;
 
-echo $edad, "<br>";
+$cont = 0;
 
 if($edad <= 0.3)
     {
@@ -27,7 +39,6 @@ if($edad <= 0.3)
         $edad = "adulto";
     }
 
-    echo $formalidad, "<br>";
     if($formalidad >= 0.8)
     {
         $formalidad = "formal";
@@ -40,8 +51,6 @@ if($edad <= 0.3)
     {
         $formalidad = "casual";
     }
-
-    echo $genero, "<br>";
 
     if($genero <= 0.40)
     {
@@ -56,21 +65,9 @@ if($edad <= 0.3)
         $genero = "masculino";
     }
 
-
-    echo $edad, "<br>";
-
-
-    echo $genero, "<br>";
-    
-
-    echo $formalidad, "<br>";
-
     $estilo1 = estilo1($estilo);
-    echo $estilo1, "<br>";
 
     $estilo2 = estilo2($estilo);
-    echo $estilo2, "<br>";
-
 
     if($genero == "femenino")
     {
@@ -78,32 +75,70 @@ if($edad <= 0.3)
         {
             if($formalidad < 0)
             {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo $registro['id_producto'], "<br>";
+                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+                AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+                $result = mysqli_query($conexion, $query); 
+                while ($registro = mysqli_fetch_array($result))
+                { 
+                    if($cont < 11)
+                    {   
+                        echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    $cont++;
                 }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
             }
             else
             {
                 $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
+                AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+                $result = mysqli_query($conexion, $query); 
+                while ($registro = mysqli_fetch_array($result))
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -124,7 +159,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -142,7 +196,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -162,7 +235,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -181,7 +273,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -198,7 +309,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -218,7 +348,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -236,7 +385,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -254,7 +422,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -271,7 +458,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -296,7 +502,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -314,7 +539,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -335,7 +579,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -353,7 +616,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -372,7 +654,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -391,7 +692,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -408,7 +728,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -428,7 +767,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -446,7 +804,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -464,7 +841,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -481,7 +877,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -506,7 +921,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -524,7 +958,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -545,7 +998,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -563,7 +1035,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -583,7 +1074,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -602,7 +1112,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -619,7 +1148,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -639,7 +1187,26 @@ if($edad <= 0.3)
             { 
                 if($cont < 11)
                 {
-                    echo $registro['id_producto'], "<br>";
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                 }
                 else
                 {
@@ -657,7 +1224,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -675,7 +1261,26 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -692,7 +1297,27 @@ if($edad <= 0.3)
            { 
                if($cont < 11)
                {
-                   echo $registro['id_producto'], "<br>";
+                   
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
                }
                else
                {
@@ -704,12 +1329,88 @@ if($edad <= 0.3)
         }
     }
 
+    if($cont == 0)
+    {
+        $query = "SELECT * from productos WHERE (estilo = '$estilo1' OR estilo = '$estilo2') 
+        AND (genero = '$genero' OR genero = 'unisex')";
+        $result = mysqli_query($conexion, $query); 
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            if($cont < 11)
+            {
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
+            }
+            else
+            {
+                break;
+            }
+            $cont++;
+        }
+    }
+
     
-if($cont < 11)
+    if($cont < 11)
+    {
+        echo "No hubo mas resultados";
+    }
+}
+else
 {
-    echo "No hubo mas resultados";
+    $query = "SELECT *, COUNT(*) FROM comprado INNER JOIN productos ON productos.id_producto = comprado.id_producto GROUP BY comprado.id_producto ORDER BY COUNT(*) DESC LIMIT 10;";
+    $result = mysqli_query($conexion, $query); 
+    $cont = 0;
+    while ($registro = mysqli_fetch_array($result)){ 
+    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+    <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+    <p class='labelElemento'>",
+    $registro['nombre_producto'],
+    "</p>";
+    
+    if($registro['precio_oferta'] == 0)
+    {
+        echo "<p class='labelPrecio'>",
+        $registro['precio'],
+        "</p>";
+    }
+    else
+    {
+        echo "<p class='labelPrecio'>",
+        $registro['precio_oferta'],
+        "</p>";
+    }
+
+    echo "</div>";
+    $cont++;
 }
 
+if($cont == 0)
+{
+    echo "<div class='producto' id='producto'>
+    <p class='precprodcarrito'>
+    No ha habido compras aún :(
+    </p>
+    </div>";
+}
+}
  
 function estilo1($estilo)
  {

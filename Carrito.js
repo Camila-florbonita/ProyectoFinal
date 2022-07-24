@@ -1,5 +1,6 @@
 const req = new XMLHttpRequest();
 const req2 = new XMLHttpRequest();
+const req3 = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function carrito()
@@ -21,3 +22,10 @@ function carrito()
        req2.send();
 
 }, false);
+
+function remove(id)
+{
+    req3.open("GET", "CarritoQuitar.php?id_p=" + id);
+    req3.send();
+    window.location.href = "CarritoDeCompras.html";
+}
