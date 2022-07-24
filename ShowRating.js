@@ -1,4 +1,4 @@
-const reqC = new XMLHttpRequest();
+var reqC = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function Calificacion()

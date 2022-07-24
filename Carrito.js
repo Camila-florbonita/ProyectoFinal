@@ -1,6 +1,6 @@
-const req = new XMLHttpRequest();
-const req2 = new XMLHttpRequest();
-const req3 = new XMLHttpRequest();
+var req = new XMLHttpRequest();
+var req2 = new XMLHttpRequest();
+var req3 = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function carrito()

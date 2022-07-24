@@ -1,4 +1,4 @@
-const req = new XMLHttpRequest();
+var req = new XMLHttpRequest();
 function Secciones(seccion)
 {
     
