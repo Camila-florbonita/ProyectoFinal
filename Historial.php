@@ -19,24 +19,31 @@ $id_us = 1;
         $registro2 = mysqli_fetch_array($result2);
 
 echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
-<p class='nomprodcarrito' id='NombreProducto'>",
-    $registro2['nombre_producto'],
-"</p>
-<p class='precprodcarrito'>",
-    $registro2['precio'],
-"</p>
-<p class='descprodcarrito'>",
-"Comprado el: ", $registro['fecha'],
-"</p>
-</div>";
+        <div class='imgProduct'>
+            <img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
+        </div>
+        <div class='infoProduct'>
+            <p class='product-name'>",
+                $registro2['nombre_producto'],
+            "</p>
+            <p class='product-price'>$ ",
+                $registro2['precio'],
+            "</p>
+            <p class='product-description'>",
+                "Comprado el: ", $registro2['fecha'],
+            "</p>
+            <p class='product-description'>",
+                $registro2['descripcion'],
+            "</p>
+        </div>
+    </div>";
 $cont++;
 }
 
 if($cont == 0)
 {
   echo "<div class='producto' id='producto'>
-  <p class='precprodcarrito'>
+  <p class='product-name'>
   No se tienen compras registradas
   </p>
   </div>";

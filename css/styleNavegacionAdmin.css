@@ -1,0 +1,472 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand-logo
+{
+    width: 40px;
+    height: 40px;
+}
+
+.brand-name
+{
+    color: white;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.categorias
+{
+    box-shadow: 0 5px 6px 0 rgb(0 0 0 / 10%), 0 7px 8px 0 rgb(0 0 0 / 9%);
+}
+
+.icono-busqueda
+{
+    /* margin-left: 110px; */
+    /* width: 70px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer; */
+    font-size: 25px;
+    color: white;
+    width: 50px;
+}
+
+.icono-buscar
+{
+    border: none;
+    color: white;
+    background-color: transparent;
+    width: 30px;
+    height: 27px;
+    cursor: pointer;
+    /* content: url("https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png"); */
+}
+
+.icono-menu
+{
+    cursor: pointer;
+    /* border: none;
+    background: transparent; */
+    /* width: 30px;
+    height: 27px; */
+    margin: auto;
+    font-size: 25px;
+    color: white;
+    width: 70px;
+    display: none;
+}
+
+.wrapper #show-search:checked ~ .icono-busqueda i::before
+{
+    content: "\f00d";
+}
+
+.wrapper
+{
+    background: #c97ed3;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+/* .content .links li a
+{
+    
+} */
+
+.content .brand a
+{
+    color: white;
+}
+
+.wrapper nav
+{
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 50px);
+    margin: 0 auto;
+    height: 100px;
+    justify-content: space-between;
+}
+
+nav .content
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav .content .links
+{
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.content .links li
+{
+    list-style: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.content .links li .menu-busqueda
+{
+    padding: 9px 17px;
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.content .links li a, 
+.content .links li label
+{
+    padding: 9px 17px;
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.content .links li label
+{
+    display: none;
+}
+
+.content .links li .menu-busqueda:hover
+{
+    color: #810891;
+}
+
+.content .links li a:hover, 
+.content .links li label:hover
+{
+    background: #f397ff;
+    border-radius: 15px;
+}
+
+.wrapper .search-box
+{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    max-width: calc(100% - 50px);
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper #show-search:checked ~ .search-box
+{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-box input
+{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    background: #c97ed3;
+}
+
+.search-box input::placeholder
+{
+    color: #f2f2f2;
+}
+
+.icono-boton-buscar
+{
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.icono-cerrar
+{
+    position: relative;
+}
+
+.search-box .boton-buscar
+{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    transform: translateY(25%);
+    height: 70px;
+    width: 70px;
+    background: #c97ed3;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+}
+
+.wrapper input[type="checkbox"]
+{
+    display: none;
+}
+
+.content .links ul
+{
+    position: absolute;
+    top: 110px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    background: #c97ed3;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.content .links li:hover ul
+{
+    top: 110px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.content .links li
+{
+    /* line-height: 100px; */
+}
+
+.content .links ul li a
+{
+    display: block;
+    width: 100%;
+    /* line-height: 30px; */
+    border-radius: 15px!important;
+}
+
+.contenedor-login
+{
+    /* line-height: 120px; */
+    margin-left: 24px;
+}
+
+.boton-login
+{
+    background-color: white;
+    border: 2px solid #c64cd6;
+    border-radius: 10px;
+    color: #c64cd6;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: medium;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    padding: 10px 15px;
+}
+
+.boton-login:hover, .boton-login:focus
+{
+    background-color: #c64cd6;
+    color: white;
+}
+
+@media screen and (max-width: 1250px) {
+    .wrapper nav {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    nav .content .links
+    {
+        margin-left: 30px;
+    }
+
+    .content .links li a 
+    {
+        padding: 8px 13px;
+    }
+
+    .wrapper .search-box
+    {
+        max-width: calc(100% - 100px);
+    }
+
+    .wrapper .search-box input
+    {
+        padding: 0 100px 0 15px;
+    }
+
+}
+
+.contenedor-login
+{
+    width: 150px;
+}
+
+@media screen and (max-width: 1050px) {
+    nav .brand-name
+    {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 680px) 
+{
+    nav .content .links
+    {
+        display: block;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 100px;
+        left: -100%;
+        margin-left: 0;
+        max-width: 350px;
+        overflow-y: auto;
+        padding-bottom: 100px;
+        background: #aa6bb3;
+        transition: all 0.3s ease;
+    }
+
+    nav #show-menu:checked ~ .content .links
+    {
+        left: 0%;
+    }
+
+    .content .links li
+    {
+        margin: 15px 20px;
+    }
+
+    .content .links li a, 
+    .content .links li label
+    {
+        /* line-height: 40px; */
+        font-size: 20px;
+        display: block;
+        padding: 8px 18px;
+        cursor: pointer;
+    }
+
+    .wrapper .icono-menu
+    {
+        display: block;
+    }
+
+    .wrapper #show-menu:checked ~ .icono-menu i::before
+    {
+        content: "\f00d";
+    }
+
+    .content .links li .menu-busqueda:hover
+    {
+        background: #f397ff;
+        border-radius: 15px;
+        color: white;
+    }
+
+    .content .links li
+    {
+        /* line-height: 40px; */
+    }
+
+    .content .links ul
+    {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        max-height: 0px;
+        overflow: hidden;
+    }
+
+    .content .links #show-prenda:checked ~ ul,
+    .content .links #show-temporada:checked ~ ul,
+    .content .links #show-estilo:checked ~ ul,
+    .content .links #show-ocasion:checked ~ ul,
+    .content .links #show-maniqui:checked ~ ul
+    {
+        max-height: 100vh;
+        transition: all 0.3s ease;
+    }
+
+    .content .links ul li
+    {
+        margin: 7px 20px;
+    }
+
+    .content .links ul li a
+    {
+        font-size: 19px;
+        /* line-height: 30px; */
+        border-radius: 15px!important;
+    }
+
+    .menu-busqueda
+    {
+        display: none;
+    }
+
+    nav .brand-name
+    {
+        font-size: 50px;
+    }
+
+    .contenedor-login
+    {
+        width: 100%;
+        padding-left: 20%;
+        padding-right: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .categorias
+    {
+        box-shadow: none;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper nav
+    {
+        padding: 0 10px;
+    }
+
+    nav .brand-name
+    {
+        font-size: 30px;
+    }
+
+    .wrapper .search-box
+    {
+        max-width: calc(100% - 80px);
+    }
+
+    .wrapper .search-box input
+    {
+        padding-right: 35px;
+    }
+
+    .wrapper .search-box .boton-buscar
+    {
+        width: 30px;
+        right: 0;
+    }
+
+}
