@@ -1,14 +1,15 @@
-var req = new XMLHttpRequest();
+var reqMS = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function Seccion()
 {
-     req.onload = function MenuSecciones(){
+     reqMS.onload = function MenuSecciones(){
      var prendas = document.getElementById("producto");
     
-     prendas.innerHTML = req.responseText;
+     prendas.innerHTML = reqMS.responseText;
+     
 }
-    req.open("GET", "MenuSecciones.php?");
-    req.send();
+    reqMS.open("GET", "MenuSecciones.php?");
+    reqMS.send();
 
 }, false);

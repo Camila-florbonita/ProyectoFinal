@@ -3,8 +3,8 @@ function Secciones(seccion)
 {
     
     var secc = seccion;
-    req.open("GET", "GetSeccion.php?seccion=" + secc);
-    req.send();
+    reqGS.open("GET", "GetSeccion.php?seccion=" + secc);
+    reqGS.send();
 
     window.location.href = "MenuSecciones.html";
     alert(seccion);
