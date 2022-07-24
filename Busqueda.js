@@ -1,4 +1,4 @@
-var req = new XMLHttpRequest();
+var reqB = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function busqueda()

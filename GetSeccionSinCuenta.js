@@ -1,4 +1,4 @@
-var req = new XMLHttpRequest();
+var reqGS = new XMLHttpRequest();
 function Secciones(seccion)
 {
     
