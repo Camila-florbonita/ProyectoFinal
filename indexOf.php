@@ -3,9 +3,6 @@
 session_start();
 
 include "database.php";
-
-$id_us = $_SESSION["id_us"];
-
     $query = "SELECT * from productos WHERE precio_oferta != 0";
     $result = mysqli_query($conexion, $query); 
 
@@ -18,7 +15,7 @@ echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['i
     $registro['nombre_producto'],
 "</p>
 <p class='labelPrecio'>",
-    $registro['precio'],
+    $registro['precio_oferta'],
 "</p>
 </div>";
 $cont++;

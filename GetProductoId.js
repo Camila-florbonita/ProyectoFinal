@@ -1,9 +1,8 @@
-function getProductoId(id_p)
+function getProductId(id_p)
 {
-//    req.open("GET", "GetProductoId.php?id=" + id_p);
+    var sendid = id_p;
+    req.open("GET", "GetProductoId.php?id=" + sendid);
+    req.send();
 
-    alert("why wTf");
-
-    console.log("why");
-
+    window.location.href = "ProductoConCuenta.html";
 }

@@ -16,6 +16,7 @@ function Ofertas()
 document.addEventListener('DOMContentLoaded', 
 function LimitDate()
 {
+  
     var today = new Date();
     var dd = today.getDate()-1;
     var mm = today.getMonth()+1;

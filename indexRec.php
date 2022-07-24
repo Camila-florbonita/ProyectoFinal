@@ -3,42 +3,44 @@
 session_start();
 
 include "database.php";
+$query = "SELECT *, COUNT(*) FROM comprado INNER JOIN productos 
+ON productos.id_producto = comprado.id_producto 
+WHERE comprado.fecha > CURRENT_DATE() - INTERVAL 1 month GROUP BY comprado.id_producto 
+ORDER BY COUNT(*) DESC LIMIT 10;";
+$result = mysqli_query($conexion, $query); 
 
+$cont = 0;
+while ($registro = mysqli_fetch_array($result)){ 
+    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+    <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+    <p class='labelElemento'>",
+    $registro['nombre_producto'],
+    "</p>";
+    
+    if($registro['precio_oferta'] == 0)
+    {
+        echo "<p class='labelPrecio'>",
+        $registro['precio'],
+        "</p>";
+    }
+    else
+    {
+        echo "<p class='labelPrecio'>",
+        $registro['precio_oferta'],
+        "</p>";
+    }
 
-$id_us = 1;
-
-    $query = "SELECT * from comprado WHERE id_usuario = '$id_us'";
-    $result = mysqli_query($conexion, $query); 
-
-    $cont = 0;
-    while ($registro = mysqli_fetch_array($result)){ 
-        $id_prenda = $registro['id_producto'];
-        $query2 = "SELECT * from productos WHERE id_producto = '$id_prenda'";
-        $result2 = mysqli_query($conexion, $query2); 
-        $registro2 = mysqli_fetch_array($result2);
-
-echo "<div class='elemento' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
-<p class='nomprodcarrito' id='NombreProducto'>",
-    $registro2['nombre_producto'],
-"</p>
-<p class='precprodcarrito'>",
-    $registro2['precio'],
-"</p>
-<p class='descprodcarrito'>",
-"Comprado el: ", $registro['fecha'],
-"</p>
-</div>";
-$cont++;
+    echo "</div>";
+    $cont++;
 }
 
 if($cont == 0)
 {
-  echo "<div class='elemento' id='producto'>
-  <p class='precprodcarrito'>
-  No se tienen compras registradas
-  </p>
-  </div>";
+    echo "<div class='producto' id='producto'>
+    <p class='precprodcarrito'>
+    No ha habido compras aún :(
+    </p>
+    </div>";
 }
 
 

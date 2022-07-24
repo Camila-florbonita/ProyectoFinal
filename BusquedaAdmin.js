@@ -1,14 +1,14 @@
 var req = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
-function busqueda()
+function buscar()
 {
-    req.onload = function FindPrendas(){
+    req.onload = function buscarAdministrador(){
     var prendas = document.getElementById("producto");
     
     prendas.innerHTML = req.responseText;
 }
-    req.open("GET", "Buscar.php?");
+    req.open("GET", "BusquedaAdmin.php?");
     req.send();
 
 }, false);

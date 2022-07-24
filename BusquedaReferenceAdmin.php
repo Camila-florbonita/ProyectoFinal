@@ -12,5 +12,5 @@ $_SESSION['f7'] = "";
 $_SESSION['f8'] = "";
 $_SESSION['f9'] = "";
 
-header("Location: BusquedaConCuenta.html");
+header("Location: BusquedaAdmin.html");
 ?>

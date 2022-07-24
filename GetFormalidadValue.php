@@ -1,7 +1,5 @@
 <?PHP
 
-session_start();
-
 include "database.php";
 $id_us = 1;
 $suma = 0;
@@ -25,20 +23,15 @@ $suma = 0;
             break;
         }
 
-        echo $formalidadValue, "<br>";
-        
+
         $suma = $suma + $formalidadValue;
-        echo $suma, "<br>";
+
 $cont++;
 }
 
-echo $suma, "<br>";
-echo $cont, "<br>";
 $total = $suma/$cont;
-echo $total;
+
 
 $_SESSION["fromalidadValue"] = $total;
-
-header("Location: GetGeneroValue.php");
 
 ?>

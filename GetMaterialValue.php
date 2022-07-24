@@ -1,6 +1,5 @@
 <?PHP
 
-session_start();
 
 include "database.php";
 $id_us = 1;
@@ -35,19 +34,15 @@ $suma = 0;
             break;
         }
 
-        echo $materialValue, "<br>";
-        
+
         $suma = $suma + $materialValue;
-        echo $suma, "<br>";
+
 $cont++;
 }
 
-echo $suma, "<br>";
-echo $cont, "<br>";
 $total = $suma/$cont;
-echo $total;
 
 $_SESSION["materialValue"] = $total;
 
-header("Location: GetTemporadaValue.php");
+
 ?>

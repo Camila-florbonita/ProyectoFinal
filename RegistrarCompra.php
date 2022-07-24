@@ -4,14 +4,13 @@
 session_start();
 date_default_timezone_set("America/Mexico_City");
 
-//$id_us = $_SESSION["id_us"];
+$id_us = $_SESSION["id_us"];
 $id_pr = $_SESSION['id_p'];
 $fecha = date("Y-m-d");
 
 $talla = $_POST["talla"];
 $action = $_POST["botons"];
 
-$action = "comprar";
 
 include "database.php";
 $query = "SELECT * from tallas WHERE id_producto = '$id_pr'";
@@ -26,6 +25,7 @@ if($action == "comprar")
 {
     if($result2->num_rows == 0)
     {
+        echo "Me quiero matar";
         header("Location: InformacionDeEntrega.html");
     }
     else
@@ -34,6 +34,8 @@ if($action == "comprar")
         $ingreso = "INSERT into comprado (id_usuario, id_producto, fecha, talla) VALUES ('$id_us','$id_pr','$fecha', '$talla')";
         mysqli_query($conexion, $ingreso); 
         echo $fecha;
+        $newTalla = $talla - 1;
+        $update = "UPDATE tallas SET '$talla' = '$newTalla' WHERE id_producto = '$id_pr'";
     }
     
 }

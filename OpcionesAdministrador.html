@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/index.js"></script>
         <script src="VerificarLogin.js"></script>
+        <script src="OpcionesAdministrador.js"></script>
     </head>
     <body>
 
@@ -28,57 +29,10 @@
             </button>
         </header>
 
-        <!-- MENU RESPONSIVO ADMINISTRADOR -->
-
-        <!-- <header class="header">
-            <div id="brand" style="cursor: pointer;">
-                <a href="OpcionesAdministrador.html">
-                    <abbr title="Cadivie">
-                        <img class="logo" src="img/logo_provisional.jpg">
-    
-                    </abbr>
-                </a>
-                
-                <a class="companyname" href="OpcionesAdministrador.html">Cadivie</a>
-            </div>
-            <nav>
-              <ul>
-                <li>
-                    <button class="logout">
-                        Cerrar Sesión
-                    </button>
-                </li>
-                
-              </ul>
-            </nav>
-            <div id="iconoMenu" onclick="toggleMobileMenu(this)">
-                <div class="bar1">
-                    <img class="imgMenu" src="https://res.cloudinary.com/cadivie/image/upload/v1654142978/menu_ptc4k1.png">
-
-                </div>
-                <div class="bar2">
-                    <img class="imgMenu" src="https://res.cloudinary.com/cadivie/image/upload/v1654146176/close_gqiqrm.png">
-                </div>
-              <ul class="menuMovil">
-                <li><a href="">Cerrar Sesión</a></li>
-                
-              </ul>
-            </div>
-          </header> -->
         
-        <!--  -->
-
         <nav>
             <div class="menuadmin">
                 <ul>
-                    <li>
-                        <a class="edprenda" href="EditarPrenda.html">
-                            
-                                Editar
-                            
-                        </a>
-
-                    </li>
                     <li>
                         <a class="analitics" href="Analytics.html">
                             
@@ -95,36 +49,45 @@
                         </a>
 
                     </li>
+                    <li>
+                        <a class="ofer" href="AgregarPrenda.html">
+                            
+                                Agregar Prenda
+                            
+                        </a>
+
+                    </li>
                 </ul>
             </div>
 
         </nav>
+
+        <p>
+            
+            <form class="buscar" action="BusquedaReferenceAdmin.php" method="post">
+                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
+                <button class="lupa" type="submit">
+                    <abbr title="Buscar">
+                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
+    
+                    </abbr>
+                </button>
+            </form>
+        </p>
         
-        <a class="agprenda" href="">
-            <button class="opcadmin">
-                Agregar prenda
-            </button>
-        </a>
-        <a class="boprenda" href="">
-            <button class="opcadmin">
-                Borrar
-            </button>
-        </a>
-        <a class="edprenda" href="">
-            <button class="opcadmin">
-                Editar
-            </button>
-        </a>
-        <a class="analitics" href="">
-            <button class="opcadmin">
-                Graficas
-            </button>
-        </a>
-        <a class="ofer" href="">
-            <button class="opcadmin">
-                Ofertas
-            </button>
-        </a>
+        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
+            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
+            <p class="nomprodcarrito">
+                Nombre del producto
+            </p>
+            <p class="precprodcarrito">
+                id
+            </p>
+            <p>
+                <button onclick="Editar()">Editar</button>
+                <button onclick="Borrar()">Borrar</button>
+            </p>
+        </div>
 
         <footer class="footer">
             <a class="foot" href="">

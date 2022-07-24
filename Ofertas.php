@@ -28,7 +28,7 @@ switch($duracion)
     date_modify($fin, "+1 day");
     $fin = date_format($fin, "Y-m-d");
     break;
-    case "temporada": 
+    case "temporadaOf": 
         $temp = $_POST["temporada"];
         switch($temp)
         {
