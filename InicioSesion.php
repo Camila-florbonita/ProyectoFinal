@@ -22,11 +22,15 @@ else
 if($coincidename == $correo_electronico && $datopass == $password)
 {
     $_SESSION["id_us"] = $registro['id_usuario'];
+    $_SESSION["id_name"] = $registro['nombre_usuario'];
+    $_SESSION["id_email"] = $registro['correo_electronico'];
     echo $_SESSION["id_us"];
+    echo json_encode(array('success'=> 1));
     header("Location: InicioConCuenta.html");
 }
 else
 {
+    echo json_encode(array('success'=> 0));
     header("Location: login.html");
 }
 }

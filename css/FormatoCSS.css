@@ -7,6 +7,32 @@ body
     
 }
 
+*::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  *::-webkit-scrollbar:vertical {
+    width:10px;
+  }
+  
+  *::-webkit-scrollbar-button:increment, *::-webkit-scrollbar-button {
+    display: none;
+  } 
+  
+  *::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #c3c3c3;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+  }
+  
+  *::-webkit-scrollbar-track {
+    border-radius: 10px;  
+  }
+
 .header
 {
     /* background-color: rgb(255, 180, 190); */
@@ -70,19 +96,16 @@ body
 
 .menuUsuario
 {
-    float: right;
     list-style-type: none;
     padding: 0;
-    overflow: hidden;
-    margin-right: 120px;
-    margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 15px;
+    
 }
 
 .menuUsuario ul
 {
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .opcionMenu
@@ -106,6 +129,7 @@ body
     display: none;
     width: auto;
     position: absolute;
+    z-index: 4;
 }
 
 .opcionUsuario a
@@ -131,8 +155,8 @@ body
 .iconocuenta
 {
     float: right;
-    width: 50;
-    height: 50;
+    width: 50px;
+    height: 50px;
 }
 
 .carrito
@@ -443,7 +467,7 @@ body
 .boton-paypal
 {
     padding: 10px;
-    width: 100px;
+    width: 150px;
     float: left;
     margin-top: 20px;
 }
@@ -520,22 +544,22 @@ body
     display: inline;
 }
 
-.producto
+/* .producto
 {
     display: block;
     margin: 50px;
     margin-left: 150px;
     width: 60%;
     height: 190px;
-}
+} */
 
-.imagenprenda
+/* .imagenprenda
 {
     width: 160;
     height: 190;
     margin-right: 20px;
     float: left;
-}
+} */
 
 .nomprodcarrito, .cantidadtotal
 {
@@ -725,26 +749,45 @@ body
 
 .logout
 {
-    margin-top: 30px;
-    margin-right: 50px;
-    float: right;
-    width: 150px;
+    width: 100%;
     height: 40px;
 
-    border: 2px solid #c64cd6;
-    background: #c64cd6;
+
     font-size: medium;
-    color: white;
     /* padding: 15px 20px; */
     border-radius: 20px;
     cursor: pointer;
+    color: #c64cd6;
+    background: white;
+    border: 2px solid #c64cd6;
 }
 
 .logout:hover
 {
+    border-color: #c64cd6;
+    background: #c64cd6;
+    color: white;
+}
+
+.login_button
+{
+    width: 100%;
+    height: 40px;
+
+    font-size: medium;
+    /* padding: 15px 20px; */
+    border-radius: 20px;
+    cursor: pointer;
     color: #c64cd6;
     background: white;
+    border: 2px solid #c64cd6;
+}
+
+.login_button:hover
+{
     border-color: #c64cd6;
+    background: #c64cd6;
+    color: white;
 }
 
 .menuadmin

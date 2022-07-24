@@ -1,10 +1,22 @@
+:root
+{
+    --strong-pink: #c64cd6;
+    --white: white;
+    --background: whitesmoke;
+    --gris-oscuro: rgb(77,77,77);
+    --lg: 1.8rem;
+    --md: 1.5rem;
+    --sm: 1.2rem;
+}
+
 body 
 {
     background-color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
 }
 
-.container 
+.container-products
 {
     margin-top: 40px;
     margin-right: auto;
@@ -26,7 +38,7 @@ body
 .sugerencias 
 {
     display: flex;
-    overflow: scroll;
+    overflow: auto;
     margin-left: 2%;
     margin-right: 2%;
     /* margin-top: -50px; */

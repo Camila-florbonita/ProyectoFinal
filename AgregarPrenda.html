@@ -1,6 +1,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <title>Ingresar prenda</title>
         <meta charset="UTF-8">        
@@ -11,54 +13,69 @@
     <body>
 
         <header class="header">
-            <a href="OpcionesAdministrador.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
-
-                </abbr>
-            </a>
-            <a href="OpcionesAdministrador.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-
-            <button class="logout" id="logout">
-                Cerrar Sesión
-            </button>
-        </header>
-
-        <nav>
-            <div class="menuadmin">
-                <ul>
-                    <li>
-                        <a class="edprenda" href="EditarPrenda.html">
-                            
-                                Editar
-                            
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="analitics" href="Analytics.html">
-                            
-                                Analitics
-                            
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="ofer" href="Ofertas.html">
-                            
-                                Ofertas
-                            
-                        </a>
-
-                    </li>
-                </ul>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <input type="checkbox" id="show-search">
+                        <input type="checkbox" id="show-menu">
+                        <label for="show-menu" class="icono-menu">
+                            <abbr title="Menú">
+                                <i class="fas fa-bars"></i>
+                            </abbr>
+                        </label>
+                        <div class="content">
+                            <div class="brand">
+                                <a href="OpcionesAdministrador.html" class="brand-name">
+                                    <abbr title="Cadivie">
+                                        Cadivie
+                                    </abbr>
+                                </a>
+                            </div>
+                            <ul class="links">
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="EditarPrenda.html">Editar</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Analytics.html">Análisis</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Ofertas.html">Ofertas</a>
+                                        
+                                    </div>
+                                </li>
+                                <div class="contenedor-login">
+                                    <a class="boton-login" href="" id="logout">
+                                            Cerrar Sesión
+                                    </a>
+                                </div>
+        
+                            </ul>
+                            <label for="show-search" class="icono-busqueda">
+                                <abbr title="Buscar">
+                                    <i class="fas fa-search"></i>
+                                </abbr>
+                            </label>
+                        </div>
+                        <form class="search-box" action="BusquedaReferenceAdmin.php" method="post">
+                            <input class="" name="Busqueda" type="text" placeholder="Buscar..." required>
+                            <button class="boton-buscar" type="submit">
+                                <abbr title="Buscar">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </abbr>
+                            </button>
+                        </form>
+                    </nav>
+                </header>
+                
             </div>
-            
-        </nav>
+        </header>
 
         <img class="imgprenda" src="ImagenesPrendas/1.jpg">
         <div class="etiquetas_container">
@@ -129,10 +146,10 @@
                         <option value="salmon">Salmón</option>
                         <option value="fucsia">Fucsia</option>
                         <option value="violeta">Violeta</option>
-                        <option value="celeste">Azul celeste</option>
-                        <option value="marino">Azul marino</option>
-                        <option value="lima">Verde lima</option>
-                        <option value="verdeoscuro">Verde oscuro</option>
+                        <option value="azul celeste">Azul celeste</option>
+                        <option value="azul marino">Azul marino</option>
+                        <option value="verde lima">Verde lima</option>
+                        <option value="verde oscuro">Verde oscuro</option>
                         <option value="mostaza">Mostaza</option>
                         <option value="cian">Cian</option>
                         <option value="vino">Vino</option>
@@ -253,7 +270,8 @@
                     <input type="number" min="0" step=".01" name="precio" placeholder="Precio..." required>
                 </p>
                 <p>
-                    <input type="file" name="imageprenda" placeholder="Imagen de la prenda..." required>
+                    <label for="imgPrenda">Imagen de la prenda</label>
+                    <input type="file" id="archivo" name="archivo" accept="image/jpg" required>
                 </p>
             </div>
             <div class="ntallas">

@@ -2,140 +2,111 @@
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
-        <!-- <link rel="stylesheet" href="css/primerIntentoMenu.css"> -->
+        <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
+        <link rel="stylesheet" href="css/styleResultados.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <title>Opciones administrador</title>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/index.js"></script>
         <script src="VerificarLogin.js"></script>
+        <script src="OpcionesAdministrador.js"></script>
     </head>
     <body>
 
         <header class="header">
-            <a href="OpcionesAdministrador.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
-
-                </abbr>
-            </a>
-            <a href="OpcionesAdministrador.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-            <button class="logout"  id="logout">
-                Cerrar Sesión
-            </button>
+            <div class="wrapper">
+                    <nav>
+                        <input type="checkbox" id="show-search">
+                        <input type="checkbox" id="show-menu">
+                        <label for="show-menu" class="icono-menu">
+                            <abbr title="Menú">
+                                <i class="fas fa-bars"></i>
+                            </abbr>
+                        </label>
+                        <div class="content">
+                            <div class="brand">
+                                <a href="OpcionesAdministrador.html" class="brand-name">
+                                    <abbr title="Cadivie">
+                                        Cadivie
+                                    </abbr>
+                                </a>
+                            </div>
+                            <ul class="links">
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="AgregarPrenda.html">Agregar</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="EditarPrenda.html">Editar</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Analytics.html">Análisis</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Ofertas.html">Ofertas</a>
+                                        
+                                    </div>
+                                </li>
+                                <div class="contenedor-login">
+                                    <a class="boton-login" href="" id="logout">
+                                            Cerrar Sesión
+                                    </a>
+                                </div>
+        
+                            </ul>
+                            <label for="show-search" class="icono-busqueda">
+                                <abbr title="Buscar">
+                                    <i class="fas fa-search"></i>
+                                </abbr>
+                            </label>
+                        </div>
+                        <form class="search-box" action="BusquedaReferenceAdmin.php" method="post">
+                            <input class="" name="Busqueda" type="text" placeholder="Buscar..." required>
+                            <button class="boton-buscar" type="submit">
+                                <abbr title="Buscar">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </abbr>
+                            </button>
+                        </form>
+                    </nav>
+            </div>
         </header>
 
-        <!-- MENU RESPONSIVO ADMINISTRADOR -->
-
-        <!-- <header class="header">
-            <div id="brand" style="cursor: pointer;">
-                <a href="OpcionesAdministrador.html">
-                    <abbr title="Cadivie">
-                        <img class="logo" src="img/logo_provisional.jpg">
-    
-                    </abbr>
-                </a>
-                
-                <a class="companyname" href="OpcionesAdministrador.html">Cadivie</a>
-            </div>
-            <nav>
-              <ul>
-                <li>
-                    <button class="logout">
-                        Cerrar Sesión
-                    </button>
-                </li>
-                
-              </ul>
-            </nav>
-            <div id="iconoMenu" onclick="toggleMobileMenu(this)">
-                <div class="bar1">
-                    <img class="imgMenu" src="https://res.cloudinary.com/cadivie/image/upload/v1654142978/menu_ptc4k1.png">
-
+        <div class="results-container">
+            <div id="producto">
+                <div class="producto">
+                    <div class="image-container">
+                        <img class="imagenprenda" src="https://cadivie.herokuapp.com/ImagenesPrendas/4.jpg">
+        
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">
+                            Nombre del producto
+                        </p>
+                        <p class="price product-price">
+                            ID del producto
+                        </p>
+                    </div>
+                    <div class="buttons-container">
+                        <button class='btn btn-success' onclick="Editar()"><i class="fas fa-pencil-alt"></i></button>
+                        <button class='btn btn-danger' onclick="Borrar()"><i class='far fa-trash-alt'></i></button>
+                    </div>
                 </div>
-                <div class="bar2">
-                    <img class="imgMenu" src="https://res.cloudinary.com/cadivie/image/upload/v1654146176/close_gqiqrm.png">
-                </div>
-              <ul class="menuMovil">
-                <li><a href="">Cerrar Sesión</a></li>
-                
-              </ul>
+
             </div>
-          </header> -->
-        
-        <!--  -->
+        </div>
 
-        <nav>
-            <div class="menuadmin">
-                <ul>
-                    <li>
-                        <a class="edprenda" href="EditarPrenda.html">
-                            
-                                Editar
-                            
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="analitics" href="Analytics.html">
-                            
-                                Analitics
-                            
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="ofer" href="Ofertas.html">
-                            
-                                Ofertas
-                            
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-        
-        <a class="agprenda" href="">
-            <button class="opcadmin">
-                Agregar prenda
-            </button>
-        </a>
-        <a class="boprenda" href="">
-            <button class="opcadmin">
-                Borrar
-            </button>
-        </a>
-        <a class="edprenda" href="">
-            <button class="opcadmin">
-                Editar
-            </button>
-        </a>
-        <a class="analitics" href="">
-            <button class="opcadmin">
-                Graficas
-            </button>
-        </a>
-        <a class="ofer" href="">
-            <button class="opcadmin">
-                Ofertas
-            </button>
-        </a>
-
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            
-        </footer>
-        
         <script src="Logout.js"></script>
     </body>
 </html>

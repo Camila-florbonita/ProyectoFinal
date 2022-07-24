@@ -2,7 +2,10 @@
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
         <link rel="stylesheet" href="css/styleCart.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <title>Lista de deseos</title>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,78 +15,82 @@
         <script src="VerificarLogin.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
+    <body class="body">
 
         <header class="header">
-            <a href="InicioConCuenta.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+            <div class="wrapper">
+                <nav>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="InicioConCuenta.html" class="brand-name">
+                                <abbr title="Cadivie">
+                                    Cadivie
+                                </abbr>
+                            </a>
+                        </div>
+                        <ul class="cart-button-container">
+                                <a href="CarritoDeCompras.html" class="cart-button">
+                                    <abbr title="Carrito de Compras">
+                                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+                    
+                                    </abbr>
+                                </a>
+                        </ul>
+                            <ul class="menuUsuario" style="margin-right: 80px">
+                                <li class="opcionMenu">
+                                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                                    <ul class="submenuUsuario">
+                                        <li class="opcionUsuario">
+                                            <a href="HistorialDeCompras.html">
+                                                Historial
+                                            </a>
+                                        </li >
+                                        <li class="opcionUsuario">
+                                            <a href="ListaDeDeseos.html">
+                                                Lista de deseos
+                                            </a>
+                                        </li>
+                                        <li class="opcionUsuario">
+                                            <a href="ConfiguracionCuenta.html">
+                                                Configuracion
+                                            </a>
+                                        </li>
+                                        <li class="opcionUsuario" id="logout">
+                                            <a href="" id="logout">
+                                                Cerrar sesion
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                    </div>
+                </nav>
+            </div>
 
-                </abbr>
-            </a>
-            <form class="buscar" action="BusquedaReference.php" method="post">
-                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
-                <button class="lupa" type="submit">
-                    <abbr title="Buscar">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
-
-                    </abbr>
-                </button>
-            </form>
-            <a href="InicioConCuenta.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-            <ul class="menuUsuario">
-                <li class="opcionMenu">
-                    
-                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
-                    
-                    <ul class="submenuUsuario">
-                        <li class="opcionUsuario">
-                            <a href="HistorialDeCompras.html">
-                                Historial
-                            </a>
-                        </li >
-                        <li class="opcionUsuario">
-                            <a href="ListaDeDeseos.html">
-                                Lista de deseos
-                            </a>
-                        </li>
-                        <li class="opcionUsuario">
-                            <a href="ConfiguracionCuenta.html">
-                                Configuracion
-                            </a>
-                        </li>
-                        <li class="opcionUsuario" id="logout">
-                            <a href="" id="logout">
-                                Cerrar sesion
-                            </a>
-                        </li> 
-                    </ul>
-                </li>
-            </ul>
-            <a href="CarritoDeCompras.html" class="carrito">
-                <abbr title="Carrito de Compras">
-                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
-                    
-                </abbr>
-            </a>
         </header>
 
 
-        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
+        <div class="products-container">
+            <div id="producto">
+                <div class="producto">
+                    <div class="imgProduct">
+                        <img class="imagenprenda" src="https://cadivie.herokuapp.com/ImagenesPrendas/4.jpg">
+        
+                    </div>
+                    <div class="infoProduct">
+                        <p class="product-name">Nombre del producto</p>
+                        <p class="price product-price">Precio del producto</p>
+                        <p class="product-description">Descripcion del producto</p>
+                        
+                        <div class="delete-button-container">
+                            <button class='btn btn-danger'><i class='far fa-trash-alt'></i></button>
+                        </div>
+                    </div>
+    
+                    
+                </div>
+
+            </div>
         </div>
         
         <script src="Logout.js"></script>

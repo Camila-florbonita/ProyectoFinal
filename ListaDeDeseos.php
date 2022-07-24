@@ -18,26 +18,39 @@ $id_us = $_SESSION["id_us"];
         $result2 = mysqli_query($conexion, $query2); 
         $registro2 = mysqli_fetch_array($result2);
 
-echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
-<p class='nomprodcarrito' id='NombreProducto'>",
+echo "
+<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
+                    <div class='imgProduct'>
+                        <img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
+        
+                    </div>
+                    <div class='infoProduct'>
+                        <p class='product-name'>",
     $registro2['nombre_producto'],
-"</p>
-<p class='precprodcarrito'>",
+    "</p>
+                        <p class='price product-price'>$ ",
     $registro2['precio'],
-"</p>
-<p class='descprodcarrito'>",
-"Descripcion",
-"</p>
-</div>";
+    "</p>
+                        <p class='product-description'>",
+    $registro2['descripcion'],
+    "</p>
+                        
+                        <div class='delete-button-container'>
+                            <button class='btn btn-danger' onclick='remove(", $registro2['id_producto'],")'><i class='far fa-trash-alt'></i></button>
+                        </div>
+                    </div>
+    
+                    
+                </div>
+";
 $cont++;
 }
 
 if($cont == 0)
 {
   echo "<div class='producto' id='producto'>
-  <p class='precprodcarrito'>
-  No se tienen compras registradas
+  <p class='product-name'>
+  No se tienen productos en la lista de deseos
   </p>
   </div>";
 }
