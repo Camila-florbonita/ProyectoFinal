@@ -1,4 +1,4 @@
-const reqS = new XMLHttpRequest();
+var reqS = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function Comentarios()
