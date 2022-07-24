@@ -6,7 +6,7 @@ body
 
 .container 
 {
-
+    margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
     align-items: center;
@@ -29,7 +29,7 @@ body
     overflow: scroll;
     margin-left: 2%;
     margin-right: 2%;
-    margin-top: -50px;
+    /* margin-top: -50px; */
 }
 
 .elemento 
@@ -45,8 +45,7 @@ body
     border-radius: 20px;
     border-width: 2px;
     /*     position: relative; */
-    
-
+    min-width: 220px;
 }
 
 .elemento a
@@ -64,9 +63,12 @@ body
 .imagenElemento 
 {
     max-height: 200px;
+    max-width: 200px;
     min-height: auto;
     border-radius: 20px;
-    
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
 
 .labelElemento 
@@ -78,6 +80,8 @@ body
     max-width: 200px;
     text-align: center;
     width: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .labelPrecio 

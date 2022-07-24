@@ -17,11 +17,11 @@ $id_p = $_SESSION["id_p"];
         $result2 = mysqli_query($conexion, $query2); 
         $registro2 = mysqli_fetch_array($result2);
 
-        echo "<div class= 'comentarios'>     
-        <p class= 'nombreusuario'>",
+        echo "<div class='comment-box''>     
+        <p class='username'>",
             $registro2['nombre_usuario'],
         "</p>
-        <p class= 'comentario'>",
+        <p class='comment-text'>",
             $registro['comentario'],
         "</p>
     </div>";
@@ -30,8 +30,8 @@ $cont++;
 
 if($cont == 0)
 {
-  echo "<div class= 'comentarios'>     
-  <p class= 'nombreusuario'>
+  echo "<div class='comment-box'>     
+  <p class='username'>
   No hay comentarios
   </p>
 </div>";
