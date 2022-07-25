@@ -42,7 +42,7 @@ try {
 
     $cuerpo = '<h4>Este es su codigo de verificacion</h4>';
     $cuerpo .= '<p><b>' . $codigo . '</b></p><br>';
-    $cuerpo .= '<a href="http://localhost/ProyectoFinal/VerificarCorreo.php?correo_electronico='.$correo_electronico.'">Verifique su correo</a>';
+    $cuerpo .= '<a href="https://cadivie.herokuapp.com/VerificarCorreo.php?correo_electronico='.$correo_electronico.'">Verifique su correo</a>';
 
     $mail->Body    = utf8_decode($cuerpo);
     $mail->AltBody = 'Favor de ingresar su codigo de verificacion en la pagina de registro de Cadivie';
