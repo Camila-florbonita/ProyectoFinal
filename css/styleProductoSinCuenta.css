@@ -140,6 +140,8 @@
     {
         display: flex;
         border-bottom: 1px solid var(--background);
+        margin-top: 16px;
+        margin-bottom: 16px;
     }
 
     .username
