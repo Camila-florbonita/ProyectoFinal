@@ -234,9 +234,11 @@
 
         .product-image
         {
-            width: 90%; /* 70% */
+            width: 100%; /* 70% */
             height: auto; /* auto */
-            max-width: 86%;
+            object-fit: cover;
+            margin-left: 24px;
+            margin-right: 24px;
         }
 
         .product-info
