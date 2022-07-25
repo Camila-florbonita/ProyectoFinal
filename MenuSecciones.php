@@ -34,7 +34,7 @@ $registro['precio'],
     </p>
     <p class='product-description'>
         ",
-$registro2['descripcion'],
+$registro['descripcion'],
 "
     </p>
 
