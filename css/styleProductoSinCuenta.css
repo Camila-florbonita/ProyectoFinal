@@ -191,8 +191,25 @@
             margin: 3px 0px 0px 3px;
         }
 
+        .comments-container
+        {
+            width: auto;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+
         .comment-box
         {
             flex-direction: column;
+        }
+        
+        .username
+        {
+            margin-bottom: 8px;
+        }
+
+        .comment-text
+        {
+            margin-top: 8px;
         }
     }
