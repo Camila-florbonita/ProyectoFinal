@@ -33,6 +33,7 @@
         .subtitle
         {
             font-size: var(--md);
+            margin-bottom: 16px;
         }
 
         .description
@@ -68,7 +69,6 @@
         align-items: center;
         justify-content: center;
         width: 300px;
-        padding: 16px;
     }
 
     .product-image {
@@ -92,10 +92,11 @@
         background-color: var(--white);
         color: var(--strong-pink);
         padding: 15px 54px;
+        outline: none;
         cursor: pointer;
     }
 
-    .primary-button:hover
+    .primary-button:hover, .primary-button:focus
     {
         background-color: var(--strong-pink);
         color: var(--white);
