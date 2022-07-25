@@ -180,30 +180,30 @@
             </form>
         </div>
         
-        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                id
-            </p>
-            <p>
-                <button onclick="Editar()">Editar</button>
-                <button onclick="Borrar()">Borrar</button>
-            </p>
+        <div class="results-container">
+            <div id="producto">
+                <div class="producto">
+                    <div class="image-container">
+                        <img class="imagenprenda" src="https://cadivie.herokuapp.com/ImagenesPrendas/4.jpg">
+        
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">
+                            Nombre del producto
+                        </p>
+                        <p class="price product-price">
+                            ID del producto
+                        </p>
+                    </div>
+                    <div class="buttons-container">
+                        <button class='btn btn-success' onclick="Editar()"><i class="fas fa-pencil-alt"></i></button>
+                        <button class='btn btn-danger' onclick="Borrar()"><i class='far fa-trash-alt'></i></button>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            
-        </footer>
-        
         <script src="Logout.js"></script>
     </body>
 </html>

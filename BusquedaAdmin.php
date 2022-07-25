@@ -74,18 +74,23 @@ $busqueda = $_SESSION["Busqueda"];
 
     $cont = 0;
     while ($registro = mysqli_fetch_array($result)){ 
-        echo "<div class='grid grid-cols-1 md:grid-cols-5' id='producto'>
-        <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-        <p class='nomprodcarrito' id='NombreProducto'>",
-            $registro['nombre_producto'],
-        "</p>
-        <p class='precprodcarrito'>",
-            $registro['id_producto'],            
-        "</p>
-        <p>
-                <button onclick='Editar(", $registro['id_producto'], ")'>Editar</button>
-                <button onclick='Borrar(", $registro['id_producto'], ")'>Borrar</button>
-            </p>
+        echo "
+        <div class='producto'>
+            <div class='image-container'>
+                <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+            </div>
+            <div class='product-info'>
+                <p class='product-name'>",
+                    $registro['nombre_producto'],
+                "</p>
+                <p class='price product-price'>ID: ",
+                    $registro['id_producto'],            
+                "</p>
+            </div>
+            <div class='buttons-container'>
+                <button class='btn btn-success' onclick='Editar(", $registro['id_producto'], ")'><i class='fas fa-pencil-alt'></i></button>
+                <button class='btn btn-danger' onclick='Borrar(", $registro['id_producto'], ")'><i class='far fa-trash-alt'></i></button>
+            </div>
         </div>";
 $cont++;
 }
@@ -93,7 +98,7 @@ $cont++;
 if($cont == 0)
 {
   echo "<div class='producto' id='producto'>
-  <p class='precprodcarrito'>
+  <p class='product-name'>
   No hay coincidencias para esa busqueda
   </p>
   </div>";
