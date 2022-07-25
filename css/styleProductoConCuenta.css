@@ -234,11 +234,9 @@
 
         .product-image
         {
-            width: 100%; /* 70% */
+            width: 90%; /* 70% */
             height: auto; /* auto */
-            object-fit: cover;
-            margin-left: 24px;
-            margin-right: 24px;
+            max-width: 86%;
         }
 
         .product-info
@@ -275,13 +273,6 @@
         .form-comment
         {
             width: 100%;
-        }
-
-        .comments-container
-        {
-            width: auto;
-            margin-right: 40px;
-            margin-left: 40px;
         }
 
         .comment-box
