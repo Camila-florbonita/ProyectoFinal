@@ -2,7 +2,7 @@
 include "database.php";
 
 session_start();
-$id_us = 1;
+$id_us = $_SESSION["id_us"];
 $queryx = "SELECT * from comprado WHERE id_usuario = '$id_us'";
     $resultx = mysqli_query($conexion, $queryx); 
 

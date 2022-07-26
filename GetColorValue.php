@@ -1,7 +1,7 @@
 <?PHP
 
 include "database.php";
-$id_us = 1;
+$id_us = $_SESSION["id_us"];
 $suma = 0;
 $colores = [];
 

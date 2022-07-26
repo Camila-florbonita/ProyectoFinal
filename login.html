@@ -6,7 +6,12 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleLogin.css">
         <title>Iniciar sesion</title>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="495801222005-278r2r4ojcehbgrq9o1t8d0g4flbj985.apps.googleusercontent.com">
+        <script src="loginGoogle.js"></script>
+        <script src="loginGoogle.php"></script>
     </head>
+    
     <body>
 
         <header class="header">
@@ -31,6 +36,7 @@
             <h1 class="labelLogin">
                 Inicia sesión
             </h1>
+            
 
             <div class="contenedor">
                 <div class="input-contenedor">
@@ -40,37 +46,18 @@
 
                 <div class="input-contenedor">
                     <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/password_u5caf0.png" class="icono">
-                    <input class="input" type="password" name="password" placeholder="Contraseña" minlength="6" maxlength="50" required>
+                    <input class="input" type="password" name="password" placeholder="Contraseña" maxlength="50" required>
                 </div>
 
                 <button class="botonLogin" type="submit">
                     Iniciar sesión
                 </button>
 
-                <!-- <a href="'.$google_client->createAuthUrl().'"> -->
-                    <button type="button" style="background:#4285f4; margin-top: 15px; margin-bottom: 15px; color:white; border:none; width:100%; height:40px; margin-left: auto; margin-right: auto; position: relative; border-radius:3%;"><img src="img/googleIcono.png" style="width:30px; background:white; border-radius:50%;" alt=""><b style="margin-top: auto; margin-bottom: auto; left: 15px; position: relative">Inicia sesión con Google</b></button>
-                <!-- </a></a> -->
-
-                <!-- <div class="panel panel-default">
-                    <?php
-                    if($login_button == '')
-                    {
-                     echo '<div class="panel-heading">Welcome User</div><div class="panel-body">';
-                     echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
-                     echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
-                     echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
-                     echo '<h3><a href="logoutGoogle.php">Logout</h3></div>';
-                    }
-                    else
-                    {
-                     echo '<div align="center">'.$login_button . '</div>';
-                    }
-                    ?>
-                    </div> -->
-                    <!-- <button class="botonLoginGoogle">
-                        Iniciar con Google
-                    </button> -->
-                
+                <a href="loginGoogle.php">
+                    <button type="button" style="background:#4285f4; margin-top: 15px; margin-bottom: 15px; color:white; border:none; width:100%; height:40px; margin-left: auto; margin-right: auto; position: relative; border-radius:3%;"><img src="img/googleIcono.png" style="width:30px; background:white; border-radius:50%;" alt="">
+                        Inicia sesión con Google
+                        </button>
+                </a>
 
                 <p class="aviso">Al registrarse aceptas nuestras Condiciones de uso y Política de privacidad.</p>
 
@@ -82,6 +69,8 @@
                 </p>
             </div>
         </form>
+
+        
         <!--
             
         -->

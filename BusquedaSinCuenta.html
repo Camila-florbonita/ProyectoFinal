@@ -2,7 +2,7 @@
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
-        <link rel="stylesheet" href="css/styleCart.css">
+        <link rel="stylesheet" href="css/styleResultados.css">
         <title>Resultados de busqueda</title>
         <script src="Busqueda.js"></script>
         <script src="GetProductIdSinCuenta.js"></script>
@@ -10,251 +10,365 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styleNavegacionSinCuenta.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     </head>
     <body>
 
         <header class="header">
-            <a href="index.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
-
-                </abbr>
-            </a>
-            <form class="buscar" action="BusquedaReferenceSinCuenta.php" method="post">
-                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
-                <button class="lupa" type="submit">
-                    <abbr title="Buscar">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
-
-                    </abbr>
-                </button>
-            </form>
-            <a href="index.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-            <a class="iniciarsesion" href="login.html">
-                Iniciar sesion
-            </a>
+            <div class="wrapper">
+                <nav>
+                    <input type="checkbox" id="show-search">
+                    <input type="checkbox" id="show-menu">
+                    <label for="show-menu" class="icono-menu">
+                        <abbr title="Menú">
+                            <i class="fas fa-bars"></i>
+                        </abbr>
+                    </label>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="InicioConCuenta.html" class="brand-name">
+                                    Cadivie
+                            </a>
+                        </div>
+                            <ul class="links">
+                                <li>
+                                    <div class="menu-busqueda">Prenda</div>
+                                    <input type="checkbox" id="show-prenda">
+                                    <label for="show-prenda">Prenda</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('playera')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Playeras
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('pantalon')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Pantalones
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vestido')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Vestidos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('short')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Shorts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('falda')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Faldas
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('sueter')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Sueteres
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Temporada</div>
+                                    <input type="checkbox" id="show-temporada">
+                                    <label for="show-temporada">Temporada</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('primavera')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Primavera
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('verano')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Verano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('otono')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Otoño
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('invierno')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Invierno
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Estilo</div>
+                                    <input type="checkbox" id="show-estilo">
+                                    <label for="show-estilo">Estilo</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('clasico')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Clasico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vintage')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Vintage
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('gotico')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Gotico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('preppy')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Preppy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('urbano')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Urbano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('hipster')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Hipster
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('grunge')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Grunge
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('natural')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Natural
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('sofisticado')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Sofisticado
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('artsy')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Artsy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vanguardista')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Vanguardista
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('boho')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Boho
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('romantico')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Romantico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('dramatico')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Dramatico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('girly')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Girly
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Ocasión</div>
+                                    <input type="checkbox" id="show-ocasion">
+                                    <label for="show-ocasion">Ocasión</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('playa')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Playa
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('elegante')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Elegante
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('deportivo')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Deportivo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('fiesta')" href="MenuSeccionesSinCuenta.html" class="subcategorias">
+                                                Fiesta
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Maniquí 3D</div>
+                                    <input type="checkbox" id="show-maniqui">
+                                    <label for="show-maniqui">Maniquí 3D</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a href="" class="subcategorias">
+                                                Poner al maniqui
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <div class="contenedor-login">
+                                        <a class="boton-login" href="login.html">
+                                            <button class="login_button">
+                                                Iniciar sesion
+                                            </button>
+                                        </a>
+                                </div>
+        
+                            </ul>
+                        <label for="show-search" class="icono-busqueda">
+                            <abbr title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </abbr>
+                        </label>
+                    </div>
+                    <form class="search-box" action="BusquedaReferenceSinCuenta.php" method="post">
+                        <input class="" type="text" placeholder="Buscar..." required>
+                        <button class="boton-buscar" type="submit">
+                            <abbr title="Buscar">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </abbr>
+                        </button>
+                    </form>
+                </nav>
+            </div>
         </header>
 
-        <nav>
+        <div id="filtrar">
+            <form action="FiltrarBusqueda.php" method="post">
+                <select name="genero" id="genero">
+                    <option value="">Genero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="unisex">Unisex</option>
+                </select>
+                <select name="estilo" id="estilo" >
+                    <option value="">Estilo</option>
+                    <option value="clasico">Clasico</option>
+                    <option value="vintage">Vintage</option>
+                    <option value="gotico">Gotico</option>
+                    <option value="preppy">Preppy</option>
+                    <option value="urbano">Urbano</option>
+                    <option value="hipster">Hipster</option>
+                    <option value="grunge">Grunge</option>
+                    <option value="natural">Natural</option>
+                    <option value="sofisticado">Sofisticado</option>
+                    <option value="artsy">Artsy</option>
+                    <option value="vanguardista">Vanguardista</option>
+                    <option value="boho">Boho</option>
+                    <option value="romantico">Romantico</option>
+                    <option value="dramatico">Dramatico</option>
+                    <option value="girly">Girly</option>
+                </select>
+                <select name="edad" id="edad" >
+                    <option value="">Edad</option>
+                    <option value="nino">Niños</option>
+                    <option value="joven">Jovenes</option>
+                    <option value="adulto">Adultos</option>
+                </select>
+                <select name="color" id="color" >
+                    <option value="">Color</option>
+                    <option value="negro">Negro</option>
+                    <option value="azul">Azul</option>
+                    <option value="cafe">Café</option>
+                    <option value="gris">Gris</option>
+                    <option value="verde">Verde</option>
+                    <option value="naranja">Naranja</option>
+                    <option value="rosa">Rosa</option>
+                    <option value="morado">Morado</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="blanco">Blanco</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="turquesa">Turquesa</option>
+                    <option value="magenta">Magenta</option>
+                    <option value="lila">Lila</option>
+                    <option value="beige">Beige</option>
+                    <option value="salmon">Salmón</option>
+                    <option value="fucsia">Fucsia</option>
+                    <option value="violeta">Violeta</option>
+                    <option value="celeste">Azul celeste</option>
+                    <option value="marino">Azul marino</option>
+                    <option value="lima">Verde lima</option>
+                    <option value="verdeoscuro">Verde oscuro</option>
+                    <option value="mostaza">Mostaza</option>
+                    <option value="cian">Cian</option>
+                    <option value="vino">Vino</option>
+                </select>
+                <select name="tipodeprenda" id="tipodeprenda">
+                    <option value="">Tipo de prenda</option>
+                    <option class="playera" value="playera">Playera</option>
+                    <option class="pantalon" value="pantalon">Pantalon</option>
+                    <option class="vestido" value="vestido">Vestido</option>
+                    <option class="short" value="short">Short</option>
+                    <option class="falda" value="falda">Falda</option>
+                    <option class="sueter" value="sueter">Sueter</option>
+                </select>
+                <select name="temporada" id="temporada">
+                    <option value="">Temporada</option>
+                    <option value="primavera">Primavera</option>
+                    <option value="verano">Verano</option>
+                    <option value="otono">Otoño</option>
+                    <option value="invierno">Invierno</option>
+                </select>
+                <select name="ocasion" id="ocasion">
+                    <option value="">Ocasion</option>
+                    <option value="playa">Playa</option>
+                    <option value="elegante">Elegante</option>
+                    <option value="deporte">Deportes</option>
+                    <option value="fiesta">Fiesta</option>
+                </select>
+                <select name="formalidad" id="formalidad">
+                    <option value="">Nivel de formalidad</option>
+                    <option value="casual">Casual</option>
+                    <option value="semiformal">Semiformal</option>
+                    <option value="formal">Formal</option>
+                </select>
+                <select name="material" id="material">
+                    <option value="">Material</option>
+                    <option value="algodon">Algodon</option>
+                    <option value="poliester">Poliester</option>
+                    <option value="lana">Lana</option>
+                    <option value="seda">Seda</option>
+                    <option value="cuero">Cuero</option>
+                    <option value="mezclilla">Mezclilla</option>
+                    <option value="licra">Licra</option>
+                    <option value="lino">Lino</option>
+                </select>
+                <button type="submit" value="aplicar" name="boton">Aplicar filtros</button>
+                <button type="submit" value="borrar" name="boton">Borrar filtros</button>
+            </form>
+        </div>
 
-            <ul class="menu">
-                <li class="sub">
-                    <div class="a">
-                        Prenda
-                    </div>
-                    <ul class="submenu">
-                        <li>
-                            <a onclick="Secciones('playera')" href="MenuSeccionesSinCuenta.html">
-                                Playeras
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('pantalon')" href="MenuSeccionesSinCuenta.html">
-                                Pantalones
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('vestido')" href="MenuSeccionesSinCuenta.html">
-                                Vestidos
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('short')" href="MenuSeccionesSinCuenta.html">
-                                Shorts
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('falda')" href="MenuSeccionesSinCuenta.html">
-                                Faldas
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('sueter')" href="MenuSeccionesSinCuenta.html">
-                                Sueteres
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub">
-                    <div class="a">
-                        Temporada
-                        
-                    </div>
-                    
-                    <ul class="submenu">
-                        <li>
-                            <a onclick="Secciones('primavera')" href="MenuSeccionesSinCuenta.html">
-                                Primavera
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('verano')" href="MenuSeccionesSinCuenta.html">
-                                Verano
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('otono')" href="MenuSeccionesSinCuenta.html">
-                                Otoño
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('invierno')" href="MenuSeccionesSinCuenta.html">
-                                Invierno
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub">
-                    <div class="a">
-                        Estilo
-                        
-                    </div>
-                    
-                    <ul class="submenu">
-                        <li>
-                            <a onclick="Secciones('clasico')" href="MenuSeccionesSinCuenta.html">
-                                Clasico
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('vintage')" href="MenuSeccionesSinCuenta.html">
-                                Vintage
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('gotico')" href="MenuSeccionesSinCuenta.html">
-                                Gotico
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('preppy')" href="MenuSeccionesSinCuenta.html">
-                                Preppy
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('urbano')" href="MenuSeccionesSinCuenta.html">
-                                Urbano
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('hipster')" href="MenuSeccionesSinCuenta.html">
-                                Hipster
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('grunge')" href="MenuSeccionesSinCuenta.html">
-                                Grunge
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('natural')" href="MenuSeccionesSinCuenta.html">
-                                Natural
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('sofisticado')" href="MenuSeccionesSinCuenta.html">
-                                Sofisticado
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('artsy')" href="MenuSeccionesSinCuenta.html">
-                                Artsy
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('vanguardista')" href="MenuSeccionesSinCuenta.html">
-                                Vanguardista
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('boho')" href="MenuSeccionesSinCuenta.html">
-                                Boho
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('romantico')" href="MenuSeccionesSinCuenta.html">
-                                Romantico
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('dramatico')" href="MenuSeccionesSinCuenta.html">
-                                Dramatico
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('girly')" href="MenuSeccionesSinCuenta.html">
-                                Girly
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub">
-                    <div class="a">
-                        Ocasion
-                        
-                    </div>
-                    
-                    <ul class="submenu">
-                        <li>
-                            <a onclick="Secciones('playa')" href="MenuSeccionesSinCuenta.html">
-                                Playa
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('elegante')" href="MenuSeccionesSinCuenta.html">
-                                Elegante
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('deportivo')" href="MenuSeccionesSinCuenta.html">
-                                Deportivo
-                            </a>
-                        </li>
-                        <li>
-                            <a onclick="Secciones('fiesta')" href="MenuSeccionesSinCuenta.html">
-                                Fiesta
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sub">
-                    <div class="a">
-                        Maniqui 3D
-                        
-                    </div>
-                    
-                    <ul class="submenu">
-                        <li>
-                            <a href="">
-                                Combinar atuendo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Poner al maniqui
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="results-container">
+            <div id="producto" class="producto">
+                <div class="image-container">
+                    <img class="imagenprenda" src="https://cadivie.herokuapp.com/ImagenesPrendas/4.jpg">
+    
+                </div>
+                <div class="product-info">
+                    <p class="product-name">
+                        Nombre del producto
+                    </p>
+                    <p class="price product-price">
+                        Precio del producto
+                    </p>
+                    <p class="product-description">
+                        Aqui va la descripcion del producto
+                    </p>
+    
+                </div>
+            </div>
 
-        </nav>
-
-        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
         </div>
     </body>
 </html>

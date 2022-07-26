@@ -1,28 +1,81 @@
 <?php
 
-//start session on web page
+
+require 'google-api-php-client--PHP8.0/vendor/autoload.php';
+include "database.php";
+
 session_start();
+ 
+// init configuration
+$clientID = '495801222005-278r2r4ojcehbgrq9o1t8d0g4flbj985.apps.googleusercontent.com';
+$clientSecret = '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';
+$redirectUri = 'http://localhost/ProyectoFinal/loginGoogle.php';
+  
+// create Client Request to access Google API
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
+ 
+// authenticate code from Google OAuth Flow
+if (isset($_GET['code'])) {
+  $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+  $client->setAccessToken($token['access_token']);
+  
+  // get profile info
+  $google_oauth = new Google_Service_Oauth2($client);
+  $google_account_info = $google_oauth->userinfo->get();
+  $email =  $google_account_info->email;
+  $name =  $google_account_info->name;
 
-//config.php
+  $query = "SELECT * from usuarios WHERE correo_electronico = '$email'";
+  $result = mysqli_query($conexion, $query);
+  if($registro = mysqli_fetch_array($result))
+  {
+    echo "<script>
+    window.location.href = 'InicioConCuenta.html';
+    </script>
+    ";
+    $_SESSION["id_us"] = $registro['id_usuario'];
+    $_SESSION["id_name"] = $registro['nombre_usuario'];
+    $_SESSION["id_email"] = $registro['correo_electronico'];
+  }
+  else
+  {
+    $ingreso = "INSERT into usuarios (nombre_usuario, correo_electronico, password) VALUES ('$name','$email','$name')";
+    mysqli_query($conexion, $ingreso);
+    $query2 = "SELECT * from usuarios WHERE correo_electronico = '$email'";
+    $result2 = mysqli_query($conexion, $query2);
+    $registro2 = mysqli_fetch_array($result2);
+    $_SESSION["id_us"] = $registro['id_usuario'];
+    $_SESSION["id_name"] = $registro['nombre_usuario'];
+    $_SESSION["id_email"] = $registro['correo_electronico'];
 
-//Include Google Client Library for PHP autoload file
-require_once 'vendor/autoload.php';
+    echo "<script>
+    window.location.href = 'InicioConCuenta.html';
+    </script>
+    ";
+    
+  }
 
-//Make object of Google API Client for call Google API
-$google_client = new Google_Client();
+  
 
-//Set the OAuth 2.0 Client ID
-$google_client->setClientId('614500226004-kj43csb97d21edr7ahb47f1pgg67dmp7.apps.googleusercontent.com');
+ 
+  // now you can use this profile info to create account in your website and make user logged in.
+} else {
+  echo "";
+    echo "<a href='".$client->createAuthUrl()."'>
+    <button id='botonuwu'>
+    Google Login
+    </button>
+    </a>";
+    echo "";
 
-//Set the OAuth 2.0 Client Secret key
-$google_client->setClientSecret('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');
-
-//Set the OAuth 2.0 Redirect URI
-$google_client->setRedirectUri('http://localhost/ProyectoFinal/InicioConCuenta.html');
-
-// to get the email and profile 
-$google_client->addScope('email');
-
-$google_client->addScope('profile');
-
+    echo "<script>
+    document.getElementById('botonuwu').click();
+    </script>
+    ";
+}
 ?>

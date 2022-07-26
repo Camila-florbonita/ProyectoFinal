@@ -67,20 +67,6 @@ else
         echo "<script> alert('El correo ya ha sido registrado') </script>"; 
         echo "<script> window.location.href = 'registro.html' </script>"; 
     }
-
-
-    // $verify = "SELECT correo_electronico FROM verificar WHERE correo_electronico = '$correo_electronico'";
-    // if ($verify != $correo_electronico)
-    // {
-    //     $_SESSION["verifyEmail"] = $correo_electronico;
-        
-    //     include 'CodigoVerificacion.php';
-    // }
-    // else
-    // {
-    //     echo "<script> alert('El correo ya ha sido registrado') </script>"; 
-    //     echo "<script> window.location.href = 'registro.html' </script>"; 
-    // }
     
 
 }

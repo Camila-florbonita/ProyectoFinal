@@ -2,7 +2,7 @@
 
 
 include "database.php";
-$id_us = 1;
+$id_us = $_SESSION["id_us"];
 $suma = 0;
 
     $query = "SELECT * from comprado WHERE id_usuario = '$id_us'";

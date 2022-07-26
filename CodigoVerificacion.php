@@ -15,6 +15,9 @@ $correo_electronico = $_REQUEST["correo_electronico"];
         // echo "<script> alert(".mysqli_num_rows($result).") </script>";
         $updateData = "UPDATE verificar SET status = 1 WHERE codigo = '$verifyCode'";
         mysqli_query($conexion, $updateData);
+        $insertData = "INSERT INTO usuarios (nombre_usuario, correo_electronico, password)
+        SELECT nombre_usuario, correo_electronico, password FROM verificar";
+        mysqli_query($conexion, $insertData);
         header("Location: login.html");
     }
     else
