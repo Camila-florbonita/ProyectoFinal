@@ -11,7 +11,7 @@ $result = mysqli_query($conexion, $query);
 
 $cont = 0;
 while ($registro = mysqli_fetch_array($result)){ 
-    echo "<div class='elemento' id='elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+    echo "<div class='elemento' id='elementoSug' onclick='getProductId(", $registro['id_producto'],")'>
     <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
     <p class='labelElemento'>",
     $registro['nombre_producto'],
@@ -36,7 +36,7 @@ while ($registro = mysqli_fetch_array($result)){
 
 if($cont == 0)
 {
-    echo "<div class='producto' id='producto'>
+    echo "<div class='elemento' id='elementoSug'>
     <p class='precprodcarrito'>
     No ha habido compras aún :(
     </p>

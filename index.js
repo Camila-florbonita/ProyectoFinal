@@ -13,9 +13,9 @@ function index()
     req.send();
 
     req2.onload = function IndexInicio2(){
-        var prendas = document.getElementById("sugerenciasSug");
+        var prendas2 = document.getElementById("sugerenciasSug");
        
-        prendas.innerHTML = req2.responseText;
+        prendas2.innerHTML = req2.responseText;
    }
        req2.open("GET", "indexRec.php?");
        req2.send();
