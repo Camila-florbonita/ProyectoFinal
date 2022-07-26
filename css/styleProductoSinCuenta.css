@@ -89,7 +89,7 @@
         font-size: var(--md);
         background-color: var(--white);
         color: var(--strong-pink);
-        padding: 15px 20px;
+        padding: 15px 54px;
         outline: none;
         cursor: pointer;
     }
@@ -140,6 +140,8 @@
     {
         display: flex;
         border-bottom: 1px solid var(--background);
+        margin-top: 16px;
+        margin-bottom: 16px;
     }
 
     .username
@@ -191,5 +193,15 @@
         .comment-box
         {
             flex-direction: column;
+        }
+        
+        .username
+        {
+            margin-bottom: 8px;
+        }
+
+        .comment-text
+        {
+            margin-top: 8px;
         }
     }

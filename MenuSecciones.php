@@ -16,20 +16,29 @@ $seccion = $_SESSION["secc"];
     while ($registro = mysqli_fetch_array($result)){ 
 
 
-echo "<div class='producto' id='producto' onclick='getProductId(", $registro['id_producto'],")'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-<p class='nomprodcarrito' id='NombreProducto'>",
-    $registro['nombre_producto'],
-"</p>
-<p class='precprodcarrito'>",
-    $registro['precio'],
-"</p>
-<p class='descprodcarrito'>",
-"Estilo: ", $registro['estilo'], "<br>",
-"Genero: ", $registro['genero'], "<br>",
-"Color: ", $registro['color'], "<br>",
-"Corte: ", $registro['corte'], "<br>",
-"</p>
+echo "<div class='producto' onclick='getProductId(", $registro['id_producto'],")'>
+<div class='image-container'>
+    <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+
+</div>
+<div class='product-info'>
+    <p class='product-name'>
+        ",
+$registro['nombre_producto'],
+"
+    </p>
+    <p class='price product-price'>
+        ",
+$registro['precio'],
+"
+    </p>
+    <p class='product-description'>
+        ",
+$registro['descripcion'],
+"
+    </p>
+
+</div>
 </div>";
 $cont++;
 }
@@ -37,7 +46,7 @@ $cont++;
 if($cont == 0)
 {
   echo "<div class='producto' id='producto'>
-  <p class='precprodcarrito'>
+  <p class='product-name'>
   No hay coincidencias para esa busqueda
   </p>
   </div>";

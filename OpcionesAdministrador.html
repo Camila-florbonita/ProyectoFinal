@@ -42,12 +42,6 @@
                                 </li>
                                 <li>
                                     <div class="menu-opciones">
-                                        <a href="EditarPrenda.html">Editar</a>
-                                        
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="menu-opciones">
                                         <a href="Analytics.html">Análisis</a>
                                         
                                     </div>
@@ -83,8 +77,8 @@
             </div>
         </header>
 
-        <div class="results-container">
-            <div id="producto">
+        
+            <div id="producto"  class="results-container">
                 <div class="producto">
                     <div class="image-container">
                         <img class="imagenprenda" src="https://cadivie.herokuapp.com/ImagenesPrendas/4.jpg">
@@ -105,78 +99,8 @@
                 </div>
 
             </div>
-        </div>
-
         
-        <nav>
-            <div class="menuadmin">
-                <ul>
-                    <li>
-                        <a class="analitics" href="Analytics.html">
-                            
-                                Analitics
-                            
-                        </a>
 
-                    </li>
-                    <li>
-                        <a class="ofer" href="Ofertas.html">
-                            
-                                Ofertas
-                            
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="ofer" href="AgregarPrenda.html">
-                            
-                                Agregar Prenda
-                            
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-
-        <p>
-            
-            <form class="buscar" action="BusquedaReferenceAdmin.php" method="post">
-                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
-                <button class="lupa" type="submit">
-                    <abbr title="Buscar">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
-    
-                    </abbr>
-                </button>
-            </form>
-        </p>
-        
-        <div id="producto" class="grid grid-cols-1 md:grid-cols-5">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                id
-            </p>
-            <p>
-                <button onclick="Editar()">Editar</button>
-                <button onclick="Borrar()">Borrar</button>
-            </p>
-        </div>
-
-        <footer class="footer">
-            <a class="foot" href="">
-                Aviso legal
-            </a>
-            <a class="foot" href="">
-                Politica de privacidad
-            </a>
-            
-        </footer>
-        
         <script src="Logout.js"></script>
     </body>
 </html>

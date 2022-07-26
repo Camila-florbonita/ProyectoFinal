@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+    <link rel="stylesheet" href="css/FormatoCSS.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal</title>
+    <script src="GetSeccion.js"></script>
+    <script src="Busqueda.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+
+    <header class="header">
+        <div class="wrapper">
+            <nav>
+                <input type="checkbox" id="show-search">
+                <input type="checkbox" id="show-menu">
+                <label for="show-menu" class="icono-menu">
+                    <abbr title="Menú">
+                        <i class="fas fa-bars"></i>
+                    </abbr>
+                </label>
+                <div class="content">
+                    <div class="brand">
+                        <a href="InicioConCuenta.html" class="brand-name">
+                            <abbr title="Cadivie">
+                                Cadivie
+                            </abbr>
+                        </a>
+                    </div>
+                        <ul class="links">
+                            <li>
+                                <div class="menu-busqueda">Prenda</div>
+                                <input type="checkbox" id="show-prenda">
+                                <label for="show-prenda">Prenda</label>
+                                <ul class="categorias">
+                                    <li>
+                                        <a onclick="Secciones('playera')" href="MenuSecciones.html" class="subcategorias">
+                                            Playeras
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('pantalon')" href="MenuSecciones.html" class="subcategorias">
+                                            Pantalones
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('vestido')" href="MenuSecciones.html" class="subcategorias">
+                                            Vestidos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('short')" href="MenuSecciones.html" class="subcategorias">
+                                            Shorts
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('falda')" href="MenuSecciones.html" class="subcategorias">
+                                            Faldas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('sueter')" href="MenuSecciones.html" class="subcategorias">
+                                            Sueteres
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="menu-busqueda">Temporada</div>
+                                <input type="checkbox" id="show-temporada">
+                                <label for="show-temporada">Temporada</label>
+                                <ul class="categorias">
+                                    <li>
+                                        <a onclick="Secciones('primavera')" href="MenuSecciones.html" class="subcategorias">
+                                            Primavera
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('verano')" href="MenuSecciones.html" class="subcategorias">
+                                            Verano
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('otono')" href="MenuSecciones.html" class="subcategorias">
+                                            Otoño
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('invierno')" href="MenuSecciones.html" class="subcategorias">
+                                            Invierno
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="menu-busqueda">Estilo</div>
+                                <input type="checkbox" id="show-estilo">
+                                <label for="show-estilo">Estilo</label>
+                                <ul class="categorias">
+                                    <li>
+                                        <a onclick="Secciones('clasico')" href="MenuSecciones.html" class="subcategorias">
+                                            Clasico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('vintage')" href="MenuSecciones.html" class="subcategorias">
+                                            Vintage
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('gotico')" href="MenuSecciones.html" class="subcategorias">
+                                            Gotico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('preppy')" href="MenuSecciones.html" class="subcategorias">
+                                            Preppy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('urbano')" href="MenuSecciones.html" class="subcategorias">
+                                            Urbano
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('hipster')" href="MenuSecciones.html" class="subcategorias">
+                                            Hipster
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('grunge')" href="MenuSecciones.html" class="subcategorias">
+                                            Grunge
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('natural')" href="MenuSecciones.html" class="subcategorias">
+                                            Natural
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('sofisticado')" href="MenuSecciones.html" class="subcategorias">
+                                            Sofisticado
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('artsy')" href="MenuSecciones.html" class="subcategorias">
+                                            Artsy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('vanguardista')" href="MenuSecciones.html" class="subcategorias">
+                                            Vanguardista
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('boho')" href="MenuSecciones.html" class="subcategorias">
+                                            Boho
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('romantico')" href="MenuSecciones.html" class="subcategorias">
+                                            Romantico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('dramatico')" href="MenuSecciones.html" class="subcategorias">
+                                            Dramatico
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('girly')" href="MenuSecciones.html" class="subcategorias">
+                                            Girly
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="menu-busqueda">Ocasión</div>
+                                <input type="checkbox" id="show-ocasion">
+                                <label for="show-ocasion">Ocasión</label>
+                                <ul class="categorias">
+                                    <li>
+                                        <a onclick="Secciones('playa')" href="MenuSecciones.html" class="subcategorias">
+                                            Playa
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('elegante')" href="MenuSecciones.html" class="subcategorias">
+                                            Elegante
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('deportivo')" href="MenuSecciones.html" class="subcategorias">
+                                            Deportivo
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="Secciones('fiesta')" href="MenuSecciones.html" class="subcategorias">
+                                            Fiesta
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="menu-busqueda">Maniquí 3D</div>
+                                <input type="checkbox" id="show-maniqui">
+                                <label for="show-maniqui">Maniquí 3D</label>
+                                <ul class="categorias">
+                                    <li>
+                                        <a href="" class="subcategorias">
+                                            Combinar atuendo
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="subcategorias">
+                                            Poner al maniqui
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="cart-button-container">
+                                <a href="CarritoDeCompras.html" class="cart-button">
+                                    <abbr title="Carrito de Compras">
+                                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
+                    
+                                    </abbr>
+                                </a>
+                        </ul>
+                        <ul class="menuUsuario">
+                            <li class="opcionMenu">
+                                    <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                                <ul class="submenuUsuario">
+                                    <li class="opcionUsuario">
+                                        <a href="HistorialDeCompras.html">
+                                            Historial
+                                        </a>
+                                    </li >
+                                    <li class="opcionUsuario">
+                                        <a href="ListaDeDeseos.html">
+                                            Lista de deseos
+                                        </a>
+                                    </li>
+                                    <li class="opcionUsuario">
+                                        <a href="ConfiguracionCuenta.html">
+                                            Configuracion
+                                        </a>
+                                    </li>
+                                    <li class="opcionUsuario" id="logout">
+                                        <a href="" id="logout">
+                                            Cerrar sesion
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    <label for="show-search" class="icono-busqueda">
+                        <abbr title="Buscar">
+                            <i class="fas fa-search"></i>
+                        </abbr>
+                    </label>
+                </div>
+                <form class="search-box" action="BusquedaReference.php" method="post">
+                    <input class="" type="text" placeholder="Buscar..." required>
+                    <button class="boton-buscar" type="submit">
+                        <abbr title="Buscar">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </abbr>
+                    </button>
+                </form>
+            </nav>
+        </div>
+
+    </header>
+    
+    <div style="width: 90%; margin: auto; text-align: justify;">
+        <br><br>
+            <h1 style="text-align: center;">
+                POLITICA DE PRIVACIDAD
+    
+            </h1>
+            <br>
+            <h4>
+                Última actualización: Enero 2021.
+    
+            </h4><br>
+            <h2>
+                1. INFORMACIÓN AL USUARIO
+    
+            </h2><br>
+            
+            <p>
+                TU EMPRESA, S.L., como Responsable del Tratamiento, le informa que, según lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril, (RGPD) y en la L.O. 3/2018, de 5 de diciembre, de protección de datos y garantía de los derechos digitales (LOPDGDD), trataremos su datos tal y como reflejamos en la presente Política de Privacidad.
+                <br><br>
+                En esta Política de Privacidad describimos cómo recogemos sus datos personales y por qué los recogemos, qué hacemos con ellos, con quién los compartimos, cómo los protegemos y sus opciones en cuanto al tratamiento de sus datos personales.
+                <br><br>
+                Esta Política se aplica al tratamiento de sus datos personales recogidos por la empresa para la prestación de sus servicios. Si acepta las medidas de esta Política, acepta que tratemos sus datos personales como se define en esta Política.
+                <br><br>
+            </p>
+            
+    <h2>
+        2. CONTACTO
+    
+    </h2>
+    <br>
+    <p>
+        Denominación social: TU EMPRESA, S.L.
+        <br><br>
+        Nombre comercial: TU EMPRESA
+        <br><br>
+        CIF: NUMERO CIF
+        <br><br>
+        Domicilio: DIRECCION DE TU NEGOCIO
+        <br><br>
+        e-mail: tuemail@tudominio. com
+        <br><br>
+    
+    </p>
+    <h2>
+    
+        3. PRINCIPIOS CLAVE
+    </h2> 
+    <br>
+    <p>
+        Siempre hemos estado comprometidos con prestar nuestros servicios con el más alto grado de calidad, lo que incluye tratar sus datos con seguridad y transparencia. Nuestros principios son:
+        <br><br>
+        Legalidad: Solo recopilaremos sus Datos personales para fines específicos, explícitos y legítimos.
+        <br><br>
+        Minimización de datos: Limitamos la recogida de datos de carácter personal a lo que es estrictamente relevante y necesario para los fines para los que se han recopilado.
+        <br><br>
+        Limitación de la Finalidad: Solo recogeremos sus datos personales para los fines declarados y solo según sus deseos.
+        <br><br>
+        Precisión: Mantendremos sus datos personales exactos y actualizados.
+        <br><br>
+        Seguridad de los Datos: Aplicamos las medidas técnicas y organizativas adecuadas y proporcionales a los riesgos para garantizar que sus datos no sufran daños, tales como divulgación o acceso no autorizado, la destrucción accidental o ilícita o su pérdida accidental o alteración y cualquier otra forma de tratamiento ilícito.
+        <br><br>
+        Acceso y Rectificación: Disponemos de medios para que acceda o rectifique sus datos cuando lo considere oportuno.
+        <br><br>
+        Conservación: Conservamos sus datos personales de manera legal y apropiada y solo mientras es necesario para los fines para los que se han recopilado.
+        <br><br>
+        Las transferencias internacionales: cuando se dé el caso de que sus datos vayan a ser transferidos fuera de la UE/EEE se protegerán adecuadamente.
+        <br><br>
+        Terceros: El acceso y transferencia de datos personales a terceros se llevan a cabo de acuerdo con las leyes y reglamentos aplicables y con las garantías contractuales adecuadas.
+        <br><br>
+        Marketing Directo y cookies: Cumplimos con la legislación aplicable en materia de publicidad y cookies.
+        <br><br>
+    </p>
+    
+    
+    <h2>
+        4. RECOGIDA Y TRATAMIENTO DE SUS DATOS PERSONALES
+    
+    </h2>
+    <br>
+    <p>
+        Las tipos de datos que se pueden solicitar y tratar son:
+        <br><br>
+        Datos de carácter identificativo.
+        <br><br>
+        También recogemos de forma automática datos sobre su visita a nuestro sitio web  según se describe en la política de cookies.
+        <br><br>
+        Siempre que solicitemos sus Datos personales, le informaremos con claridad de qué datos personales recogemos y con qué fin. En general, recogemos y tratamos sus datos personales con el propósito de:
+        <br><br>
+        Proporcionar información, servicios, productos, información relevante y novedades en el sector.
+        <br><br>
+        Envío de comunicaciones.
+    
+    </p>
+    <br>
+    <h2>
+        5. LEGITIMIDAD
+    
+    </h2>
+    <br>
+    <p>
+        De acuerdo con la normativa de protección de datos aplicable, sus datos personales podrán tratarse siempre que:
+        <br><br>
+        Nos ha dado su consentimiento a los efectos del tratamiento. Por supuesto podrá retirar su consentimiento en cualquier momento.
+        <br><br>
+        Por requerimiento legal.
+        <br><br>
+        Por exisitr un interés legítimo que no se vea menoscabado por sus derechos de privacidad, como por ejemplo el envío de información comercial bien por suscripción a nuestra newsletter o por su condición de cliente.
+        <br><br>
+        Por se necesaria para la prestación de alguno de nuestros servicios mediante relación contractual entre usted y nosotros.
+    
+    </p>
+    <br>
+    <h2>
+    
+        6. COMUNICACIÓN DE DATOS PERSONALES
+    </h2>
+    <br>
+    <p>
+        Los datos pueden ser comunicados a empresas relacionadas con TU EMPRESA, S.L. para la prestación de los diversos servicios en calidad de Encargados del Tratamiento. La empresa no realizará ninguna cesión, salvo por obligación legal.
+    
+    </p>
+    <br>
+    <h2>
+        7. SUS DERECHOS
+    
+    </h2>
+    <br>
+    <p>
+        En relación con la recogida y tratamiento de sus datos personales, puede ponerse en contacto con nosotros en cualquier momento para:
+        <br><br>
+        Acceder a sus datos personales y a cualquier otra información indicada en el Artículo 15.1 del RGPD.
+        <br><br>
+        Rectificar sus datos personales que sean inexactos o estén incompletos de acuerdo con el Artículo 16 del RGPD.
+        <br><br>
+        Suprimir sus datos personales de acuerdo con el Artículo 17 del RGPD.
+        <br><br>
+        Limitar el tratamiento de sus datos personales de acuerdo con el Artículo 18 del RGPD.
+        <br><br>
+        Solicitar la portabilidad de sus datos de acuerdo con el Artículo 20 del RGPD.
+        <br><br>
+        Oponerse al tratamiento de sus datos personales de acuerdo con el artículo 21 del RGPD.
+        <br><br>
+        Si ha otorgado su consentimiento para alguna finalidad concreta, tiene derecho a retirar el consentimiento otorgado en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada rrhh.
+        <br><br>
+        Puede ejercer estos derechos enviando comunicación, motivada y acreditada, a tuemail@tudominio .com
+        <br><br>
+        También tiene derecho a presentar una reclamación ante la Autoridad de control competente (www.aepd.es) si considera que el tratamiento no se ajusta a la normativa vigente.
+        <br><br>
+    
+    </p>
+    
+    <h2>
+    
+        8. INFORMACIÓN LEGAL
+    </h2>
+    <br>
+    <p>
+        Los requisitos de esta Política complementan, y no reemplazan, cualquier otro requisito existente bajo la ley de protección de datos aplicable, que será la que prevalezca en cualquier caso.
+        <br><br>
+        Esta Política está sujeta a revisiones periódicas y la empresa puede modificarla en cualquier momento. Cuando esto ocurra, le avisaremos de cualquier cambio y le pediremos que vuelva a leer la versión más reciente de nuestra Política y que confirme su aceptación
+        
+    
+    </p>
+
+    </div>
+
+
+<!-- Footer -->
+<footer
+class="text-center text-lg-start text-white"
+style="background-color: #f8a6f0; 
+width: 100%;"
+>
+<!-- Grid container -->
+<div class="container p-4 pb-0">
+<!-- Section: Links -->
+<section class="">
+<!--Grid row-->
+<div class="row">
+
+<!-- Grid column -->
+<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+    <h6 class="text-uppercase mb-4 font-weight-bold">
+    Legal
+    </h6>
+    <p>
+    <a class="text-white" href="AvisoLegalConCuenta.html">Aviso Legal</a>
+    </p>
+    <p>
+    <a class="text-white" href="PoliticasPrivacidadConCuenta.html">Políticas de privacidad</a>
+    </p>
+</div>
+
+<!-- Grid column -->
+<hr class="w-100 clearfix d-md-none" />
+
+<!-- Grid column -->
+<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+    <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+    <p><i class="fas fa-home mr-3"></i> C. Nueva Escocia 1885, 44638 Guadalajara, Jal.</p>
+    <p><i class="fas fa-envelope mr-3"></i> cadivie.ecommerce@gmail.com</p>
+    <p><i class="fas fa-phone mr-3"></i> + 52 33-1111-1111</p>
+    <p><i class="fas fa-print mr-3"></i> + 52 33-2222-2222</p>
+</div>
+<!-- Grid column -->
+</div>
+<!--Grid row-->
+</section>
+<!-- Section: Links -->
+
+<hr class="my-3">
+
+<!-- Section: Copyright -->
+<section class="p-3 pt-0">
+<div class="row d-flex align-items-center">
+<!-- Grid column -->
+
+<!-- Grid column -->
+
+<!-- Grid column -->
+<div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+    <!-- Facebook -->
+    <a
+    class="btn btn-outline-light btn-floating m-1"
+    class="text-white"
+    role="button"
+    ><i class="fab fa-facebook-f"></i
+    ></a>
+
+    <!-- Twitter -->
+    <a
+    class="btn btn-outline-light btn-floating m-1"
+    class="text-white"
+    role="button"
+    ><i class="fab fa-twitter"></i
+    ></a>
+
+    <!-- Google -->
+    <a
+    class="btn btn-outline-light btn-floating m-1"
+    class="text-white"
+    role="button"
+    ><i class="fab fa-google"></i
+    ></a>
+
+    <!-- Instagram -->
+    <a
+    class="btn btn-outline-light btn-floating m-1"
+    class="text-white"
+    role="button"
+    ><i class="fab fa-instagram"></i
+    ></a>
+</div>
+<!-- Grid column -->
+</div>
+</section>
+<!-- Section: Copyright -->
+</div>
+<!-- Grid container -->
+</footer>
+
+
+</body>
+</html>

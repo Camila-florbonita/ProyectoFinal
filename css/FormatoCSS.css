@@ -258,11 +258,11 @@ body
 
 .banner
 {
+    margin-top: 24px;
     height: 400;
     width: 100%;
     z-index: 0;
     display: block;
-    margin: auto;
 }
 
 .ofertas
