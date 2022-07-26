@@ -127,7 +127,7 @@
         margin-left: auto;
         background-color: var(--white);
         border-radius: 10px;
-        padding: 10px 20px;
+        padding: 20px;
         margin-bottom: 24px;
     }
 
@@ -140,8 +140,8 @@
     {
         display: flex;
         border-bottom: 1px solid var(--background);
-        margin-top: 16px;
-        margin-bottom: 16px;
+        margin-top: 36px;
+        margin-bottom: 36px;
     }
 
     .username
