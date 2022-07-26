@@ -5,7 +5,7 @@ cerrar_sesion.addEventListener("click", function () {
         preventBack();
         setTimeout("preventBack()", 0);  
         window.onunload = function () {null};
-        window.location.replace("./");
+        window.location.replace("./index.html");
     });
 });
 
