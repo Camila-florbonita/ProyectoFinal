@@ -25,7 +25,7 @@
                         </label>
                         <div class="content">
                             <div class="brand">
-                                <a href="OpcionesAdministrador.html" class="brand-name">
+                                <a href="InicioConCuenta.html" class="brand-name">
                                     <abbr title="Cadivie">
                                         Cadivie
                                     </abbr>
@@ -77,11 +77,14 @@
             </div>
         </header>
 
-        <img class="imgprenda" src="ImagenesPrendas/1.jpg">
+        <div class="image-container">
+            <img id="img-file" class="imgprenda" src="ImagenesPrendas/1.jpg">
+
+        </div>
         <div class="etiquetas_container">
             
         
-        <form class="carsdeprenda" action="AgregarPrenda.php" method="post">
+        <form class="carsdeprenda" action="AgregarPrenda.php" method="post" enctype="multipart/form-data">
             
             <div class="etiquetas">
                 <p>
@@ -146,10 +149,10 @@
                         <option value="salmon">Salmón</option>
                         <option value="fucsia">Fucsia</option>
                         <option value="violeta">Violeta</option>
-                        <option value="azul celeste">Azul celeste</option>
-                        <option value="azul marino">Azul marino</option>
-                        <option value="verde lima">Verde lima</option>
-                        <option value="verde oscuro">Verde oscuro</option>
+                        <option value="celeste">Azul celeste</option>
+                        <option value="marino">Azul marino</option>
+                        <option value="lima">Verde lima</option>
+                        <option value="verdeoscuro">Verde oscuro</option>
                         <option value="mostaza">Mostaza</option>
                         <option value="cian">Cian</option>
                         <option value="vino">Vino</option>
@@ -271,7 +274,7 @@
                 </p>
                 <p>
                     <label for="imgPrenda">Imagen de la prenda</label>
-                    <input type="file" id="archivo" name="archivo" accept="image/jpg" required>
+                    <input type="file" id="archivo" name="archivo" accept="image/jpg" onchange="preview(event)" required>
                 </p>
             </div>
             <div class="ntallas">
@@ -299,6 +302,22 @@
                 </button>
             </p>
         </form>
+
+        <script>
+            let preview = (event) => {
+                let read_img = new FileReader();
+                let id_img = document.getElementById('img-file');
+                read_img.onload = () => {
+                    if (read_img.readyState == 2)
+                    {
+                        id_img.src = read_img.result
+                    }
+                }
+
+                read_img.readAsDataURL(event.target.files[0])
+            }
+        </script>
+
         <script src="Logout.js"></script>
     </body>
 </html>
