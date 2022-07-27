@@ -34,6 +34,18 @@ $result = mysqli_query($conexion, $query);
 if($registro = mysqli_fetch_array($result))
 {
     $ingresoTallas = "UPDATE  tallas SET XS = '$TXS', S = '$TS', M = '$TM', L = '$TL', XL = '$TXL' WHERE id_producto = '$id_p'";
+    $query2 = "SELECT * from tallas WHERE id_producto = '$id_p'";
+    $result2 = mysqli_query($conexion, $query2); 
+    $registro2 = mysqli_fetch_array($result2);
+    if($registro2["XS"] > 0||$registro2["S"] > 0||$registro2["M"] > 0||$registro2["L"] > 0||$registro2["XL"] > 0)
+    {
+        $query3 = "SELECT * from listadedeseos WHERE id_producto = '$id_p'";
+        $result3 = mysqli_query($conexion, $query3); 
+        while($registro3 = mysqli_fetch_array($result3))
+        {
+            
+        }
+    }
 }
 else
 {
