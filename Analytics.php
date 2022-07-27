@@ -106,15 +106,15 @@ switch($tipo)
                                 </a>
                             </div>
                             <ul class="links">
-                                <li>
+                            <li>
                                     <div class="menu-opciones">
-                                        <a href="EditarPrenda.html">Editar</a>
+                                        <a href="AgregarPrenda.html">Agregar</a>
                                         
                                     </div>
                                 </li>
                                 <li>
                                     <div class="menu-opciones">
-                                        <a href="AgregarPrenda.html">Agregar</a>
+                                        <a href="Analytics.html">Análisis</a>
                                         
                                     </div>
                                 </li>
