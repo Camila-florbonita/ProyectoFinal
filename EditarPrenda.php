@@ -20,8 +20,42 @@ $TS = $_POST["ns"];
 $TM = $_POST["nm"];
 $TL = $_POST["nl"];
 $TXL = $_POST["nxl"];
+$archivo = $_FILES['archivo']['name'];
 
 include "database.php";
+
+if (isset($archivo) && $archivo != "")
+{
+   $tipo = $_FILES['archivo']['type'];
+   $temporal_name = $_FILES['archivo']['tmp_name'];
+
+   if (!(strpos($tipo,'jpg') || strpos($tipo,'jpeg'))) // || strpost($tipo,'png') || strpost($tipo,'jpeg') || 
+   {
+      echo "<script> alert('Solo se permiten archivos tipo imagen con las extenciones jpg') </script>"; //png y jpeg
+      echo "<script> window.location.href = 'OpcionesAdministrador.html' </script>"; 
+    }
+   else
+   {
+      $ruta = 'ImagenesPrendas'.'/'.$id_p.'.jpg';
+      $file_query = "UPDATE productos SET ruta = '$ruta' WHERE id_producto = $id_p";
+      $resultado = mysqli_query($conexion, $file_query);
+      if ($resultado)
+      {
+         move_uploaded_file($temporal_name, 'ImagenesPrendas'.'/'.$id_p.'.jpg');
+      }
+      else
+      {
+         echo "<script> alert('Ocurrió un error al subir el archivo intente de nuevo') </script>";
+         echo "<script> window.location.href = 'OpcionesAdministrador.html' </script>"; 
+        }
+   }
+
+}
+else
+      {
+         echo "<script> alert('Ocurrió un error intente de nuevo') </script>"; 
+         echo "<script> window.location.href = 'OpcionesAdministrador.html' </script>"; 
+        }
 
 
 $ingreso = "UPDATE productos SET nombre_producto = '$nombreprenda', genero = '$genero', estilo = '$estilo', 
@@ -66,6 +100,11 @@ else
 mysqli_query($conexion, $ingresoTallas);
 
 
-header("Location: OpcionesAdministrador.html");
+
+
+
+
+echo "<script> window.location.href = 'OpcionesAdministrador.html' </script>"; 
+
 ?>
 
