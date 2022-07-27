@@ -74,61 +74,82 @@ switch($tipo)
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
-        <link rel="stylesheet" href="css/styleCuenta.css">
-        <title>Analytics</title>
+        <link rel="stylesheet" href="css/styleProductoConCuenta.css">
+        <link rel="stylesheet" href="css/styleAnalytics.css">
+        <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <title>Análisis</title>
+        <script src="VerificarLogin.js"></script>
         <script src="package/dist/chart.js"></script>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
-        <header class="header">
-            <a href="OpcionesAdministrador.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
-
-                </abbr>
-            </a>
-            <a href="OpcionesAdministrador.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-            <button class="logout" id="logout">
-                Cerrar Sesión
-            </button>
-        </header>
-
-        <nav>
-            <div class="menuadmin">
-                <ul>
-                    <li>
-                        <a class="edprenda" href="EditarPrenda.html">
-                            
-                                Editar
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="analitics" href="Analytics.html">
-                            
-                                Analitics
-                            
-                        </a>
-
-                    </li>
-                    <li>
-                        <a class="ofer" href="Ofertas.html">
-                            
-                                Ofertas
-                                
-                            </a>
-
-                    </li>
-                </ul>
+    <header class="header">
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <input type="checkbox" id="show-search">
+                        <input type="checkbox" id="show-menu">
+                        <label for="show-menu" class="icono-menu">
+                            <abbr title="Menú">
+                                <i class="fas fa-bars"></i>
+                            </abbr>
+                        </label>
+                        <div class="content">
+                            <div class="brand">
+                                <a href="OpcionesAdministrador.html" class="brand-name">
+                                    <abbr title="Cadivie">
+                                        Cadivie
+                                    </abbr>
+                                </a>
+                            </div>
+                            <ul class="links">
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="EditarPrenda.html">Editar</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="AgregarPrenda.html">Agregar</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Ofertas.html">Ofertas</a>
+                                        
+                                    </div>
+                                </li>
+                                <div class="contenedor-login">
+                                    <a class="boton-login" href="" id="logout">
+                                            Cerrar Sesión
+                                    </a>
+                                </div>
+        
+                            </ul>
+                            <label for="show-search" class="icono-busqueda">
+                                <abbr title="Buscar">
+                                    <i class="fas fa-search"></i>
+                                </abbr>
+                            </label>
+                        </div>
+                        <form class="search-box" action="BusquedaReferenceAdmin.php" method="post">
+                            <input class="" name="Busqueda" type="text" placeholder="Buscar..." required>
+                            <button class="boton-buscar" type="submit">
+                                <abbr title="Buscar">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </abbr>
+                            </button>
+                        </form>
+                    </nav>
+                </header>
+                
             </div>
-            
-        </nav>
+    </header>
 
         <script>
             document.addEventListener('DOMContentLoaded', 
@@ -162,10 +183,60 @@ switch($tipo)
                 
         </script>
 
+        <div class="page-container">
+            <form class="form-grafica" action="Analytics.php" method="post">
+                <p class="title">
+                    Elija el tipo gráfica
+                </p>
+    
+                <select class="input analytics" name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
+                    <option value="">Graficas</option>
+                    <option value="general">General</option>
+                    <option value="prenda">Prenda</option>
+                    <option value="estilo">Estilo</option>
+                </select>
+    
+                <select class="input analytics" name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
+                    
+                </select>
+    
+                <select class="input analytics" name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
+                    <option value="">Estilo</option>
+                    <option value="clasico">Clasico</option>
+                    <option value="vintage">Vintage</option>
+                    <option value="gotico">Gotico</option>
+                    <option value="preppy">Preppy</option>
+                    <option value="urbano">Urbano</option>
+                    <option value="hipster">Hipster</option>
+                    <option value="grunge">Grunge</option>
+                    <option value="natural">Natural</option>
+                    <option value="sofisticado">Sofisticado</option>
+                    <option value="artsy">Artsy</option>
+                    <option value="vanguardista">Vanguardista</option>
+                    <option value="boho">Boho</option>
+                    <option value="romantico">Romantico</option>
+                    <option value="dramatico">Dramatico</option>
+                    <option value="girly">Girly</option>
+                </select>
+    
+                <p class="subtitle graphycs">
+                    Inicio:
+                </p>
+                <input class="input analytics" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
+                <p class="subtitle graphycs">
+                    Fin:
+                </p>
+                <input class="input analytics" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
+                <br>
+                <button class="primary-button analisis" id="verGrafica" type="submit" disabled>Ver Grafica</button>
+            </form>
 
-        <div class="graficaContainer" >
-            <canvas id="grafica"></canvas>
+            <div class="grafica-container" >
+                <canvas id="grafica"></canvas>
+            </div>
+            
         </div>
+        
         <script src="Logout.js"></script>
     </body>
 </html>

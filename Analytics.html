@@ -2,9 +2,11 @@
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleProductoConCuenta.css">
+        <link rel="stylesheet" href="css/styleAnalytics.css">
         <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <title>Analytics</title>
+        <title>Análisis</title>
         <script src="package/dist/chart.js"></script>
         <script src="Analytics.js"></script>
         <script src="VerificarLogin.js"></script>
@@ -78,54 +80,60 @@
             </div>
         </header>
         
-        <form class="fechaGrafca" action="Analytics.php" method="post">
+        <div class="page-container">
+            <form class="form-grafica" action="Analytics.php" method="post">
+                <p class="title">
+                    Elija el tipo gráfica
+                </p>
+    
+                <select class="input analytics" name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
+                    <option value="">Graficas</option>
+                    <option value="general">General</option>
+                    <option value="prenda">Prenda</option>
+                    <option value="estilo">Estilo</option>
+                </select>
+    
+                <select class="input analytics" name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
+                    
+                </select>
+    
+                <select class="input analytics" name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
+                    <option value="">Estilo</option>
+                    <option value="clasico">Clasico</option>
+                    <option value="vintage">Vintage</option>
+                    <option value="gotico">Gotico</option>
+                    <option value="preppy">Preppy</option>
+                    <option value="urbano">Urbano</option>
+                    <option value="hipster">Hipster</option>
+                    <option value="grunge">Grunge</option>
+                    <option value="natural">Natural</option>
+                    <option value="sofisticado">Sofisticado</option>
+                    <option value="artsy">Artsy</option>
+                    <option value="vanguardista">Vanguardista</option>
+                    <option value="boho">Boho</option>
+                    <option value="romantico">Romantico</option>
+                    <option value="dramatico">Dramatico</option>
+                    <option value="girly">Girly</option>
+                </select>
+    
+                <p class="subtitle graphycs">
+                    Inicio:
+                </p>
+                <input class="input analytics" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
+                <p class="subtitle graphycs">
+                    Fin:
+                </p>
+                <input class="input analytics" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
+                <br>
+                <button class="primary-button analisis" id="verGrafica" type="submit" disabled>Ver Grafica</button>
+            </form>
 
-            <select class="input" name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
-                <option value="">Graficas</option>
-                <option value="general">General</option>
-                <option value="prenda">Prenda</option>
-                <option value="estilo">Estilo</option>
-            </select>
-
-            <select class="input" name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
-                
-            </select>
-
-            <select class="input" name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
-                <option value="">Estilo</option>
-                <option value="clasico">Clasico</option>
-                <option value="vintage">Vintage</option>
-                <option value="gotico">Gotico</option>
-                <option value="preppy">Preppy</option>
-                <option value="urbano">Urbano</option>
-                <option value="hipster">Hipster</option>
-                <option value="grunge">Grunge</option>
-                <option value="natural">Natural</option>
-                <option value="sofisticado">Sofisticado</option>
-                <option value="artsy">Artsy</option>
-                <option value="vanguardista">Vanguardista</option>
-                <option value="boho">Boho</option>
-                <option value="romantico">Romantico</option>
-                <option value="dramatico">Dramatico</option>
-                <option value="girly">Girly</option>
-            </select>
-
-            <p>
-                Inicio:
-            </p>
-            <input class="input" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
-            <p>
-                Fin:
-            </p>
-            <input class="input" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
-            <br>
-            <button class="guardarcambios" id="verGrafica" type="submit" disabled>Ver Grafica</button>
-        </form>
-
-
-        <div class="graficaContainer" >
-            <canvas id="grafica"></canvas>
+            <div class="grafica-container" >
+                <canvas id="grafica"></canvas>
+            </div>
+            
         </div>
+
         <script src="Logout.js"></script>
     </body>
 </html>
