@@ -4,12 +4,14 @@
 require 'google-api-php-client--PHP8.0/vendor/autoload.php';
 include "database.php";
 
+$sts = $_REQUEST["out"];
+
 session_start();
  
 // init configuration
 $clientID = '495801222005-278r2r4ojcehbgrq9o1t8d0g4flbj985.apps.googleusercontent.com';
 $clientSecret = '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';
-$redirectUri = '/loginGoogle.php';
+$redirectUri = 'https://cadivie.herokuapp.com/loginGoogle.php';
   
 // create Client Request to access Google API
 $client = new Google_Client();
@@ -21,6 +23,25 @@ $client->addScope("profile");
  
 // authenticate code from Google OAuth Flow
 if (isset($_GET['code'])) {
+  if($sts == "yes")
+  {
+    echo "<a href='".$client->revokeToken()."'>
+    <button id='botonowo'>
+    Google Logout
+    </button>
+    </a>";
+    echo "";
+
+    echo "<script>
+    document.getElementById('botonowo').click();
+    </script>
+    ";
+
+    session_destroy();
+    header("Location: index.html");
+  }
+  else
+  {
   $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
   $client->setAccessToken($token['access_token']);
   
@@ -59,7 +80,7 @@ if (isset($_GET['code'])) {
     ";
     
   }
-
+  }
   
 
  
