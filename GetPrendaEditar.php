@@ -292,6 +292,9 @@ echo '<div id="predit">
                         </select>
                     </p>
                     <p>
+                        <input type="text" name="descprenda" value="', $registro["descripcion"], '" required>
+                    </p>
+                    <p>
                         <input class="input" type="number" min="0" step=".01" name="precio" placeholder="Precio..." required value="', $registro["precio"], '">
                     </p>
                     <p>

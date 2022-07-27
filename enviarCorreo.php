@@ -38,7 +38,7 @@ try {
     
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = '¡Uno de los Productos en su lista de deseos ha sido abastecido!';
+    $mail->Subject = 'Uno de los Productos en su lista de deseos ha sido abastecido!';
     
     $cuerpo = '<h4>Ahora puede comprar el producto:</h4>';
     $cuerpo .= '<p><b>' . $nombre_producto . '</b></p><br>';
