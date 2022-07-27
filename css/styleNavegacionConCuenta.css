@@ -95,6 +95,11 @@ nav .content
     width: 100%;
 }
 
+nav .content ul
+{
+    margin: 0;
+}
+
 nav .content .links
 {
     margin-left: 80px;
