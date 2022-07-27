@@ -18,11 +18,19 @@ $id_us = $_SESSION["id_us"];
         $result2 = mysqli_query($conexion, $query2); 
         $registro2 = mysqli_fetch_array($result2);
 
-echo "<div class='producto' id='producto' onclick='selectPrenda(", $registro2['id_producto'],")'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
-<p class='nomprodcarrito' id='NombreProducto'>",
-    $registro2['nombre_producto'],
-"</p>
+echo "<div class='producto' onclick='selectPrenda(", $registro2['id_producto'],")'>
+<div class='image-container'>
+    <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+
+</div>
+<div class='product-info'>
+    <p class='product-name'>
+        ",
+$registro['nombre_producto'],
+"
+    </p>
+    
+</div>
 </div>";
 $cont++;
 }
@@ -30,7 +38,7 @@ $cont++;
 if($cont == 0)
 {
   echo "<div class='producto' id='producto'>
-  <p class='precprodcarrito'>
+  <p class='product-name'>
   No se tienen compras registradas
   </p>
   </div>";
