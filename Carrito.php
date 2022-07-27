@@ -17,7 +17,7 @@ while ($registro = mysqli_fetch_array($result)){
     $result2 = mysqli_query($conexion, $query2); 
     $registro2 = mysqli_fetch_array($result2);
     
-    echo "
+    echo "<div class='product-container'>
     <div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
                         <div class='imgProduct'>
                             <img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
@@ -33,11 +33,11 @@ while ($registro = mysqli_fetch_array($result)){
                             <p class='product-description'>",
         $registro2['descripcion'],
         "</p>
-                            
+        </div>
+        </div>         
                             <div class='delete-button-container'>
                                 <button class='btn btn-danger' onclick='remove(", $registro2['id_producto'],")'><i class='far fa-trash-alt'></i></button>
                             </div>
-                        </div>
         
                         
                     </div>

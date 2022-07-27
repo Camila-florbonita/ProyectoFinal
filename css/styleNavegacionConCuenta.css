@@ -95,6 +95,11 @@ nav .content
     width: 100%;
 }
 
+nav .content ul
+{
+    margin: 0;
+}
+
 nav .content .links
 {
     margin-left: 80px;
@@ -225,6 +230,7 @@ nav .content .links
     background: #c97ed3;
     border-radius: 15px;
     padding: 10px;
+    transition: all 0.3s;
 }
 
 .content .links li:hover ul

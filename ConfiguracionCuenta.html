@@ -3,6 +3,9 @@
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleCuenta.css">
+        <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <title>Configuracion de cuenta</title>
         <script src="Busqueda.js"></script>
         <script src="GetProductId.js"></script>
@@ -14,61 +17,266 @@
     <body>
 
         <header class="header">
-            <a href="InicioConCuenta.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
-
-                </abbr>
-            </a>
-            <form class="buscar" action="BusquedaReference.php" method="post">
-                <input class="busqueda" name="Busqueda" type="text" placeholder="Buscar...">
-                <button class="lupa" type="submit">
-                    <abbr title="Buscar">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/lupa_jm0bhn.png">
-
-                    </abbr>
-                </button>
-            </form>
-            <a href="InicioConCuenta.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-            <ul class="menuUsuario">
-                <li class="opcionMenu">
+            <div class="wrapper">
+                <nav>
+                    <input type="checkbox" id="show-search">
+                    <input type="checkbox" id="show-menu">
+                    <label for="show-menu" class="icono-menu">
+                        <abbr title="Menú">
+                            <i class="fas fa-bars"></i>
+                        </abbr>
+                    </label>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="InicioConCuenta.html" class="brand-name">
+                                <abbr title="Cadivie">
+                                    Cadivie
+                                </abbr>
+                            </a>
+                        </div>
+                            <ul class="links">
+                                <li>
+                                    <div class="menu-busqueda">Prenda</div>
+                                    <input type="checkbox" id="show-prenda">
+                                    <label for="show-prenda">Prenda</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('playera')" href="MenuSecciones.html" class="subcategorias">
+                                                Playeras
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('pantalon')" href="MenuSecciones.html" class="subcategorias">
+                                                Pantalones
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vestido')" href="MenuSecciones.html" class="subcategorias">
+                                                Vestidos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('short')" href="MenuSecciones.html" class="subcategorias">
+                                                Shorts
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('falda')" href="MenuSecciones.html" class="subcategorias">
+                                                Faldas
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('sueter')" href="MenuSecciones.html" class="subcategorias">
+                                                Sueteres
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Temporada</div>
+                                    <input type="checkbox" id="show-temporada">
+                                    <label for="show-temporada">Temporada</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('primavera')" href="MenuSecciones.html" class="subcategorias">
+                                                Primavera
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('verano')" href="MenuSecciones.html" class="subcategorias">
+                                                Verano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('otono')" href="MenuSecciones.html" class="subcategorias">
+                                                Otoño
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('invierno')" href="MenuSecciones.html" class="subcategorias">
+                                                Invierno
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Estilo</div>
+                                    <input type="checkbox" id="show-estilo">
+                                    <label for="show-estilo">Estilo</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('clasico')" href="MenuSecciones.html" class="subcategorias">
+                                                Clasico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vintage')" href="MenuSecciones.html" class="subcategorias">
+                                                Vintage
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('gotico')" href="MenuSecciones.html" class="subcategorias">
+                                                Gotico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('preppy')" href="MenuSecciones.html" class="subcategorias">
+                                                Preppy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('urbano')" href="MenuSecciones.html" class="subcategorias">
+                                                Urbano
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('hipster')" href="MenuSecciones.html" class="subcategorias">
+                                                Hipster
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('grunge')" href="MenuSecciones.html" class="subcategorias">
+                                                Grunge
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('natural')" href="MenuSecciones.html" class="subcategorias">
+                                                Natural
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('sofisticado')" href="MenuSecciones.html" class="subcategorias">
+                                                Sofisticado
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('artsy')" href="MenuSecciones.html" class="subcategorias">
+                                                Artsy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('vanguardista')" href="MenuSecciones.html" class="subcategorias">
+                                                Vanguardista
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('boho')" href="MenuSecciones.html" class="subcategorias">
+                                                Boho
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('romantico')" href="MenuSecciones.html" class="subcategorias">
+                                                Romantico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('dramatico')" href="MenuSecciones.html" class="subcategorias">
+                                                Dramatico
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('girly')" href="MenuSecciones.html" class="subcategorias">
+                                                Girly
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Ocasión</div>
+                                    <input type="checkbox" id="show-ocasion">
+                                    <label for="show-ocasion">Ocasión</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a onclick="Secciones('playa')" href="MenuSecciones.html" class="subcategorias">
+                                                Playa
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('elegante')" href="MenuSecciones.html" class="subcategorias">
+                                                Elegante
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('deportivo')" href="MenuSecciones.html" class="subcategorias">
+                                                Deportivo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="Secciones('fiesta')" href="MenuSecciones.html" class="subcategorias">
+                                                Fiesta
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="menu-busqueda">Maniquí 3D</div>
+                                    <input type="checkbox" id="show-maniqui">
+                                    <label for="show-maniqui">Maniquí 3D</label>
+                                    <ul class="categorias">
+                                        <li>
+                                            <a href="ElegirPrendaParaCombinar.html" class="subcategorias">
+                                                Combinar atuendo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Maniqui.html" class="subcategorias">
+                                                Probar en Maniquí
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="cart-button-container">
+                                <a href="CarritoDeCompras.html" class="cart-button">
+                                    <abbr title="Carrito de Compras">
+                                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
                     
-                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
-                    
-                    <ul class="submenuUsuario">
-                        <li class="opcionUsuario">
-                            <a href="HistorialDeCompras.html">
-                                Historial
-                            </a>
-                        </li >
-                        <li class="opcionUsuario">
-                            <a href="ListaDeDeseos.html">
-                                Lista de deseos
-                            </a>
-                        </li>
-                        <li class="opcionUsuario">
-                            <a href="ConfiguracionCuenta.html">
-                                Configuracion
-                            </a>
-                        </li>
-                        <li class="opcionUsuario" id="logout">
-                            <a href="" id="logout">
-                                Cerrar sesion
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <a href="CarritoDeCompras.html" class="carrito">
-                <abbr title="Carrito de compras">
-                    <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571538/carritodecompras_pzica7.png">
-
-                </abbr>
-            </a>
+                                    </abbr>
+                                </a>
+                            </ul>
+                            <ul class="menuUsuario">
+                                <li class="opcionMenu">
+                                        <img class="iconocuenta" src="https://res.cloudinary.com/cadivie/image/upload/v1653572164/cuentaicono_inclmf.png">
+                                    <ul class="submenuUsuario">
+                                        <li class="opcionUsuario">
+                                            <a href="HistorialDeCompras.html">
+                                                Historial
+                                            </a>
+                                        </li >
+                                        <li class="opcionUsuario">
+                                            <a href="ListaDeDeseos.html">
+                                                Lista de deseos
+                                            </a>
+                                        </li>
+                                        <li class="opcionUsuario">
+                                            <a href="ConfiguracionCuenta.html">
+                                                Configuracion
+                                            </a>
+                                        </li>
+                                        <li class="opcionUsuario" id="logout">
+                                            <a href="" id="logout">
+                                                Cerrar sesion
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <label for="show-search" class="icono-busqueda">
+                            <abbr title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </abbr>
+                        </label>
+                    </div>
+                    <form class="search-box" action="BusquedaReference.php" method="post">
+                        <input class="" type="text" placeholder="Buscar..." required>
+                        <button class="boton-buscar" type="submit">
+                            <abbr title="Buscar">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </abbr>
+                        </button>
+                    </form>
+                </nav>
+            </div>
         </header>
 
         <div id="confC">
