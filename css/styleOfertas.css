@@ -1,0 +1,116 @@
+:root
+                {
+                    --strong-pink: #c64cd6;
+                    --white: white;
+                    --background: whitesmoke;
+                    --gris-oscuro: rgb(77,77,77);
+                    --gris-claro: #aaa;
+                    --lg: 1.8rem;
+                    --md: 1.5rem;
+                    --sm: 1.2rem;
+                }
+    
+            body 
+            {
+                background-color: whitesmoke;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+    
+            .page-container
+            {
+                
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 100px;
+                margin-top: 100px;
+            }
+
+            .form-container
+            {
+                display: flex;
+                place-content: center;
+                gap: 32px;
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+    
+            .form-grafica
+            {
+                display: flex;
+                flex-direction: column;
+                background-color: var(--white);
+                border-radius: 10px;
+                min-width: 320px;
+                padding: 16px;
+                height: 100%;
+                place-content: center;
+            }
+
+            .grafica-container
+            {
+                background-color: var(--white);
+                border-radius: 10px;
+                padding: 16px;
+                display: flex;
+                min-width: 320px;
+                place-items: center;
+                place-content: center;
+                height: 100%;
+            }
+    
+            .primary-button {
+                border: 2px solid var(--strong-pink);
+                border-radius: 10px;
+                font-size: var(--md);
+                background-color: var(--white);
+                color: var(--strong-pink);
+                padding: 15px 20px;
+                cursor: pointer;
+                width: 100%;
+            }
+    
+            .primary-button:hover, .primary-button:focus
+            {
+                background-color: var(--strong-pink); 
+                color: var(--white);
+            }
+
+            .sales
+            {
+                margin-top: 32px;
+                margin-bottom: 32px;
+            }
+    
+            .input
+            {
+                border: solid 2px var(--gris-claro); 
+                border-radius: 10px;
+                margin-bottom: 16px;
+                font-size: var(--sm);
+                padding: 2px 4px;
+            }
+
+        .input:hover, .input:focus
+        {
+            border: solid 2px var(--strong-pink);
+            border-radius: 15px;
+            outline: none;
+        }
+            
+            .title
+            {
+                font-size: var(--lg);
+                margin-bottom: 32px;
+                margin-top: 32px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .subtitle
+            {
+                font-size: var(--md);
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: var(--gris-oscuro);
+            }

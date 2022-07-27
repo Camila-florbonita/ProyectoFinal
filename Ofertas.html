@@ -2,6 +2,7 @@
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleOfertas.css">
         <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <title>Ingresar prenda</title>
@@ -34,19 +35,19 @@
                             <ul class="links">
                                 <li>
                                     <div class="menu-opciones">
-                                        <a href="EditarPrenda.html">Editar</a>
-                                        
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="menu-opciones">
-                                        <a href="Analytics.html">Análisis</a>
-                                        
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="menu-opciones">
                                         <a href="AgregarPrenda.html">Agregar</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Analytics.php">Análisis</a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Ofertas.html">Ofertas</a>
                                         
                                     </div>
                                 </li>
@@ -77,41 +78,53 @@
             </div>
         </header>
 
-        <form class="ingresarofertas" action="Ofertas.php" method="post">
-            <div class="productooferta">
-            <select name="POferta" id="POferta" multiple required>
+        <div class="page-container">
+            <form class="form-container" action="Ofertas.php" method="post">
+                <div class="form-grafica">
+                    <p class="title">Crear oferta</p>
+    
+                    <p class="subtitle">
+                        Duracion de la oferta
+                    </p>
+                    <select class="input" name="duracionOferta" id="duracionOferta" required onchange="temporadazzz()">
+                        <option value="mes">Mes</option>
+                        <option value="dia">Dia</option>
+                        <option value="temporadaOf">Temporada</option>
+                        <option value="liquidacion">Liquidacion</option>
+                    </select>        
+                    <select class="input" name="temporada" id="temporada" disabled style="visibility: hidden;">
+                        <option value="primavera">Primavera</option>
+                        <option value="verano">Verano</option>
+                        <option value="otono">Otoño</option>
+                        <option value="invierno">Invierno</option>
+                    </select>    
+                    <p class="subtitle">
+                        Inicio de la oferta:
+                    </p>
+                    <input class="input" type="date" name="iniciooferta" id="iniciooferta" required>
+                    <p class="subtitle">
+                        Descuento (en porcentaje):
+                    </p>
+                    <input class="input" name="descuento" type="number" required max="99">
+                    %
+                    <p>
+                        <button class="primary-button sales" type="submit">Agregar promocion</button>
+                    </p>
 
-            </select>
+                </div>
+                
+                <div class="grafica-container">
+                    <div class="productooferta">
+                    <select name="POferta" id="POferta" multiple required>
+        
+                    </select>
+                    </div>
+                    
+                </div>
+                
+            </form>
+
         </div>
-            
-            <p>
-                Duracion de la oferta
-            </p>
-            <select name="duracionOferta" id="duracionOferta" required onchange="temporadazzz()">
-                <option value="mes">Mes</option>
-                <option value="dia">Dia</option>
-                <option value="temporadaOf">Temporada</option>
-                <option value="liquidacion">Liquidacion</option>
-            </select>        
-            <select name="temporada" id="temporada" disabled style="visibility: hidden;">
-                <option value="primavera">Primavera</option>
-                <option value="verano">Verano</option>
-                <option value="otono">Otoño</option>
-                <option value="invierno">Invierno</option>
-            </select>    
-            <p>
-                Inicio de la oferta:
-            </p>
-            <input class="fechaoferta" type="date" name="iniciooferta" id="iniciooferta" required>
-            <p>
-                Descuento (en porcentaje):
-            </p>
-            <input class="descuento" name="descuento" type="number" required max="99">
-            %
-            <p>
-                <button class="guardaroferta" type="submit">Agregar promocion</button>
-            </p>
-        </form>
 
         <script src="Logout.js"></script>
     </body>

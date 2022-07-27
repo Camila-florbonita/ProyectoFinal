@@ -2,9 +2,6 @@ body
 {
     background-color: whitesmoke;
     margin: 0;
-    padding-bottom: 100px;
-    margin-bottom: -100px;
-    
 }
 
 *::-webkit-scrollbar {
