@@ -19,10 +19,10 @@ $id_us = $_SESSION["id_us"];
         $registro2 = mysqli_fetch_array($result2);
 
 echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-        <div class='imgProduct'>
+        <div class='image-container'>
             <img class='imagenprenda' src='ImagenesPrendas/", $registro2['id_producto'], ".jpg'>
         </div>
-        <div class='infoProduct'>
+        <div class='product-info'>
             <p class='product-name'>",
                 $registro2['nombre_producto'],
             "</p>

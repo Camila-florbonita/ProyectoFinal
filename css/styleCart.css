@@ -90,7 +90,7 @@
     border-radius: 20px;
 }
 
-.infoProduct {
+.product-info {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -154,7 +154,7 @@
         flex-direction: column;
     }
 
-    .imgProduct {
+    .image-container {
         display: flex;
         justify-content: center;
     }
