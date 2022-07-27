@@ -7,6 +7,7 @@
         <script src="Busqueda.js"></script>
         <script src="GetProductId.js"></script>
         <script src="VerificarLogin.js"></script>
+        <script src="ConfiguracionCuenta.js"></script>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -70,7 +71,8 @@
             </a>
         </header>
 
-        <form class="formularioConfiguracion" action="#">
+        <div id="confC">
+        <form class="formularioConfiguracion" action="ConfiguracionCuenta.php" method="post">
             <h2 class="labelConfigurar">
                 Información de la cuenta
             </h2>
@@ -252,6 +254,7 @@
                 </div>
             </div>
         </form>
+        </div>
         
         <script src="Logout.js"></script>
     </body>

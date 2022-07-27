@@ -1,3 +1,5 @@
+var gend;
+
 function genero(gen)
 {
     gend = gen;
@@ -7,6 +9,10 @@ function genero(gen)
 
 function Maniqui(idPrenda, tipoPrenda)
 {   
+    document.getElementById("fem").style.visibility = "hidden";
+    document.getElementById("masc").style.visibility = "hidden";
+    document.getElementById("volver").style.visibility = "visible";
+
     var prendas = document.getElementById("producto");
     prendas.innerHTML = "";
     var idp = idPrenda;
@@ -14,7 +20,9 @@ function Maniqui(idPrenda, tipoPrenda)
 
     alert (idp, tP);
 
-    gen = genero();
+    var gen = gend;
+
+    alert(gen);
 
     var scene = new THREE.Scene();    
     
