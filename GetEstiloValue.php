@@ -52,8 +52,9 @@ $cont++;
 
 }
 
-$total = $suma/$cont;
-
+if($cont != 0){
+    $total = $suma/$cont;
+    }
 $_SESSION["estiloValue"] = $total;
 
 ?>

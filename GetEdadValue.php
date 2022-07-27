@@ -27,7 +27,9 @@ while ($registro = mysqli_fetch_array($result)){
     
 }
 
+if($cont != 0){
 $total = $suma/$cont;
+}
 
 
 $_SESSION["edadValue"] = $total;
