@@ -19,6 +19,11 @@ else
     $coincidename = $registro["correo_electronico"];
     $datopass = $registro["password"];
     
+    if($coincidename == "cadivie.ecommerce@gmail.com" && $datopass == "CadivieAdmin123")
+    {
+        header("Location: OpcionesAdministrador.html");
+    }
+    else{
 if($coincidename == $correo_electronico && $datopass == $password)
 {
     $_SESSION["id_us"] = $registro['id_usuario'];
@@ -32,6 +37,7 @@ else
 {
     echo json_encode(array('success'=> 0));
     header("Location: login.html");
+}
 }
 }
 

@@ -1,5 +1,7 @@
 <?PHP
 
+session_start();
+
 $id_us = $_SESSION["id_us"];
 $direccion = $_POST["direccion"];
 $n_ext = $_POST["nexterior"];
