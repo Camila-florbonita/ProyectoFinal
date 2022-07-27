@@ -77,20 +77,28 @@ $busqueda = $_SESSION["Busqueda"];
 //echo " " . $registro['id_producto']." ";
 
 
-echo "<div class='producto' id='producto' onclick='getProductId(", $registro['id_producto'],")'>
+echo "<div class='producto' onclick='getProductId(", $registro['id_producto'],")'>
 <div class='image-container'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+    <img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+
 </div>
 <div class='product-info'>
-<p class='product-name' id='NombreProducto'>",
-    $registro['nombre_producto'],
-"</p>
-<p class='price product-price'>",
-    $registro['precio'],
-"</p>
-<p class='product-description'>",
+    <p class='product-name'>
+        ",
+$registro['nombre_producto'],
+"
+    </p>
+    <p class='price product-price'>$ 
+        ",
+$registro['precio'],
+"
+    </p>
+    <p class='product-description'>
+        ",
 $registro['descripcion'],
-"</p>
+"
+    </p>
+
 </div>
 </div>";
 $cont++;
