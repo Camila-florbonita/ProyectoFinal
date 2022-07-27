@@ -25,7 +25,10 @@ if($cont == 0)
 else
 {
     $calif = $calTotal/$cont;
-    echo "Calificacion promedio de esa prenda: ".$calif;
+    if ($calif == 1)
+      echo $calif." estrella";
+    else
+      echo $calif." estrellas";
 }
 
 ?>

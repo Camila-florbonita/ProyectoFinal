@@ -34,8 +34,7 @@ $query = "SELECT * from comprado WHERE id_producto = '$id_p' AND id_usuario = '$
       echo "<script>     
       alert('No has comprado la prenda, no puedes calificarla');
     </script>";
-    echo $id_p;
-    echo $id_u;
+    echo "<script> window.location.href = 'ProductoConCuenta.html' </script>";
     }
 
     ?>
