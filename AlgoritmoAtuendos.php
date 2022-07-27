@@ -5,10 +5,10 @@ session_start();
 
 include "database.php";
 
-//$id_u = $_SESSION["id_us"];
-//$id_p = $_REQUEST["id"];
-$id_u = 1;
-$id_p = 22;
+$id_u = $_SESSION["id_us"];
+$id_p = $_SESSION["id_p"];
+
+
 $comprado = [];
 
 $queryC = "SELECT * from comprado WHERE id_usuario = '$id_u'";
@@ -288,19 +288,15 @@ $flag4 = false;
         }
     }
 
-    echo "<div class='producto' id='producto'>
-<img class='imagenprenda' src='ImagenesPrendas/", $id_p['id_producto'], ".jpg'>
+    echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
+<img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
 <p class='nomprodcarrito' id='NombreProducto'>",
-    $id_p['nombre_producto'],
+    $registro['nombre_producto'],
 "</p>
 <p class='precprodcarrito'>",
-    $id_p['precio'],
+    $registro['precio'],
 "</p>
-<p class='descprodcarrito'>",
-"Estilo: ", $id_p['estilo'], "<br>",
-"Genero: ", $id_p['genero'], "<br>",
-"Color: ", $id_p['color'], "<br>",
-"Corte: ", $id_p['corte'], "<br>",
+<p class='descprodcarrito'>", $registro['descripcion'],
 "</p>
 </div>";
 
@@ -312,7 +308,6 @@ $flag4 = false;
     {
         $i = false;
         $ultQuery = $queryPortion . $colour . $style . $type1;
-        echo $ultQuery, "<br>";
         $ultResult = mysqli_query($conexion, $ultQuery); 
         while($ultRegistro = mysqli_fetch_array($ultResult))
         {
@@ -331,7 +326,7 @@ $flag4 = false;
         }
         else
         {
-            echo "<div class='producto' id='producto'>
+            echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
             <img class='imagenprenda' src='ImagenesPrendas/", $trueid['id_producto'], ".jpg'>
             <p class='nomprodcarrito' id='NombreProducto'>",
                 $trueid['nombre_producto'],
@@ -352,7 +347,6 @@ $flag4 = false;
     {
         $i = false;
         $ultQuery = $queryPortion . $colour . $style . $type2;
-        echo $ultQuery, "<br>";
         $ultResult = mysqli_query($conexion, $ultQuery); 
         while($ultRegistro = mysqli_fetch_array($ultResult))
         {
@@ -371,7 +365,7 @@ $flag4 = false;
         }
         else
         {
-            echo "<div class='producto' id='producto'>
+            echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
             <img class='imagenprenda' src='ImagenesPrendas/", $trueid['id_producto'], ".jpg'>
             <p class='nomprodcarrito' id='NombreProducto'>",
                 $trueid['nombre_producto'],
