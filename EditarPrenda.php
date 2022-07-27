@@ -51,12 +51,6 @@ if (isset($archivo) && $archivo != "")
    }
 
 }
-else
-      {
-         echo "<script> alert('Ocurrió un error intente de nuevo') </script>"; 
-         echo "<script> window.location.href = 'OpcionesAdministrador.html' </script>"; 
-        }
-
 
 $ingreso = "UPDATE productos SET nombre_producto = '$nombreprenda', genero = '$genero', estilo = '$estilo', 
 edad = '$edad', color = '$color', tipo_prenda = '$tipodeprenda', temporada = '$temporada', ocasion = '$ocasion', 
@@ -80,14 +74,16 @@ if($registro = mysqli_fetch_array($result))
             $id_usuario = $registro3['id_usuario'];
             $get_user = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario";
             $result_user = mysqli_query($conexion, $get_user);
-            $correo_electronico = $result_user['correo_electronico'];
-            $nombre_usuario = $result_user['nombre_usuario'];
+            $registro_user = mysqli_fetch_array($result_user);
+            $correo_electronico = $registro_user['correo_electronico'];
+            $nombre_usuario = $registro_user['nombre_usuario'];
 
             $id_producto = $registro3['id_producto'];
             $get_product = "SELECT * FROM productos WHERE id_producto = $id_producto";
             $result_product = mysqli_query($conexion, $get_product);
-            $nombre_producto = $result_product['nombre_producto'];
-            $descripcion = $result_product['descripcion'];
+            $registro_product = mysqli_fetch_array($result_product);
+            $nombre_producto = $registro_product['nombre_producto'];
+            $descripcion = $registro_product['descripcion'];
 
             include 'enviarCorreo.php';
         }

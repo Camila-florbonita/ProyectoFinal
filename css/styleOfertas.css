@@ -74,6 +74,7 @@
             {
                 background-color: var(--strong-pink); 
                 color: var(--white);
+                transition: all 0.3s;
             }
 
             .sales
@@ -96,6 +97,7 @@
             border: solid 2px var(--strong-pink);
             border-radius: 15px;
             outline: none;
+            transition: all 0.3s;
         }
             
             .title

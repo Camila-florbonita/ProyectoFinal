@@ -282,6 +282,7 @@ nav .content .links
 {
     background-color: #c64cd6;
     color: white;
+    transition: all 0.3s;
 }
 
 @media screen and (max-width: 1250px) {
