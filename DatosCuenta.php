@@ -5,8 +5,7 @@ session_start();
 
 include "database.php";
 
-//$id_us = $_SESSION["id_us"];
-$id_us = 4;
+$id_us = $_SESSION["id_us"];
 
     $query = "SELECT * from entrega WHERE id_usuario = '$id_us'";
     $result = mysqli_query($conexion, $query); 
