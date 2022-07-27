@@ -43,7 +43,19 @@ if($registro = mysqli_fetch_array($result))
         $result3 = mysqli_query($conexion, $query3); 
         while($registro3 = mysqli_fetch_array($result3))
         {
-            
+            $id_usuario = $registro3['id_usuario'];
+            $get_user = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario";
+            $result_user = mysqli_query($conexion, $get_user);
+            $correo_electronico = $result_user['correo_electronico'];
+            $nombre_usuario = $result_user['nombre_usuario'];
+
+            $id_producto = $registro3['id_producto'];
+            $get_product = "SELECT * FROM productos WHERE id_producto = $id_producto";
+            $result_product = mysqli_query($conexion, $get_product);
+            $nombre_producto = $result_product['nombre_producto'];
+            $descripcion = $result_product['descripcion'];
+
+            include 'enviarCorreo.php';
         }
     }
 }
