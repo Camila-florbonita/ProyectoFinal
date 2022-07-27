@@ -3,6 +3,7 @@
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleCart.css">
+        <link rel="stylesheet" href="css/styleManiqui.css">
         <title>Elegir Prenda Para Maniqui</title>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -281,33 +282,41 @@
             </div>
         </header>
 
-        <div id="canvas"></div>
+        <div class="page-container">
+            <div class="maniqui-container">
+                <div class="maniqui button-container">
+                    <button class="primary-button" onclick="genero(1); prenda();" id="fem">Femenino</button>
+                    <button class="primary-button" onclick="genero(2); prenda();" id="masc">Masculino</button>
+                    <a class="primary-button go-back" href="Maniqui.html" style="display: none;" id="volver">Probar otra prenda</a>
+                </div>
+                <div id="canvas"></div>
+                <script type="module">
+                    import * as THREE from 'three';
+                    import { GLTFLoader } from 'GLTFLoader.js';
+                 </script>
+                     
+            </div>
+            
+            <div id="producto" class="products-container">
+                    <div class="producto">
+                        <div class="image-container">
+                            <img class="imagenprenda"
+                                src="delarosa-logo.png">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name" id="yes">Blusa blanca de manga corta con estampado de flores</p>
+                            <p class="price product-price">$ 300</p>
+                            <p class="product-description">Lorem ipsum dolor sit amet. orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis at tortor sit amet auctor.</p>
+                        </div>
+                        
+                        
+                    </div>
+            </div>
 
-    <script type="module">
-       import * as THREE from 'three';
-       import { GLTFLoader } from 'GLTFLoader.js';
-    </script>
-        
-        <button onclick="genero(1); prenda();" id="fem">Femenino</button>
-        <button onclick="genero(2); prenda();" id="masc">Masculino</button>
-        <a href="Maniqui.html" style="visibility: hidden;" id="volver">
-            <button>
-                Probar otra prenda
-            </button>
-        </a>
-
-        <div id="producto">
-            <img class="imagenprenda" src="img/imagendelproducto_provisional.jpg">
-            <p class="nomprodcarrito" id="yes">
-                Nombre del producto
-            </p>
-            <p class="precprodcarrito">
-                Precio del producto
-            </p>
-            <p class="descprodcarrito">
-                Aqui va la descripcion del producto
-            </p>
         </div>
+
+    
+        
         <script src="Logout.js"></script>
     </body>
 </html>

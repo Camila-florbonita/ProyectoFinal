@@ -9,9 +9,9 @@ function genero(gen)
 
 function Maniqui(idPrenda, tipoPrenda)
 {   
-    document.getElementById("fem").style.visibility = "hidden";
-    document.getElementById("masc").style.visibility = "hidden";
-    document.getElementById("volver").style.visibility = "visible";
+    document.getElementById("fem").style.display = "none";
+    document.getElementById("masc").style.display = "none";
+    document.getElementById("volver").style.display = "block";
 
     var prendas = document.getElementById("producto");
     prendas.innerHTML = "";
