@@ -12,9 +12,9 @@
         <script src="Calificacion.js"></script>
         <script src="GetSeccion.js"></script>
         <script src="VerificarLogin.js"></script>
-        <script src="Busqueda.js"></script>
         <script src="GetProductId.js"></script>
         <script src="ShowRating.js"></script>
+        <script src="NumeroDePrendas.js"></script>
         <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
         <link rel="stylesheet" href="css/styleProductoConCuenta.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -219,12 +219,12 @@
                                     <label for="show-maniqui">Maniquí 3D</label>
                                     <ul class="categorias">
                                         <li>
-                                            <a href="" class="subcategorias">
+                                            <a href="ElegirPrendaParaCombinar.html" class="subcategorias">
                                                 Combinar atuendo
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="subcategorias">
+                                            <a href="Maniqui.html" class="subcategorias">
                                                 Poner al maniqui
                                             </a>
                                         </li>
@@ -273,7 +273,7 @@
                         </label>
                     </div>
                     <form class="search-box" action="BusquedaReference.php" method="post">
-                        <input class="" type="text" placeholder="Buscar..." required>
+                        <input class="" type="text" placeholder="Buscar..." required name="Busqueda">
                         <button class="boton-buscar" type="submit">
                             <abbr title="Buscar">
                                 <i class="fas fa-long-arrow-alt-right"></i>
@@ -314,6 +314,11 @@
                             <input class="primary-button option" type="radio" name="talla" id="M" value="M">
                             <input class="primary-button option" type="radio" name="talla" id="L" value="L">
                             <input class="primary-button option" type="radio" name="talla" id="XL" value="XL">
+                        </div>
+                        <div>
+                            <input type="number" name="nprendas" id="nprendas" value="1" readonly>
+                            <button type="button" id="masprendas" onclick="up()">+</button>
+                            <button type="button" id="menosprendas" onclick="down()">-</button>
                         </div>
                         <div class="button-container">
                             
@@ -461,34 +466,33 @@
                 <form action="Calificacion.php" method="post">
                     <abbr title="Calificar con una estrella">
                         <button class="imageButton star" type="submit" value="1" name="estrellas">
-                            <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella1">
+                            <img id="estrella1" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png">
                         </button>
                     </abbr>
                     <abbr title="Calificar con dos estrellas">
                         <button class="imageButton star" type="submit" value="2" name="estrellas">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella2">
+                        <img id="estrella2" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png">
                         </button>
                     </abbr>
                     <abbr title="Calificar con tres estrellas">
                         <button class="imageButton star" type="submit" value="3" name="estrellas">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella3">
+                        <img id="estrella3" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png">
                         </button>
                     </abbr>
                     <abbr title="Calificar con cuatro estrellas">
                         <button class="imageButton star" type="submit" value="4" name="estrellas">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella4">
+                        <img id="estrella4" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png">
                         </button>
                     </abbr>
                     <abbr title="Calificar con cinco estrellas">
                         <button class="imageButton star" type="submit" value="5" name="estrellas">
-                        <img src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" id="estrella5">
+                        <img id="estrella5" src="https://res.cloudinary.com/cadivie/image/upload/v1653571539/estrella_cjwug3.png" >
                         </button>
                     </abbr>
                 </form>
                 <div class="calification-box">
                     <p class="average calification">Calificación Promedio:</p>
                     <p class="calification-text calification" id="CalifTotal">5</p>
-                    <p class="calification-text calification">estrellas</p>
                 </div>
                 
             </div>
@@ -520,7 +524,6 @@
 
             </div>
     
-            
         </div>
 
         <script src="Logout.js"></script>

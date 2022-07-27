@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         // var_dump($datos);
         $estado = $datos['detalles']['status'];
         $fecha = $datos['detalles']['update_time'];
-        $fecha_db = date('Y-m-d H:i:s', strtotime($fecha));
+        $fecha_db = date('Y-m-d', strtotime($fecha));
         $_email = $datos['detalles']['payer']['email_address'];
         $id_cliente = $datos['detalles']['payer']['payer_id'];
     
@@ -51,14 +51,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         // echo $id_cliente;
         // echo $precio;
         // echo $fecha_db;
+
+        $prc = $_SESSION['precio'];
+        $talla = $_SESSION["talla"];
+
+        $query = "SELECT * from tallas WHERE id_producto = '$id_producto'";
+        $result = mysqli_query($conexion, $query); 
+        $registro = mysqli_fetch_array($result);
+        $tallas = $registro["talla"];
     
-        $ingreso = "INSERT INTO `comprado`(`id_usuario`, `id_producto`, `fecha_historial`, `id_transaccion`, `email`, `id_cliente`, `precio`) VALUES ('$id_us', '$id_producto','$fecha_db','$id_transaccion','$_email','$id_cliente','$precio')";
+        for($cont = 0; $cont < $_SESSION["nprendas"]; $cont++)
+        {
+            $ingreso = "INSERT INTO `comprado`(`id_usuario`, `id_producto`, `fecha_historial`, `id_transaccion`, `email`, `id_cliente`, `precio`, talla) 
+            VALUES ('$id_us', '$id_producto','$fecha_db','$id_transaccion','$_email','$id_cliente','$prc', '$talla')";
+            $newTalla = $tallas - 1;
+            $update = "UPDATE tallas SET '$talla' = '$newTalla' WHERE id_producto = '$id_pr'";
+        
+        
     
         //$ingreso->execute(["1", '4', $id_transaccion, $estado, $email, $id_cliente, $precio, $fecha_db]);
             // $sql->execute(['1', '4', '1234abcd', 'SUCCESFUL', 'fotosdecamilarock67@gmail.com', 'abcd1234', 239, '2022-15-06 00:00:00']);
         
         // $id_historial = $con->lastInsertId(); arreglar despues
         mysqli_query($conexion, $ingreso);
+    }
         // mysqli_query($conexion, $ingreso);
     }else {
         echo $json;
@@ -69,5 +85,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 // echo $x;
 
 
-
+//$newTalla = $talla - 1;
+  //      $update = "UPDATE tallas SET '$talla' = '$newTalla' WHERE id_producto = '$id_pr'";
 ?>
