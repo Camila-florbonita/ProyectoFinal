@@ -6,7 +6,7 @@ function busqueda()
     reqB.onload = function FindPrendas(){
     var prendas = document.getElementById("producto");
     
-    prendas.innerHTML = req.responseText;
+    prendas.innerHTML = reqB.responseText;
 }
     reqB.open("GET", "Buscar.php?");
     reqB.send();
