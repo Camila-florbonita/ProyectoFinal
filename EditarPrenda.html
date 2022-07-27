@@ -294,7 +294,20 @@
         </div>
     </div>
 
+    <script>
+        let preview = (event) => {
+            let read_img = new FileReader();
+            let id_img = document.getElementById('img-file');
+            read_img.onload = () => {
+                if (read_img.readyState == 2)
+                {
+                    id_img.src = read_img.result
+                }
+            }
 
+            read_img.readAsDataURL(event.target.files[0])
+        }
+    </script>
         
         <script src="Logout.js"></script>
     </body>

@@ -108,9 +108,9 @@ $materialA = array("algodon", "poliester", "lana", "seda", "cuero", "mezclilla",
 
 echo '<div id="predit">
             <div class="etiquetas_container">
-            <form class="carsdeprenda" action="EditarPrenda.php" method="post">
+            <form class="carsdeprenda" action="EditarPrenda.php" method="post" enctype="multipart/form-data">
     
-                <img class="imgprenda" src="ImagenesPrendas/', $registro["id_producto"], '.jpg">
+                <img id="img-file" class="imgprenda" src="ImagenesPrendas/', $registro["id_producto"], '.jpg">
                 <div class="etiquetas">
                     <p>
                         <input class="input" type="text" name="nombreprenda" placeholder="Nombre de la prenda..." required value="', $registro["nombre_producto"], '">
@@ -294,6 +294,10 @@ echo '<div id="predit">
                     <p>
                         <input class="input" type="number" min="0" step=".01" name="precio" placeholder="Precio..." required value="', $registro["precio"], '">
                     </p>
+                    <p>
+                    <label for="imgPrenda">Imagen de la prenda</label>
+                    <input type="file" id="archivo" name="archivo" value="', $registro["ruta"], '" accept="image/jpg" onchange="preview(event)">
+                </p>
                 </div>
                 <div class="ntallas">
                     <p>
