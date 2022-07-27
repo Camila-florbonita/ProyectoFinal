@@ -1,7 +1,7 @@
 <?PHP
 
 session_start();
-$id_usuario = $_SESSION["id_us"];
+$id_us = $_SESSION["id_us"];
 $id_p = $_SESSION["id_p"];
 
 include "database.php";
