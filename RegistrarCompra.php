@@ -127,7 +127,7 @@ if($action == "listadeseos")
                 },
                 onApprove: function(data, actions)
                 {
-                        let url = 'https://cadivie.herokuapp.com//GetDatosCompra.php'
+                        let url = 'https://cadivie.herokuapp.com/GetDatosCompra.php'
                     actions.order.capture().then(function(detalles)
                     {
                         const item = {
@@ -146,6 +146,7 @@ if($action == "listadeseos")
                         console.log(JSON.stringify(item));
                         console.log(detalles);
                         console.log(url);
+                        alert(detalles);
                         alert('Pago realizado');
                         //window.location.href="";
                         return fetch(url,
