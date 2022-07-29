@@ -127,7 +127,7 @@ if($action == "listadeseos")
                 },
                 onApprove: function(data, actions)
                 {
-                        let url = 'https://localhost/ProyectoFinal/GetDatosCompra.php'
+                        let url = 'https://cadivie.herokuapp.com//GetDatosCompra.php'
                     actions.order.capture().then(function(detalles)
                     {
                         const item = {
