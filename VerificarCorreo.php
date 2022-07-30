@@ -27,6 +27,8 @@ else
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleCuenta.css">
+        <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <title>Código de Verificación</title>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,19 +51,19 @@ else
     </head>
     <body>
 
-        <header class="header">
-            <a href="index.html">
-                <abbr title="Cadivie">
-                    <img class="logo" src="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+    <header class="header">
+        <div class="wrapper">
+            <nav>
+                <div class="content">
+                    <div class="brand">
+                        <a href="InicioConCuenta.html" class="brand-name">
+                                Cadivie
+                        </a>
+                    </div>
+            </nav>
+        </div>
 
-                </abbr>
-            </a>
-            <a href="index.html">
-                <span class="companyname">
-                    Cadivie
-                </span>
-            </a>
-        </header>
+    </header>
 
         <form class="formularioConfiguracion" action="CodigoVerificacion.php" method="post">
             <h1 class="labelConfigurar">
