@@ -94,7 +94,7 @@ else
     $ingresoTallas = "INSERT into tallas (id_producto, XS, S, M, L, XL) VALUES ('$id_p', '$TXS', '$TS', '$TM', '$TL', '$TXL')";
 }
 mysqli_query($conexion, $ingresoTallas);
-
+echo "<script> alert('Subido con éxtio') </script> ";
 
 
 

@@ -107,24 +107,48 @@ $materialA = array("algodon", "poliester", "lana", "seda", "cuero", "mezclilla",
 
 
 echo '<div id="predit">
-            <div class="etiquetas_container">
-            <form class="carsdeprenda" action="EditarPrenda.php" method="post" enctype="multipart/form-data">
+            <form action="EditarPrenda.php" method="post" enctype="multipart/form-data">
     
-                <img id="img-file" class="imgprenda" src="ImagenesPrendas/', $registro["id_producto"], '.jpg">
-                <div class="etiquetas">
-                    <p>
-                        <input class="input" type="text" name="nombreprenda" placeholder="Nombre de la prenda..." required value="', $registro["nombre_producto"], '">
-                    </p>
-                    <p>
-                        <select class="input" name="genero" id="genero" required>
+            <div class="page-container">
+                <div class="image-container">
+                    <img id="img-file" class="imgprenda" src="', $registro["ruta"], '">
+                    
+                </div>
+                <div class="form-container">
+                    <div class="etiquetas-container">
+                        <div class="etiquetas">
+                            <input class="input" type="text" name="nombreprenda" placeholder="Nombre de la prenda..." value="', $registro["nombre_producto"], '" required>
+                            <input class="input" type="text" name="descprenda" placeholder="Descripcion de la prenda..." value="', $registro["descripcion"], '" required>
+                            <input class="input" type="number" min="0" step=".01" name="precio" placeholder="Precio..." value="', $registro["precio"], '" required>
+                            <div class="tallas-container">
+                                <label for="xs">XS: </label>
+                                <input class="input tallas" type="number" min="0" name="nxs" id="xs" value="', $registro2["XS"], '" required>
+                            </div>
+                            <div class="tallas-container">
+                                <label for="s">S: </label>
+                                <input class="input tallas" type="number" min="0" name="ns" id="s" value="', $registro2["S"], '" required>
+                            </div>
+                            <div class="tallas-container">
+                                <label for="m">M: </label>
+                                <input class="input tallas" type="number" min="0" name="nm" id="m" value="', $registro2["M"], '" required>
+                            </div>
+                            <div class="tallas-container">
+                                <label for="l">L: </label>
+                                <input class="input tallas" type="number" min="0" name="nl" id="l" value="', $registro2["L"], '" required>
+                            </div>
+                            <div class="tallas-container">
+                                <label for="xl">XL: </label>
+                                <input class="input tallas" type="number" min="0" name="nxl" id="xl" value="', $registro2["XL"], '" required>
+                            </div>
+                        </div>
+                        <div class="etiquetas">
+                            <select class="input" name="genero" id="genero" required>
                             <option value="">Genero</option>
                             <option value="masculino"', $genero[0], '>Masculino</option>
                             <option value="femenino"', $genero[1], '>Femenino</option>
                             <option value="unisex"', $genero[2], '>Unisex</option>
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="estilo" id="estilo" required>
+                            <select class="input" name="estilo" id="estilo" required>
                             <option value="">Estilo</option>
                             <option value="clasico"', $estilo[0], '>Clasico</option>
                             <option value="vintage"', $estilo[1], '>Vintage</option>
@@ -142,19 +166,13 @@ echo '<div id="predit">
                             <option value="dramatico"', $estilo[13], '>Dramatico</option>
                             <option value="girly"', $estilo[14], '>Girly</option>
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="edad" id="edad" required>
+                            <select class="input" name="edad" id="edad" required>
                             <option value="">Edad</option>
                             <option value="nino"', $edad[0], '>Niños</option>
                             <option value="joven"', $edad[1], '>Jovenes</option>
                             <option value="adulto"', $edad[2], '>Adultos</option>
                         </select>
-                    </p>
-                </div>
-                <div class="etiquetas">
-                    <p> 
-                        <select class="input" name="color" id="color" required>
+                            <select class="input" name="color" id="color" required>
                             <option value="">Color</option>
                             <option value="negro"', $color[0], '>Negro</option>
                             <option value="azul"', $color[1], '>Azul</option>
@@ -182,9 +200,7 @@ echo '<div id="predit">
                             <option value="cian"', $color[23], '>Cian</option>
                             <option value="vino"', $color[24], '>Vino</option>
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="tipodeprenda" id="tipodeprenda" required onchange="CambiarCorte()">
+                            <select class="input" name="tipodeprenda" id="tipodeprenda" required onchange="CambiarCorte()">
                             <option value="">Tipo de prenda</option>
                             <option class="playera" value="playera"', $tprenda[0], '>Playera</option>
                             <option class="pantalon" value="pantalon"', $tprenda[1], '>Pantalon</option>
@@ -193,38 +209,28 @@ echo '<div id="predit">
                             <option class="falda" value="falda"', $tprenda[4], '>Falda</option>
                             <option class="sueter" value="sueter"', $tprenda[5], '>Sueter</option>
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="temporada" id="temporada">
+                            <select class="input" name="temporada" id="temporada">
                             <option value="">Temporada</option>
                             <option value="primavera"', $temporada[0], '>Primavera</option>
                             <option value="verano"', $temporada[1], '>Verano</option>
                             <option value="otono"', $temporada[2], '>Otoño</option>
                             <option value="invierno"', $temporada[3], '>Invierno</option>
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="ocasion" id="ocasion">
+                            <select class="input" name="ocasion" id="ocasion">
                             <option value="">Ocasion</option>
                             <option value="playa"', $ocasion[0], '>Playa</option>
                             <option value="elegante"', $ocasion[1], '>Elegante</option>
                             <option value="deporte"', $ocasion[2], '>Deportes</option>
                             <option value="fiesta"', $ocasion[3], '>Fiesta</option>
                         </select>
-                    </p>
-                </div>
-                <div class="etiquetas">
-                    <p>
-                        <select class="input" name="formalidad" id="formalidad" required>
+                            <select class="input" name="formalidad" id="formalidad" required>
                             <option value="">Nivel de formalidad</option>
                             <option value="casual"', $formalidad[0], '>Casual</option>
                             <option value="semiformal"', $formalidad[1], '>Semiformal</option>
                             <option value="formal"', $formalidad[2], '>Formal</option>
                             
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="material" id="material" required>
+                            <select class="input" name="material" id="material" required>
                             <option value="">Material</option>
                             <option value="algodon"', $material[0], '>Algodon</option>
                             <option value="poliester"', $material[1], '>Poliester</option>
@@ -235,9 +241,7 @@ echo '<div id="predit">
                             <option value="licra"', $material[6], '>Licra</option>
                             <option value="lino"', $material[7], '>Lino</option>
                         </select>
-                    </p>
-                    <p>
-                        <select class="input" name="corte" id="corte" required disabled>
+                            <select class="input" name="corte" id="corte" required disabled>
                             <option value="">Corte</option>
                             <optgroup label="Corte de Playera" id="CortePlayera">
                                 <option value="camiseta" id="camiseta">Camiseta</option>
@@ -290,42 +294,20 @@ echo '<div id="predit">
                             </optgroup>
                             
                         </select>
-                    </p>
-                    <p>
-                        <input type="text" name="descprenda" value="', $registro["descripcion"], '" required>
-                    </p>
-                    <p>
-                        <input class="input" type="number" min="0" step=".01" name="precio" placeholder="Precio..." required value="', $registro["precio"], '">
-                    </p>
-                    <p>
-                    <label for="imgPrenda">Imagen de la prenda</label>
-                    <input type="file" id="archivo" name="archivo" value="', $registro["ruta"], '" accept="image/jpg" onchange="preview(event)">
-                </p>
-                </div>
-                <div class="ntallas">
-                    <p>
-                        XS: <input class="input" type="number" min="0" name="nxs" required value="', $registro2["XS"], '">
-                    </p>
-                    <p>
-                        S: <input class="input" type="number" min="0" name="ns" required value="', $registro2["S"], '">
-                    </p>
-                    <p>
-                        M: <input class="input" type="number" min="0" name="nm" required value="', $registro2["M"], '">
-                    </p>
-                    <p>
-                        L: <input class="input" type="number" min="0" name="nl" required value="', $registro2["L"], '">
-                    </p>
-                    <p>
-                        XL: <input class="input" type="number" min="0" name="nxl" required value="', $registro2["XL"], '">
-                    </p>
-                </div>
-    
-                <button class="guardarcambios" type="submit">
-                    Editar prenda
-                </button>
-            </form>
-        </div>
-    </div>';
+                            
+                        </div>
+            </div>
+
+            <div class="select-file">
+                <label for="archivo">Imagen de la prenda</label>
+                <input type="file" id="archivo" name="archivo" value="', $registro["ruta"], '" accept="image/jpg" onchange="preview(event)" required>
+            </div>
+            <button class="primary-button" type="submit">
+                Ingresar prenda
+            </button>
+            </div>
+            </div>
+        </form>';
 
 
 ?>

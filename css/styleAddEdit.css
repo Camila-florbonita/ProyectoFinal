@@ -1,0 +1,138 @@
+:root
+            {
+                --strong-pink: #c64cd6;
+                --white: white;
+                --background: whitesmoke;
+                --gris-oscuro: rgb(77,77,77);
+                --gris-claro: #aaa;
+                --lg: 1.8rem;
+                --md: 1.5rem;
+                --sm: 1.2rem;
+            }
+
+        body 
+        {
+            background-color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page-container
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 32px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .imgprenda
+        {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .form-container
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .etiquetas-container
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .etiquetas
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        
+        .primary-button {
+                border: 2px solid var(--strong-pink);
+                border-radius: 10px;
+                font-size: var(--md);
+                background-color: var(--white);
+                color: var(--strong-pink);
+                padding: 15px 20px;
+                cursor: pointer;
+                width: 100%;
+            }
+    
+            .primary-button:hover, .primary-button:focus
+            {
+                background-color: var(--strong-pink); 
+                color: var(--white);
+                transition: all 0.3s;
+            }
+
+            .input
+            {
+                border: solid 2px var(--gris-claro); 
+                border-radius: 10px;
+                font-size: var(--sm);
+                padding: 8px 8px;
+            }
+
+        .input:hover, .input:focus
+        {
+            border: solid 2px var(--strong-pink);
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .tallas-container
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .tallas-container label
+        {
+            display: flex;
+            justify-content: end;
+            place-items: center;
+            margin-right: 8px;
+        }
+         
+        .tallas
+        {
+            width: 30%;
+            margin-bottom: 0;
+        }
+
+        .select-file
+        {
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 960px) {
+            .page-container
+            {
+                display: flex;
+                flex-direction: column;
+            }
+            
+        }
+        
+        @media (max-width: 580px) {
+            .etiquetas-container
+            {
+                display: flex;
+                flex-direction: column;
+            }
+        }
