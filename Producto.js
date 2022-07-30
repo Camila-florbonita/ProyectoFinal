@@ -2,6 +2,10 @@ var req = new XMLHttpRequest();
 var req2 = new XMLHttpRequest();
 var req3 = new XMLHttpRequest();
 var req4 = new XMLHttpRequest();
+var req5 = new XMLHttpRequest();
+var req6 = new XMLHttpRequest();
+var req7 = new XMLHttpRequest();
+var req8 = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function producto()
@@ -35,11 +39,11 @@ req3.onload = function InfoProducto3()
 
     req4.onload = function InfoProducto4()
 {
-    var productImage = document.getElementById("productImage");
-    productImage.src = "ImagenesPrendas/" + req4.responseText + ".jpg";
+    var productInfo = document.getElementById("productInfo");
+    productInfo.innerHTML = req4.responseText;
 }
     
-    req4.open("GET", "GetProductImage.php?");
+    req4.open("GET", "GetProductInfo.php?");
     req4.send();
 
 }, false);

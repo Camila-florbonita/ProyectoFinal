@@ -137,6 +137,21 @@
 
     }
 
+    
+    .categories
+    {
+        border: none!important;
+        margin-top: 12px!important;
+        margin-bottom: 12px!important;
+    }
+    
+    .category
+    {
+        
+        margin-right: 12px!important;
+    }
+
+
     .comments-container
     {
         width: 80%;
