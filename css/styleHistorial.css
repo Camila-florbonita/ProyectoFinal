@@ -33,7 +33,7 @@
             padding: 20px;
             display: flex;
             border-radius: 10px;
-        
+            cursor: pointer;
             box-shadow: 0 5px 7px 0 rgb(0 0 0 / 10%), 0 6px 8px 0 rgb(0 0 0 / 9%);
         }
 
