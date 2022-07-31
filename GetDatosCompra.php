@@ -7,13 +7,13 @@ $id_producto = $_SESSION['id_p'];
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    
+    echo "<script> alert('funciono') </script>";
     $json = file_get_contents('php://input');
     // var_dump(file_get_contents("php://input"));
-    // echo "<script> alert('$json') </script>"; 
+    echo "<script> alert('$json') </script>"; 
     $datos = json_decode($json, true);
 
-    // echo "<script> alert('$datos') </script>"; 
+    echo "<script> alert('$datos') </script>"; 
     
     // $show ="name: {" . $datos["name"] . "}";
     // echo $show; 
@@ -35,22 +35,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     
         // $ingreso = "INSERT INTO comprado (id_usuario, id_producto, id_transaccion, estado, email, id_cliente, precio, fecha_historial) VALUES ('$id_us', '$id_producto', '$id_transaccion', '$estado', '$email', '$id_cliente', '$precio',
         // '$fecha_db')";
-        // echo "<script> alert('$id_us') </script>"; 
-        // echo "<script> alert('$id_producto') </script>"; 
-        // echo "<script> alert('$id_transaccion') </script>"; 
-        // echo "<script> alert('$estado') </script>"; 
-        // echo "<script> alert('$email') </script>"; 
-        // echo "<script> alert('$id_cliente') </script>"; 
-        // echo "<script> alert('$precio') </script>"; 
-        // echo "<script> alert('$fecha_db') </script>"; 
-        // echo $id_us; 
-        // echo $id_producto;
-        // echo $id_transaccion;
-        // echo $estado;
-        // echo $email;
-        // echo $id_cliente;
-        // echo $precio;
-        // echo $fecha_db;
+        echo "<script> alert('$id_us') </script>"; 
+        echo "<script> alert('$id_producto') </script>"; 
+        echo "<script> alert('$id_transaccion') </script>"; 
+        echo "<script> alert('$estado') </script>"; 
+        echo "<script> alert('$email') </script>"; 
+        echo "<script> alert('$id_cliente') </script>"; 
+        echo "<script> alert('$precio') </script>"; 
+        echo "<script> alert('$fecha_db') </script>"; 
+        echo $id_us; 
+        echo $id_producto;
+        echo $id_transaccion;
+        echo $estado;
+        echo $email;
+        echo $id_cliente;
+        echo $precio;
+        echo $fecha_db;
 
         $prc = $_SESSION['precio'];
         $talla = $_SESSION["talla"];
