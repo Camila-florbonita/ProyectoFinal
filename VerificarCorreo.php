@@ -12,6 +12,16 @@ if (isset($_GET['correo_electronico']))
         echo "<script> alert('Su correo ya ha sido verificado') </script>"; 
         echo "<script> window.location.href = 'login.html' </script>";
     }
+    else
+    {
+        $check_email = "SELECT * FROM verificar WHERE correo_electronico = '$correo_electronico'";
+        $result_email = mysqli_query($conexion, $check_email);
+        if (mysqli_num_rows($result_email) == 0)
+        {
+            echo "<script> alert('Este correo no ha sido registrado') </script>"; 
+            echo "<script> window.location.href = 'registro.html' </script>"; 
+        }
+    }
 }
 else
 {
