@@ -59,6 +59,13 @@
                 height: 100%;
             }
     
+            .sales-container
+            {
+                padding-top: 48px;
+                place-content: start;
+                flex-direction: column;
+            }
+    
             .primary-button {
                 border: 2px solid var(--strong-pink);
                 border-radius: 10px;
