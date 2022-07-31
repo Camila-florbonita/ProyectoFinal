@@ -22,12 +22,24 @@
             margin-bottom: 4px;
         }
 
+        .precio
+        {
+            display: flex;
+        }
+
         .product-price
         {
             font-size: var(--lg);
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 36px;
+        }
+
+        .original-price
+        {
+            margin-top: 6px;
+            margin-bottom: 30px;
+            margin-left: 24px;
         }
 
         .subtitle

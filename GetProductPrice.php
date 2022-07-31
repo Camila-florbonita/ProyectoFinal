@@ -12,11 +12,18 @@ $id = $_SESSION['id_p'];
     while ($registro = mysqli_fetch_array($result)){ 
         if($registro['precio_oferta'] != 0)
         {
-            echo "$", $registro['precio_oferta'];
+            echo "<p class='product-price'>$ 
+                    ", $registro['precio_oferta'], "
+                </p>
+                <p class='description original-price'><del>$ 
+                    ", $registro['precio'], "
+                </del></p>";
         }
         else
         {
-        echo "$", $registro['precio'];
+        echo "<p class='product-price'>$ 
+                ", $registro['precio'], "
+            </p>";
         }
 }
 

@@ -22,7 +22,7 @@ function producto()
 req2.onload = function InfoProducto2()
 {
     var productPrice = document.getElementById("productPrice");
-    productPrice.textContent = req2.responseText;
+    productPrice.innerHTML = req2.responseText;
 }
     
     req2.open("GET", "GetProductPrice.php?");
@@ -45,6 +45,16 @@ req3.onload = function InfoProducto3()
     
     req4.open("GET", "GetProductInfo.php?");
     req4.send();
+
+    req5.onload = function InfoProducto5()
+{
+    var productImage = document.getElementById("productImage");
+    productImage.src = req5.responseText;
+}
+    
+    req5.open("GET", "GetProductImage.php?");
+    req5.send();
+
 
 }, false);
 
