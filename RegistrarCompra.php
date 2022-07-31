@@ -127,7 +127,7 @@ if($action == "listadeseos")
                 },
                 onApprove: function(data, actions)
                 {
-                        let url = 'https://cadivie.herokuapp.com/GetDatosCompra.php'
+                        let url = 'GetDatosCompra.php'
                     actions.order.capture().then(function(detalles)
                     {
                         const item = {
@@ -151,10 +151,10 @@ if($action == "listadeseos")
                         //window.location.href="";
                         return fetch(url,
                         {
-                            method: 'post',
+                            method: 'POST',
                             headers: 
                             {
-                                'content-type': 'application/json'
+                                'Content-Type': 'application/json'
                             },
                             body: JSON.stringify(item)
                         }).catch( err => {
