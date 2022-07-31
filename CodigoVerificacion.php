@@ -22,7 +22,8 @@ $correo_electronico = $_REQUEST["correo_electronico"];
             $insertData = "INSERT INTO usuarios (nombre_usuario, correo_electronico, password)
             SELECT nombre_usuario, correo_electronico, password FROM verificar";
             mysqli_query($conexion, $insertData);
-            header("Location: login.html");
+            echo "<script> alert('Su correo ha sido verificado') </script>"; 
+            echo "<script> window.location.href = 'login.html' </script>";
         }
         else
         {
@@ -32,7 +33,7 @@ $correo_electronico = $_REQUEST["correo_electronico"];
     }
     else
     {
-        echo "<script> alert('Código invalido') </script>";
+        echo "<script> alert('Este correo no ha sido registrado') </script>"; 
         echo "<script> window.location.href = 'registro.html' </script>";
     }
 // }
