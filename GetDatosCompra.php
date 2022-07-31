@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $json = file_get_contents('php://input');
     // var_dump(file_get_contents("php://input"));
     // echo "<script> alert('$json') </script>"; 
-    $datos = json_decode($json, true);
+    $datos = json_decode($json);
 
     // echo "<script> alert('$datos') </script>"; 
     
@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     
         for($cont = 0; $cont < $_SESSION["nprendas"]; $cont++)
         {
-            $ingreso = "INSERT INTO `comprado`(`id_usuario`, `id_producto`, `fecha_historial`, `id_transaccion`, `email`, `id_cliente`, `precio`, `talla`) 
+            $ingreso = "INSERT INTO `comprado`(`id_usuario`, `id_producto`, `fecha`, `id_transaccion`, `email`, `id_cliente`, `precio`, `talla`) 
             VALUES ('$id_us', '$id_producto','$fecha_db','$id_transaccion','$_email','$id_cliente','$prc', '$talla')";
             $newTalla = $tallas - 1;
             $update = "UPDATE tallas SET '$talla' = '$newTalla' WHERE id_producto = '$id_pr'";
@@ -74,6 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         
         // $id_historial = $con->lastInsertId(); arreglar despues
         mysqli_query($conexion, $ingreso);
+        mysqli_query($conexion, $update);
     }
         // mysqli_query($conexion, $ingreso);
     }else {
@@ -84,6 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 // echo $x;
 
+// echo "<script> window.location.href='InicioConCuenta.html' </script>";
 
 //$newTalla = $talla - 1;
   //      $update = "UPDATE tallas SET '$talla' = '$newTalla' WHERE id_producto = '$id_pr'";

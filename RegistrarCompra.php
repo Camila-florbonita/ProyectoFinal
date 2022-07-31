@@ -148,7 +148,7 @@ if($action == "listadeseos")
                         console.log(url);
                         alert(detalles);
                         alert('Pago realizado');
-                        //window.location.href="";
+                        
                         return fetch(url,
                         {
                             method: 'POST',
@@ -159,8 +159,9 @@ if($action == "listadeseos")
                             body: JSON.stringify(item)
                         }).catch( err => {
                             alert(err);
-                        });;
+                        });
                     });
+                    // window.location.href="InicioConCuenta.html";
                 },
 
                 onCancel: function(data)
