@@ -105,6 +105,20 @@
     margin-bottom: 8px;
 }
 
+.columns
+{
+    display: flex;
+    gap: 32px;
+}
+
+.categorias
+{
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+    margin-left: 12px;
+    font-size: 15px !important;
+}
+
 .total-amount {
     margin-top: 8px;
     margin-bottom: 16px;
@@ -158,6 +172,12 @@
     .image-container {
         display: flex;
         justify-content: center;
+    }
+
+    .columns
+    {
+        flex-direction: column;
+        gap: 0;
     }
 }
 

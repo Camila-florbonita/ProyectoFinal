@@ -35,6 +35,52 @@ echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['i
             <p class='product-description'>",
                 $registro2['descripcion'],
             "</p>
+            <div class='columns'>
+            <div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Prenda: </p>
+                <p class='product-description categorias'>", $registro2['tipo_prenda'], "</p>
+            </div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Género: </p>
+                <p class='product-description categorias'>", $registro2['genero'], "</p>
+            </div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Color: </p>
+                <p class='product-description categorias'>", $registro2['color'], "</p>
+            </div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Temporada: </p>
+                <p class='product-description categorias'>", $registro2['temporada'], "</p>
+            </div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Estilo: </p>
+                <p class='product-description categorias'>", $registro2['estilo'], "</p>
+            </div>
+            </div>
+            <div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Edad: </p>
+                <p class='product-description categorias'>", $registro2['edad'], "</p>
+            </div>
+            <div style='display: flex;'>
+            <p class='product-description categorias'>Material: </p>
+            <p class='product-description categorias'>", $registro2['material'], "</p>
+            </div>
+            <div style='display: flex;'>
+            <p class='product-description categorias'>Corte: </p>
+            <p class='product-description categorias'>", $registro2['corte'], "</p>
+            </div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Formalidad: </p>
+                <p class='product-description categorias'>", $registro2['formalidad'], "</p>
+            </div>
+            <div style='display: flex;'>
+                <p class='product-description categorias'>Ocasión: </p>
+                <p class='product-description categorias'>", $registro2['ocasion'], "</p>
+            </div>
+            </div>
+            </div>
         </div>
     </div>";
 $cont++;
