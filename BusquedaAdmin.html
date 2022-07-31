@@ -77,8 +77,9 @@
             </div>
         </header>
 
-        <div id="filtrar">
-            <form action="FiltrarBusquedaAdmin.php" method="post">
+        <div class="filters" id="filtrar">
+            <form class="filter-form" action="FiltrarBusqueda.php" method="post">
+                <div class="filter-section">
                 <select name="genero" id="genero">
                     <option value="">Genero</option>
                     <option value="masculino">Masculino</option>
@@ -153,6 +154,8 @@
                     <option value="otono">Otoño</option>
                     <option value="invierno">Invierno</option>
                 </select>
+            </div>
+            <div class="filter-section">
                 <select name="ocasion" id="ocasion">
                     <option value="">Ocasion</option>
                     <option value="playa">Playa</option>
@@ -177,8 +180,9 @@
                     <option value="licra">Licra</option>
                     <option value="lino">Lino</option>
                 </select>
-                <button type="submit" value="aplicar" name="boton">Aplicar filtros</button>
-                <button type="submit" value="borrar" name="boton">Borrar filtros</button>
+                <button type="submit" value="aplicar" name="boton">Aplicar</button>
+                <button type="submit" value="borrar" name="boton">Reestablecer</button>
+            </div>
             </form>
         </div>
         

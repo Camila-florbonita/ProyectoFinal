@@ -78,3 +78,36 @@ color: var(--gris-oscuro);
 margin-top: 16px;
 margin-bottom: 16px;
 }
+
+.filters
+{
+    margin-top: 32px;
+    justify-content: center;
+    display: flex;
+}
+
+.filter-form
+{
+    display: flex;
+    gap: 12px;
+}
+
+.filter-section
+{
+    display: flex;
+    gap: 12px;
+}
+
+@media (max-width: 1300px) {
+    .filter-form
+    {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 740px) {
+    .filter-section
+    {
+        flex-direction: column;
+    }
+}
