@@ -1,22 +1,59 @@
+<?PHP
+
+session_start();
+
+include "database.php";
+
+$cont = 0;
+
+$f_inicio = $_POST["iniciooferta"];
+$f_fin = $_POST["finoferta"];
+$labels = "";
+$data = "";
+
+$query = "SELECT *, COUNT(*) AS cuenta FROM comprado WHERE fecha >= '$f_inicio' AND fecha <= '$f_fin'
+GROUP BY id_producto ORDER BY COUNT(*) DESC LIMIT 3;";
+$result = mysqli_query($conexion, $query); 
+while ($registro = mysqli_fetch_array($result))
+{
+    $cont++;
+    $labels = $labels.' "'.$registro['id_producto'].'",';
+    $data = $data.' '.$registro['cuenta'].',';
+}
+
+$antiquery = "SELECT *, COUNT(*) AS cuenta FROM comprado WHERE fecha >= '$f_inicio' AND fecha <= '$f_fin'
+GROUP BY id_producto ORDER BY COUNT(*) ASC LIMIT 3;";
+$antiresult = mysqli_query($conexion, $antiquery); 
+
+$cont = 0;
+while ($antiregistro = mysqli_fetch_array($antiresult))
+{
+    $cont++;
+    $labels = $labels.' "'.$antiregistro['id_producto'].'",';
+    $data = $data.' '.$antiregistro['cuenta'].',';
+}
+         
+?>
+
 <html>
     <head>
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
+        <link rel="stylesheet" href="css/styleProductoConCuenta.css">
+        <link rel="stylesheet" href="css/styleAnalytics.css">
         <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
-        <link rel="stylesheet" href="css/styleResultados.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <title>Opciones administrador</title>
+        <title>Análisis</title>
+        <script src="VerificarLogin.js"></script>
+        <script src="package/dist/chart.js"></script>
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="js/index.js"></script>
-        <script src="VerificarLogin.js"></script>
-        <script src="OpcionesAdministrador.js"></script>
     </head>
     <body>
 
-        <header class="header">
+    <header class="header">
             <div class="wrapper">
+                <header>
                     <nav>
                         <input type="checkbox" id="show-search">
                         <input type="checkbox" id="show-menu">
@@ -34,7 +71,7 @@
                                 </a>
                             </div>
                             <ul class="links">
-                                <li>
+                            <li>
                                     <div class="menu-opciones">
                                         <a href="AgregarPrenda.html">Agregar</a>
                                         
@@ -86,33 +123,59 @@
                             </button>
                         </form>
                     </nav>
+                </header>
+                
             </div>
-        </header>
+    </header>
 
-        
-            <div id="producto"  class="results-container">
-                <div class="producto">
-                    <div class="image-container">
-                        <img class="imagenprenda" src="https://res.cloudinary.com/cadivie/image/upload/v1658810344/imagen_predeterminado_ybsfjg.png">
-        
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">
-                            Nombre del producto
-                        </p>
-                        <p class="price product-price">
-                            ID del producto
-                        </p>
-                    </div>
-                    <div class="buttons-container">
-                        <button class='btn btn-success' onclick="Editar()"><i class="fas fa-pencil-alt"></i></button>
-                        <button class='btn btn-danger' onclick="Borrar()"><i class='far fa-trash-alt'></i></button>
-                    </div>
-                </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', 
+            function Grafica(){
+                var graph = document.getElementById("grafica");
+              var barChart = new Chart(graph, {
+                type: 'bar',
+                data: {
+                  labels: [<?php echo $labels; ?>],
+                  datasets: [{
+                    label: 'Prendas mas y menos compradas',
+                    data: [<?php echo $data; ?>],
+                    backgroundColor: [
+      'rgba(0, 255, 132, 0.8)',
+      'rgba(0, 255, 132, 0.8)',
+      'rgba(0, 255, 132, 0.8)',
+      'rgba(255, 12, 10, 0.8)',
+      'rgba(255, 12, 10, 0.8)',
+      'rgba(255, 12, 10, 0.8)'
+    ],
+                    borderColor: 'blue'
+                  }]
+                },
+                options: {
+                  plugins:{
+                  title: {
+                    display: true,
+                    text: "Compras"
+                  }
+                },
+                scales: {
+                  y: {
+                    min: 0,
+                  }
+                }
+              }
+              });
+              }, false)
+                
+        </script>
 
+        <div class="page-container">
+            
+            <div class="grafica-container" >
+                <canvas id="grafica"></canvas>
             </div>
+            
+        </div>
         
-
         <script src="Logout.js"></script>
     </body>
 </html>
