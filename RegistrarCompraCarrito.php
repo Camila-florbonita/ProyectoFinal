@@ -20,7 +20,19 @@ $precioT = $_SESSION['totalCarrito'];
     </head>
     <body>
         
-
+    <header class="header">
+            <div class="wrapper">
+                <nav>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="InicioConCuenta.html" class="brand-name">
+                                    Cadivie
+                            </a>
+                        </div>
+                </nav>
+            </div>
+        
+        </header>
     
 <div id='paypal-button-container'></div>
     

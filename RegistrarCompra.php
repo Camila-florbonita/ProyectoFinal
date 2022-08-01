@@ -123,7 +123,19 @@ if($action == "listadeseos")
     <script src="https://www.paypal.com/sdk/js?client-id=AbrbjYzSiUJ8bo2JLT7y-IeWAjwfpOOITl3gwdu6-0j2zET21JTpPe4bven5HaUP-gFKh2lQ3hUjAEgv&currency=MXN"></script>
     </head>
     <body>
+    <header class="header">
+            <div class="wrapper">
+                <nav>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="InicioConCuenta.html" class="brand-name">
+                                    Cadivie
+                            </a>
+                        </div>
+                </nav>
+            </div>
         
+        </header>
 
     
 <div id='paypal-button-container'></div>
