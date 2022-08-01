@@ -61,9 +61,10 @@ $ingreso = "UPDATE productos SET precio_oferta = '$ofertaT' WHERE id_producto = 
 mysqli_query($conexion, $ingreso);
 $ingreso = "INSERT INTO ofertas (id_producto, inicio, fin, descuento) VALUES ('$id_p', '$inicio', '$fin', '$oferta')";
 mysqli_query($conexion, $ingreso);
+
+}
 echo "<script>
         alert('Oferta ingresada');
+        windows.location.href = 'Ofertas.html';
         </script>";
-}
-header("Location: Ofertas.html");
 ?>

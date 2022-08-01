@@ -40,6 +40,25 @@ for($cont = 0; $cont < $np; $cont++)
     mysqli_query($conexion, $update);
 }
 
+$queryLiq = "SELECT * from tallas WHERE id_producto = '$id_producto'";
+$resultLiq = mysqli_query($conexion, $queryLiq); 
+$registroLiq = mysqli_fetch_array($resultLiq);
+if($registroLiq['XS'] == 0 && $registroLiq['S'] == 0 && $registroLiq['M'] == 0 && $registroLiq['L'] == 0 && $registroLiq['XL'] == 0)
+{
+    $queryOf = "SELECT * from ofertas WHERE id_producto = '$id_producto'";
+    $resultOf = mysqli_query($conexion, $queryOf); 
+    if($registroOf = mysqli_fetch_array($resultOf))
+    {
+        if($registroOf['fin'] == "0000-00-00")
+        {
+            $deletion = "DELETE FROM ofertas WHERE id_producto = '$id_producto'";
+            $updation = "UPDATE productos SET precio_oferta = 0 WHERE id_producto = '$id_producto'";
+            mysqli_query($conexion, $deletion);
+            mysqli_query($conexion, $updation);
+        }
+    }
+}
+
 header("Location: InicioConCuenta.html");
 
 ?>
