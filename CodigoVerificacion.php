@@ -8,22 +8,33 @@ $correo_electronico = $_REQUEST["correo_electronico"];
 // if (isset($_GET['correo_electronico']))
 // {
     // $correo_electronico = $_GET['correo_electronico'];
-    $query = "SELECT * FROM verificar WHERE codigo = '$verifyCode' AND correo_electronico = '$correo_electronico'";
-    $result = mysqli_query($conexion, $query);
-    if(mysqli_num_rows($result) > 0)
+    $check_email = "SELECT * FROM verificar WHERE correo_electronico = '$correo_electronico'";
+    $result_email = mysqli_query($conexion, $check_email);
+    if (mysqli_num_rows($result_email) > 0)
     {
-        // echo "<script> alert(".mysqli_num_rows($result).") </script>";
-        $updateData = "UPDATE verificar SET status = 1 WHERE codigo = '$verifyCode'";
-        mysqli_query($conexion, $updateData);
-        $insertData = "INSERT INTO usuarios (nombre_usuario, correo_electronico, password)
-        SELECT nombre_usuario, correo_electronico, password FROM verificar";
-        mysqli_query($conexion, $insertData);
-        header("Location: login.html");
+        $query = "SELECT * FROM verificar WHERE codigo = '$verifyCode' AND correo_electronico = '$correo_electronico'";
+        $result = mysqli_query($conexion, $query);
+        if(mysqli_num_rows($result) > 0)
+        {
+            // echo "<script> alert(".mysqli_num_rows($result).") </script>";
+            $updateData = "UPDATE verificar SET status = 1 WHERE codigo = '$verifyCode'";
+            mysqli_query($conexion, $updateData);
+            $insertData = "INSERT INTO usuarios (nombre_usuario, correo_electronico, password)
+            SELECT nombre_usuario, correo_electronico, password FROM verificar";
+            mysqli_query($conexion, $insertData);
+            echo "<script> alert('Su correo ha sido verificado') </script>"; 
+            echo "<script> window.location.href = 'login.html' </script>";
+        }
+        else
+        {
+            echo "<script> alert('Código invalido') </script>";
+            echo "<script> window.location.href = 'registro.html' </script>";  
+        }
     }
     else
     {
-        echo "<script> alert('Código invalido') </script>";
-        echo "<script> window.location.href = 'registro.html' </script>";  
+        echo "<script> alert('Este correo no ha sido registrado') </script>"; 
+        echo "<script> window.location.href = 'registro.html' </script>";
     }
 // }
 // else
