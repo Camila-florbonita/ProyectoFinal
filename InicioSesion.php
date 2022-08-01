@@ -22,10 +22,11 @@ else
     
     if($correo_electronico == "cadivie.ecommerce@gmail.com" && $password == $datopass)
     {
-        header("Location: OpcionesAdministrador.html");
         $_SESSION["id_us"] = $registro['id_usuario'];
     $_SESSION["id_name"] = $registro['nombre_usuario'];
     $_SESSION["id_email"] = $registro['correo_electronico'];
+        header("Location: OpcionesAdministrador.html");
+        
     }
     else{
 if($coincidename == $correo_electronico && $datopass == $password)
@@ -38,6 +39,7 @@ if($coincidename == $correo_electronico && $datopass == $password)
 }
 else
 {
+    echo "<script type='text/javascript'>alert('Contraseña incorrecta');</script>";
     header("Location: login.html");
 }
 }
