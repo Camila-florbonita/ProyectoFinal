@@ -81,7 +81,8 @@ if($edad <= 0.3)
     $estilo1 = estilo1($estilo);
 
     $estilo2 = estilo2($estilo);
-    echo $edad;
+    
+    /* echo $edad;
     echo "<br>";
     echo $formalidad;
     echo "<br>";
@@ -95,7 +96,7 @@ if($edad <= 0.3)
     echo "<br>";
     echo $material;
     echo "<br>";
-    echo $color;
+    echo $color; */
 
     if($temporada < .5 && $temporada > 0)
     {

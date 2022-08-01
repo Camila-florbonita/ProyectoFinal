@@ -26,11 +26,20 @@ while ($registro = mysqli_fetch_array($result)){
                         <div class='infoProduct'>
                             <p class='product-name'>",
         $registro2['nombre_producto'],
-        "</p>
-                            <p class='price product-price'>$ ",
+        "</p>";
+        if($registro2['precio_oferta'] != 0)
+        {
+            echo "<p class='price product-price'>$ ",
+        $registro2['precio_oferta'],
+        "</p>";
+        }
+        else
+        {
+            echo "<p class='price product-price'>$ ",
         $registro2['precio'],
-        "</p>
-                            <p class='product-description'>",
+        "</p>";
+        }
+        echo "<p class='product-description'>",
         $registro2['descripcion'],
         "</p>
         </div>
@@ -43,7 +52,15 @@ while ($registro = mysqli_fetch_array($result)){
                     </div>
     ";
     $cont++;
-    $totalCarrito = $totalCarrito + $registro2['precio'];
+    if($registro2['precio_oferta'] != 0)
+    {
+        $totalCarrito = $totalCarrito + $registro2['precio_oferta'];
+    }
+    else
+    {
+        $totalCarrito = $totalCarrito + $registro2['precio'];
+    }
+    
 }
 
 if($cont == 0)
