@@ -3,10 +3,23 @@ include "database.php";
 
 session_start();
 $id_us = $_SESSION["id_us"];
+$compras = [];
+$recomendado = [];
+$flag = true;
+
 $queryx = "SELECT * from comprado WHERE id_usuario = '$id_us'";
     $resultx = mysqli_query($conexion, $queryx); 
 
 if ($registrox = mysqli_fetch_array($resultx)) {
+
+    $queryz = "SELECT * from comprado WHERE id_usuario = '$id_us'";
+    $resultz = mysqli_query($conexion, $queryz); 
+    while($registroz = mysqli_fetch_array($resultz))
+    {
+        $compras[] = $registroz['id_producto'];
+    }
+
+    echo count($compras);
 
 include 'GetEdadValue.php';
 include 'GetEstiloValue.php';
@@ -68,1274 +81,542 @@ if($edad <= 0.3)
     $estilo1 = estilo1($estilo);
 
     $estilo2 = estilo2($estilo);
+    echo $edad;
+    echo "<br>";
+    echo $formalidad;
+    echo "<br>";
+    echo $estilo1;
+    echo "<br>";
+    echo $estilo2;
+    echo "<br>";
+    echo $genero;
+    echo "<br>";
+    echo $temporada;
+    echo "<br>";
+    echo $material;
+    echo "<br>";
+    echo $color;
 
-    if($genero == "femenino")
+    if($temporada < .5 && $temporada > 0)
     {
-        if($temporada < .5 && $temporada > 0)
-        {
-            if($formalidad < 0)
+        $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+        AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+        $result = mysqli_query($conexion, $query); 
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
             {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-                AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-                $result = mysqli_query($conexion, $query); 
-                while ($registro = mysqli_fetch_array($result))
-                { 
-                    if($cont < 11)
-                    {   
-                        echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
+                if($registro['id_producto'] == $compras[$c2])
+                {
+                    $flag = false;
+                }
+            }
+            if($flag == true){
+                if($cont < 11)
+                {   
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                    <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                    <p class='labelElemento'>",
+                    $registro['nombre_producto'],
+                    "</p>";
+                    if($registro['precio_oferta'] == 0)
+                    {
+                        echo "<p class='labelPrecio'>",
+                        $registro['precio'],
+                        "</p>";
                     }
                     else
                     {
-                        break;
+                        echo "<p class='labelPrecio'>",
+                        $registro['precio_oferta'],
+                        "</p>";
                     }
-                    $cont++;
-                }
-            }
-            else
-            {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-                AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-                $result = mysqli_query($conexion, $query); 
-                while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
+                    echo "</div>";   
                 }
                 else
                 {
                     break;
                 }
                 $cont++;
+                $recomendado[] = $registro['id_producto'];
             }
-            }
-        }
-        if($temporada >= .5)
-        {
-            if($formalidad < 0)
-            {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-            else
-            {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-        }
-
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
-             AND formalidad = '$formalidad' AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            if($temporada < .5 && $temporada > 0)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-             AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-        }
-        if($temporada >= .5)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
+            $flag = true;
         }
     }
+    elseif($temporada >= .5)
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+        AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+        $result = mysqli_query($conexion, $query); 
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
+            {
+                if($registro['id_producto'] == $compras[$c2])
+                {
+                    $flag = false;
+                }
+            }
+            for($c3 = 0; $c3 < count($recomendado); $c3++)
+            {
+                if($registro['id_producto'] == $recomendado[$c3])
+                {
+                    $flag = false;
+                }
+            }
+            if($flag == true){
 
-    if($genero == "masculino")
+                if($cont < 11)
+                {
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+                $recomendado[] = $registro['id_producto'];
+            }
+            $flag = true;
+        } 
+        
+    }
+    else
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
+        AND formalidad = '$formalidad' AND color = '$color'";
+        $result = mysqli_query($conexion, $query); 
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
+            {
+                if($registro['id_producto'] == $compras[$c2])
+                {
+                    $flag = false;
+                }
+            }
+            for($c3 = 0; $c3 < count($recomendado); $c3++)
+            {
+                if($registro['id_producto'] == $recomendado[$c3])
+                {
+                    $flag = false;
+                }
+            }
+            if($flag == true){
+
+                if($cont < 11)
+                {
+                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
+                }
+                else
+                {
+                    break;
+                }
+                $cont++;
+                $recomendado[] = $registro['id_producto'];
+            }
+            $flag = true;
+        }    
+    }
+
+    if($cont < 11)
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
+        AND color = '$color'";
+        $result = mysqli_query($conexion, $query); 
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
+            {
+                if($registro['id_producto'] == $compras[$c2])
+                {
+                    $flag = false;
+                }
+            }
+            for($c3 = 0; $c3 < count($recomendado); $c3++)
+            {
+                if($registro['id_producto'] == $recomendado[$c3])
+                {
+                    $flag = false;
+                }
+            }
+            
+            if($flag == true){
+               if($cont < 11)
+               {
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+               $recomendado[] = $registro['id_producto'];
+            }
+            $flag = true;
+       }
+    }
+
+    if($cont < 11)
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
+        $result = mysqli_query($conexion, $query);
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
+            {
+                if($registro['id_producto'] == $compras[$c2])
+                {
+                    $flag = false;
+                }
+            }
+            for($c3 = 0; $c3 < count($recomendado); $c3++)
+            {
+                if($registro['id_producto'] == $recomendado[$c3])
+                {
+                    $flag = false;
+                }
+            }
+            
+            if($flag == true){
+               if($cont < 11)
+               {
+                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+                   <p class='labelElemento'>",
+                   $registro['nombre_producto'],
+                   "</p>";
+                   
+                   if($registro['precio_oferta'] == 0)
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio'],
+                       "</p>";
+                   }
+                   else
+                   {
+                       echo "<p class='labelPrecio'>",
+                       $registro['precio_oferta'],
+                       "</p>";
+                   }
+               
+                   echo "</div>";
+               }
+               else
+               {
+                   break;
+               }
+               $cont++;
+               $recomendado[] = $registro['id_producto'];
+            }
+            $flag = true;
+       }
+    }
+
+    if($cont < 11)
     {
         if($temporada < .5 && $temporada > 0)
-        {
-            if($formalidad < 0)
-            {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-            else
-            {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-        }
-        if($temporada >= .5)
-        {
-            if($formalidad < 0)
-            {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-            else
-            {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
-             AND formalidad = '$formalidad' AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            if($temporada < .5 && $temporada > 0)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-             AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-        }
-        if($temporada >= .5)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        }
-    }
-
-    if($genero == "unisex")
     {
-        if($temporada < .5 && $temporada > 0)
-        {
-            if($formalidad < 0)
+        $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+         AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
+        $result = mysqli_query($conexion, $query); 
+        while ($registro = mysqli_fetch_array($result))
+        { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
+                {
+                    if($registro['id_producto'] == $compras[$c2])
+                    {
+                        $flag = false;
+                    }
+                }
+                for($c3 = 0; $c3 < count($recomendado); $c3++)
+                {
+                    if($registro['id_producto'] == $recomendado[$c3])
+                    {
+                        $flag = false;
+                    }
+                }
+                if($flag == true){
+            if($cont < 11)
             {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
+                echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+               <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+               <p class='labelElemento'>",
+               $registro['nombre_producto'],
+               "</p>";
                
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
+               if($registro['precio_oferta'] == 0)
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio'],
+                   "</p>";
+               }
+               else
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio_oferta'],
+                   "</p>";
+               }
+           
+               echo "</div>";
             }
             else
             {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
+                break;
             }
-            }
+            $cont++;
+            $recomendado[] = $registro['id_producto'];
         }
-        if($temporada >= .5)
-        {
-            if($formalidad < 0)
-            {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND formalidad = '$formalidad' AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-            else
-            {
-                $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad' 
-            AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-            }
-        }
-
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
-            AND formalidad = '$formalidad' AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo1' AND genero = '$genero' AND edad = '$edad'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            if($temporada < .5 && $temporada > 0)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-             AND color = '$color' AND (temporada = 'otono' OR temporada = 'invierno')";
-            $result = mysqli_query($conexion, $query); 
-            while ($registro = mysqli_fetch_array($result))
-            { 
-                if($cont < 11)
-                {
-                    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-                }
-                else
-                {
-                    break;
-                }
-                $cont++;
-            }
-        }
-        if($temporada >= .5)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
-            AND color = '$color'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
-        if($cont < 11)
-        {
-            $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
-           $result = mysqli_query($conexion, $query); 
-           while ($registro = mysqli_fetch_array($result))
-           { 
-               if($cont < 11)
-               {
-                   
-                   echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-                   <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-                   <p class='labelElemento'>",
-                   $registro['nombre_producto'],
-                   "</p>";
-                   
-                   if($registro['precio_oferta'] == 0)
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio'],
-                       "</p>";
-                   }
-                   else
-                   {
-                       echo "<p class='labelPrecio'>",
-                       $registro['precio_oferta'],
-                       "</p>";
-                   }
-               
-                   echo "</div>";
-               }
-               else
-               {
-                   break;
-               }
-               $cont++;
-           }
-        }
+        $flag = true;
         }
     }
+    elseif($temporada >= .5)
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+        AND color = '$color' AND (temporada = 'primavera' OR temporada = 'verano')";
+       $result = mysqli_query($conexion, $query); 
+       while ($registro = mysqli_fetch_array($result))
+       { 
+        for($c2 = 0; $c2 < count($compras); $c2++)
+        {
+            if($registro['id_producto'] == $compras[$c2])
+            {
+                $flag = false;
+            }
+        }
+        for($c3 = 0; $c3 < count($recomendado); $c3++)
+                {
+                    if($registro['id_producto'] == $recomendado[$c3])
+                    {
+                        $flag = false;
+                    }
+                }
+        if($flag == true){
+           if($cont < 11)
+           {
+            echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+               <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+               <p class='labelElemento'>",
+               $registro['nombre_producto'],
+               "</p>";
+               
+               if($registro['precio_oferta'] == 0)
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio'],
+                   "</p>";
+               }
+               else
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio_oferta'],
+                   "</p>";
+               }
+           
+               echo "</div>";
+           }
+           else
+           {
+               break;
+           }
+           $cont++;
+           $recomendado[] = $registro['id_producto'];
+        }
+        $flag = true;
+       }
+    }
+    else
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'
+        AND color = '$color'";
+       $result = mysqli_query($conexion, $query); 
+       while ($registro = mysqli_fetch_array($result))
+       { 
+        for($c2 = 0; $c2 < count($compras); $c2++)
+        {
+            if($registro['id_producto'] == $compras[$c2])
+            {
+                $flag = false;
+            }
+        }
+        for($c3 = 0; $c3 < count($recomendado); $c3++)
+                {
+                    if($registro['id_producto'] == $recomendado[$c3])
+                    {
+                        $flag = false;
+                    }
+                }
+        if($flag == true){
+           if($cont < 11)
+           {
+            echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+               <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+               <p class='labelElemento'>",
+               $registro['nombre_producto'],
+               "</p>";
+               
+               if($registro['precio_oferta'] == 0)
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio'],
+                   "</p>";
+               }
+               else
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio_oferta'],
+                   "</p>";
+               }
+           
+               echo "</div>";
+           }
+           else
+           {
+               break;
+           }
+           $cont++;
+           $recomendado[] = $registro['id_producto'];
+        }
+        $flag = false;
+       }
+    }
 
-    if($cont == 0)
+    if($cont < 11)
+    {
+        $query = "SELECT * from productos WHERE estilo = '$estilo2' AND genero = '$genero' AND edad = '$edad'";
+       $result = mysqli_query($conexion, $query); 
+       while ($registro = mysqli_fetch_array($result))
+       { 
+        for($c2 = 0; $c2 < count($compras); $c2++)
+        {
+            if($registro['id_producto'] == $compras[$c2])
+            {
+                $flag = false;
+            }
+        }
+        for($c3 = 0; $c3 < count($recomendado); $c3++)
+                {
+                    if($registro['id_producto'] == $recomendado[$c3])
+                    {
+                        $flag = false;
+                    }
+                }
+        if($flag == true){
+           if($cont < 11)
+           {
+            echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+               <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+               <p class='labelElemento'>",
+               $registro['nombre_producto'],
+               "</p>";
+               
+               if($registro['precio_oferta'] == 0)
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio'],
+                   "</p>";
+               }
+               else
+               {
+                   echo "<p class='labelPrecio'>",
+                   $registro['precio_oferta'],
+                   "</p>";
+               }
+           
+               echo "</div>";
+           }
+           else
+           {
+               break;
+           }
+           $cont++;
+           $recomendado[] = $registro['id_producto'];
+        }
+        $flag = true;
+       }
+    }
+    }
+
+    
+    if($cont < 11)
     {
         $query = "SELECT * from productos WHERE (estilo = '$estilo1' OR estilo = '$estilo2') 
         AND (genero = '$genero' OR genero = 'unisex')";
         $result = mysqli_query($conexion, $query); 
         while ($registro = mysqli_fetch_array($result))
         { 
+            for($c2 = 0; $c2 < count($compras); $c2++)
+                    {
+                        if($registro['id_producto'] == $compras[$c2])
+                        {
+                            $flag = false;
+                        }
+                    }
+                    for($c3 = 0; $c3 < count($recomendado); $c3++)
+                    {
+                        if($registro['id_producto'] == $recomendado[$c3])
+                        {
+                            $flag = false;
+                        }
+                    }
+                    if($flag == true){
             if($cont < 11)
             {
                 echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
@@ -1364,6 +645,9 @@ if($edad <= 0.3)
                 break;
             }
             $cont++;
+            $recomendado[] = $registro['id_producto'];
+        }
+        $flag = true;
         }
     }
 
@@ -1378,38 +662,41 @@ else
     $query = "SELECT *, COUNT(*) FROM comprado INNER JOIN productos ON productos.id_producto = comprado.id_producto GROUP BY comprado.id_producto ORDER BY COUNT(*) DESC LIMIT 10;";
     $result = mysqli_query($conexion, $query); 
     $cont = 0;
-    while ($registro = mysqli_fetch_array($result)){ 
-    echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
-    <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-    <p class='labelElemento'>",
-    $registro['nombre_producto'],
-    "</p>";
+    while ($registro = mysqli_fetch_array($result))
+    { 
+        echo "<div class='elemento' id'elementoOf' onclick='getProductId(", $registro['id_producto'],")'>
+        <img class='imagenElemento' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+        <p class='labelElemento'>",
+        $registro['nombre_producto'],
+        "</p>";
+        
+        if($registro['precio_oferta'] == 0)
+        {
+            echo "<p class='labelPrecio'>",
+            $registro['precio'],
+            "</p>";
+        }
+        else
+        {
+            echo "<p class='labelPrecio'>",
+            $registro['precio_oferta'],
+            "</p>";
+        }
     
-    if($registro['precio_oferta'] == 0)
-    {
-        echo "<p class='labelPrecio'>",
-        $registro['precio'],
-        "</p>";
+        echo "</div>";
+        $cont++;
     }
-    else
+        
+
+    if($cont == 0)
     {
-        echo "<p class='labelPrecio'>",
-        $registro['precio_oferta'],
-        "</p>";
+        echo "<div class='producto' id='producto'>
+        <p class='precprodcarrito'>
+        No ha habido compras aún :(
+        </p>
+        </div>";
     }
 
-    echo "</div>";
-    $cont++;
-}
-
-if($cont == 0)
-{
-    echo "<div class='producto' id='producto'>
-    <p class='precprodcarrito'>
-    No ha habido compras aún :(
-    </p>
-    </div>";
-}
 }
  
 function estilo1($estilo)
