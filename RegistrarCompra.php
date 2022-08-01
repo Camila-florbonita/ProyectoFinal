@@ -127,7 +127,7 @@ if($action == "listadeseos")
                 },
                 onApprove: function(data, actions)
                 {
-                        let url = 'GetDatosCompra.php'
+                        let url = ''
                     actions.order.capture().then(function(detalles)
                     {
                         const item = {
@@ -146,8 +146,27 @@ if($action == "listadeseos")
                         console.log(JSON.stringify(item));
                         console.log(detalles);
                         console.log(url);
-                        alert(detalles);
+                        var stringJSON = JSON.stringify(item);
+                        var info = JSON.parse(stringJSON);
+                        var id_transaccion = info.detalles.id;
+                        var email = info.detalles.payer.email_address;
+                        var id_cliente = info.detalles.payer.payer_id;
+                        var status = info.detalles.status;
+                        var fecha = info.detalles.update_time;
+                        alert(id_transaccion);
+                        alert(email);
+                        alert(id_cliente);
+                        var redireccion = "SetDatosCompra.php?id_t=" + id_transaccion + "&email=" + email + "&id_c=" + id_cliente + "&fecha=" + fecha + "&status=" + status;
+                        alert(redireccion);
                         alert('Pago realizado');
+                        window.location.href = redireccion;
+
+                        <?php
+                        $tallas = $registro["M"];
+                        echo "alert('$tallas');";
+                        echo "alert('", $_SESSION['talla'], "');";
+                        //echo "window.location.href='InicioConCuenta.html';";
+                        ?>
                         
                         return fetch(url,
                         {
@@ -161,7 +180,8 @@ if($action == "listadeseos")
                             alert(err);
                         });
                     });
-                    // window.location.href="InicioConCuenta.html";
+                    //window.location.href="InicioConCuenta.html";
+                    
                 },
 
                 onCancel: function(data)
