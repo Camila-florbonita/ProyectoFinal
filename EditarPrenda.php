@@ -62,6 +62,7 @@ $result = mysqli_query($conexion, $query);
 if($registro = mysqli_fetch_array($result))
 {
     $ingresoTallas = "UPDATE  tallas SET XS = '$TXS', S = '$TS', M = '$TM', L = '$TL', XL = '$TXL' WHERE id_producto = '$id_p'";
+    mysqli_query($conexion, $ingresoTallas);
     $query2 = "SELECT * from tallas WHERE id_producto = '$id_p'";
     $result2 = mysqli_query($conexion, $query2); 
     $registro2 = mysqli_fetch_array($result2);
@@ -92,8 +93,9 @@ if($registro = mysqli_fetch_array($result))
 else
 {
     $ingresoTallas = "INSERT into tallas (id_producto, XS, S, M, L, XL) VALUES ('$id_p', '$TXS', '$TS', '$TM', '$TL', '$TXL')";
+    mysqli_query($conexion, $ingresoTallas);
 }
-mysqli_query($conexion, $ingresoTallas);
+
 echo "<script> alert('Subido con éxtio') </script> ";
 
 

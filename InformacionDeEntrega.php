@@ -13,6 +13,8 @@ $municipio = $_POST["municipio"];
 $instrucciones = $_POST["insdeentrega"];
 
 include "database.php";
+
+
 $ingreso = "INSERT into entrega (id_usuario, direccion, n_ext, n_int, telefono, cp, estado, municipio, instentrega) 
 VALUES ('$id_us','$direccion','$n_ext', '$n_int', '$tel', '$CP', '$estado', '$municipio', '$instrucciones')";
 mysqli_query($conexion, $ingreso);

@@ -10,8 +10,7 @@
         <meta charset="UTF-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="VerificarLogin.js"></script>
-        <script src="Historial.js"></script>
-        <script src="GetProductIdCombinar.js"></script>
+        <script src="GetEtiquetaCombinar.js"></script>
     </head>
     <body>
 
@@ -277,32 +276,29 @@
                 </nav>
             </div>
         </header>
+        <form action="GetEtiquetaCombinar.php" method="post" id="generarAtuendo">
+            <select class="input" name="etiquetas" id="etiquetas" onchange="getEtiqueta()" required>
+                <option value="">Elegir etiqueta</option>
+                <option value="genero" >Genero</option>
+                <option value="estilo" >Estilo</option>
+                <option value="edad" >Edad</option>
+                <option value="color" >Color</option>
+                <option value="prenda" >Prenda</option>
+                <option value="temporada" >Temporada</option>
+                <option value="ocasion">Ocasion</option>
+                <option value="formalidad" >Formalidad</option>
+                <option value="material" >Material</option>
+            </select>
+        
+            <select name="etiqueta" id="etiqueta" required>
 
-        <a href="ElegirEtiquetaParaCombinar.html">
-            <button id="elegiretq">
-                Elegir por etiquetas
+            </select>
+
+            <button type="submit">
+                Generar Atuendo
             </button>
-        </a>
+        </form>
         
-
-        <div id="producto" class="results-container">
-            
-                <div class="producto">
-                    <div class="image-container">
-                        <img class="imagenprenda" src="https://res.cloudinary.com/cadivie/image/upload/v1658810344/imagen_predeterminado_ybsfjg.png">
-        
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">
-                            Nombre del producto
-                        </p>
-                        <p class="price product-price">
-                            ID del producto
-                        </p>
-                    </div>
-                </div>
-
-        </div>
         <script src="Logout.js"></script>
     </body>
 </html>

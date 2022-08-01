@@ -3,7 +3,7 @@
 session_start();
 
 $correo_electronico = $_POST["email"];
-$password =  $_POST["password"];
+$password =  sha1($_POST["password"]);
 
 include "database.php";
 $dato = "SELECT * FROM usuarios WHERE correo_electronico = '$correo_electronico'";
@@ -19,9 +19,12 @@ else
     $coincidename = $registro["correo_electronico"];
     $datopass = $registro["password"];
     
-    if($coincidename == "cadivie.ecommerce@gmail.com" && $datopass == "CadivieAdmin123")
+    if($correo_electronico == "cadivie.ecommerce@gmail.com" && $password == $datopass)
     {
         header("Location: OpcionesAdministrador.html");
+        $_SESSION["id_us"] = $registro['id_usuario'];
+    $_SESSION["id_name"] = $registro['nombre_usuario'];
+    $_SESSION["id_email"] = $registro['correo_electronico'];
     }
     else{
 if($coincidename == $correo_electronico && $datopass == $password)
@@ -30,12 +33,10 @@ if($coincidename == $correo_electronico && $datopass == $password)
     $_SESSION["id_name"] = $registro['nombre_usuario'];
     $_SESSION["id_email"] = $registro['correo_electronico'];
     echo $_SESSION["id_us"];
-    echo json_encode(array('success'=> 1));
     header("Location: InicioConCuenta.html");
 }
 else
 {
-    echo json_encode(array('success'=> 0));
     header("Location: login.html");
 }
 }

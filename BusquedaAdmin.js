@@ -1,4 +1,6 @@
 var req = new XMLHttpRequest();
+var req2 = new XMLHttpRequest();
+
 
 document.addEventListener('DOMContentLoaded', 
 function buscar()
