@@ -16,6 +16,7 @@ if ($password != $password2)
 }
 else
 {
+    // $password = sha1($_POST['password']); // esto es para encriptar pero no ahorita
     $email_bd = "SELECT correo_electronico FROM verificar WHERE correo_electronico = '$correo_electronico' AND status = 1";
     $result = mysqli_query($conexion, $email_bd);
     
