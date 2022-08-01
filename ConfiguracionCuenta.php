@@ -2,7 +2,6 @@
 session_start();
 
 $id_us = $_SESSION["id_us"];
-$id_us = 4;
 $direccion = $_POST["direccion"];
 $n_ext = $_POST["nexterior"];
 $n_int = $_POST["ninterior"];

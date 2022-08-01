@@ -60,7 +60,7 @@ $queryC = "SELECT * from comprado WHERE id_usuario = '$id_u'";
                 $qp2 = "SELECT * FROM productos WHERE (tipo_prenda  = 'pantalon' OR 
                 tipo_prenda  = 'short' OR tipo_prenda  = 'falda')";
             }
-            if($etq == "pantalon" || $etq == "shotrt" || $etq == "falda")
+            if($etq == "pantalon" || $etq == "short" || $etq == "falda")
             {
                 $qp2 = "SELECT * FROM productos WHERE (tipo_prenda  = 'playera' OR tipo_prenda  = 'sueter')";
             }
@@ -76,7 +76,7 @@ $queryC = "SELECT * from comprado WHERE id_usuario = '$id_u'";
                 $qp2 = "SELECT * FROM productos WHERE temporada = '$etq' AND 
                 (tipo_prenda  = 'pantalon' OR tipo_prenda  = 'short' OR tipo_prenda  = 'falda')";
             }
-            if($etq == "otoño" || $etq == "invierno")
+            if($etq == "otono" || $etq == "invierno")
             {
                 $qp1 = "SELECT * FROM productos WHERE temporada = '$etq' AND tipo_prenda  = 'playera'";
                 $qp2 = "SELECT * FROM productos WHERE temporada = '$etq' AND tipo_prenda  = 'pantalon'";

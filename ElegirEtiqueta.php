@@ -146,7 +146,7 @@ if($etiqueta == "material")
     echo'
     <select class="input" name="etiqueta" id="etiqueta" required>
     <option value="">Material</option>
-    <option value="algodon"Algodon</option>
+    <option value="algodon">Algodon</option>
     <option value="poliester">Poliester</option>
     <option value="lana">Lana</option>
     <option value="seda">Seda</option>

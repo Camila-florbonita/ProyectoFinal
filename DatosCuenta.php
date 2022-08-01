@@ -222,7 +222,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <input class="input" type="text" name="nombre">
+                            <input class="input" type="text" name="nombre" required>
                         </div>
 
                     </div>
@@ -239,7 +239,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <input class="input" type="text" name="direccion">
+                            <input class="input" type="text" name="direccion" required>
                         </div>
 
                     </div>
@@ -253,7 +253,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <input class="input" type="text" name="nexterior">
+                            <input class="input" type="text" name="nexterior" required>
                         </div>
 
                     </div>
@@ -281,7 +281,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <input class="input" type="text" name="telefono" maxlength="10" minlength="10">
+                            <input class="input" type="text" name="telefono" maxlength="10" minlength="10" required>
                         </div>
 
                     </div>
@@ -295,7 +295,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <input class="input" type="text" name="cpostal" maxlength="5" minlength="5">
+                            <input class="input" type="text" name="cpostal" maxlength="5" minlength="5" required>
                         </div>
 
                     </div>
@@ -311,7 +311,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <select class="input" name="estado" id="estado">
+                            <select class="input" name="estado" id="estado" required>
                                 <option value="aguascalientes">Aguascalientes</option>
                                 <option value="bcnorte">Baja California Norte</option>
                                 <option value="bcsur">Baja California Sur</option>
@@ -359,7 +359,7 @@ $id_us = $_SESSION["id_us"];
                     </div>
                     <div class="columna">
                         <div class="input-contenedor">
-                            <input class="input" type="text" name="municipio">
+                            <input class="input" type="text" name="municipio" required>
                         </div>
 
                     </div>
