@@ -3,7 +3,8 @@
 session_start();
 
 $correo_electronico = $_POST["email"];
-$password =  sha1($_POST["password"]);
+$password =  $_POST["password"];
+// $password =  sha1($_POST["password"]);
 
 include "database.php";
 $dato = "SELECT * FROM usuarios WHERE correo_electronico = '$correo_electronico'";
