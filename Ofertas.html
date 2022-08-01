@@ -114,12 +114,24 @@
                 </div>
                 
                 <div class="grafica-container">
-                    <div class="productooferta">
-                    <select name="POferta" id="POferta" multiple required>
-        
-                    </select>
+                    
+                    <div class="productooferta" style="height: 80%;">
+                        <input list="productoOfertas" type="text" name="POf" id="POferta" class="input">
+                    <datalist id="productoOfertas">
+                        
+                    </datalist>
+                    <button type="button" class="primary-button sales" onclick="prendaOferta()">
+                        Agregar prenda a la oferta
+                    </button>
+                    </div>
+
+                    <div>
+                        <select name="POferta[]" id="Pof2" class="input" readonly multiple>
+
+                        </select>
                     </div>
                     
+
                 </div>
                 
             </form>

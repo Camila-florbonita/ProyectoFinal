@@ -1,4 +1,5 @@
 var req = new XMLHttpRequest();
+var req2 = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function Ofertas()
@@ -10,6 +11,14 @@ function Ofertas()
 }
     req.open("GET", "OfertasProductos.php?");
     req.send();
+
+    req2.onload = function SelectProductos(){
+      var selectP2 = document.getElementById("Pof2");
+     
+      selectP2.innerHTML = req2.responseText;
+ }
+     req2.open("GET", "OfertasSelect.php?");
+     req2.send();
 
 }, false);
 
@@ -43,4 +52,11 @@ function temporadazzz()
         document.getElementById("temporada").disabled = false;
         document.getElementById("iniciooferta").disabled = true;
     }
+}
+
+function prendaOferta()
+{
+  var pre = document.getElementById("POferta").value;
+  var seleccion = document.getElementById("Pof2");
+  seleccion.options[pre-1].selected = true;
 }

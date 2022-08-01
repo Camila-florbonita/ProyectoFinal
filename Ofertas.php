@@ -5,10 +5,15 @@ include "database.php";
 
 $dtz = new DateTimeZone("America/Mexico_City");
 $oferta = $_POST["descuento"];
-$id_p = $_POST["POferta"];
+$arrid_p = $_POST["POferta"];
 $inicio = $_POST["iniciooferta"];
 $duracion = $_POST["duracionOferta"];
 $year = date("Y");
+
+for($cont = 0; $cont < count($arrid_p); $cont++)
+{
+    $id_p = $arrid_p[$cont];
+echo $id_p;
 
 
 $query = "SELECT * from productos WHERE id_producto = '$id_p'";
@@ -47,7 +52,8 @@ switch($duracion)
             break;
         }
     break;
-    case "liquidacion": $fin = "";
+    case "liquidacion": $fin = "0000-00-00";
+    break;
 
 }
 
@@ -55,6 +61,9 @@ $ingreso = "UPDATE productos SET precio_oferta = '$ofertaT' WHERE id_producto = 
 mysqli_query($conexion, $ingreso);
 $ingreso = "INSERT INTO ofertas (id_producto, inicio, fin, descuento) VALUES ('$id_p', '$inicio', '$fin', '$oferta')";
 mysqli_query($conexion, $ingreso);
-
+echo "<script>
+        alert('Oferta ingresada');
+        </script>";
+}
 header("Location: Ofertas.html");
 ?>
