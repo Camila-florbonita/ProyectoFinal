@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
+    <link rel="stylesheet" href="css/FormatoCSS.css">
+    <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
+    <link rel="stylesheet" href="css/styleSesion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="VerificarLogin.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual del Administrador</title>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+                <nav>
+                    <input type="checkbox" id="show-search">
+                    <input type="checkbox" id="show-menu">
+                    <label for="show-menu" class="icono-menu">
+                        <abbr title="Menú">
+                            <i class="fas fa-bars"></i>
+                        </abbr>
+                    </label>
+                    <div class="content">
+                        <div class="brand">
+                            <a href="OpcionesAdministrador.html" class="brand-name">
+                                <abbr title="Cadivie">
+                                    Cadivie
+                                </abbr>
+                            </a>
+                        </div>
+                        <ul class="links">
+                            <li>
+                                <div class="menu-opciones">
+                                    <a href="AgregarPrenda.html">Agregar</a>
+                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="menu-opciones">
+                                    <a href="Analytics.html">Análisis</a>
+                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="menu-opciones">
+                                    <a href="Ofertas.html">Ofertas</a>
+                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="menu-opciones">
+                                    <a href="Manual.html">Manual</a>
+                                    
+                                </div>
+                            </li>
+                            <div class="contenedor-login">
+                                <a class="boton-login" href="" id="logout">
+                                        Cerrar Sesión
+                                </a>
+                            </div>
+    
+                        </ul>
+                        <label for="show-search" class="icono-busqueda">
+                            <abbr title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </abbr>
+                        </label>
+                    </div>
+                    <form class="search-box" action="BusquedaReferenceAdmin.php" method="post">
+                        <input class="" name="Busqueda" type="text" placeholder="Buscar..." required>
+                        <button class="boton-buscar" type="submit">
+                            <abbr title="Buscar">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </abbr>
+                        </button>
+                    </form>
+                </nav>
+        </div>
+    </header>
+
+    <div style="width: 80%; margin-left: auto; margin-right: auto; margin-top: 32px;">
+        <h1>Bienvenido al tutorial de administrador de Cadivie</h1>
+        <div style="width: 90%; margin-right: 0; margin-left: auto;">
+            <p style="margin-top: 16px; font-weight: bold; color: #c64cd6;">Índice</p>
+            <ul>
+                <li><a class="link" href = "#Agregar">Agregar prenda</a></li>
+                <li><a class="link" href = "#Editar">Editar prenda</a></li>
+                <li><a class="link" href = "#Borrar">Borrar prenda</a></li>
+                <li><a class="link" href = "#Analytics">Análisis en gráficas</a></li>
+                <li><a class="link" href = "#Ofertas">Asignar ofertas</a></li>
+            </ul>
+
+        </div>
+
+        <div id="Agregar" style="padding: 20px; padding-top: 100px;">
+            <p class="label-title">Agregar prenda</p>
+            <p>Para agregar una prenda siga los siguientes pasos:</p>
+            <ol>
+                <li>Dar clic en la opción de Agregar del menú de la página.</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/agregar_paso1_p4jxb9.jpg" alt="">
+                <li>Rellenar todos los campos requeridos para añadir la prenda, incluyendo sus características y cuantas piezas hay en cada talla de la prenda.</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/agregar_paso2_hgtmhh.jpg" alt="">
+                <li>Dar clic en el botón de Ingresar prenda</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/agregar_paso3_tgfmyn.jpg" alt="">
+            </ol>
+        </div>
+        <br>
+        <div id="Editar" style="padding: 20px; padding-top: 100px;">
+            <p class="label-title">Editar prenda</p>
+            <p>Para editar la información de las categorías de una prenda siga los siguientes pasos:</p>
+            <ol>
+                <li>Una vez elegida la prenda a editar dar clic en el botón verde con el icono del lápiz para editarla.</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/editar_paso1_pqpnav.jpg" alt="">
+                <li>A continuación, se muestran las categorías que tiene actualmente la prenda para que solo se modifiquen las que se requieran.</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/editar_paso2_vnia8u.jpg" alt="">
+                <li>Una vez modificadas las categorías deseadas dar clic en el botón de Editar prenda.</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/editar_paso3_zmjrl4.jpg" alt="">
+            </ol>
+        </div>
+        <br>
+        <div id="Borrar" style="padding: 20px; padding-top: 100px;">
+            <p class="label-title">Borrar prenda</p>
+            <p>Para borrar una prenda siga los siguientes pasos:</p>
+            <ol>
+                <li>Una vez elegida la prenda dar clic en el botón rojo con el icono de basura para borrarla.</li>
+                <img style="max-height: 500px; margin-left: auto; margin-right: auto; margin-top: 32px; margin-bottom: 32px;" src="https://res.cloudinary.com/cadivie/image/upload/v1659340678/borrar_paso1_cyedj1.jpg" alt="">
+            </ol>
+        </div>
+        <br>
+        <div id="Analytics" style="padding: 20px; padding-top: 100px;">
+            <p class="label-title">Análisis en gráficas</p>
+            <p>Para observar los análisis realizados por el sistema de una forma más personalizada siga los siguientes pasos:</p>
+        </div>
+        <br>
+        <div id="Ofertas" style="padding: 20px; padding-top: 100px;">
+            <p class="label-title">Asignar ofertas</p>
+
+        </div>
+    </div>
+
+    <script src="Logout.js"></script>
+</body>
+</html>

@@ -184,53 +184,7 @@ switch($tipo)
         </script>
 
         <div class="page-container">
-            <form class="form-grafica" action="Analytics.php" method="post">
-                <p class="title">
-                    Elija el tipo gráfica
-                </p>
-    
-                <select class="input analytics" name="tipoGrafica" id="TGrafica" required onchange="showSelectGraph()">
-                    <option value="">Graficas</option>
-                    <option value="general">General</option>
-                    <option value="prenda">Prenda</option>
-                    <option value="estilo">Estilo</option>
-                </select>
-    
-                <select class="input analytics" name="GraficaPrenda" id="GraficaPrenda" disabled onchange="enableDate()">
-                    
-                </select>
-    
-                <select class="input analytics" name="GraficaEstilo" id="GraficaEstilo" disabled onchange="enableDate()">
-                    <option value="">Estilo</option>
-                    <option value="clasico">Clasico</option>
-                    <option value="vintage">Vintage</option>
-                    <option value="gotico">Gotico</option>
-                    <option value="preppy">Preppy</option>
-                    <option value="urbano">Urbano</option>
-                    <option value="hipster">Hipster</option>
-                    <option value="grunge">Grunge</option>
-                    <option value="natural">Natural</option>
-                    <option value="sofisticado">Sofisticado</option>
-                    <option value="artsy">Artsy</option>
-                    <option value="vanguardista">Vanguardista</option>
-                    <option value="boho">Boho</option>
-                    <option value="romantico">Romantico</option>
-                    <option value="dramatico">Dramatico</option>
-                    <option value="girly">Girly</option>
-                </select>
-    
-                <p class="subtitle graphycs">
-                    Inicio:
-                </p>
-                <input class="input analytics" id="inicioOferta" type="date" name="iniciooferta" disabled required onchange="enableEnd()">
-                <p class="subtitle graphycs">
-                    Fin:
-                </p>
-                <input class="input analytics" type="date" name="finoferta" id="finOferta" disabled required onchange="enableBotonGrafica()">
-                <br>
-                <button class="primary-button analisis" id="verGrafica" type="submit" disabled>Ver Grafica</button>
-            </form>
-
+            
             <div class="grafica-container" >
                 <canvas id="grafica"></canvas>
             </div>
