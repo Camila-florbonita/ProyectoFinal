@@ -8,7 +8,6 @@ include "database.php";
 $id_u = $_SESSION["id_us"];
 $id_p = $_SESSION["id_p"];
 
-
 $comprado = [];
 
 $queryC = "SELECT * from comprado WHERE id_usuario = '$id_u'";
@@ -26,6 +25,18 @@ $flag4 = false;
     $query = "SELECT * from productos WHERE id_producto = '$id_p'";
     $result = mysqli_query($conexion, $query); 
     $registro = mysqli_fetch_array($result);
+
+    echo "<div class='producto' id='producto' onclick='getProductId(", $registro['id_producto'],")'>
+<img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
+<p class='nomprodcarrito' id='NombreProducto'>",
+    $registro['nombre_producto'],
+"</p>
+<p class='precprodcarrito'>",
+    $registro['precio'],
+"</p>
+<p class='descprodcarrito'>", $registro['descripcion'],
+"</p>
+</div>";
 
     $color =  $registro['color'];
     $genero = $registro['genero']; 
@@ -240,7 +251,7 @@ $flag4 = false;
     }
     elseif($temporada == "invierno" or $temporada == "otono")
     {
-        $style = " AND estilo = '$estilo' AND (temporada = 'invierno' OR temporada = 'otono')";
+        $style = " AND estilo = '$estilo' AND (temporada = 'invierno' OR temporada = 'otono' OR temporada = '')";
         $qty = 3;
         switch($tipoPrenda)
         {
@@ -288,21 +299,10 @@ $flag4 = false;
         }
     }
 
-    echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-<img class='imagenprenda' src='ImagenesPrendas/", $registro['id_producto'], ".jpg'>
-<p class='nomprodcarrito' id='NombreProducto'>",
-    $registro['nombre_producto'],
-"</p>
-<p class='precprodcarrito'>",
-    $registro['precio'],
-"</p>
-<p class='descprodcarrito'>", $registro['descripcion'],
-"</p>
-</div>";
-
     if($tipoPrenda == "vestido")
     {
         echo "Es un vestido, no hay más recomendaciones";
+        $qty = 0;
     }
     else
     {
@@ -326,23 +326,24 @@ $flag4 = false;
         }
         else
         {
-            echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-            <img class='imagenprenda' src='ImagenesPrendas/", $trueid['id_producto'], ".jpg'>
+            $trueQuery = "SELECT * FROM productos WHERE id_producto = '$trueid'";
+            $trueResult = mysqli_query($conexion, $trueQuery); 
+            $trueRegistro = mysqli_fetch_array($trueResult);
+            echo "<div class='producto' id='producto' onclick='getProductId(", $trueRegistro['id_producto'],")'>
+            <img class='imagenprenda' src='ImagenesPrendas/", $trueRegistro['id_producto'], ".jpg'>
             <p class='nomprodcarrito' id='NombreProducto'>",
-                $trueid['nombre_producto'],
+                $trueRegistro['nombre_producto'],
             "</p>
             <p class='precprodcarrito'>",
-                $trueid['precio'],
+                $trueRegistro['precio'],
             "</p>
             <p class='descprodcarrito'>",
-            "Estilo: ", $trueid['estilo'], "<br>",
-            "Genero: ", $trueid['genero'], "<br>",
-            "Color: ", $trueid['color'], "<br>",
-            "Corte: ", $trueid['corte'], "<br>",
+            $trueRegistro['descripcion'],
             "</p>
             </div>";
         }
     }
+
     if($qty == 3)
     {
         $i = false;
@@ -365,25 +366,23 @@ $flag4 = false;
         }
         else
         {
-            echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['id_producto'],")'>
-            <img class='imagenprenda' src='ImagenesPrendas/", $trueid['id_producto'], ".jpg'>
+            $trueQuery = "SELECT * FROM productos WHERE id_producto = '$trueid'";
+            $trueResult = mysqli_query($conexion, $trueQuery); 
+            $trueRegistro = mysqli_fetch_array($trueResult);
+            echo "<div class='producto' id='producto' onclick='getProductId(", $trueRegistro['id_producto'],")'>
+            <img class='imagenprenda' src='ImagenesPrendas/", $trueRegistro['id_producto'], ".jpg'>
             <p class='nomprodcarrito' id='NombreProducto'>",
-                $trueid['nombre_producto'],
+                $trueRegistro['nombre_producto'],
             "</p>
             <p class='precprodcarrito'>",
-                $trueid['precio'],
+                $trueRegistro['precio'],
             "</p>
             <p class='descprodcarrito'>",
-            "Estilo: ", $trueid['estilo'], "<br>",
-            "Genero: ", $trueid['genero'], "<br>",
-            "Color: ", $trueid['color'], "<br>",
-            "Corte: ", $trueid['corte'], "<br>",
+            $trueRegistro['descripcion'],
             "</p>
             </div>";
         }
     }
-
-
 
 ?>
  
