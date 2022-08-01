@@ -30,7 +30,7 @@ echo "<div class='producto' id='producto' onclick='getProductId(", $registro2['i
                 $registro2['precio'],
             "</p>
             <p class='product-description'>",
-                "Comprado el: ", $registro2['fecha'],
+                "Comprado el: ", $registro['fecha'],
             "</p>
             <p class='product-description'>",
                 $registro2['descripcion'],
