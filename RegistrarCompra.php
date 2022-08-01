@@ -73,18 +73,45 @@ if($action == "comprar")
 
 if($action == "carrito")
 {
-    $ingreso = "INSERT into carrito (id_usuario, id_producto, talla) VALUES ('$id_us','$id_pr', '$talla')";
-    mysqli_query($conexion, $ingreso); 
-    echo "carrito";
-    header("Location: ProductoConCuenta.html");
+    if($registro["$talla"] < $np)
+    {
+        echo "<script>
+        alert('No hay suficientes prendas, elige un numero menor de prendas');
+        window.location.href = 'ProductoConCuenta.html';
+        </script>";
+    }
+    else
+    {
+        for($cont = 0; $cont < $np; $cont++)
+        {
+            $ingreso = "INSERT into carrito (id_usuario, id_producto, talla) VALUES ('$id_us','$id_pr', '$talla')";
+            mysqli_query($conexion, $ingreso); 
+            echo "carrito";   
+        }
+        header("Location: ProductoConCuenta.html");
+    }
+    
+    
 }
 
 if($action == "listadeseos")
 {
-    $ingreso = "INSERT into listadedeseos (id_usuario, id_producto) VALUES ('$id_us','$id_pr')";
-    mysqli_query($conexion, $ingreso); 
-    echo "carrito";
-    header("Location: ProductoConCuenta.html");
+    $queryLD = "SELECT * from listadedeseos WHERE id_producto = '$id_pr' AND id_usuario = '$id_us'";
+    $resultLD = mysqli_query($conexion, $queryLD); 
+    if($registroLD = mysqli_fetch_array($resultLD))
+    {
+        echo "<script>
+        alert('Ya has guardado esta prenda en tu lista de deseos');
+        window.location.href = 'ProductoConCuenta.html';
+        </script>";
+    }
+    else
+    {
+        $ingreso = "INSERT into listadedeseos (id_usuario, id_producto) VALUES ('$id_us','$id_pr')";
+        mysqli_query($conexion, $ingreso); 
+        echo "carrito";
+        header("Location: ProductoConCuenta.html");
+    }    
 }
 
 
