@@ -4,6 +4,7 @@
             --white: white;
             --background: whitesmoke;
             --gris-oscuro: rgb(77, 77, 77);
+            --gris-claro: #aaa;
             --lg: 1.8rem;
             --md: 1.5rem;
             --sm: 1.2rem;
@@ -108,6 +109,13 @@
         cursor: pointer;
     }
 
+    .mas-menos
+    {
+        padding: 6px;
+        min-width: 30px;
+        margin-left: 8px;
+    }
+
     .primary-button:hover, .primary-button:focus
     {
         background-color: var(--strong-pink);
@@ -198,11 +206,17 @@
     .input
     {
         width: 100%;
-        border: 2px solid var(--background);
+        border: 2px solid var(--gris-claro);
         padding: 10px;
         border-radius: 10px;
         font-size: var(--sm);
         outline: none;
+    }
+
+    .cantidad:hover, .cantidad:focus
+    {
+        border: 2px solid var(--gris-claro) !important;
+        border-radius: 10px !important;
     }
     
     .input:hover, .input:focus
