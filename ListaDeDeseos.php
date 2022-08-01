@@ -37,7 +37,7 @@ echo "<div class='product-container'>
     </div>
     </div>         
                         <div class='delete-button-container'>
-                            <button class='btn btn-danger' onclick='remove(", $registro2['id_producto'],")'><i class='far fa-trash-alt'></i></button>
+                            <button class='btn btn-danger' onclick='remove(", $registro['id_listadedeseos'],")'><i class='far fa-trash-alt'></i></button>
                         </div>
     
                     

@@ -25,7 +25,7 @@ function carrito()
 
 function remove(id)
 {
-    req3.open("GET", "CarritoQuitar.php?id_p=" + id);
+    req3.open("GET", "CarritoQuitar.php?id_h=" + id);
     req3.send();
     window.location.href = "CarritoDeCompras.html";
 }
