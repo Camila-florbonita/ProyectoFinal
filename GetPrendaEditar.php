@@ -300,10 +300,10 @@ echo '<div id="predit">
 
             <div class="select-file">
                 <label for="archivo">Imagen de la prenda</label>
-                <input type="file" id="archivo" name="archivo" value="', $registro["ruta"], '" accept="image/jpg" onchange="preview(event)" required>
+                <input type="file" id="archivo" name="archivo" value="', $registro["ruta"], '" accept="image/jpg" onchange="preview(event)">
             </div>
             <button class="primary-button" type="submit">
-                Ingresar prenda
+                Editar prenda
             </button>
             </div>
             </div>

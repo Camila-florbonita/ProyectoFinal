@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 
 include "database.php";
 
@@ -14,9 +14,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
-require 'phpmailer/src/Exception.php';
+require_once 'phpmailer/src/PHPMailer.php';
+require_once 'phpmailer/src/SMTP.php';
+require_once 'phpmailer/src/Exception.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);

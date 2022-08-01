@@ -38,49 +38,6 @@ body
     height: 100px;
 }
 
-.logo
-{
-    width: 60;
-    height: 60;
-    margin: 20px;
-    margin-left: 50px;
-    float: left;
-}
-
-.buscar
-{
-    float: left;
-    margin-top: 34px;
-    margin-left: 20px;
-}
-
-.busqueda
-{
-    height: 30px;
-    border: 1px solid #aaa;
-    border-radius: 10px;
-    padding: 7px;
-}
-
-.busqueda:hover
-{
-    border: 1px solid darkgrey;
-    border-radius: 15px;
-}
-
-.lupa
-{
-    border: none;
-    background-color: transparent;
-}
-
-.lupa img
-{
-    width: 30;
-    height: 27;
-    margin-bottom: -9px;
-}
-
 .companyname
 {
     color: white;
@@ -262,205 +219,6 @@ body
     display: block;
 }
 
-.ofertas
-{
-    /* background-color: rgb(250, 199, 198); */
-    background-color: var(--colorClaro);
-    margin: 60px;
-    padding-bottom: 10px;
-}
-
-.of
-{
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.oferta
-{
-    margin-left: 35px;
-    height: 200;
-    width: 200;
-    margin-bottom: 20px;
-}
-
-.ofertaelemento
-{
-    display: inline-block;
-    width: 19%;
-}
-
-.ofdesc
-{
-    margin-left: 35px;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
-}
-
-.popular
-{
-    /* background-color: rgb(255, 178, 176); */
-    background-color: var(--colorClaro);
-    margin: 60px;
-    padding-bottom: 10px;
-}
-
-.pop
-{
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.maspopular
-{
-    margin-left: 35px;
-    height: 200;
-    width: 200;
-    margin-bottom: 20px;
-}
-
-.popelemento
-{
-    display: inline-block;
-    width: 19%;
-}
-
-.popdesc
-{
-    margin-left: 35px;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
-}
-
-.creacioncuenta p, .registrarsecongoogle, .yatienescuenta, .iniciosesion p, .iniciarcongoogle, .notienescuenta
-{
-    text-align: center;
-    font-size: larger;
-}
-
-.creatucuenta, .iniciacuenta
-{
-    text-align: center;
-    font-family: "Arial Black";
-    font-size: xx-large;
-}
-
-.registrarse, .iniciasesion
-{
-    margin-top: 10px;
-    text-align: center;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--principalColorOscuro);
-    color: white;
-    border-radius: 10px;
-}
-
-/* .regcongoogle, .incongoogle
-{
-    text-align: center;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: orange;
-    border-radius: 10px;
-} */
-
-.imagenprincipal
-{
-    width: 320px;
-    height: 400px;
-    float: left;
-    margin-right: 20px;
-}
-
-.imagensecundaria
-{
-    width: 80px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.imagenesdelproducto
-{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    display: block;
-    float: left;
-}
-
-.nombredelproducto
-{
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-}
-
-.preciodelproducto
-{
-    font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 60px;
-}
-
-.prenda span
-{
-    font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-}
-
-.comprarprenda
-{
-    display: inline-block;
-}
-
-.elegirtalla
-{
-    appearance: none;
-    outline: none;
-    border-style: solid;
-    border-color: #c64cd6;
-    border-width: 1px;
-    width: 60px;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: white;
-    color: #c64cd6;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 40px;
-    margin-top: 10px;
-}
-
-.elegirtalla:hover
-{
-    /* border-width: 2px; */
-    background-color: #c64cd6;
-    color: white;
-}
-
-.elegirtalla:checked
-{
-    /* background-color: rgb(94, 94, 94); */
-    background-color: #c64cd6;
-    color: white;
-    /* border-color: var(--colorClaro); */
-}
-
-.elegirtalla::before
-{
-    content: attr(id);
-}
-
 .boton-paypal
 {
     padding: 10px;
@@ -484,79 +242,11 @@ body
     height: 50px;
 }
 
-
-.descripciondelproducto, .coments
-{
-    font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 50px;
-}
-
-.descprod
-{
-    margin-left: 50px;
-    font-size: large;
-    margin-bottom: 100px;
-}
-
-.calificacion p
-{
-    font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.calificacion
-{
-    margin-left: 50px;
-    margin-bottom: 50px;
-}
-
 .estrella
 {
     width: 40;
     height: 40;
 }
-
-.comentarios
-{
-    margin-bottom: 50;
-}
-
-.form-comentar
-{
-    text-align: center;
-}
-
-.comentar
-{
-    width: 500px;
-    height: 50px;
-    border-radius: 10px;
-}
-
-.nombreusuario, .comentario
-{
-    margin-left: 50px;
-    font-size: large;
-    display: inline;
-}
-
-/* .producto
-{
-    display: block;
-    margin: 50px;
-    margin-left: 150px;
-    width: 60%;
-    height: 190px;
-} */
-
-/* .imagenprenda
-{
-    width: 160;
-    height: 190;
-    margin-right: 20px;
-    float: left;
-} */
 
 .nomprodcarrito, .cantidadtotal
 {
@@ -854,7 +544,7 @@ body
     margin-left: 40px;
     border: none;
 }
-
+/* 
 .imgprenda
 {
     width: 240;
@@ -862,8 +552,8 @@ body
     margin-top: 50px;
     margin-left: 80px;
     float: left;
-}
-
+} */
+/* 
 .etiquetas_container
 {
     display: inline-block;
@@ -910,7 +600,7 @@ body
 {
     float: left;
     margin-left: 50px;
-}
+} */
 
 .borrarprenda
 {
