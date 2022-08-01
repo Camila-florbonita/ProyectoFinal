@@ -66,7 +66,7 @@ else
             <nav>
                 <div class="content">
                     <div class="brand">
-                        <a href="InicioConCuenta.html" class="brand-name">
+                        <a href="index.html" class="brand-name">
                                 Cadivie
                         </a>
                     </div>
