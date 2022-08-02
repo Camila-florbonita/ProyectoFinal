@@ -3,6 +3,7 @@
         <link rel="shortcut icon" href="https://res.cloudinary.com/cadivie/image/upload/v1654155910/logo_okravg.png">
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleResultados.css">
+        <link rel="stylesheet" href="css/styleOfertas.css">
         <link rel="stylesheet" href="css/styleNavegacionConCuenta.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -11,6 +12,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="VerificarLogin.js"></script>
         <script src="GetEtiquetaCombinar.js"></script>
+        <style>
+            
+            .page-container
+        {
+            display: flex;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 32px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        </style>
     </head>
     <body>
 
@@ -277,27 +295,30 @@
             </div>
         </header>
         <form action="GetEtiquetaCombinar.php" method="post" id="generarAtuendo">
-            <select class="input" name="etiquetas" id="etiquetas" onchange="getEtiqueta()" required>
-                <option value="">Elegir etiqueta</option>
-                <option value="genero" >Genero</option>
-                <option value="estilo" >Estilo</option>
-                <option value="edad" >Edad</option>
-                <option value="color" >Color</option>
-                <option value="prenda" >Prenda</option>
-                <option value="temporada" >Temporada</option>
-                <option value="ocasion">Ocasion</option>
-                <option value="formalidad" >Formalidad</option>
-                <option value="material" >Material</option>
-            </select>
+            <div class="page-container">
+                    <select class="input" name="etiquetas" id="etiquetas" onchange="getEtiqueta()" required>
+                        <option value="">Elegir etiqueta</option>
+                        <option value="genero" >Genero</option>
+                        <option value="estilo" >Estilo</option>
+                        <option value="edad" >Edad</option>
+                        <option value="color" >Color</option>
+                        <option value="prenda" >Prenda</option>
+                        <option value="temporada" >Temporada</option>
+                        <option value="ocasion">Ocasion</option>
+                        <option value="formalidad" >Formalidad</option>
+                        <option value="material" >Material</option>
+                    </select>
+                
+                    <select class="input" name="etiqueta" id="etiqueta" required>
         
-            <select name="etiqueta" id="etiqueta" required>
-
-            </select>
-
-            <button type="submit">
-                Generar Atuendo
-            </button>
-        </form>
+                    </select>
+        
+                    <button class="primary-button" type="submit">
+                        Generar Atuendo
+                    </button>
+                    
+                </div>
+            </form>
         
         <script src="Logout.js"></script>
     </body>
