@@ -59,7 +59,7 @@ if($action == "comprar")
         if($registro["$talla"] < $np)
         {
             echo "<script>
-            alert('No hay suficientes prendas, elige un numero menor de prendas');
+            alert('No hay suficientes inventario');
             window.location.href = 'ProductoConCuenta.html';
             </script>";
         }
@@ -76,7 +76,7 @@ if($action == "carrito")
     if($registro["$talla"] < $np)
     {
         echo "<script>
-        alert('No hay suficientes prendas, elige un numero menor de prendas');
+        alert('No hay suficiente inventario');
         window.location.href = 'ProductoConCuenta.html';
         </script>";
     }
