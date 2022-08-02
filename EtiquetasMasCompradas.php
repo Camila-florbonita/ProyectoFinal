@@ -8,12 +8,12 @@ include "database.php";
 $labels = "";
 $data = "";
 
-$query = "SELECT *, COUNT(*) AS cuenta FROM busqueda 
-GROUP BY busqueda ORDER BY COUNT(*) DESC LIMIT 5;";
+$query = "SELECT *, COUNT(*) AS cuenta FROM comprado INNER JOIN productos ON comprado.id_producto = 
+productos.id_producto GROUP BY productos.estilo ORDER BY cuenta DESC LIMIT 5;";
 $result = mysqli_query($conexion, $query); 
 while ($registro = mysqli_fetch_array($result))
 {
-    $labels = $labels.' "'.$registro['busqueda'].'",';
+    $labels = $labels.' "'.$registro['estilo'].'",';
     $data = $data.' '.$registro['cuenta'].',';
 }
          
@@ -138,7 +138,7 @@ while ($registro = mysqli_fetch_array($result))
                   plugins:{
                   title: {
                     display: true,
-                    text: "Busquedas"
+                    text: "Compras"
                   }
                 },
                 scales: {

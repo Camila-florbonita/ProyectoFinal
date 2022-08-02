@@ -17,7 +17,7 @@ switch($tipo)
     case "general":
         $nombreGrafica = "Compras";
         $query = "SELECT *, COUNT(*) AS cuenta from comprado WHERE fecha >= '$f_inicio' 
-        AND fecha <= '$f_fin' GROUP BY fecha";
+        AND fecha <= '$f_fin' GROUP BY fecha ORDER BY fecha ASC";
         $result = mysqli_query($conexion, $query);
         while ($registro = mysqli_fetch_array($result))
         { 
@@ -32,7 +32,7 @@ switch($tipo)
         $pr = $_POST["GraficaPrenda"];
         $nombreGrafica = "Prenda ".$pr;
         $query = "SELECT *, COUNT(*) AS cuenta from comprado WHERE fecha >= '$f_inicio' 
-        AND fecha <= '$f_fin' AND id_producto = '$pr' GROUP BY fecha";
+        AND fecha <= '$f_fin' AND id_producto = '$pr' GROUP BY fecha ORDER BY fecha ASC";
         $result = mysqli_query($conexion, $query);
         while ($registro = mysqli_fetch_array($result))
         { 
@@ -48,7 +48,7 @@ switch($tipo)
         $nombreGrafica = "Estilo ".$es;
         $query = "SELECT *, COUNT(*) AS cuenta from comprado INNER JOIN productos 
         ON comprado.id_producto = productos.id_producto WHERE fecha >= '$f_inicio' 
-        AND fecha <= '$f_fin' AND productos.estilo = '$es' GROUP BY fecha";
+        AND fecha <= '$f_fin' AND productos.estilo = '$es' GROUP BY fecha ORDER BY fecha ASC";
         $result = mysqli_query($conexion, $query);
         while ($registro = mysqli_fetch_array($result))
         { 
