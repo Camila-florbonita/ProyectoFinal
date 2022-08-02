@@ -42,6 +42,9 @@ while ($registro = mysqli_fetch_array($result)){
         echo "<p class='product-description'>",
         $registro2['descripcion'],
         "</p>
+        <p class='product-description'>",
+        $registro['talla'],
+        "</p>
         </div>
         </div>         
                             <div class='delete-button-container'>
