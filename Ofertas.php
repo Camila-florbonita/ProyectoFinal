@@ -65,6 +65,6 @@ mysqli_query($conexion, $ingreso);
 }
 echo "<script>
         alert('Oferta ingresada');
-        windows.location.href = 'Ofertas.html';
+        window.location.href = 'Ofertas.html';
         </script>";
 ?>
