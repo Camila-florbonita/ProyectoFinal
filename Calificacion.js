@@ -33,7 +33,7 @@ function calificacion()
 
 function cal(cont)
 {
-    alert(cont);
+    // alert(cont);
     var calif = cont;
     for(cont = cont; cont > 0; cont--)
     {

@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleOfertas.css">
         <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
+        <link rel="stylesheet" href="css/styleResultados.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <title>Ingresar prenda</title>
         <script src="Ofertas.js"></script>
@@ -15,7 +16,6 @@
 
         <header class="header">
             <div class="wrapper">
-                <header>
                     <nav>
                         <input type="checkbox" id="show-search">
                         <input type="checkbox" id="show-menu">
@@ -57,6 +57,12 @@
                                         
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="menu-opciones">
+                                        <a href="Informes.html">Informes</a>
+                                        
+                                    </div>
+                                </li>
                                 <div class="contenedor-login">
                                     <a class="boton-login" href="" id="logout">
                                             Cerrar Sesión
@@ -79,8 +85,6 @@
                             </button>
                         </form>
                     </nav>
-                </header>
-                
             </div>
         </header>
 
@@ -136,7 +140,28 @@
             </div>
                 
             </form>
+            <br><br>
+            <div id="producto"  class="results-container">
+                <div class="producto">
+                    <div class="image-container">
+                        <img class="imagenprenda" src="https://res.cloudinary.com/cadivie/image/upload/v1658810344/imagen_predeterminado_ybsfjg.png">
+        
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">
+                            Nombre del producto
+                        </p>
+                        <p class="price product-price">
+                            ID del producto
+                        </p>
+                    </div>
+                    <div class="buttons-container">
+                        <button class='btn btn-success' onclick="Editar()"><i class="fas fa-pencil-alt"></i></button>
+                        <button class='btn btn-danger' onclick="Borrar()"><i class='far fa-trash-alt'></i></button>
+                    </div>
+                </div>
 
+            </div>
         </div>
 
         <script src="Logout.js"></script>

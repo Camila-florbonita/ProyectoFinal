@@ -16,7 +16,7 @@ function GetProductosShow()
 function showSelectGraph()
 {
   var tGrafica = document.getElementById("TGrafica").value;
-  alert(tGrafica);
+  // alert(tGrafica);
   if(tGrafica == "prenda")
   {
     document.getElementById("GraficaPrenda").disabled = false;
@@ -36,8 +36,8 @@ function showSelectGraph()
 
 function enableDate()
 {
-  alert(document.getElementById("GraficaPrenda").value);
-  alert(document.getElementById("GraficaEstilo").value);
+  // alert(document.getElementById("GraficaPrenda").value);
+  // alert(document.getElementById("GraficaEstilo").value);
   var today = new Date();
   var dd = today.getDate()-1;
   var mm = today.getMonth()+1;

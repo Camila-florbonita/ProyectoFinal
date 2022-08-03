@@ -24,21 +24,21 @@ if($etiqueta == "estilo")
     echo'
     <select class="input" name="etiqueta" id="etiqueta" required>
     <option value="">Estilo</option>
-    <option value="clasico" onclick="getValue("unisex")">Clasico</option>
-    <option value="vintage" onclick="getValue("unisex")">Vintage</option>
-    <option value="gotico">Gotico</option>
-    <option value="preppy">Preppy</option>
-    <option value="urbano">Urbano</option>
-    <option value="hipster">Hipster</option>
-    <option value="grunge">Grunge</option>
-    <option value="natural">Natural</option>
-    <option value="sofisticado">Sofisticado</option>
     <option value="artsy">Artsy</option>
-    <option value="vanguardista">Vanguardista</option>
     <option value="boho">Boho</option>
-    <option value="romantico">Romantico</option>
+    <option value="clasico" onclick="getValue("unisex")">Clasico</option>
     <option value="dramatico">Dramatico</option>
     <option value="girly">Girly</option>
+    <option value="gotico">Gotico</option>
+    <option value="grunge">Grunge</option>
+    <option value="hipster">Hipster</option>
+    <option value="natural">Natural</option>
+    <option value="preppy">Preppy</option>
+    <option value="romantico">Romantico</option>
+    <option value="sofisticado">Sofisticado</option>
+    <option value="urbano">Urbano</option>
+    <option value="vanguardista">Vanguardista</option>
+    <option value="vintage" onclick="getValue("unisex")">Vintage</option>
     </select>';
 
 }
@@ -59,31 +59,31 @@ if($etiqueta == "color")
     echo'
     <select class="input" name="etiqueta" id="etiqueta" required>
     <option value="">Color</option>
-    <option value="negro">Negro</option>
-    <option value="azul">Azul</option>
-    <option value="cafe">Café</option>
-    <option value="gris">Gris</option>
-    <option value="verde">Verde</option>
-    <option value="naranja">Naranja</option>
-    <option value="rosa">Rosa</option>
-    <option value="morado">Morado</option>
-    <option value="rojo">Rojo</option>
-    <option value="blanco">Blanco</option>
     <option value="amarillo">Amarillo</option>
-    <option value="turquesa">Turquesa</option>
-    <option value="magenta">Magenta</option>
-    <option value="lila">Lila</option>
-    <option value="beige">Beige</option>
-    <option value="salmon">Salmón</option>
-    <option value="fucsia">Fucsia</option>
-    <option value="violeta">Violeta</option>
+    <option value="azul">Azul</option>
     <option value="azul celeste">Azul celeste</option>
     <option value="azul marino">Azul marino</option>
+    <option value="beige">Beige</option>
+    <option value="blanco">Blanco</option>
+    <option value="cafe">Café</option>
+    <option value="cian">Cian</option>
+    <option value="fucsia">Fucsia</option>
+    <option value="gris">Gris</option>
+    <option value="lila">Lila</option>
+    <option value="magenta">Magenta</option>
+    <option value="morado">Morado</option>
+    <option value="mostaza">Mostaza</option>
+    <option value="naranja">Naranja</option>
+    <option value="negro">Negro</option>
+    <option value="rojo">Rojo</option>
+    <option value="rosa">Rosa</option>
+    <option value="turquesa">Turquesa</option>
+    <option value="verde">Verde</option>
     <option value="verde lima">Verde lima</option>
     <option value="verde oscuro">Verde oscuro</option>
-    <option value="mostaza">Mostaza</option>
-    <option value="cian">Cian</option>
     <option value="vino">Vino</option>
+    <option value="violeta">Violeta</option>
+    <option value="salmon">Salmón</option>
     </select>';
 
 }
@@ -121,10 +121,10 @@ if($etiqueta == "ocasion")
     echo'
     <select class="input" name="etiqueta" id="etiqueta" required>
     <option value="">Ocasion</option>
-    <option value="playa">Playa</option>
-    <option value="elegante">Elegante</option>
     <option value="deporte">Deportes</option>
+    <option value="elegante">Elegante</option>
     <option value="fiesta">Fiesta</option>
+    <option value="playa">Playa</option>
     </select>';
     
 }
@@ -147,13 +147,13 @@ if($etiqueta == "material")
     <select class="input" name="etiqueta" id="etiqueta" required>
     <option value="">Material</option>
     <option value="algodon">Algodon</option>
-    <option value="poliester">Poliester</option>
-    <option value="lana">Lana</option>
-    <option value="seda">Seda</option>
     <option value="cuero">Cuero</option>
-    <option value="mezclilla">Mezclilla</option>
+    <option value="lana">Lana</option>
     <option value="licra">Licra</option>
     <option value="lino">Lino</option>
+    <option value="mezclilla">Mezclilla</option>
+    <option value="poliester">Poliester</option>
+    <option value="seda">Seda</option>
     </select>';
     
 }

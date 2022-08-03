@@ -20,7 +20,7 @@ function Borrar(id)
     var idp = id;
     if (confirm("¿Borrar?") == true) 
     {
-        alert(idp);
+        // alert(idp);
         window.location.href = "BorrarPrenda.php?idp=" + idp;
     }
 }
