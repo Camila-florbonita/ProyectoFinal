@@ -7,5 +7,4 @@ function Secciones(seccion)
     reqGS.send();
 
     window.location.href = "MenuSecciones.html";
-    alert(seccion);
 }
