@@ -98,6 +98,74 @@ body
     transition: all 0.3s;
 }
 
+.google-button-container
+{
+    display: flex;
+    background:white; 
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+    border: 1px solid #4285f4; 
+    width:100%; 
+    height:60px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius:10px;
+    cursor: pointer;
+}
+
+.google-button-container:hover
+{
+    transition: all 0.3s;
+    background-color: #4285f4;
+}
+
+.google-button
+{
+    color:#4285f4; 
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}    
+
+.google-button-text
+{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 20px;
+}    
+
+.google-button-container:hover .google-button-text
+{
+    color: white;
+    transition: all 0.3s;
+}
+
+.google-icon-container
+{
+    height:58px; 
+    width: 80px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    place-content: center;
+    padding: 8px;
+}    
+
+.google-button-container:hover .google-icon-container
+{
+    background:white; 
+    transition: all 0.2s;
+
+}
+
+.google-icon
+{
+    width: 30px;
+}
+
 .aviso, .redirect-text
 {
     text-align: center;
