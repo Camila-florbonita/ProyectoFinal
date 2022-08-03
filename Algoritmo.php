@@ -19,7 +19,7 @@ if ($registrox = mysqli_fetch_array($resultx)) {
         $compras[] = $registroz['id_producto'];
     }
 
-    echo count($compras);
+
 
 include 'GetEdadValue.php';
 include 'GetEstiloValue.php';
