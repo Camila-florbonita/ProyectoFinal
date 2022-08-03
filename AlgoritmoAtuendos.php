@@ -48,8 +48,11 @@ $flag4 = false;
     $formalidad = $registro['formalidad']; 
     $material = $registro['material'];
     $corte = $registro['corte'];
+    $estiloB = estiloB($estilo);
+    $estiloC = estiloC($estilo);
 
-    $queryPortion = "SELECT * FROM productos WHERE genero = '$genero' AND edad  = '$edad' AND formalidad = '$formalidad'";
+    $queryPortion = "SELECT * FROM productos WHERE genero = '$genero' AND formalidad = '$formalidad'";
+    $queryend = " ORDER BY RAND();";
 
     switch($color)
     {
@@ -251,7 +254,7 @@ $flag4 = false;
     }
     elseif($temporada == "invierno" or $temporada == "otono")
     {
-        $style = " AND estilo = '$estilo' AND (temporada = 'invierno' OR temporada = 'otono' OR temporada = '')";
+        $style = " AND (estilo = '$estilo' OR estilo = '$estiloB' OR estilo = '$estiloC') AND (temporada = 'invierno' OR temporada = 'otono' OR temporada = '')";
         $qty = 3;
         switch($tipoPrenda)
         {
@@ -275,7 +278,7 @@ $flag4 = false;
     }
     else
     {
-        $style = " AND estilo = '$estilo'";
+        $style = " AND (estilo = '$estilo' OR estilo = '$estiloB' OR estilo = '$estiloC')";
         $qty = 2;
         switch($tipoPrenda)
         {
@@ -299,15 +302,15 @@ $flag4 = false;
         }
     }
 
-    if($tipoPrenda == "vestido")
+    if($tipoPrenda == "vestido" || $ocasion == "elegante")
     {
-        echo "Es un vestido, no hay más recomendaciones";
+        echo "Este es un outfit por si mismo, no hay más recomendaciones";
         $qty = 0;
     }
     else
     {
         $i = false;
-        $ultQuery = $queryPortion . $colour . $style . $type1;
+        $ultQuery = $queryPortion . $colour . $style . $type1 . $queryend;
         $ultResult = mysqli_query($conexion, $ultQuery); 
         while($ultRegistro = mysqli_fetch_array($ultResult))
         {
@@ -347,7 +350,7 @@ $flag4 = false;
     if($qty == 3)
     {
         $i = false;
-        $ultQuery = $queryPortion . $colour . $style . $type2;
+        $ultQuery = $queryPortion . $colour . $style . $type2 . $queryend;
         $ultResult = mysqli_query($conexion, $ultQuery); 
         while($ultRegistro = mysqli_fetch_array($ultResult))
         {
@@ -362,7 +365,7 @@ $flag4 = false;
         }
         if($i == false)
         {
-            echo "No tienes ninguna prenda para combinar, intenta comprar mas prendas";
+            echo "";
         }
         else
         {
@@ -383,6 +386,50 @@ $flag4 = false;
             </div>";
         }
     }
+
+    echo "<br>";
+    //echo $ultQuery;
+
+     
+function estiloB($estilo)
+{
+    $estiloArr = array("urbano", "grunge", "gotico", "artsy", "girly", "romantico",  "natural", "clasico", "hipster", "vintage", "preppy", "sofisticado", "dramatico", "boho", "vanguardista");
+
+   $cnt = 0;
+   for($cnt = 0; $cnt < count($estiloArr); $cnt++)
+   {
+       if($estilo == $estiloArr && $cnt > 0)
+       {
+           $estiloB = $estiloArr[$cnt - 1];
+       }
+       else
+       {
+           $estiloB = "";
+       }
+   }
+
+   return $estiloB;
+} 
+
+function estiloC($estilo)
+{
+   $estiloArr = array("urbano", "grunge", "gotico", "artsy", "girly", "romantico",  "natural", "clasico", "hipster", "vintage", "preppy", "sofisticado", "dramatico", "boho", "vanguardista");
+
+   $cnt = 0;
+   for($cnt = 0; $cnt < count($estiloArr); $cnt++)
+   {
+       if($estilo == $estiloArr && $cnt < 13)
+       {
+           $estiloC = $estiloArr[$cnt + 1];
+       }
+       else
+       {
+           $estiloC = "";
+       }
+   }
+   return $estiloC;
+} 
+
 
 ?>
  
