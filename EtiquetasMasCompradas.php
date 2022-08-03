@@ -121,7 +121,7 @@ while ($registro = mysqli_fetch_array($result))
                 data: {
                   labels: [<?php echo $labels; ?>],
                   datasets: [{
-                    label: 'Etiquetas mas buscadas',
+                    label: 'Etiquetas mas compradas',
                     data: [<?php echo $data; ?>],
                     backgroundColor: [
       'rgba(255, 159, 64, 0.8)',
