@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="css/FormatoCSS.css">
         <link rel="stylesheet" href="css/styleProductoConCuenta.css">
         <link rel="stylesheet" href="css/styleAnalytics.css">
+        <link rel="stylesheet" href="css/styleResultados.css">
         <link rel="stylesheet" href="css/styleNavegacionAdmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <title>Análisis</title>
@@ -93,25 +94,40 @@
         </header>
         
         <div class="page-container">
-            <div id="compras">
-                <p>
+            <div class="producto" id="compras">
+                <p class="subtitle graphycs">
                     Compras este año:
                 </p>
-                <p>
+                <p class="price">
                     0
                 </p>
-                <p>
+                <p class="subtitle graphycs">
                     Compras este mes:
                 </p>
-                <p>
+                <p class="price">
                     0
                 </p>
-                <p>
+                <p class="subtitle graphycs">
                     Compras esta temporada:
                 </p>
-                <p>
+                <p class="price">
                     0
                 </p>
+            </div>
+
+            <div style="width: 60%; display: flex; flex-direction: column; margin-right:auto; margin-left:auto;">
+                <a href="InformePrendas.html" class="primary-button" style="text-decoration: none; text-align: center; margin-bottom: 24px;">
+                        Informe general de prendas
+                </a>
+    
+                <a href="EtiquetasMasBuscadas.php" class="primary-button" style="text-decoration: none; text-align: center; margin-bottom: 24px;">
+                        Etiquetas mas buscadas
+                </a>
+    
+                <a href="EtiquetasMasCompradas.php" class="primary-button" style="text-decoration: none; text-align: center; margin-bottom: 24px;">
+                        Etiquetas mas compradas
+                </a>
+
             </div>
 
             <form class="form-grafica" action="PrendasMasCompradas.php" method="post">
@@ -129,23 +145,7 @@
                 </button>
             </form>
 
-            <a href="InformePrendas.html">
-                <button>
-                    Informe general de prendas
-                </button>
-            </a>
-
-            <a href="EtiquetasMasBuscadas.php">
-                <button>
-                    Etiquetas mas buscadas
-                </button>
-            </a>
-
-            <a href="EtiquetasMasCompradas.php">
-                <button>
-                    Etiquetas mas compradas
-                </button>
-            </a>
+            
             
         </div>
 

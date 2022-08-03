@@ -27,26 +27,26 @@ $queryT = "SELECT COUNT(*) FROM comprado WHERE fecha >= '$inicioT';";
 $resultT = mysqli_query($conexion, $queryT); 
 $registrot = mysqli_fetch_array($resultT);
 
-echo "<div id='compras'>
-<p>
-    Compras este año:
-</p>
-<p>",
+echo "
+<p class='subtitle graphycs'>
+                    Compras este año:
+                </p>
+                <p class='price'>",
     $registroyear['COUNT(*)'],
 "</p>
-<p>
-    Compras este mes:
-</p>
-<p>",
+<p class='subtitle graphycs'>
+                    Compras este mes:
+                </p>
+                <p class='price'>",
 $registromes['COUNT(*)'],
 "</p>
-<p>
-    Compras esta temporada:
-</p>
-<p>",
+<p class='subtitle graphycs'>
+                    Compras esta temporada:
+                </p>
+                <p class='price'>",
 $registrot['COUNT(*)'],
 "</p>
-</div>";
+";
 
 ?>
  

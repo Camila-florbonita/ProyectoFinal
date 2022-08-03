@@ -243,11 +243,11 @@ nav .content .links
     opacity: 1;
     visibility: visible;
 }
-
+/* 
 .content .links li
 {
-    /* line-height: 100px; */
-}
+    line-height: 100px;
+} */
 
 .content .links ul li a
 {
@@ -267,7 +267,7 @@ nav .content .links
 {
     background-color: white;
     border: 2px solid #c64cd6;
-    border-radius: 10px;
+    border-radius: 20px;
     color: #c64cd6;
     text-decoration: none;
     cursor: pointer;
@@ -380,10 +380,10 @@ nav .content .links
         color: white;
     }
 
-    .content .links li
+    /* .content .links li
     {
-        /* line-height: 40px; */
-    }
+        line-height: 40px;
+    } */
 
     .content .links ul
     {
