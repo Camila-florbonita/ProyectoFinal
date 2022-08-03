@@ -11,25 +11,27 @@ $f_fin = $_POST["finoferta"];
 $labels = "";
 $data = "";
 
-$query = "SELECT *, COUNT(*) AS cuenta FROM comprado WHERE fecha >= '$f_inicio' AND fecha <= '$f_fin'
-GROUP BY id_producto ORDER BY COUNT(*) DESC LIMIT 3;";
+$query = "SELECT *, COUNT(*) AS cuenta FROM comprado INNER JOIN productos ON comprado.id_producto = 
+productos.id_producto WHERE fecha >= '$f_inicio' AND fecha <= '$f_fin'
+GROUP BY comprado.id_producto ORDER BY COUNT(*) DESC LIMIT 3;";
 $result = mysqli_query($conexion, $query); 
 while ($registro = mysqli_fetch_array($result))
 {
     $cont++;
-    $labels = $labels.' "'.$registro['id_producto'].'",';
+    $labels = $labels.' "'.$registro['nombre_producto'].'",';
     $data = $data.' '.$registro['cuenta'].',';
 }
 
-$antiquery = "SELECT *, COUNT(*) AS cuenta FROM comprado WHERE fecha >= '$f_inicio' AND fecha <= '$f_fin'
-GROUP BY id_producto ORDER BY COUNT(*) ASC LIMIT 3;";
+$antiquery = "SELECT *, COUNT(comprado.id_producto) AS cuenta FROM productos LEFT JOIN comprado 
+ON comprado.id_producto = productos.id_producto WHERE fecha >= '$f_inicio' AND fecha <= '$f_fin' 
+OR fecha IS NULL GROUP BY productos.id_producto ORDER BY cuenta ASC LIMIT 3;";
 $antiresult = mysqli_query($conexion, $antiquery); 
 
 $cont = 0;
 while ($antiregistro = mysqli_fetch_array($antiresult))
 {
     $cont++;
-    $labels = $labels.' "'.$antiregistro['id_producto'].'",';
+    $labels = $labels.' "'.$antiregistro['nombre_producto'].'",';
     $data = $data.' '.$antiregistro['cuenta'].',';
 }
          

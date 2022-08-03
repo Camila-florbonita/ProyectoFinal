@@ -138,7 +138,7 @@ while ($registro = mysqli_fetch_array($result))
                   plugins:{
                   title: {
                     display: true,
-                    text: "Compras"
+                    text: "Busquedas"
                   }
                 },
                 scales: {
