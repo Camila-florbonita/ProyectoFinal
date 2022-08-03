@@ -61,7 +61,6 @@
     
             .sales-container
             {
-                padding-top: 48px;
                 place-content: start;
                 flex-direction: column;
             }

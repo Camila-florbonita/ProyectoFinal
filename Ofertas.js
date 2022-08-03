@@ -1,5 +1,6 @@
 var req = new XMLHttpRequest();
 var req2 = new XMLHttpRequest();
+var req3 = new XMLHttpRequest();
 
 document.addEventListener('DOMContentLoaded', 
 function Ofertas()
@@ -19,6 +20,14 @@ function Ofertas()
  }
      req2.open("GET", "OfertasSelect.php?");
      req2.send();
+
+     req3.onload = function ShowSales() {
+       var showOfertas = document.getElementById("producto");
+       showOfertas.innerHTML = req3.responseText;
+     }
+
+     req3.open("GET", "GetOfertas.php?");
+     req3.send();
 
 }, false);
 
