@@ -9,7 +9,7 @@ session_start();
 // init configuration
 $clientID = '495801222005-278r2r4ojcehbgrq9o1t8d0g4flbj985.apps.googleusercontent.com';
 $clientSecret = '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';
-$redirectUri = 'https://cadivie.herokuapp/loginGoogle.php';
+$redirectUri = 'https://cadivie.herokuapp.com/loginGoogle.php';
   
 // create Client Request to access Google API
 $client = new Google_Client();
