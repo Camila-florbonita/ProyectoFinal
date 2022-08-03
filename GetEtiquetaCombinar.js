@@ -5,7 +5,7 @@ function getEtiqueta()
 {
     var etq = document.getElementById("etiquetas").value;
     var sendid = etq;
-    alert(sendid);
+    // alert(sendid);
 
     reqEt.onload = function Etiqueta(){
         var etiquetas = document.getElementById("etiqueta");

@@ -3,7 +3,7 @@ var gend;
 function genero(gen)
 {
     gend = gen;
-    alert(gend);
+    // alert(gend);
     return gend;
 }
 
@@ -22,7 +22,7 @@ function Maniqui(idPrenda, tipoPrenda)
 
     var gen = gend;
 
-    alert(gen);
+    // alert(gen);
 
     var scene = new THREE.Scene();    
     

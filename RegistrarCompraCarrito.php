@@ -95,18 +95,18 @@ $precioT = $_SESSION['totalCarrito'];
                         var id_cliente = info.detalles.payer.payer_id;
                         var status = info.detalles.status;
                         var fecha = info.detalles.update_time;
-                        alert(id_transaccion);
-                        alert(email);
-                        alert(id_cliente);
+                        // alert(id_transaccion);
+                        // alert(email);
+                        // alert(id_cliente);
                         var redireccion = "SetCompraCarrito.php?id_t=" + id_transaccion + "&email=" + email + "&id_c=" + id_cliente + "&fecha=" + fecha + "&status=" + status;
-                        alert(redireccion);
+                        // alert(redireccion);
                         alert('Pago realizado');
                         window.location.href = redireccion;
 
                         <?php
                         $tallas = "M";
-                        echo "alert('$tallas');";
-                        echo "alert('", $_SESSION['totalCarrito'], "');";
+                        // echo "alert('$tallas');";
+                        // echo "alert('", $_SESSION['totalCarrito'], "');";
                         //echo "window.location.href='InicioConCuenta.html';";
                         ?>
                         

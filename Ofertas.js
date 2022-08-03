@@ -54,7 +54,7 @@ function LimitDate()
 function temporadazzz()
 {
     var dof = document.getElementById("duracionOferta").value;    
-    alert(dof);
+    // alert(dof);
     if(dof == "temporadaOf")
     {
         document.getElementById("temporada").setAttribute("style", "visibility: visible;");
